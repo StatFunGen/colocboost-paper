@@ -9,7 +9,9 @@ ColocBoost is a statistical approach for identifying shared genetic influences a
 
 ## Repository Structure
 
-This Jupyter Book contains the codes and data used to generate all figures from our manuscript. Each notebook is fully executable and documented to ensure reproducibility of our results. The main sections include:
+This Jupyter Book contains the codes and data used to generate all figures from our manuscript, available at: https://github.com/StatFunGen/colocboost-paper
+
+Each notebook is fully executable and documented to ensure reproducibility of our results. The main sections include:
 
 - **Figure 2**: Method overview and benchmark comparisons
 - **Figure 3**: Cell-type specific xQTL colocalization analyses
