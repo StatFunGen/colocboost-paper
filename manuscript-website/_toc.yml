@@ -3,8 +3,6 @@
 
 format: jb-book
 root: index
-defaults:
-  expand_sections: true  # Make all sections expand by default
 chapters:
   - file: intro
   - file: Main_Figures/index
