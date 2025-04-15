@@ -49,10 +49,10 @@ po/*~
 rsconnect/
 
 # Jupyter Notebook specific
-#.ipynb_checkpoints
-#*/.ipynb_checkpoints/*
-#*.nbconvert.ipynb
-#.jupyter/
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.nbconvert.ipynb
+.jupyter/
 jupyter_notebook_config.py
 
 # Mac specific
@@ -75,3 +75,6 @@ Icon
 *.swp
 *.swo
 *~
+
+# Jupyter Book
+_build
