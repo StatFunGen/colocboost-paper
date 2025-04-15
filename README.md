@@ -197,7 +197,7 @@ jobs:
 
     - name: Build the book
       run: |
-        jupyter-book build .
+        jupyter-book build . --config manuscript-website/_config.yml --toc manuscript-website/_toc.yml
 
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
@@ -207,25 +207,3 @@ jobs:
 ```
 
 This will automatically rebuild and publish your book whenever you push changes to the main branch.
-
-## 10. Updating Your Book
-
-When you make changes:
-
-1. Edit your content
-2. Rebuild the book:
-   ```bash
-   jupyter-book build .
-   ```
-3. Push to GitHub:
-   ```bash
-   git add .
-   git commit -m "Update content"
-   git push
-   ```
-4. If not using GitHub Actions, redeploy:
-   ```bash
-   ghp-import -n -p -f _build/html
-   ```
-
-With GitHub Actions set up, your site will automatically update after you push changes to the main branch.
