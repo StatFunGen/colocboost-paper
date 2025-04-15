@@ -1,0 +1,24 @@
+# Book settings
+title: Data and code to reproduce figures in ColocBoost manuscript
+author: Xuewei Cao with input from Gao Wang
+logo: logo.png  # Add a logo file to your repo if you have one
+copyright: "2025"  # Current year
+
+execute:
+  execute_notebooks: false
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+bibtex_bibfiles:
+  - references.bib
+
+repository:
+  url: https://github.com/StatFunGen/colocboost-paper
+  branch: main 
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+
