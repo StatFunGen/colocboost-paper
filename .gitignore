@@ -51,12 +51,15 @@ rsconnect/
 # Jupyter Notebook specific
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+**/.ipynb_checkpoints
+**/.ipynb_checkpoints/**
 *.nbconvert.ipynb
 .jupyter/
 jupyter_notebook_config.py
 
 # Mac specific
 .DS_Store
+**/.DS_Store
 .AppleDouble
 .LSOverride
 Icon
