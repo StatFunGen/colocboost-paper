@@ -1,0 +1,46 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+chapters:
+  - file: intro
+  - file: Main_Figures/index
+    sections:
+      - file: Main_Figures/Figure_2/index
+        sections:
+          - file: Main_Figures/Figure_2/Figure_2a
+          - file: Main_Figures/Figure_2/Figure_2b
+          - file: Main_Figures/Figure_2/Figure_2c
+          - file: Main_Figures/Figure_2/Figure_2d
+          - file: Main_Figures/Figure_2/Figure_2e
+      - file: Main_Figures/Figure_3/index
+        sections:
+          - file: Main_Figures/Figure_3/Figure_3a
+          - file: Main_Figures/Figure_3/Figure_3b
+          - file: Main_Figures/Figure_3/Figure_3c
+          - file: Main_Figures/Figure_3/Figure_3d
+          - file: Main_Figures/Figure_3/Figure_3e
+          - file: Main_Figures/Figure_3/Figure_3f
+          - file: Main_Figures/Figure_3/Figure_3g
+          - file: Main_Figures/Figure_3/Figure_3h
+          - file: Main_Figures/Figure_3/Figure_3i
+      - file: Main_Figures/Figure_4/index
+        sections:
+          - file: Main_Figures/Figure_4/Figure_4a
+          - file: Main_Figures/Figure_4/Figure_4b
+          - file: Main_Figures/Figure_4/Figure_4c
+          - file: Main_Figures/Figure_4/Figure_4d
+      - file: Main_Figures/Figure_5/index
+        sections:
+          - file: Main_Figures/Figure_5/Figure_5abc
+          - file: Main_Figures/Figure_5/Figure_5d
+      - file: Main_Figures/Figure_6/index
+        sections:
+          - file: Main_Figures/Figure_6/Figure_6a
+          - file: Main_Figures/Figure_6/Figure_6b
+          - file: Main_Figures/Figure_6/Figure_6c
+          - file: Main_Figures/Figure_6/Figure_6d
+          - file: Main_Figures/Figure_6/Figure_6e
+          - file: Main_Figures/Figure_6/Figure_6f
+          - file: Main_Figures/Figure_6/Figure_6g
