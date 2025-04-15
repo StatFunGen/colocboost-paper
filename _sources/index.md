@@ -1,1 +1,3 @@
-# ColocBoost Manuscript Companion Resources\n\nCode and data to reproduce figures in ColocBoost manuscript.
+# ColocBoost Manuscript Companion Resources
+
+Code and data to reproduce figures in ColocBoost manuscript.

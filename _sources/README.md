@@ -123,16 +123,16 @@ You'll need to create index.md files for each section. Here's an example structu
 
 ```bash
 # Root index.md
-echo "# ColocBoost Manuscript Companion Resources\n\nCode and data to reproduce figures in ColocBoost manuscript." > index.md
+echo -e "# ColocBoost Manuscript Companion Resources\n\nCode and data to reproduce figures in ColocBoost manuscript." > index.md
 
 # Main figures index
 mkdir -p Main_Figures
-echo "# Main Figures\n\nThis section contains the main figures from our analysis." > Main_Figures/index.md
+echo -e "# Main Figures\n\nThis section contains the main figures from our analysis." > Main_Figures/index.md
 
 # Create index files for each figure group
 for i in {2..6}; do
   mkdir -p Main_Figures/Figure_$i
-  echo "# Figure $i\n\nAnalysis and results for Figure $i." > Main_Figures/Figure_$i/index.md
+  echo -e "# Figure $i\n\nAnalysis and results for Figure $i." > Main_Figures/Figure_$i/index.md
 done
 ```
 
@@ -140,7 +140,7 @@ done
 
 
 ```bash
-jupyter-book build . 
+jupyter-book build . --config manuscript-website/_config.yml --toc manuscript-website/_toc.yml
 ```
 
 This will generate the HTML files in the `_build/html` directory.
@@ -165,8 +165,7 @@ This will:
 3. Ensure the source is set to the `gh-pages` branch and the folder is `/ (root)`
 4. Save the settings
 
-The site should be live at: 
-
+The site should be live at: https://statfungen.github.io/colocboost-paper/
 
 ## 8. Optional: Set Up GitHub Actions for Automatic Deployment
 

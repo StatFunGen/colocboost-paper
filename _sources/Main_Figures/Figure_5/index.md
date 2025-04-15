@@ -1,1 +1,3 @@
-# Figure 5\n\nAnalysis and results for Figure 5.
+# Figure 5
+
+Analysis and results for Figure 5.
