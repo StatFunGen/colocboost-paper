@@ -26,4 +26,4 @@ html:
 sphinx:
   config:
     html_theme_options:
-      show_navbar_depth: 1
+      show_navbar_depth: 2
