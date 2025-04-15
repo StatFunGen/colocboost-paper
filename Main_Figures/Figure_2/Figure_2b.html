@@ -1,0 +1,1702 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Figure 2b. Representative simulation examples. &#8212; Data and code to reproduce figures in ColocBoost manuscript</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Main_Figures/Figure_2/Figure_2b';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Figure 2c. Variant‐level precision‐recall curves." href="Figure_2c.html" />
+    <link rel="prev" title="Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons." href="Figure_2a.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Data and code to reproduce figures in ColocBoost manuscript</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    ColocBoost Manuscript Companion Resources\n\nCode and data to reproduce figures in ColocBoost manuscript.
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Main Figures\n\nThis section contains the main figures from our analysis.</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Figure 2\n\nAnalysis and results for Figure 2.</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Figure_2a.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Figure 2b. Representative simulation examples.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Figure_2c.html">Figure 2c. Variant‐level precision‐recall curves.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Figure_2d.html">Figure 2d. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Figure_2e.html">Figure 2e. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Figure_3/index.html">Figure 3\n\nAnalysis and results for Figure 3.</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_3/Figure_3a.html">Figure 3a. Colocalization patterns across three different molecular trait modalities (expression, splicing, protein abundance).</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_3/Figure_3b.html">Figure 3b. Distribution of the number of 95% CoSs corresponding to the different numbers of colocalized traits per locus.</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../Figure_3/Figure_3c.html">Figure 3c. UpSet plot summarizing the colocalization patterns across 6 pseudo-bulk brain cell-type eQTL data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_3/Figure_3d.html">Figure 3d. Cell-type specific colocalization versus fine-mapping eQTL.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_3/Figure_3e.html">Figure 3e. Significantly enriched KEGG pathways.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_3/Figure_3f.html">Figure 3f. Homogeneity in causal effect directions.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_3/Figure_3g.html">Figure 3g. Empirical distribution of the number of 95% CoS versus the size of the CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_3/Figure_3h.html">Figure 3h. Distribution of the number of CoSs per gene.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_3/Figure_3i.html">Figure 3i. Shared cell-types in primary CoS and secondary CoS.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Figure_4/index.html">Figure 4\n\nAnalysis and results for Figure 4.</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_4/Figure_4a.html">Figure 4a. Variant set -level Excess-of-overlap (EOO) analysis.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_4/Figure_4b.html">Figure 4b. Variant set -level Excess-of-overlap (EOO) analysis in bulk region.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_4/Figure_4c.html">Figure 4c. Variant set -level Excess-of-overlap (EOO) analysis in cell types.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_4/Figure_4d.html">Figure 4d. Microglia-specific eQTL colocalization in FCGR2A.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Figure_5/index.html">Figure 5\n\nAnalysis and results for Figure 5.</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_5/Figure_5abc.html">Figure 5abc. Disease heritability analyses of variant-level functional annotations derived from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_5/Figure_5d.html">Figure 5d. Standardized effect sizes of the MaxVCP-xQTL and an analogous score based on the HyPrColoc method.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Figure_6/index.html">Figure 6\n\nAnalysis and results for Figure 6.</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6a.html">Figure 6a. UpSet plot comparison.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6b.html">Figure 6b. Scatter plot across variants in terms of the magnitude of quantile-matched z-scores.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6c.html">Figure 6c. Distribution of distances from the gene TSS for CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6d.html">Figure 6d. Precision-recall analysis compared with ENCODE-rE2G links.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6e.html">Figure 6e. UpSet plot for AD-xQTL colocalization.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6f.html">Figure 6f. Manhattan plot of variant level MaxVCP from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6g.html">Figure 6g. Microglia-specific eQTL colocalization in FCGR2A.</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/StatFunGen/colocboost-paper" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/StatFunGen/colocboost-paper/issues/new?title=Issue%20on%20page%20%2FMain_Figures/Figure_2/Figure_2b.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Main_Figures/Figure_2/Figure_2b.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Figure 2b. Representative simulation examples.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-effects-for-two-causal-variants">1. Heterogeneous effects for two causal variants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-identify-two-cos-including-two-true-causal-variants">ColocBoost identify two CoS including two true causal variants.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyprcoloc">HyPrColoc</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coloc-one-causal-assumption">COLOC (one causal assumption)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coloc-v5">COLOC (V5)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moloc">MOLOC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-causal-strongest-marginal-effect">2. Non-causal strongest marginal effect</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">HyPrColoc</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">COLOC (one causal assumption)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">COLOC (V5)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">MOLOC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weaker-causal-effect-for-target-traits">3. Weaker causal effect for target traits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">HyPrColoc</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">COLOC (one causal assumption)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">COLOC (V5)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">MOLOC</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="figure-2b-representative-simulation-examples">
+<h1>Figure 2b. Representative simulation examples.<a class="headerlink" href="#figure-2b-representative-simulation-examples" title="Link to this heading">#</a></h1>
+<p>Representative simulation examples illustrating limitations of competing methods: (i) methods under “one-causal” assumption fail to detect causal signals with heterogeneous effects and (ii) spurious detection of non-causal variants with strongest marginal effect; (iii) COLOC (V5) shows reduced sensitivity to weak causal effects in GWAS.</p>
+<section id="heterogeneous-effects-for-two-causal-variants">
+<h2>1. Heterogeneous effects for two causal variants<a class="headerlink" href="#heterogeneous-effects-for-two-causal-variants" title="Link to this heading">#</a></h2>
+<p>When analyzing multiple causal variants, it’s important to consider that they may exhibit heterogeneous effects across different contexts, populations, or individuals.</p>
+<section id="colocboost-identify-two-cos-including-two-true-causal-variants">
+<h3>ColocBoost identify two CoS including two true causal variants.<a class="headerlink" href="#colocboost-identify-two-cos-including-two-true-causal-variants" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;Figure_2b.rds&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">HeterogeneousEffect</span>
+<span class="n">X</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">X</span>
+<span class="n">Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">Y</span>
+<span class="n">data</span><span class="o">$</span><span class="n">variant</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>2256</li><li>3446</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colocboost</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y</span><span class="p">)</span>
+<span class="n">res</span><span class="o">$</span><span class="n">cos_details</span><span class="o">$</span><span class="n">cos</span><span class="o">$</span><span class="n">cos_index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting checking the input data.
+
+Starting gradient boosting algorithm.
+
+Boosting iterations for outcome 1, 2 converge after 39 iterations!
+
+Starting assemble analyses and results summary.
+</pre></div>
+</div>
+<div class="output text_html"><dl>
+	<dt>$`cos1:y1_y2`</dt>
+		<dd><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>3457</li><li>3425</li><li>3426</li><li>3419</li><li>3521</li><li>3437</li><li>3453</li><li>3416</li><li>3484</li><li>3523</li><li>3410</li><li>3411</li><li>3414</li><li>3415</li><li>3417</li><li>3420</li><li>3421</li><li>3422</li><li>3423</li><li>3424</li><li>3432</li><li>3435</li><li>3439</li><li>3440</li><li>3449</li><li>3450</li><li>3451</li><li>3452</li><li>3454</li><li>3455</li><li>3456</li><li>3458</li><li>3472</li><li>3476</li><li>3479</li><li>3481</li><li>3482</li><li>3485</li><li>3486</li><li>3504</li><li>3508</li><li>3510</li><li>3511</li><li>3512</li><li>3516</li><li>3447</li><li>3480</li><li>3428</li><li>3446</li><li>3495</li><li>3438</li><li>3494</li><li>3430</li></ol>
+</dd>
+	<dt>$`cos2:y1_y2`</dt>
+		<dd><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>2256</li><li>2259</li></ol>
+</dd>
+</dl>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+<span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">variant</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/87a520db6492d120342ac389852b2ad9a8d3b52de551ff97b581b450335799fd.png"><img alt="../../_images/87a520db6492d120342ac389852b2ad9a8d3b52de551ff97b581b450335799fd.png" src="../../_images/87a520db6492d120342ac389852b2ad9a8d3b52de551ff97b581b450335799fd.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">variant</span><span class="p">),</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1500</span><span class="o">:</span><span class="m">4000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/8331757325a0aca62a756f6ec2d5f8efd667333b38537cad1cf53a950671bdfa.png"><img alt="../../_images/8331757325a0aca62a756f6ec2d5f8efd667333b38537cad1cf53a950671bdfa.png" src="../../_images/8331757325a0aca62a756f6ec2d5f8efd667333b38537cad1cf53a950671bdfa.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">$</span><span class="n">cos_details</span><span class="o">$</span><span class="n">cos_purity</span><span class="o">$</span><span class="n">min_abs_cor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 2 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>cos1:y1_y2</th><th scope=col>cos2:y1_y2</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>cos1:y1_y2</th><td>0.9869088</td><td>0.0125171</td></tr>
+	<tr><th scope=row>cos2:y1_y2</th><td>0.0125171</td><td>0.9840258</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;vcp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">variant</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1500</span><span class="o">:</span><span class="m">4000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/bb07d957293cbc95534c76178adc9d25e392fd45edef0b4b0aa64f533354c14a.png"><img alt="../../_images/bb07d957293cbc95534c76178adc9d25e392fd45edef0b4b0aa64f533354c14a.png" src="../../_images/bb07d957293cbc95534c76178adc9d25e392fd45edef0b4b0aa64f533354c14a.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="hyprcoloc">
+<h3>HyPrColoc<a class="headerlink" href="#hyprcoloc" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">hyprcoloc</span><span class="p">)</span>
+<span class="n">betas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">Y</span><span class="p">[,</span><span class="n">i</span><span class="p">])</span>
+<span class="w">    </span><span class="n">rr</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">susieR</span><span class="o">::</span><span class="nf">univariate_regression</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="w">    </span><span class="n">betas</span><span class="p">[,</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rr</span><span class="o">$</span><span class="n">betahat</span>
+<span class="w">    </span><span class="n">sebetas</span><span class="p">[,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rr</span><span class="o">$</span><span class="n">sebetahat</span>
+<span class="p">}</span>
+<span class="n">traits</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">)</span>
+<span class="n">rsid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;snp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">)))</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">betas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colnames</span><span class="p">(</span><span class="n">sebetas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">traits</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">betas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">sebetas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rsid</span>
+<span class="n">res_hyprcoloc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">hyprcoloc</span><span class="p">(</span><span class="n">betas</span><span class="p">,</span><span class="w"> </span><span class="n">sebetas</span><span class="p">,</span><span class="w"> </span><span class="n">trait.names</span><span class="o">=</span><span class="n">traits</span><span class="p">,</span><span class="w"> </span><span class="n">snp.id</span><span class="o">=</span><span class="n">rsid</span><span class="p">,</span><span class="w"> </span><span class="n">snpscores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“replacing previous import ‘Matrix::tcrossprod’ by ‘Rmpfr::tcrossprod’ when loading ‘hyprcoloc’”
+Warning message:
+“replacing previous import ‘Matrix::crossprod’ by ‘Rmpfr::crossprod’ when loading ‘hyprcoloc’”
+Warning message:
+“replacing previous import ‘Matrix::.__C__atomicVector’ by ‘Rmpfr::.__C__atomicVector’ when loading ‘hyprcoloc’”
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_hyprcoloc</span><span class="o">$</span><span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 1 × 7</caption>
+<thead>
+	<tr><th scope=col>iteration</th><th scope=col>traits</th><th scope=col>posterior_prob</th><th scope=col>regional_prob</th><th scope=col>candidate_snp</th><th scope=col>posterior_explained_by_snp</th><th scope=col>dropped_trait</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;lgl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;lgl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>1</td><td>None</td><td>NA</td><td>1</td><td>NA</td><td>NA</td><td>1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_hyprcoloc</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">str</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>List of 1
+ $ results:&#39;data.frame&#39;:	1 obs. of  7 variables:
+  ..$ iteration                 : num 1
+  ..$ traits                    : chr &quot;None&quot;
+  ..$ posterior_prob            : logi NA
+  ..$ regional_prob             : num 1
+  ..$ candidate_snp             : logi NA
+  ..$ posterior_explained_by_snp: num NA
+  ..$ dropped_trait             : chr &quot;1&quot;
+ - attr(*, &quot;class&quot;)= chr &quot;hyprcoloc&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="coloc-one-causal-assumption">
+<h3>COLOC (one causal assumption)<a class="headerlink" href="#coloc-one-causal-assumption" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">coloc</span><span class="p">)</span>
+<span class="n">LD</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_cormat</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">LD</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">LD</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">MAF</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colMeans</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="m">2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">as.numeric</span>
+<span class="n">D1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;beta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">betas</span><span class="p">[,</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;varbeta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="o">^</span><span class="m">2</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;sdY&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Y</span><span class="p">[,</span><span class="m">1</span><span class="p">])),</span>
+<span class="w">           </span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;quant&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MAF&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAF</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LD&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LD</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;snp&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;position&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="n">D2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;beta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">betas</span><span class="p">[,</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;varbeta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="p">[,</span><span class="m">2</span><span class="p">]</span><span class="o">^</span><span class="m">2</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;sdY&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Y</span><span class="p">[,</span><span class="m">2</span><span class="p">])),</span>
+<span class="w">           </span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;quant&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MAF&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAF</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LD&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LD</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;snp&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;position&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="n">my.res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">coloc.abf</span><span class="p">(</span><span class="n">dataset1</span><span class="o">=</span><span class="n">D1</span><span class="p">,</span><span class="w"> </span><span class="n">dataset2</span><span class="o">=</span><span class="n">D2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is coloc version 5.2.3
+
+Warning message in adjust_prior(p1, nrow(df1), &quot;1&quot;):
+“p1 * nsnps &gt;= 1, setting p1=1/(nsnps + 1)”
+Warning message in adjust_prior(p2, nrow(df2), &quot;2&quot;):
+“p2 * nsnps &gt;= 1, setting p2=1/(nsnps + 1)”
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PP.H0.abf PP.H1.abf PP.H2.abf PP.H3.abf PP.H4.abf 
+ 1.76e-21  4.33e-09  4.04e-13  9.93e-01  6.84e-03 
+[1] &quot;PP abf for shared variant: 0.684%&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1500</span><span class="o">:</span><span class="m">4000</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/da5c4df32356f6e4bebef4dd3beea42f8d15c286b24e60cd0d8819682f3141be.png"><img alt="../../_images/da5c4df32356f6e4bebef4dd3beea42f8d15c286b24e60cd0d8819682f3141be.png" src="../../_images/da5c4df32356f6e4bebef4dd3beea42f8d15c286b24e60cd0d8819682f3141be.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="coloc-v5">
+<h3>COLOC (V5)<a class="headerlink" href="#coloc-v5" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">susieR</span><span class="p">)</span>
+<span class="n">out_p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runsusie</span><span class="p">(</span><span class="n">D1</span><span class="p">)</span>
+<span class="n">out_e</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runsusie</span><span class="p">(</span><span class="n">D2</span><span class="p">)</span>
+<span class="n">out_coloc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">coloc.susie</span><span class="p">(</span><span class="n">out_e</span><span class="p">,</span><span class="w"> </span><span class="n">out_p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>running max iterations: 100
+
+	converged: TRUE
+
+running max iterations: 100
+
+	converged: TRUE
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">out_coloc</span><span class="o">$</span><span class="n">summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.table: 4 × 10</caption>
+<thead>
+	<tr><th scope=col>nsnps</th><th scope=col>hit1</th><th scope=col>hit2</th><th scope=col>PP.H0.abf</th><th scope=col>PP.H1.abf</th><th scope=col>PP.H2.abf</th><th scope=col>PP.H3.abf</th><th scope=col>PP.H4.abf</th><th scope=col>idx1</th><th scope=col>idx2</th></tr>
+	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>12900</td><td>3495</td><td>2256</td><td>4.890181e-21</td><td>1.140795e-12</td><td>4.286644e-09</td><td>0.999999996</td><td>2.924359e-11</td><td>1</td><td>1</td></tr>
+	<tr><td>12900</td><td>2256</td><td>2256</td><td>9.904029e-19</td><td>4.439301e-15</td><td>8.681693e-07</td><td>0.001895203</td><td>9.981039e-01</td><td>2</td><td>1</td></tr>
+	<tr><td>12900</td><td>3495</td><td>3408</td><td>1.921831e-17</td><td>4.483300e-09</td><td>5.255216e-10</td><td>0.120836772</td><td>8.791632e-01</td><td>1</td><td>2</td></tr>
+	<tr><td>12900</td><td>2256</td><td>3408</td><td>8.156886e-12</td><td>3.656176e-08</td><td>2.230487e-04</td><td>0.999775096</td><td>1.818970e-06</td><td>2</td><td>2</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">o</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row2</span><span class="p">,</span><span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">cs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row2</span><span class="p">[</span><span class="n">o</span><span class="p">])</span>
+<span class="n">w</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="n">cs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.95</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">cos1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="p">[</span><span class="n">o</span><span class="p">,][</span><span class="m">1</span><span class="o">:</span><span class="n">w</span><span class="p">,]</span><span class="o">$</span><span class="n">snp</span>
+<span class="n">cos1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'2256'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">o</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row3</span><span class="p">,</span><span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">cs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row3</span><span class="p">[</span><span class="n">o</span><span class="p">])</span>
+<span class="n">w</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="n">cs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.95</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">cos2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="p">[</span><span class="n">o</span><span class="p">,][</span><span class="m">1</span><span class="o">:</span><span class="n">w</span><span class="p">,]</span><span class="o">$</span><span class="n">snp</span>
+<span class="n">cos2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'3425'</li><li>'3426'</li><li>'3457'</li><li>'3521'</li><li>'3419'</li><li>'3480'</li><li>'3453'</li><li>'3437'</li><li>'3495'</li><li>'3416'</li><li>'3484'</li><li>'3523'</li><li>'3410'</li><li>'3411'</li><li>'3414'</li><li>'3415'</li><li>'3417'</li><li>'3420'</li><li>'3421'</li><li>'3422'</li><li>'3423'</li><li>'3424'</li><li>'3432'</li><li>'3435'</li><li>'3439'</li><li>'3440'</li><li>'3449'</li><li>'3450'</li><li>'3451'</li><li>'3452'</li><li>'3454'</li><li>'3455'</li><li>'3456'</li><li>'3458'</li><li>'3472'</li><li>'3476'</li><li>'3479'</li><li>'3481'</li><li>'3482'</li><li>'3485'</li><li>'3486'</li><li>'3504'</li><li>'3508'</li><li>'3510'</li><li>'3511'</li><li>'3512'</li><li>'3516'</li><li>'3447'</li><li>'3446'</li><li>'3494'</li><li>'3428'</li><li>'3438'</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">vcp_coloc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row4</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">vcp_coloc</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1500</span><span class="o">:</span><span class="m">4000</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/b136b0167e926df6387fce58b720eb5a1844a8f1e5eec19595ba0d9e9e6fe63d.png"><img alt="../../_images/b136b0167e926df6387fce58b720eb5a1844a8f1e5eec19595ba0d9e9e6fe63d.png" src="../../_images/b136b0167e926df6387fce58b720eb5a1844a8f1e5eec19595ba0d9e9e6fe63d.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="moloc">
+<h3>MOLOC<a class="headerlink" href="#moloc" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">moloc</span><span class="p">)</span>
+<span class="n">moloc_input</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">cnt</span><span class="p">){</span>
+<span class="w">    </span><span class="nf">tibble</span><span class="p">(</span><span class="n">SNP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">BETA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">betas</span><span class="p">[,</span><span class="n">cnt</span><span class="p">],</span>
+<span class="w">           </span><span class="n">SE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="p">[,</span><span class="n">cnt</span><span class="p">],</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">MAF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAF</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="n">res_moloc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">moloc_test</span><span class="p">(</span><span class="n">listData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">moloc_input</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use default priors: 1e-04,1e-05
+
+Mean estimated sdY from data1: 0.560918402515816
+
+Mean estimated sdY from data2: 0.561003724043599
+
+Use prior variances of 0.01 0.1 0.5
+
+Use prior variances of 0.01 0.1 0.5
+
+Best SNP per trait a: 2256
+
+Probability that trait a colocalizes with at least one other trait = 0.0067
+
+Best SNP per trait b: 2256
+
+Probability that trait b colocalizes with at least one other trait = 0.0067
+
+Best SNP per trait ab: 2256
+
+Probability that trait ab colocalizes with at least one other trait = 0.0067
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_moloc</span><span class="o">$</span><span class="n">priors_lkl_ppa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 5 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>prior</th><th scope=col>sumbf</th><th scope=col>logBF_locus</th><th scope=col>PPA</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>a</th><td>1.00e-04</td><td>37.56061</td><td>28.09563</td><td>4.648440e-09</td></tr>
+	<tr><th scope=row>a,b</th><td>1.00e-08</td><td>65.95099</td><td>47.02103</td><td>9.933272e-01</td></tr>
+	<tr><th scope=row>b</th><td>1.00e-04</td><td>28.39039</td><td>18.92540</td><td>4.838694e-13</td></tr>
+	<tr><th scope=row>ab</th><td>1.00e-05</td><td>54.04022</td><td>44.57524</td><td>6.672820e-03</td></tr>
+	<tr><th scope=row>zero</th><td>9.99e-01</td><td> 0.00000</td><td> 0.00000</td><td>2.264332e-21</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_moloc</span><span class="o">$</span><span class="n">best_snp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 3 × 2</caption>
+<thead>
+	<tr><th></th><th scope=col>coloc_ppas</th><th scope=col>best.snp.coloc</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>a</th><td>0.00667282</td><td>2256</td></tr>
+	<tr><th scope=row>b</th><td>0.00667282</td><td>2256</td></tr>
+	<tr><th scope=row>ab</th><td>0.00667282</td><td>2256</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+<section id="non-causal-strongest-marginal-effect">
+<h2>2. Non-causal strongest marginal effect<a class="headerlink" href="#non-causal-strongest-marginal-effect" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;Figure_2b.rds&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">LDInfluence</span>
+<span class="n">X</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">X</span>
+<span class="n">Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">Y</span>
+<span class="n">data</span><span class="o">$</span><span class="n">variant</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>654</li><li>858</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colocboost</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y</span><span class="p">)</span>
+<span class="n">res</span><span class="o">$</span><span class="n">cos_details</span><span class="o">$</span><span class="n">cos</span><span class="o">$</span><span class="n">cos_index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting checking the input data.
+
+Starting gradient boosting algorithm.
+
+Boosting iterations for outcome 1 converge after 50 iterations!
+
+Boosting iterations for outcome 2 converge after 56 iterations!
+
+Starting assemble analyses and results summary.
+</pre></div>
+</div>
+<div class="output text_html"><dl>
+	<dt>$`cos1:y1_y2`</dt>
+		<dd><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>654</li><li>721</li><li>761</li><li>797</li><li>673</li><li>677</li><li>756</li><li>720</li><li>740</li><li>678</li><li>773</li><li>777</li></ol>
+</dd>
+	<dt>$`cos2:y1_y2`</dt>
+		<dd><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>858</li><li>865</li><li>851</li><li>886</li><li>876</li><li>854</li><li>885</li></ol>
+</dd>
+</dl>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+<span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">variant</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/78616a842286cf946388f751cb45b104c3bdd3ff70032a7364082b4f00659e8a.png"><img alt="../../_images/78616a842286cf946388f751cb45b104c3bdd3ff70032a7364082b4f00659e8a.png" src="../../_images/78616a842286cf946388f751cb45b104c3bdd3ff70032a7364082b4f00659e8a.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;vcp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">variant</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/c628c5a07721e8239663b3c0502315fef1ce358825153bb7eae6f6fcd563c07e.png"><img alt="../../_images/c628c5a07721e8239663b3c0502315fef1ce358825153bb7eae6f6fcd563c07e.png" src="../../_images/c628c5a07721e8239663b3c0502315fef1ce358825153bb7eae6f6fcd563c07e.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">$</span><span class="n">cos_details</span><span class="o">$</span><span class="n">cos_purity</span><span class="o">$</span><span class="n">min_abs_cor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 2 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>cos1:y1_y2</th><th scope=col>cos2:y1_y2</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>cos1:y1_y2</th><td>0.8666675</td><td>0.2562119</td></tr>
+	<tr><th scope=row>cos2:y1_y2</th><td>0.2562119</td><td>0.7613753</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<section id="id1">
+<h3>HyPrColoc<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">hyprcoloc</span><span class="p">)</span>
+<span class="n">betas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">Y</span><span class="p">[,</span><span class="n">i</span><span class="p">])</span>
+<span class="w">    </span><span class="n">rr</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">susieR</span><span class="o">::</span><span class="nf">univariate_regression</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="w">    </span><span class="n">betas</span><span class="p">[,</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rr</span><span class="o">$</span><span class="n">betahat</span>
+<span class="w">    </span><span class="n">sebetas</span><span class="p">[,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rr</span><span class="o">$</span><span class="n">sebetahat</span>
+<span class="p">}</span>
+<span class="n">traits</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">)</span>
+<span class="n">rsid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;snp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">)))</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">betas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colnames</span><span class="p">(</span><span class="n">sebetas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">traits</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">betas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">sebetas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rsid</span>
+<span class="n">res_hyprcoloc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">hyprcoloc</span><span class="p">(</span><span class="n">betas</span><span class="p">,</span><span class="w"> </span><span class="n">sebetas</span><span class="p">,</span><span class="w"> </span><span class="n">trait.names</span><span class="o">=</span><span class="n">traits</span><span class="p">,</span><span class="w"> </span><span class="n">snp.id</span><span class="o">=</span><span class="n">rsid</span><span class="p">,</span><span class="w"> </span><span class="n">snpscores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_hyprcoloc</span><span class="o">$</span><span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 1 × 7</caption>
+<thead>
+	<tr><th scope=col>iteration</th><th scope=col>traits</th><th scope=col>posterior_prob</th><th scope=col>regional_prob</th><th scope=col>candidate_snp</th><th scope=col>posterior_explained_by_snp</th><th scope=col>dropped_trait</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;lgl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>1</td><td>1, 2</td><td>0.9995</td><td>1</td><td>snp721</td><td>1</td><td>NA</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">res_hyprcoloc</span><span class="o">$</span><span class="n">snpscores</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/2ee3f7d52c7a1a52a875dfae325a560210c74ffc46ca9baa710feba7ba815ca8.png"><img alt="../../_images/2ee3f7d52c7a1a52a875dfae325a560210c74ffc46ca9baa710feba7ba815ca8.png" src="../../_images/2ee3f7d52c7a1a52a875dfae325a560210c74ffc46ca9baa710feba7ba815ca8.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>COLOC (one causal assumption)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">coloc</span><span class="p">)</span>
+<span class="n">LD</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_cormat</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">LD</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">LD</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">)</span>
+<span class="n">MAF</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colMeans</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="m">2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">as.numeric</span>
+<span class="n">D1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;beta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">betas</span><span class="p">[,</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;varbeta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="o">^</span><span class="m">2</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;sdY&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Y</span><span class="p">[,</span><span class="m">1</span><span class="p">])),</span>
+<span class="w">           </span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;quant&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MAF&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAF</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LD&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LD</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;snp&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;position&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">))</span>
+<span class="n">D2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;beta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">betas</span><span class="p">[,</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;varbeta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="p">[,</span><span class="m">2</span><span class="p">]</span><span class="o">^</span><span class="m">2</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;sdY&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Y</span><span class="p">[,</span><span class="m">2</span><span class="p">])),</span>
+<span class="w">           </span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;quant&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MAF&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAF</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LD&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LD</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;snp&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;position&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">))</span>
+<span class="n">my.res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">coloc.abf</span><span class="p">(</span><span class="n">dataset1</span><span class="o">=</span><span class="n">D1</span><span class="p">,</span><span class="w"> </span><span class="n">dataset2</span><span class="o">=</span><span class="n">D2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PP.H0.abf PP.H1.abf PP.H2.abf PP.H3.abf PP.H4.abf 
+ 6.41e-51  2.21e-28  3.44e-26  1.86e-04  1.00e+00 
+[1] &quot;PP abf for shared variant: 100%&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">o</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4</span><span class="p">,</span><span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">cs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4</span><span class="p">[</span><span class="n">o</span><span class="p">])</span>
+<span class="n">w</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="n">cs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.95</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="p">[</span><span class="n">o</span><span class="p">,][</span><span class="m">1</span><span class="o">:</span><span class="n">w</span><span class="p">,]</span><span class="o">$</span><span class="n">snp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'721'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pph4.snp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">position</span><span class="p">,</span><span class="n">decreasing</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">pph4.snp</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">400</span><span class="o">:</span><span class="m">1200</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/879d94eebe4a782252b2b3ea957fd9bea5aad993cdf914bc73573f654e4b082e.png"><img alt="../../_images/879d94eebe4a782252b2b3ea957fd9bea5aad993cdf914bc73573f654e4b082e.png" src="../../_images/879d94eebe4a782252b2b3ea957fd9bea5aad993cdf914bc73573f654e4b082e.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>COLOC (V5)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">susieR</span><span class="p">)</span>
+<span class="n">out_p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runsusie</span><span class="p">(</span><span class="n">D1</span><span class="p">)</span>
+<span class="n">out_e</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runsusie</span><span class="p">(</span><span class="n">D2</span><span class="p">)</span>
+<span class="n">out_coloc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">coloc.susie</span><span class="p">(</span><span class="n">out_e</span><span class="p">,</span><span class="w"> </span><span class="n">out_p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>running max iterations: 100
+
+	converged: TRUE
+
+running max iterations: 100
+
+	converged: TRUE
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">out_coloc</span><span class="o">$</span><span class="n">summary</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">o</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row2</span><span class="p">,</span><span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">cs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row2</span><span class="p">[</span><span class="n">o</span><span class="p">])</span>
+<span class="n">w</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="n">cs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.95</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">cos1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="p">[</span><span class="n">o</span><span class="p">,][</span><span class="m">1</span><span class="o">:</span><span class="n">w</span><span class="p">,]</span><span class="o">$</span><span class="n">snp</span>
+<span class="n">cos1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'654'</li><li>'721'</li><li>'761'</li><li>'673'</li><li>'677'</li><li>'797'</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">o</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row3</span><span class="p">,</span><span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">cs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row3</span><span class="p">[</span><span class="n">o</span><span class="p">])</span>
+<span class="n">w</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="n">cs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.95</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">cos2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="p">[</span><span class="n">o</span><span class="p">,][</span><span class="m">1</span><span class="o">:</span><span class="n">w</span><span class="p">,]</span><span class="o">$</span><span class="n">snp</span>
+<span class="n">cos2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'858'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">vcp_coloc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row3</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">vcp_coloc</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">400</span><span class="o">:</span><span class="m">1200</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/8d888096c86fae1846e54fba0db81fc5ec12e381fb46c3e59838ffdbafbde6ad.png"><img alt="../../_images/8d888096c86fae1846e54fba0db81fc5ec12e381fb46c3e59838ffdbafbde6ad.png" src="../../_images/8d888096c86fae1846e54fba0db81fc5ec12e381fb46c3e59838ffdbafbde6ad.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="id4">
+<h3>MOLOC<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">moloc</span><span class="p">)</span>
+<span class="n">moloc_input</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">cnt</span><span class="p">){</span>
+<span class="w">    </span><span class="nf">tibble</span><span class="p">(</span><span class="n">SNP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">BETA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">betas</span><span class="p">[,</span><span class="n">cnt</span><span class="p">],</span>
+<span class="w">           </span><span class="n">SE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="p">[,</span><span class="n">cnt</span><span class="p">],</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">MAF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAF</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="n">res_moloc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">moloc_test</span><span class="p">(</span><span class="n">listData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">moloc_input</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use default priors: 1e-04,1e-05
+
+Mean estimated sdY from data1: 0.553434902059988
+
+Mean estimated sdY from data2: 0.553187001637554
+
+Use prior variances of 0.01 0.1 0.5
+
+Use prior variances of 0.01 0.1 0.5
+
+Best SNP per trait a: 721
+
+Probability that trait a colocalizes with at least one other trait = 1
+
+Best SNP per trait b: 721
+
+Probability that trait b colocalizes with at least one other trait = 1
+
+Best SNP per trait ab: 721
+
+Probability that trait ab colocalizes with at least one other trait = 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_moloc</span><span class="o">$</span><span class="n">priors_lkl_ppa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 5 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>prior</th><th scope=col>sumbf</th><th scope=col>logBF_locus</th><th scope=col>PPA</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>a</th><td>1.00e-04</td><td> 60.59171</td><td> 52.90784</td><td>2.492328e-28</td></tr>
+	<tr><th scope=row>a,b</th><td>1.00e-08</td><td>125.07877</td><td>109.71104</td><td>2.529180e-04</td></tr>
+	<tr><th scope=row>b</th><td>1.00e-04</td><td> 65.56983</td><td> 57.88597</td><td>3.618911e-26</td></tr>
+	<tr><th scope=row>ab</th><td>1.00e-05</td><td>126.45320</td><td>118.76934</td><td>9.997471e-01</td></tr>
+	<tr><th scope=row>zero</th><td>9.99e-01</td><td>  0.00000</td><td>  0.00000</td><td>1.207708e-50</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_moloc</span><span class="o">$</span><span class="n">best_snp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 3 × 2</caption>
+<thead>
+	<tr><th></th><th scope=col>coloc_ppas</th><th scope=col>best.snp.coloc</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>a</th><td>0.9997471</td><td>721</td></tr>
+	<tr><th scope=row>b</th><td>0.9997471</td><td>721</td></tr>
+	<tr><th scope=row>ab</th><td>0.9997471</td><td>721</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+<section id="weaker-causal-effect-for-target-traits">
+<h2>3. Weaker causal effect for target traits<a class="headerlink" href="#weaker-causal-effect-for-target-traits" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;Figure_2b.rds&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">WeakerTarget</span>
+<span class="n">X</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">X</span>
+<span class="n">Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">Y</span>
+<span class="n">data</span><span class="o">$</span><span class="n">variant</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1926</li><li>2271</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colocboost</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y</span><span class="p">)</span>
+<span class="n">res</span><span class="o">$</span><span class="n">cos_details</span><span class="o">$</span><span class="n">cos</span><span class="o">$</span><span class="n">cos_index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting checking the input data.
+
+Starting gradient boosting algorithm.
+
+Boosting iterations for outcome 1 converge after 23 iterations!
+
+Boosting iterations for outcome 2 converge after 33 iterations!
+
+Starting assemble analyses and results summary.
+</pre></div>
+</div>
+<div class="output text_html"><dl>
+	<dt>$`cos1:y1_y2`</dt>
+		<dd>1926</dd>
+	<dt>$`cos2:y1_y2`</dt>
+		<dd>2271</dd>
+</dl>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+<span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">variant</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/bff0963678dc4676f53cdd5988b41a4c7812f44ad7d4a28dbf2de77b45bebfc9.png"><img alt="../../_images/bff0963678dc4676f53cdd5988b41a4c7812f44ad7d4a28dbf2de77b45bebfc9.png" src="../../_images/bff0963678dc4676f53cdd5988b41a4c7812f44ad7d4a28dbf2de77b45bebfc9.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;vcp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">add_vertical_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">variant</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/e63df93e884b75599188298209755c7bb934e87ce6ad1e68fb508669997c4f58.png"><img alt="../../_images/e63df93e884b75599188298209755c7bb934e87ce6ad1e68fb508669997c4f58.png" src="../../_images/e63df93e884b75599188298209755c7bb934e87ce6ad1e68fb508669997c4f58.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+<section id="id5">
+<h3>HyPrColoc<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">hyprcoloc</span><span class="p">)</span>
+<span class="n">betas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">){</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">Y</span><span class="p">[,</span><span class="n">i</span><span class="p">])</span>
+<span class="w">    </span><span class="n">rr</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">susieR</span><span class="o">::</span><span class="nf">univariate_regression</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="w">    </span><span class="n">betas</span><span class="p">[,</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rr</span><span class="o">$</span><span class="n">betahat</span>
+<span class="w">    </span><span class="n">sebetas</span><span class="p">[,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rr</span><span class="o">$</span><span class="n">sebetahat</span>
+<span class="p">}</span>
+<span class="n">traits</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">)</span>
+<span class="n">rsid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;snp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">X</span><span class="p">)))</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">betas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colnames</span><span class="p">(</span><span class="n">sebetas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">traits</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">betas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">sebetas</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rsid</span>
+<span class="n">res_hyprcoloc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">hyprcoloc</span><span class="p">(</span><span class="n">betas</span><span class="p">,</span><span class="w"> </span><span class="n">sebetas</span><span class="p">,</span><span class="w"> </span><span class="n">trait.names</span><span class="o">=</span><span class="n">traits</span><span class="p">,</span><span class="w"> </span><span class="n">snp.id</span><span class="o">=</span><span class="n">rsid</span><span class="p">,</span><span class="w"> </span><span class="n">snpscores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_hyprcoloc</span><span class="o">$</span><span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 1 × 7</caption>
+<thead>
+	<tr><th scope=col>iteration</th><th scope=col>traits</th><th scope=col>posterior_prob</th><th scope=col>regional_prob</th><th scope=col>candidate_snp</th><th scope=col>posterior_explained_by_snp</th><th scope=col>dropped_trait</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;lgl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>1</td><td>1, 2</td><td>0.9616</td><td>1</td><td>snp1926</td><td>0.9823</td><td>NA</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">res_hyprcoloc</span><span class="o">$</span><span class="n">snpscores</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/54467111dc8e9e960ab9e3fcc03ddc03728287a13adcdede2647a6c36bb2725f.png"><img alt="../../_images/54467111dc8e9e960ab9e3fcc03ddc03728287a13adcdede2647a6c36bb2725f.png" src="../../_images/54467111dc8e9e960ab9e3fcc03ddc03728287a13adcdede2647a6c36bb2725f.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="id6">
+<h3>COLOC (one causal assumption)<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">coloc</span><span class="p">)</span>
+<span class="n">LD</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_cormat</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">LD</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">LD</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">)</span>
+<span class="n">MAF</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colMeans</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="m">2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">as.numeric</span>
+<span class="n">D1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;beta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">betas</span><span class="p">[,</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;varbeta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="o">^</span><span class="m">2</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;sdY&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Y</span><span class="p">[,</span><span class="m">1</span><span class="p">])),</span>
+<span class="w">           </span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;quant&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MAF&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAF</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LD&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LD</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;snp&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;position&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">))</span>
+<span class="n">D2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;beta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">betas</span><span class="p">[,</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;varbeta&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="p">[,</span><span class="m">2</span><span class="p">]</span><span class="o">^</span><span class="m">2</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;sdY&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="nf">unlist</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Y</span><span class="p">[,</span><span class="m">2</span><span class="p">])),</span>
+<span class="w">           </span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;quant&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MAF&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAF</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LD&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LD</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;snp&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;position&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">))</span>
+<span class="n">my.res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">coloc.abf</span><span class="p">(</span><span class="n">dataset1</span><span class="o">=</span><span class="n">D1</span><span class="p">,</span><span class="w"> </span><span class="n">dataset2</span><span class="o">=</span><span class="n">D2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PP.H0.abf PP.H1.abf PP.H2.abf PP.H3.abf PP.H4.abf 
+ 3.94e-13  2.65e-09  2.69e-06  1.71e-02  9.83e-01 
+[1] &quot;PP abf for shared variant: 98.3%&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">o</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4</span><span class="p">,</span><span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">cs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4</span><span class="p">[</span><span class="n">o</span><span class="p">])</span>
+<span class="n">w</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="n">cs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.95</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="p">[</span><span class="n">o</span><span class="p">,][</span><span class="m">1</span><span class="o">:</span><span class="n">w</span><span class="p">,]</span><span class="o">$</span><span class="n">snp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'1926'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pph4.snp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">my.res</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">position</span><span class="p">,</span><span class="n">decreasing</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)]</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">pph4.snp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/e6967efb2727dc70ac88da3d633c5e9e0c7b2c6bdbbc4de233dce25e37293b7e.png"><img alt="../../_images/e6967efb2727dc70ac88da3d633c5e9e0c7b2c6bdbbc4de233dce25e37293b7e.png" src="../../_images/e6967efb2727dc70ac88da3d633c5e9e0c7b2c6bdbbc4de233dce25e37293b7e.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="id7">
+<h3>COLOC (V5)<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">susieR</span><span class="p">)</span>
+<span class="n">out_p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runsusie</span><span class="p">(</span><span class="n">D1</span><span class="p">)</span>
+<span class="n">out_e</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runsusie</span><span class="p">(</span><span class="n">D2</span><span class="p">)</span>
+<span class="n">out_coloc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">coloc.susie</span><span class="p">(</span><span class="n">out_e</span><span class="p">,</span><span class="w"> </span><span class="n">out_p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>running max iterations: 100
+
+	converged: TRUE
+
+running max iterations: 100
+
+	converged: TRUE
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">out_coloc</span><span class="o">$</span><span class="n">summary</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">o</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row2</span><span class="p">,</span><span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">cs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row2</span><span class="p">[</span><span class="n">o</span><span class="p">])</span>
+<span class="n">w</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="n">cs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.95</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">cos1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="p">[</span><span class="n">o</span><span class="p">,][</span><span class="m">1</span><span class="o">:</span><span class="n">w</span><span class="p">,]</span><span class="o">$</span><span class="n">snp</span>
+<span class="n">cos1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'1926'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">vcp_coloc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">out_coloc</span><span class="o">$</span><span class="n">results</span><span class="o">$</span><span class="n">SNP.PP.H4.row2</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">vcp_coloc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/2fd244db14debfdd6ae47fc29ae643fc9188785835d5a2b611cfb5d4068a59ab.png"><img alt="../../_images/2fd244db14debfdd6ae47fc29ae643fc9188785835d5a2b611cfb5d4068a59ab.png" src="../../_images/2fd244db14debfdd6ae47fc29ae643fc9188785835d5a2b611cfb5d4068a59ab.png" style="width: 600px; height: 360px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="id8">
+<h3>MOLOC<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">moloc</span><span class="p">)</span>
+<span class="n">moloc_input</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">cnt</span><span class="p">){</span>
+<span class="w">    </span><span class="nf">tibble</span><span class="p">(</span><span class="n">SNP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">BETA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">betas</span><span class="p">[,</span><span class="n">cnt</span><span class="p">],</span>
+<span class="w">           </span><span class="n">SE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sebetas</span><span class="p">[,</span><span class="n">cnt</span><span class="p">],</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">MAF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAF</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="n">res_moloc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">moloc_test</span><span class="p">(</span><span class="n">listData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">moloc_input</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use default priors: 1e-04,1e-05
+
+Mean estimated sdY from data1: 0.537763795330779
+
+Mean estimated sdY from data2: 0.537609105700604
+
+Use prior variances of 0.01 0.1 0.5
+
+Use prior variances of 0.01 0.1 0.5
+
+Best SNP per trait a: 1926
+
+Probability that trait a colocalizes with at least one other trait = 0.99
+
+Best SNP per trait b: 1926
+
+Probability that trait b colocalizes with at least one other trait = 0.99
+
+Best SNP per trait ab: 1926
+
+Probability that trait ab colocalizes with at least one other trait = 0.99
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_moloc</span><span class="o">$</span><span class="n">priors_lkl_ppa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 5 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>prior</th><th scope=col>sumbf</th><th scope=col>logBF_locus</th><th scope=col>PPA</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>a</th><td>1.00e-04</td><td>17.99025</td><td> 9.456204</td><td>1.984014e-09</td></tr>
+	<tr><th scope=row>a,b</th><td>1.00e-08</td><td>42.71907</td><td>25.650974</td><td>1.089268e-02</td></tr>
+	<tr><th scope=row>b</th><td>1.00e-04</td><td>24.81574</td><td>16.281686</td><td>1.827317e-06</td></tr>
+	<tr><th scope=row>ab</th><td>1.00e-05</td><td>40.32003</td><td>31.785978</td><td>9.891055e-01</td></tr>
+	<tr><th scope=row>zero</th><td>9.99e-01</td><td> 0.00000</td><td> 0.000000</td><td>3.051242e-13</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res_moloc</span><span class="o">$</span><span class="n">best_snp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 3 × 2</caption>
+<thead>
+	<tr><th></th><th scope=col>coloc_ppas</th><th scope=col>best.snp.coloc</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>a</th><td>0.9891055</td><td>1926</td></tr>
+	<tr><th scope=row>b</th><td>0.9891055</td><td>1926</td></tr>
+	<tr><th scope=row>ab</th><td>0.9891055</td><td>1926</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./Main_Figures/Figure_2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Figure_2a.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Figure_2c.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Figure 2c. Variant‐level precision‐recall curves.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-effects-for-two-causal-variants">1. Heterogeneous effects for two causal variants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-identify-two-cos-including-two-true-causal-variants">ColocBoost identify two CoS including two true causal variants.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyprcoloc">HyPrColoc</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coloc-one-causal-assumption">COLOC (one causal assumption)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coloc-v5">COLOC (V5)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moloc">MOLOC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-causal-strongest-marginal-effect">2. Non-causal strongest marginal effect</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">HyPrColoc</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">COLOC (one causal assumption)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">COLOC (V5)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">MOLOC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weaker-causal-effect-for-target-traits">3. Weaker causal effect for target traits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">HyPrColoc</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">COLOC (one causal assumption)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">COLOC (V5)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">MOLOC</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Xuewei Cao with input from Gao Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
