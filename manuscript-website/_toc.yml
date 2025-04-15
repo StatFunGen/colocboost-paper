@@ -6,6 +6,7 @@ root: index
 chapters:
   - file: intro
   - file: Main_Figures/index
+    expand_sections: true
     sections:
       - file: Main_Figures/Figure_2/index
         sections:
