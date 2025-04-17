@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Setting Up Jupyter Book with GitHub Pages for ColocBoost manuscript &#8212; Data and code to reproduce figures in ColocBoost manuscript</title>
+    <title>Setting Up Jupyter Book with GitHub Pages for ColocBoost manuscript &#8212; ColocBoost manuscript resources</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -98,8 +98,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -149,7 +149,7 @@
   
   
   
-    <p class="title logo__title">Data and code to reproduce figures in ColocBoost manuscript</p>
+    <p class="title logo__title">ColocBoost manuscript resources</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -165,16 +165,8 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    ColocBoost Manuscript Companion Resources
-                </a>
-            </li>
-        </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Main_Figures/index.html">Main Figures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Main_Figures/index.html">Main Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="Main_Figures/Figure_2/index.html">Figure 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="Main_Figures/Figure_2/Figure_2a.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Main_Figures/Figure_2/Figure_2b.html">Figure 2b. Representative simulation examples.</a></li>
@@ -261,53 +253,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/StatFunGen/colocboost-paper" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/StatFunGen/colocboost-paper/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -427,7 +372,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-to-github-pages">6. Deploy to GitHub Pages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-github-pages-in-repository-settings">7. Set Up GitHub Pages in Repository Settings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-set-up-github-actions-for-automatic-deployment">8. Optional: Set Up GitHub Actions for Automatic Deployment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-your-book">10. Updating Your Book</a></li>
 </ul>
             </nav>
         </div>
@@ -469,7 +413,7 @@ document.write(`
 <h3>Custom _config.yml<a class="headerlink" href="#custom-config-yml" title="Link to this heading">#</a></h3>
 <p>Create or modify the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Book settings</span>
-<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data and code to reproduce figures in ColocBoost manuscript</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ColocBoost Manuscript Resources</span>
 <span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Xuewei Cao with input from Gao Wang</span>
 <span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logo.png</span><span class="w">  </span><span class="c1"># Add a logo file to your repo if you have one</span>
 <span class="nt">copyright</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025&quot;</span><span class="w">  </span><span class="c1"># Current year</span>
@@ -556,7 +500,7 @@ document.write(`
 <h2>4. Create Index Markdown Files<a class="headerlink" href="#create-index-markdown-files" title="Link to this heading">#</a></h2>
 <p>You’ll need to create <a class="reference external" href="http://index.md">index.md</a> files for each section. Here’s an example structure:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Root index.md</span>
-<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;# ColocBoost Manuscript Companion Resources\n\nCode and data to reproduce figures in ColocBoost manuscript.&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>index.md
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;# ColocBoost Manuscript Resources\n\nCode and data to reproduce figures in ColocBoost manuscript.&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>index.md
 
 <span class="c1"># Main figures index</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span>Main_Figures
@@ -628,7 +572,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>Main_Figures
 
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the book</span>
 <span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">        </span><span class="no">jupyter-book build .</span>
+<span class="w">        </span><span class="no">jupyter-book build . --config manuscript-website/_config.yml --toc manuscript-website/_toc.yml</span>
 
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub Pages action</span>
 <span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v3.6.1</span>
@@ -638,31 +582,6 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>Main_Figures
 </pre></div>
 </div>
 <p>This will automatically rebuild and publish your book whenever you push changes to the main branch.</p>
-</section>
-<section id="updating-your-book">
-<h2>10. Updating Your Book<a class="headerlink" href="#updating-your-book" title="Link to this heading">#</a></h2>
-<p>When you make changes:</p>
-<ol class="arabic">
-<li><p>Edit your content</p></li>
-<li><p>Rebuild the book:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>build<span class="w"> </span>.
-</pre></div>
-</div>
-</li>
-<li><p>Push to GitHub:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update content&quot;</span>
-git<span class="w"> </span>push
-</pre></div>
-</div>
-</li>
-<li><p>If not using GitHub Actions, redeploy:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>_build/html
-</pre></div>
-</div>
-</li>
-</ol>
-<p>With GitHub Actions set up, your site will automatically update after you push changes to the main branch.</p>
 </section>
 </section>
 
@@ -724,7 +643,6 @@ git<span class="w"> </span>push
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-to-github-pages">6. Deploy to GitHub Pages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-github-pages-in-repository-settings">7. Set Up GitHub Pages in Repository Settings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-set-up-github-actions-for-automatic-deployment">8. Optional: Set Up GitHub Actions for Automatic Deployment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-your-book">10. Updating Your Book</a></li>
 </ul>
   </nav></div>
 
