@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Figure 6g. Microglia-specific eQTL colocalization in FCGR2A. &#8212; ColocBoost manuscript resources</title>
+    <title>Figure 6g. Microglia-specific eQTL colocalization in BLNK. &#8212; ColocBoost manuscript resources</title>
   
   
   
@@ -208,7 +208,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Figure_6d.html">Figure 6d. Precision-recall analysis compared with ENCODE-rE2G links.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Figure_6e.html">Figure 6e. UpSet plot for AD-xQTL colocalization.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Figure_6f.html">Figure 6f. Manhattan plot of variant level MaxVCP from ColocBoost.</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Figure 6g. Microglia-specific eQTL colocalization in FCGR2A.</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Figure 6g. Microglia-specific eQTL colocalization in BLNK.</a></li>
 </ul>
 </details></li>
 </ul>
@@ -349,7 +349,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Figure 6g. Microglia-specific eQTL colocalization in FCGR2A.</h1>
+    <h1>Figure 6g. Microglia-specific eQTL colocalization in BLNK.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -363,19 +363,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="figure-6g-microglia-specific-eqtl-colocalization-in-fcgr2a">
-<h1>Figure 6g. Microglia-specific eQTL colocalization in FCGR2A.<a class="headerlink" href="#figure-6g-microglia-specific-eqtl-colocalization-in-fcgr2a" title="Link to this heading">#</a></h1>
-<p>The CoS-gene link from microglia-specific eQTL colocalization in FCGR2A is validated by CRISPRi in K562 cells.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="figure-6g-microglia-specific-eqtl-colocalization-in-blnk">
+<h1>Figure 6g. Microglia-specific eQTL colocalization in BLNK.<a class="headerlink" href="#figure-6g-microglia-specific-eqtl-colocalization-in-blnk" title="Link to this heading">#</a></h1>
+<p>An example case of AD-xQTL colocalization demonstrating a single CoS with cell-type specific colocalization in microglia for BLNK gene.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="kr">for</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">list.files</span><span class="p">(</span><span class="s">&quot;/Users/xueweic/Documents/GitHub/statfungen/colocboost/R&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">full.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="nf">source</span><span class="p">(</span><span class="n">file</span><span class="p">)}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;Figure4d_FCGR2A.rds&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;Figure_6g_BLNK.rds&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -383,45 +376,46 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span>
-<span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">variant_coord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">variant_coord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cos_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../../_images/ce72a4474cbcad8c53dc2a6ccd188fdb6de682f3a30bfc34ff33769451fd86d1.png"><img alt="../../_images/ce72a4474cbcad8c53dc2a6ccd188fdb6de682f3a30bfc34ff33769451fd86d1.png" src="../../_images/ce72a4474cbcad8c53dc2a6ccd188fdb6de682f3a30bfc34ff33769451fd86d1.png" style="width: 480px; height: 480px;" />
+<a class="reference internal image-reference" href="../../_images/4c8b7201e5978e8d0c3c6274babd45babe873294e8e80194702f9386bdc406c7.png"><img alt="../../_images/4c8b7201e5978e8d0c3c6274babd45babe873294e8e80194702f9386bdc406c7.png" src="../../_images/4c8b7201e5978e8d0c3c6274babd45babe873294e8e80194702f9386bdc406c7.png" style="width: 480px; height: 480px;" />
 </a>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">$</span><span class="n">cos_details</span><span class="o">$</span><span class="n">cos_outcomes_npc</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">$</span><span class="n">cos_details</span><span class="o">$</span><span class="n">cos_outcomes_npc</span><span class="o">$</span><span class="n">`cos3:y1_y2_y3_y4_y12`</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><strong>$`cos1:y1_y2_y3_y4`</strong> = <table class="dataframe">
-<caption>A data.frame: 4 × 4</caption>
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 5 × 3</caption>
 <thead>
-	<tr><th></th><th scope=col>outcomes_index</th><th scope=col>relative_logLR</th><th scope=col>npc_outcome</th><th scope=col>strong_effect</th></tr>
-	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;lgl&gt;</th></tr>
+	<tr><th></th><th scope=col>outcomes_index</th><th scope=col>relative_logLR</th><th scope=col>npc_outcome</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>AC</th><td>3</td><td>2.2861263</td><td>0.9896653</td><td> TRUE</td></tr>
-	<tr><th scope=row>DLPFC</th><td>2</td><td>1.6324724</td><td>0.9618010</td><td> TRUE</td></tr>
-	<tr><th scope=row>PCC</th><td>4</td><td>1.1526294</td><td>0.9002670</td><td> TRUE</td></tr>
-	<tr><th scope=row>Mic</th><td>1</td><td>0.3500961</td><td>0.5035101</td><td>FALSE</td></tr>
+	<tr><th scope=row>Mic</th><td> 1</td><td>2.846048</td><td>0.9966275</td></tr>
+	<tr><th scope=row>AC</th><td> 3</td><td>2.777789</td><td>0.9961342</td></tr>
+	<tr><th scope=row>PCC</th><td> 4</td><td>2.553701</td><td>0.9939482</td></tr>
+	<tr><th scope=row>DLPFC</th><td> 2</td><td>2.027412</td><td>0.9826615</td></tr>
+	<tr><th scope=row>ADGWAS</th><td>12</td><td>1.393276</td><td>0.9383666</td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">variant_coord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">25100</span><span class="o">:</span><span class="m">26300</span><span class="p">),</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">colocboost_plot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">variant_coord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">7941</span><span class="o">:</span><span class="m">8800</span><span class="p">),</span><span class="w"> </span><span class="n">plot_cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">plot_cos_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../../_images/530904e74a225be337c3c81d3da14520f193a667916437108af339ecd7901a8e.png"><img alt="../../_images/530904e74a225be337c3c81d3da14520f193a667916437108af339ecd7901a8e.png" src="../../_images/530904e74a225be337c3c81d3da14520f193a667916437108af339ecd7901a8e.png" style="width: 480px; height: 480px;" />
+<a class="reference internal image-reference" href="../../_images/a22fcdb2355ccade79b08b95f81c14a81266da0d8a5b9a31415da0d20b1bad0e.png"><img alt="../../_images/a22fcdb2355ccade79b08b95f81c14a81266da0d8a5b9a31415da0d20b1bad0e.png" src="../../_images/a22fcdb2355ccade79b08b95f81c14a81266da0d8a5b9a31415da0d20b1bad0e.png" style="width: 480px; height: 480px;" />
 </a>
 </div>
 </div>

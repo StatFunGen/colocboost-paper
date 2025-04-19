@@ -209,7 +209,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6d.html">Figure 6d. Precision-recall analysis compared with ENCODE-rE2G links.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6e.html">Figure 6e. UpSet plot for AD-xQTL colocalization.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6f.html">Figure 6f. Manhattan plot of variant level MaxVCP from ColocBoost.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6g.html">Figure 6g. Microglia-specific eQTL colocalization in FCGR2A.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Figure_6/Figure_6g.html">Figure 6g. Microglia-specific eQTL colocalization in BLNK.</a></li>
 </ul>
 </details></li>
 </ul>
@@ -369,13 +369,6 @@ document.write(`
 <p>The CoS-gene link from microglia-specific eQTL colocalization in FCGR2A is validated by CRISPRi in K562 cells.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="kr">for</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">list.files</span><span class="p">(</span><span class="s">&quot;/Users/xueweic/Documents/GitHub/statfungen/colocboost/R&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">full.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="nf">source</span><span class="p">(</span><span class="n">file</span><span class="p">)}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;Figure_4d_FCGR2A.rds&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -389,7 +382,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../../_images/ce72a4474cbcad8c53dc2a6ccd188fdb6de682f3a30bfc34ff33769451fd86d1.png"><img alt="../../_images/ce72a4474cbcad8c53dc2a6ccd188fdb6de682f3a30bfc34ff33769451fd86d1.png" src="../../_images/ce72a4474cbcad8c53dc2a6ccd188fdb6de682f3a30bfc34ff33769451fd86d1.png" style="width: 480px; height: 480px;" />
+<a class="reference internal image-reference" href="../../_images/d445bd174c84dd384ee46ed4f1d1cefdd630bbd9b42224c7dc19518e7facf1f0.png"><img alt="../../_images/d445bd174c84dd384ee46ed4f1d1cefdd630bbd9b42224c7dc19518e7facf1f0.png" src="../../_images/d445bd174c84dd384ee46ed4f1d1cefdd630bbd9b42224c7dc19518e7facf1f0.png" style="width: 480px; height: 480px;" />
 </a>
 </div>
 </div>
@@ -401,16 +394,16 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><strong>$`cos1:y1_y2_y3_y4`</strong> = <table class="dataframe">
-<caption>A data.frame: 4 × 4</caption>
+<caption>A data.frame: 4 × 3</caption>
 <thead>
-	<tr><th></th><th scope=col>outcomes_index</th><th scope=col>relative_logLR</th><th scope=col>npc_outcome</th><th scope=col>strong_effect</th></tr>
-	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;lgl&gt;</th></tr>
+	<tr><th></th><th scope=col>outcomes_index</th><th scope=col>relative_logLR</th><th scope=col>npc_outcome</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>AC</th><td>3</td><td>2.2861263</td><td>0.9896653</td><td> TRUE</td></tr>
-	<tr><th scope=row>DLPFC</th><td>2</td><td>1.6324724</td><td>0.9618010</td><td> TRUE</td></tr>
-	<tr><th scope=row>PCC</th><td>4</td><td>1.1526294</td><td>0.9002670</td><td> TRUE</td></tr>
-	<tr><th scope=row>Mic</th><td>1</td><td>0.3500961</td><td>0.5035101</td><td>FALSE</td></tr>
+	<tr><th scope=row>AC</th><td>3</td><td>2.2861263</td><td>0.9896653</td></tr>
+	<tr><th scope=row>DLPFC</th><td>2</td><td>1.6324724</td><td>0.9618010</td></tr>
+	<tr><th scope=row>PCC</th><td>4</td><td>1.1526294</td><td>0.9002670</td></tr>
+	<tr><th scope=row>Mic</th><td>1</td><td>0.3500961</td><td>0.5035101</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -422,7 +415,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../../_images/530904e74a225be337c3c81d3da14520f193a667916437108af339ecd7901a8e.png"><img alt="../../_images/530904e74a225be337c3c81d3da14520f193a667916437108af339ecd7901a8e.png" src="../../_images/530904e74a225be337c3c81d3da14520f193a667916437108af339ecd7901a8e.png" style="width: 480px; height: 480px;" />
+<a class="reference internal image-reference" href="../../_images/297a47d5a219d10015fafc7588ad896b995c669d5dbda727c5ef05264de4b864.png"><img alt="../../_images/297a47d5a219d10015fafc7588ad896b995c669d5dbda727c5ef05264de4b864.png" src="../../_images/297a47d5a219d10015fafc7588ad896b995c669d5dbda727c5ef05264de4b864.png" style="width: 480px; height: 480px;" />
 </a>
 </div>
 </div>
