@@ -102,6 +102,7 @@ chapters:
           - file: Main_Figures/Figure_4/Figure_4b
           - file: Main_Figures/Figure_4/Figure_4c
           - file: Main_Figures/Figure_4/Figure_4d
+          - file: Main_Figures/Figure_4/Figure_4e
       - file: Main_Figures/Figure_5/index
         sections:
           - file: Main_Figures/Figure_5/Figure_5abc
@@ -115,6 +116,7 @@ chapters:
           - file: Main_Figures/Figure_6/Figure_6e
           - file: Main_Figures/Figure_6/Figure_6f
           - file: Main_Figures/Figure_6/Figure_6g
+          - file: Main_Figures/Figure_6/Figure_6h
 ```
 
 ## 4. Create Index Markdown Files
