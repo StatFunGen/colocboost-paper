@@ -117,6 +117,7 @@ chapters:
           - file: Main_Figures/Figure_6/Figure_6f
           - file: Main_Figures/Figure_6/Figure_6g
           - file: Main_Figures/Figure_6/Figure_6h
+  - file: Data_Applications/index
 ```
 
 ## 4. Create Index Markdown Files
