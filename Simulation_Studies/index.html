@@ -223,10 +223,10 @@
 <li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and colocboost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and ColocBoost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait colocboost)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait ColocBoost)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
@@ -402,17 +402,17 @@ document.write(`
 <h2>1. Simulation Design Overview<a class="headerlink" href="#simulation-design-overview" title="Link to this heading">#</a></h2>
 <p>This section provides a summary of the simulation notebooks (1-11) that implement different aspects of our multi-trait colocalization method evaluations.</p>
 <ul class="simple">
-<li><p><strong>1_Phenotype_simulation.ipynb</strong>: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.</p></li>
-<li><p><strong>2_Run_Colocboost.ipynb</strong>: Executes the ColocBoost algorithm on simulated datasets to identify colocalizing variants and trait clusters. Processes and standardizes results for performance evaluation with key output metrics.</p></li>
-<li><p><strong>3_Other_Methods.ipynb</strong>: Implements competing colocalization methods (HyprColoc, MOLOC, and COLOC (V5)) for benchmarking. Standardizes outputs across methods to enable fair comparison.</p></li>
-<li><p><strong>4_Result_Summary.ipynb</strong>: Calculates performance metrics including power and false discovery rates from method results. Generates standardized comparison tables summarizing method effectiveness across simulation scenarios.</p></li>
-<li><p><strong>5_Simulation_secondary.ipynb</strong>: Creates advanced simulation scenarios including 50-trait datasets and complex colocalization configurations. Implements specialized trait clustering patterns (5+5, 3+3+2+2) and random variant sharing to test method robustness.</p></li>
-<li><p><strong>6_Simulation_GWAS.ipynb</strong>: Implements simulations specifically designed to mimic real-world GWAS summary statistics.</p></li>
-<li><p><strong>7_Simulation_correlated.ipynb</strong>: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.</p></li>
-<li><p><strong>8_Null_Simulation.ipynb</strong>: Tests type I error control and false discovery rates under null scenarios where no colocalization exists.</p></li>
-<li><p><strong>9_Fineboost.ipynb</strong>: Demonstrates the FineBoost extension that incorporates fine-mapping capabilities into the ColocBoost framework.</p></li>
-<li><p><strong>10_OPERA_simulation.ipynb</strong>: Compares performance with the OPERA method and evaluates under OPERA-specific simulation settings.</p></li>
-<li><p><strong>11_OPERA_original_design.ipynb</strong>: Implements the original OPERA design for benchmark comparisons and methodological validation.</p></li>
+<li><p><strong>Phenotype data simulation</strong>: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.</p></li>
+<li><p><strong>Run ColocBoostb</strong>: Executes the ColocBoost algorithm on simulated datasets to identify colocalizing variants and trait clusters. Processes and standardizes results for performance evaluation with key output metrics.</p></li>
+<li><p><strong>Other colocalization methods</strong>: Implements competing colocalization methods (HyprColoc, MOLOC, and COLOC (V5)) for benchmarking. Standardizes outputs across methods to enable fair comparison.</p></li>
+<li><p><strong>Colocalization result summary</strong>: Calculates performance metrics including power and false discovery rates from method results. Generates standardized comparison tables summarizing method effectiveness across simulation scenarios.</p></li>
+<li><p><strong>Secondary simulations</strong>: Creates advanced simulation scenarios including 50-trait datasets and complex colocalization configurations. Implements specialized trait clustering patterns (5+5, 3+3+2+2) and random variant sharing to test method robustness.</p></li>
+<li><p><strong>GWAS / weaker signal simulation and ColocBoost</strong>: Implements simulations specifically designed to mimic real-world GWAS summary statistics.</p></li>
+<li><p><strong>Correlated phenotypes simulation</strong>: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.</p></li>
+<li><p><strong>Null simulation</strong>: Tests type I error control and false discovery rates under null scenarios where no colocalization exists.</p></li>
+<li><p><strong>FineBoost (single trait ColocBoost)</strong>: Demonstrates the FineBoost extension that incorporates fine-mapping capabilities into the ColocBoost framework.</p></li>
+<li><p><strong>OPERA running</strong>: Compares performance with the OPERA method and evaluates under OPERA-specific simulation settings.</p></li>
+<li><p><strong>OPERA: simulation using original proportion configuration</strong>: Implements the original OPERA design for benchmark comparisons and methodological validation.</p></li>
 </ul>
 </section>
 <section id="simulation-dependence">
