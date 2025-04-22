@@ -1,0 +1,1440 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>OPERA: simulation using original proportion configuration &#8212; ColocBoost manuscript resources</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Codes/11_OPERA_original_design';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Application" href="../Data_Applications/index.html" />
+    <link rel="prev" title="OPERA running" href="10_OPERA_simulation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ColocBoost manuscript resources</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Main_Figures/index.html">Main Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_2/index.html">Figure 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2a.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2b.html">Figure 2b. Representative simulation examples.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2c.html">Figure 2c. Variant‐level precision‐recall curves.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2d.html">Figure 2d. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2e.html">Figure 2e. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_3/index.html">Figure 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3a.html">Figure 3a. Colocalization patterns across three different molecular trait modalities (expression, splicing, protein abundance).</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3b.html">Figure 3b. Distribution of the number of 95% CoSs corresponding to the different numbers of colocalized traits per locus.</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3c.html">Figure 3c. UpSet plot summarizing the colocalization patterns across 6 pseudo-bulk brain cell-type eQTL data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3d.html">Figure 3d. Cell-type specific colocalization versus fine-mapping eQTL.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3e.html">Figure 3e. Significantly enriched KEGG pathways.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3f.html">Figure 3f. Homogeneity in causal effect directions.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3g.html">Figure 3g. Empirical distribution of the number of 95% CoS versus the size of the CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3h.html">Figure 3h. Distribution of the number of CoSs per gene.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3i.html">Figure 3i. Shared cell-types in primary CoS and secondary CoS.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_4/index.html">Figure 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4a.html">Figure 4a. Variant set -level Excess-of-overlap (EOO) analysis.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4b.html">Figure 4b. Variant set -level Excess-of-overlap (EOO) analysis in bulk region.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4c.html">Figure 4c. Variant set -level Excess-of-overlap (EOO) analysis in cell types.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4d.html">Figure 4d. Microglia-specific eQTL colocalization in FCGR2A.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4e.html">Figure 4d. Multiple xQTL colocalization in SUOX.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_5/index.html">Figure 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_5/Figure_5abc.html">Figure 5abc. Disease heritability analyses of variant-level functional annotations derived from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_5/Figure_5d.html">Figure 5d. Standardized effect sizes of the MaxVCP-xQTL and an analogous score based on the HyPrColoc method.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_6/index.html">Figure 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6a.html">Figure 6a. UpSet plot comparison.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6b.html">Figure 6b. Scatter plot across variants in terms of the magnitude of quantile-matched z-scores.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6c.html">Figure 6c. Distribution of distances from the gene TSS for CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6d.html">Figure 6d. Precision-recall analysis compared with ENCODE-rE2G links.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6e.html">Figure 6e. UpSet plot for AD-xQTL colocalization.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6f.html">Figure 6f. Manhattan plot of variant level MaxVCP from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6g.html">Figure 6g. Microglia-specific eQTL colocalization in BLNK.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6h.html">Figure 6h. Colocalization across multiple xQTLs in CTSH.</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Codes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and colocboost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait colocboost)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">OPERA: simulation using original proportion configuration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Simulation_Codes/11_OPERA_original_design.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>OPERA: simulation using original proportion configuration</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#match-configuration-with-region-index">1: Match configuration with region index</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumstat-simulation">2: Sumstat simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-sumstat-into-esd-format-and-make-the-flist-summary-file">3. Transform sumstat into .esd format and make the .flist summary file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exposures">3 Exposures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5 exposures</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-smr-to-convert-esd-files-to-bsed-files-as-opera-input">4. Use SMR to convert .esd files to .bsed files as OPERA input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exposure-qtl-meta-file-summary">5. Exposure (QTL) meta file summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subset-the-genome-wide-snp-plink-binary-file-using-plink">6. Subset the genome-wide SNP PLINK binary file using PLINK</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-genotype-ld-metadata-in-remain-snp-ld-file">7. Save genotype (LD) metadata in remain_snp_LD file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-1-opera">8. Stage 1 OPERA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-2-opera">9.Stage 2 OPERA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-colocboost-on-simulated-data-for-comparison">10. Run colocboost on simulated data for comparison</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="opera-simulation-using-original-proportion-configuration">
+<h1>OPERA: simulation using original proportion configuration<a class="headerlink" href="#opera-simulation-using-original-proportion-configuration" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>Compare colocboost and OPERA under original exposure-outcome design.</p>
+</section>
+<section id="match-configuration-with-region-index">
+<h2>1: Match configuration with region index<a class="headerlink" href="#match-configuration-with-region-index" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># 3 trait index
+library(tidyverse)
+total_indices &lt;- 500
+proportions &lt;- c(0.78, 0.05, 0.05, 0.05, 0.02, 0.02, 0.02, 0.01)
+
+# Calculate the exact number of indices for each group
+group_sizes &lt;- floor(total_indices * proportions)
+
+# Adjust for any rounding errors
+group_sizes[1] &lt;- group_sizes[1] + (total_indices - sum(group_sizes))
+
+# Create a vector of group assignments
+groups &lt;- rep(1:8, times = group_sizes)
+
+
+groups &lt;- sample(groups)
+
+# Create a list to store the indices for each group
+partitioned_indices &lt;- lapply(1:8, function(i) which(groups == i) - 1)
+
+# Name the list elements for clarity
+names(partitioned_indices) &lt;- paste(&quot;Group&quot;, 1:8)
+
+# Print the number of indices in each group
+sapply(partitioned_indices, length)
+                              
+                              
+config = list(c(1,0,0,0),
+             c(1,1,0,0),
+             c(1,0,1,0),
+             c(1, 0, 0, 1),
+             c(1,1,1,0),
+             c(1,1,0,1),
+             c(1,0,1,1),
+             c(1,1,1,1))
+
+
+saveRDS(list(partitioned_indices = partitioned_indices, config = config), &quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/index/partitioned_index_3trait.rds&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># 5 trait index
+
+library(tidyverse)
+total_indices &lt;- 500
+proportions = c(0.655, rep(0.02, 5), rep(0.01, 20), rep(0.008, 5), 0.005)
+# Calculate the exact number of indices for each group
+group_sizes &lt;- floor(total_indices * proportions)
+
+# Adjust for any rounding errors
+group_sizes[1] &lt;- group_sizes[1] + (total_indices - sum(group_sizes))
+
+# Create a vector of group assignments
+groups &lt;- rep(1:length(proportions), times = group_sizes)
+
+groups &lt;- sample(groups)
+
+# Create a list to store the indices for each group
+# - 1 to start from 0
+partitioned_indices &lt;- lapply(1:length(proportions), function(i) which(groups == i) - 1)
+
+# Name the list elements for clarity
+names(partitioned_indices) &lt;- paste(&quot;Group&quot;, 1:length(proportions))
+
+# Print the number of indices in each group
+sapply(partitioned_indices, length)
+
+config = list(c(1,0,0,0,0,0),
+              
+             c(1,1,0,0,0,0),
+             c(1,0,1,0,0,0),
+             c(1,0,0,1,0,0),
+             c(1,0,0,0,1,0),
+             c(1,0,0,0,0,1),
+              
+             c(1,1,1,0,0,0),
+             c(1,1,0,1,0,0),
+             c(1,1,0,0,1,0),
+             c(1,1,0,0,0,1),
+             c(1,0,1,1,0,0),
+             c(1,0,1,0,1,0),
+             c(1,0,1,0,0,1),
+             c(1,0,0,1,1,0),
+             c(1,0,0,1,0,1),
+             c(1,0,0,0,1,1),
+              
+  c(1, 1, 1, 1, 0, 0),
+  c(1, 1, 1, 0, 1, 0),
+  c(1, 1, 1, 0, 0, 1),
+  c(1, 0, 1, 1, 1, 0),
+  c(1, 0, 1, 1, 0, 1),
+  c(1, 0, 1, 0, 1, 1),
+  c(1, 0, 0, 1, 1, 1),
+  c(1, 1, 0, 1, 1, 0),
+  c(1, 1, 0, 1, 0, 1),
+  c(1, 0, 1, 1, 0, 1),
+              
+             c(1,1,1,1,1,0),
+             c(1,1,1,0,1,1),
+             c(1,1,1,1,0,1),
+             c(1,1,0,1,1,1),
+             c(1,0,1,1,1,1),
+              
+             c(1,1,1,1,1,1))
+
+saveRDS(list(partitioned_indices = partitioned_indices, config = config), &quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/index/partitioned_index_5trait.rds&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sumstat-simulation">
+<h2>2: Sumstat simulation<a class="headerlink" href="#sumstat-simulation" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[simulation_opera_3trait]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 30
+parameter: walltime = &quot;100h&quot;
+parameter: mem = &quot;30G&quot;
+parameter: numThreads = 1
+# specify the number of causal variants
+parameter: h2g = 0.05
+parameter: total_h2g = False
+parameter: share_pattern = &quot;all&quot;
+parameter: independent = False
+# specify the number of traits (phenotypes)
+parameter: container = &quot;&quot;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_opera_3trait.rds&#39;
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    calculate_sumstat = function(X, Y){
+        Beta = c()
+        se = c()
+        Freq = c()
+        p = c()
+        for(mm in 1:ncol(X)){
+            rr &lt;- susieR::univariate_regression(X[,mm], Y)
+            Beta[mm] = rr$betahat
+            se[mm] &lt;- rr$sebetahat
+            Freq[mm] = sum(X[,mm])/(2*nrow(X))
+            p[mm] = 2 * (1 - pnorm(abs(rr$betahat / rr$sebetahat)))
+        }
+            tb = tibble(
+            SNP = colnames(X),
+            Beta = Beta,
+            se = se,
+            Freq = Freq, p = p) %&gt;% 
+        separate(SNP, into = c(&quot;Chr&quot;, &quot;Bp&quot;, &quot;A2&quot;, &quot;A1&quot;), sep = &quot;[:_]&quot;, remove = FALSE) %&gt;%
+        select(Chr, SNP, Bp, A1, A2, Freq, Beta, se, p) %&gt;%
+        mutate(Chr = str_replace(Chr, &quot;chr&quot;, &quot;&quot;)) %&gt;%
+        mutate(Chr = as.numeric(Chr), Bp = as.numeric(Bp))
+        return(tb)
+    }
+  
+    # read the plink file
+    partitioned_res = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/index/partitioned_index_3trait.rds&quot;)
+    geno &lt;- read_plink(${_input:nr})
+    tad_number &lt;-${_index}
+    # filter out columns with missing rate &gt; 0.1
+    imiss = 0.1
+    # filter out columns with MAF &lt; 0.05
+    maf = 0.05
+    Xmat = filter_X(geno$bed,imiss,maf)
+
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+  
+    result &lt;- sapply(partitioned_res$partitioned_indices, function(x) any(x == tad_number))
+    idx &lt;- which(result)
+    config = partitioned_res$config[[idx]]
+  
+    phenotype = list()
+    B = matrix(0, nrow =  ncol(Xmat), ncol = length(config))
+    
+    for(i in 1:length(config)){
+        beta = B[,i, drop = FALSE]
+        if(config[i] == 1){
+            causal_index = vars[1]
+            beta = sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+            B[, i] = beta
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        }else{
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        }
+    }
+  
+
+  
+    X = Xmat
+    Y = bind_cols(phenotype)
+    colnames(Y) = paste0(&quot;Trait&quot;, c(1:length(config)))
+    trait = list()
+    trait[[1]] = calculate_sumstat(X, unname(unlist(Y[,1]))) %&gt;% rename(freq = Freq, b = Beta) %&gt;% mutate(N = 1160) %&gt;% select(SNP, A1, A2, freq, b, se, p, N)
+    for(i in 2:ncol(Y)){
+      trait[[i]] = calculate_sumstat(X, unname(unlist(Y[,i])))
+    }
+    LD = get_correlation(Xmat)
+    data = list()
+    data[[&quot;LD&quot;]] = LD
+    data[[&quot;trait&quot;]] = trait
+    data[[&quot;tad_index&quot;]] = tad_number
+    saveRDS(data, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[simulation_opera_5trait]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 30
+parameter: walltime = &quot;100h&quot;
+parameter: mem = &quot;30G&quot;
+parameter: numThreads = 1
+# specify the number of causal variants
+parameter: h2g = 0.05
+parameter: total_h2g = False
+parameter: independent = False
+parameter: share_pattern = &quot;all&quot;
+# specify the number of traits (phenotypes)
+parameter: container = &quot;&quot;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_opera_5trait.rds&#39;
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    calculate_sumstat = function(X, Y){
+        Beta = c()
+        se = c()
+        Freq = c()
+        p = c()
+        for(mm in 1:ncol(X)){
+            rr &lt;- susieR::univariate_regression(X[,mm], Y)
+            Beta[mm] = rr$betahat
+            se[mm] &lt;- rr$sebetahat
+            Freq[mm] = sum(X[,mm])/(2*nrow(X))
+            p[mm] = 2 * (1 - pnorm(abs(rr$betahat / rr$sebetahat)))
+        }
+            tb = tibble(
+            SNP = colnames(X),
+            Beta = Beta,
+            se = se,
+            Freq = Freq, p = p) %&gt;% 
+        separate(SNP, into = c(&quot;Chr&quot;, &quot;Bp&quot;, &quot;A2&quot;, &quot;A1&quot;), sep = &quot;[:_]&quot;, remove = FALSE) %&gt;%
+        select(Chr, SNP, Bp, A1, A2, Freq, Beta, se, p) %&gt;%
+        mutate(Chr = str_replace(Chr, &quot;chr&quot;, &quot;&quot;)) %&gt;%
+        mutate(Chr = as.numeric(Chr), Bp = as.numeric(Bp))
+        return(tb)
+    }
+  
+    # read the plink file
+    partitioned_res = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/index/partitioned_index_5trait.rds&quot;)
+    geno &lt;- read_plink(${_input:nr})
+    tad_number &lt;-${_index}
+    # filter out columns with missing rate &gt; 0.1
+    imiss = 0.1
+    # filter out columns with MAF &lt; 0.05
+    maf = 0.05
+    Xmat = filter_X(geno$bed,imiss,maf)
+
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+  
+    result &lt;- sapply(partitioned_res$partitioned_indices, function(x) any(x == tad_number))
+    idx &lt;- which(result)
+    config = partitioned_res$config[[idx]]
+  
+    phenotype = list()
+    B = matrix(0, nrow =  ncol(Xmat), ncol = length(config))
+    
+    for(i in 1:length(config)){
+        beta = B[,i, drop = FALSE]
+        if(config[i] == 1){
+            causal_index = vars[1]
+            beta = sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+            B[, i] = beta
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        }else{
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        }
+    }
+  
+  
+    X = Xmat
+    Y = bind_cols(phenotype)
+    colnames(Y) = paste0(&quot;Trait&quot;, c(1:length(config)))
+    trait = list()
+    trait[[1]] = calculate_sumstat(X, unname(unlist(Y[,1]))) %&gt;% rename(freq = Freq, b = Beta) %&gt;% mutate(N = 1160) %&gt;% select(SNP, A1, A2, freq, b, se, p, N)
+    for(i in 2:ncol(Y)){
+      trait[[i]] = calculate_sumstat(X, unname(unlist(Y[,i])))
+    }
+    LD = get_correlation(Xmat)
+    data = list()
+    data[[&quot;LD&quot;]] = LD
+    data[[&quot;trait&quot;]] = trait
+    data[[&quot;tad_index&quot;]] = tad_number
+    saveRDS(data, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=40000
+#SBATCH -J OPO_3
+#SBATCH -o /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/log/OPO_3.&quot;%j&quot;.out
+#SBATCH -e /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/log/OPO_3.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+sos run /home/hs3393/cloud_colocalization/simulation_code/OPERA_original_design.ipynb simulation_opera_3trait \
+    --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/opera_genes_genotype/*.bim` \
+    --mem 40G --h2g 0.05 --independent \
+    --cwd ~/cloud_colocalization/simulation_data/opera_original_design
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="transform-sumstat-into-esd-format-and-make-the-flist-summary-file">
+<h2>3. Transform sumstat into .esd format and make the .flist summary file<a class="headerlink" href="#transform-sumstat-into-esd-format-and-make-the-flist-summary-file" title="Link to this heading">#</a></h2>
+<p>Also, GWAS trait is saved into .ma format.</p>
+<section id="exposures">
+<h3>3 Exposures<a class="headerlink" href="#exposures" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(tidyverse)
+
+cwd = &quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/simulation_opera_3trait/&quot;
+gwas = list()
+path = vector(&quot;list&quot;, 3)
+chr = c()
+distance = c()
+probe_id = c()
+
+
+cnt = 1
+for(file in list.files(cwd, pattern = &quot;.rds&quot;)){
+   file_path = paste0(cwd, file)
+    rds = readRDS(file_path)
+    tad_index = rds$tad_index
+    gwas[[cnt]] = rds$trait[[1]]
+    distance[cnt] = floor((max(as.numeric(rds$trait[[2]]$Bp)) + min(as.numeric(rds$trait[[2]]$Bp))) / 2)
+    chr[cnt] = unique(rds$trait[[2]]$Chr)
+    probe_id[cnt] = paste0(&quot;sample_&quot;, tad_index)
+    for(i in 2:4){
+        path[[i-1]][cnt] = paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/region_&quot;, tad_index, &quot;_trait&quot;, i, &quot;.esd&quot;)
+        rds$trait[[i]] %&gt;% write_tsv(path[[i-1]][cnt])
+    }
+    cnt = cnt + 1
+}
+
+for(i in 2:4){
+    tibble(Chr = chr, ProbeID =  paste0(probe_id, &quot;_&quot;, i), GeneticDistance = 0,
+                  ProbeBp = distance, Gene = paste0(probe_id, &quot;_&quot;, i),  Orientation = NA,
+                  PathOfEsd = path[[i -1]]) %&gt;%  
+        write_tsv(paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/trait_&quot;, i, &quot;.flist&quot;))
+}
+
+
+bind_rows(gwas) %&gt;% write_tsv(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/trait_1.ma&quot;)
+bind_rows(gwas) %&gt;% select(SNP) %&gt;% write_tsv(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/remain_snp.tsv&quot;, col_names = FALSE)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>5 exposures<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(tidyverse)
+
+cwd = &quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/simulation_opera_5trait/&quot;
+gwas = list()
+path = vector(&quot;list&quot;, 5)
+chr = c()
+distance = c()
+probe_id = c()
+
+
+cnt = 1
+for(file in list.files(cwd, pattern = &quot;.rds&quot;)){
+   file_path = paste0(cwd, file)
+    rds = readRDS(file_path)
+    tad_index = rds$tad_index
+    gwas[[cnt]] = rds$trait[[1]]
+    distance[cnt] = floor((max(as.numeric(rds$trait[[2]]$Bp)) + min(as.numeric(rds$trait[[2]]$Bp))) / 2)
+    chr[cnt] = unique(rds$trait[[2]]$Chr)
+    probe_id[cnt] = paste0(&quot;Region_&quot;, tad_index)
+    for(i in 2:6){
+        path[[i-1]][cnt] = paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/region_&quot;, tad_index, &quot;_trait&quot;, i, &quot;.esd&quot;)
+        rds$trait[[i]] %&gt;% write_tsv(path[[i-1]][cnt])
+    }
+    cnt = cnt + 1
+}
+
+for(i in 2:6){
+    tibble(Chr = chr, ProbeID =  paste0(probe_id, &quot;_&quot;, i), GeneticDistance = 0,
+                  ProbeBp = distance, Gene = paste0(probe_id, &quot;_&quot;, i),  Orientation = NA,
+                  PathOfEsd = path[[i -1]]) %&gt;%  
+        write_tsv(paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/trait_&quot;, i, &quot;.flist&quot;))
+}
+
+
+bind_rows(gwas) %&gt;% write_tsv(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/trait_1.ma&quot;)
+bind_rows(gwas) %&gt;% select(SNP) %&gt;% write_tsv(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/remain_snp.tsv&quot;, col_names = FALSE)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=60000
+#SBATCH -J EX5
+#SBATCH -o /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/log/extract.%j.out
+#SBATCH -e /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/log/extract.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+Rscript /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/extract_sumstat/5_extract.R
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="use-smr-to-convert-esd-files-to-bsed-files-as-opera-input">
+<h2>4. Use SMR to convert .esd files to .bsed files as OPERA input<a class="headerlink" href="#use-smr-to-convert-esd-files-to-bsed-files-as-opera-input" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>job_name=&quot;besd&quot;
+WD=&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/${job_name}&quot;
+
+
+mkdir -p ${WD}/code
+mkdir -p ${WD}/log
+
+traits=(&quot;2&quot; &quot;5&quot;)
+#causals=(&quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot;)
+
+cd ${WD}/code
+
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J JOBNAME
+#SBATCH -o PWD/log/JOBNAME.&quot;%j&quot;.out
+#SBATCH -e PWD/log/JOBNAME.&quot;%j&quot;.err
+
+
+source ~/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_TRAITtrait
+for trait_num in {2..10}; do
+    ~/smr_heidi/SMR/smr-1.3.1-linux-x86_64/smr-1.3.1 \
+    --eqtl-flist ./trait_${trait_num}.flist \
+    --make-besd \
+    --cis-wind 3000 \
+    --make-besd-dense \
+    --out ./trait_${trait_num}
+done
+
+EOF
+            
+base_script=&quot;base_script&quot;
+for trait in &quot;${traits[@]}&quot;; do
+    #for causal in &quot;${causals[@]}&quot;; do
+        output_script=&quot;script_trait_${trait}.sh&quot;
+        cat ${base_script} | sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|PWD|${WD}|g&quot; | sed &quot;s|JOBNAME|${job_name}|g&quot;  &gt; ${output_script}
+        cat ${base_script} | sed &quot;s|TRAIT|${trait}|g&quot; |  sed &quot;s|PWD|${WD}|g&quot; | sed &quot;s|JOBNAME|${job_name}|g&quot;  &gt; ${output_script}
+        sb ${output_script}
+        # cat script_variant_${variant}.sh
+    #done
+done
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exposure-qtl-meta-file-summary">
+<h2>5. Exposure (QTL) meta file summary<a class="headerlink" href="#exposure-qtl-meta-file-summary" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># Create a two-line table with strings
+library(tidyverse)
+for(TRAIT in c(4)){
+    path = c()
+    ntrait = TRAIT
+    cnt = 1
+    for(i in c(2:ntrait)){
+        path[cnt] = paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/trait_&quot;, i)
+        cnt = cnt + 1
+    }
+    data &lt;- data.frame(Path = path)
+
+    # Print the data
+    print(data)
+
+    # Save the data to a CSV file
+    write_csv(data, paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/qtl_list&quot;), col_names = FALSE)
+}
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># Create a two-line table with strings
+library(tidyverse)
+for(TRAIT in c(6)){
+    path = c()
+    ntrait = TRAIT
+    cnt = 1
+    for(i in c(2:ntrait)){
+        path[cnt] = paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/trait_&quot;, i)
+        cnt = cnt + 1
+    }
+    data &lt;- data.frame(Path = path)
+
+    # Print the data
+    print(data)
+
+    # Save the data to a CSV file
+    write_csv(data, paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/qtl_list&quot;), col_names = FALSE)
+}
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="subset-the-genome-wide-snp-plink-binary-file-using-plink">
+<h2>6. Subset the genome-wide SNP PLINK binary file using PLINK<a class="headerlink" href="#subset-the-genome-wide-snp-plink-binary-file-using-plink" title="Link to this heading">#</a></h2>
+<p>Only include the variants in our selected non-overlapping regions for stage 1 prior estimation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=60000
+#SBATCH -J LDextract
+#SBATCH -o LDextract.%j.out
+#SBATCH -e LDextract.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+cd /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait
+
+plink2 --bfile /mnt/vast/hpc/csg/molecular_phenotype_calling/genotype_arch/ROSMAP_NIA_WGS.leftnorm.filtered --extract remain_snp.tsv --make-bed --out remain_snp_LD
+
+
+for trait in 2 5 10; do
+    for causal in 1 2 3 4 5; do
+    output_sh=&quot;trait_${trait}_causal_${causal}.sh&quot;
+    cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot;   &gt; ${output_sh}
+    sbatch ${output_sh}
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="save-genotype-ld-metadata-in-remain-snp-ld-file">
+<h2>7. Save genotype (LD) metadata in remain_snp_LD file<a class="headerlink" href="#save-genotype-ld-metadata-in-remain-snp-ld-file" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># LD
+# Create a two-line table with strings
+library(tidyverse)
+for(ntrait in c(3,5)){
+    data &lt;- paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_&quot;,ntrait, &quot;trait/remain_snp_LD&quot;)
+
+    # Print the data
+    print(data)
+
+    # Save the data to a CSV file
+    write_lines(data, paste0(&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_&quot;,ntrait, &quot;trait/genotype_data&quot;))
+
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stage-1-opera">
+<h2>8. Stage 1 OPERA<a class="headerlink" href="#stage-1-opera" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 46:00:00
+#SBATCH --mem=60000
+#SBATCH -J opera1
+#SBATCH -o opera1.%j.out
+#SBATCH -e opera1.%j.err
+
+source /home/hs3393/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/
+/home/hs3393/opera_Linux/opera_Linux --besd-flist qtl_list --gwas-summary ./trait_1.ma \
+--mbfile ./genotype_data --pi-wind 1500 \
+--estimate-pi --out pi_estimation
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 46:00:00
+#SBATCH --mem=60000
+#SBATCH -J opera1
+#SBATCH -o opera1.%j.out
+#SBATCH -e opera1.%j.err
+
+source /home/hs3393/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/
+/home/hs3393/opera_Linux/opera_Linux --besd-flist qtl_list --gwas-summary ./trait_1.ma \
+--mbfile ./genotype_data --pi-wind 1500 \
+--estimate-pi --out pi_estimation
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stage-2-opera">
+<h2>9.Stage 2 OPERA<a class="headerlink" href="#stage-2-opera" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=80000
+#SBATCH -J opera2
+#SBATCH -o opera2.%j.out
+#SBATCH -e opera2.%j.err
+
+source /home/hs3393/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait
+
+/home/hs3393/opera_Linux/opera_Linux --besd-flist qtl_list --gwas-summary ./trait_1.ma \
+    --bfile /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/remain_snp_LD \
+    --outcome-wind 2000 \
+    --prior-pi-file /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/pi_estimation.pi \
+    --prior-var-file /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/pi_estimation.var \
+    --out /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_3trait/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=80000
+#SBATCH -J opera2
+#SBATCH -o opera2.%j.out
+#SBATCH -e opera2.%j.err
+
+source /home/hs3393/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait
+
+/home/hs3393/opera_Linux/opera_Linux --besd-flist qtl_list --gwas-summary ./trait_1.ma \
+    --bfile /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/remain_snp_LD \
+    --outcome-wind 2000 \
+    --prior-pi-file /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/pi_estimation.pi \
+    --prior-var-file /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/pi_estimation.var \
+    --out /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera_input/simulation_opera_5trait/
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="run-colocboost-on-simulated-data-for-comparison">
+<h2>10. Run colocboost on simulated data for comparison<a class="headerlink" href="#run-colocboost-on-simulated-data-for-comparison" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[colocboost_sumstat]
+parameter: simufile = paths
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 15
+parameter: walltime = &quot;80h&quot;
+parameter: mem = &quot;60G&quot;
+parameter: numThreads = 3
+parameter: trait = 10
+parameter: container = &quot;&quot;
+parameter: check_null_max = 0.1
+parameter: sample_size = 1160
+parameter: lfsr_max = 1
+input: simufile, group_by = 1
+output: f&#39;{cwd:a}/{_input[0]:bn}_ntrait_{trait}_{step_name}.rds&#39;
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    for(file in list.files(&quot;/home/xc2270/COLOCBoost/code_COLOCBoost/colocboost_updating/&quot;, full.names = T)) {source(file)}
+    library(tidyverse)
+    data = readRDS(${_input:ar})
+    if(length(data$trait) &lt; 5){
+        trait1 = data$trait[[1]] %&gt;% mutate(beta = b, sebeta = se, n = N, variant = SNP) %&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        trait2 = data$trait[[2]] %&gt;% mutate(beta = Beta, sebeta = se, n = 1160, variant = SNP)%&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        trait3 = data$trait[[3]] %&gt;% mutate(beta = Beta, sebeta = se, n = 1160, variant = SNP)%&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        trait4 = data$trait[[4]] %&gt;% mutate(beta = Beta, sebeta = se, n = 1160, variant = SNP)%&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        sumstat = list(trait1, trait2, trait3, trait4)
+    }else{
+        trait1 = data$trait[[1]] %&gt;% mutate(beta = b, sebeta = se, n = N, variant = SNP) %&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        trait2 = data$trait[[2]] %&gt;% mutate(beta = Beta, sebeta = se, n = 1160, variant = SNP)%&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        trait3 = data$trait[[3]] %&gt;% mutate(beta = Beta, sebeta = se, n = 1160, variant = SNP)%&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        trait4 = data$trait[[4]] %&gt;% mutate(beta = Beta, sebeta = se, n = 1160, variant = SNP)%&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        trait5 = data$trait[[5]] %&gt;% mutate(beta = Beta, sebeta = se, n = 1160, variant = SNP)%&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        trait6 = data$trait[[6]] %&gt;% mutate(beta = Beta, sebeta = se, n = 1160, variant = SNP)%&gt;% select(beta, sebeta, n, variant) %&gt;% as.data.frame()
+        sumstat = list(trait1, trait2, trait3, trait4, trait5, trait6)
+    }
+    colocboost_result = colocboost(sumstat = sumstat, LD = data$LD, target_outcome_idx=1)
+    colocboost_result$tad_index = data$tad_index
+    saveRDS(colocboost_result, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/colocboost_result&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=60000
+#SBATCH -J opera_colocb
+#SBATCH -o PWD/log/complex.%j.out
+#SBATCH -e PWD/log/complex.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/simulation_opera_3trait
+sos run /mnt/vast/hpc/csg/hs3393/cloud_colocalization/simulation_code/OPERA_original_design.ipynb colocboost_sumstat \
+    --simufile $(find -type f -name &#39;*.rds&#39;) \
+    --mem 60G \
+    --cwd PWD/3_trait
+EOF
+
+base_script=&quot;base_script&quot;
+output_script=&quot;3trait.sh&quot;
+cat ${base_script}| sed &quot;s|PWD|${work_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/colocboost_result&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 56:00:00
+#SBATCH --mem=60000
+#SBATCH -J opera_colocb
+#SBATCH -o PWD/log/complex.%j.out
+#SBATCH -e PWD/log/complex.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/simulation_opera_5trait
+sos run /mnt/vast/hpc/csg/hs3393/cloud_colocalization/simulation_code/OPERA_original_design.ipynb colocboost_sumstat \
+    --simufile $(find -type f -name &#39;*.rds&#39;) \
+    --mem 60G \
+    --cwd PWD/5_trait
+EOF
+
+base_script=&quot;base_script&quot;
+output_script=&quot;5trait.sh&quot;
+cat ${base_script}| sed &quot;s|PWD|${work_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sos"
+        },
+        kernelOptions: {
+            name: "sos",
+            path: "./Simulation_Codes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sos'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="10_OPERA_simulation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">OPERA running</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Data_Applications/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Application</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#match-configuration-with-region-index">1: Match configuration with region index</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumstat-simulation">2: Sumstat simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-sumstat-into-esd-format-and-make-the-flist-summary-file">3. Transform sumstat into .esd format and make the .flist summary file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exposures">3 Exposures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5 exposures</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-smr-to-convert-esd-files-to-bsed-files-as-opera-input">4. Use SMR to convert .esd files to .bsed files as OPERA input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exposure-qtl-meta-file-summary">5. Exposure (QTL) meta file summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subset-the-genome-wide-snp-plink-binary-file-using-plink">6. Subset the genome-wide SNP PLINK binary file using PLINK</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-genotype-ld-metadata-in-remain-snp-ld-file">7. Save genotype (LD) metadata in remain_snp_LD file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-1-opera">8. Stage 1 OPERA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-2-opera">9.Stage 2 OPERA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-colocboost-on-simulated-data-for-comparison">10. Run colocboost on simulated data for comparison</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Xuewei Cao with input from Gao Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

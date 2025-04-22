@@ -1,0 +1,1985 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>OPERA running &#8212; ColocBoost manuscript resources</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Codes/10_OPERA_simulation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OPERA: simulation using original proportion configuration" href="11_OPERA_original_design.html" />
+    <link rel="prev" title="Fineboost (single trait colocboost)" href="9_Fineboost.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ColocBoost manuscript resources</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Main_Figures/index.html">Main Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_2/index.html">Figure 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2a.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2b.html">Figure 2b. Representative simulation examples.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2c.html">Figure 2c. Variant‐level precision‐recall curves.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2d.html">Figure 2d. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2e.html">Figure 2e. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_3/index.html">Figure 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3a.html">Figure 3a. Colocalization patterns across three different molecular trait modalities (expression, splicing, protein abundance).</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3b.html">Figure 3b. Distribution of the number of 95% CoSs corresponding to the different numbers of colocalized traits per locus.</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3c.html">Figure 3c. UpSet plot summarizing the colocalization patterns across 6 pseudo-bulk brain cell-type eQTL data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3d.html">Figure 3d. Cell-type specific colocalization versus fine-mapping eQTL.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3e.html">Figure 3e. Significantly enriched KEGG pathways.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3f.html">Figure 3f. Homogeneity in causal effect directions.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3g.html">Figure 3g. Empirical distribution of the number of 95% CoS versus the size of the CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3h.html">Figure 3h. Distribution of the number of CoSs per gene.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3i.html">Figure 3i. Shared cell-types in primary CoS and secondary CoS.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_4/index.html">Figure 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4a.html">Figure 4a. Variant set -level Excess-of-overlap (EOO) analysis.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4b.html">Figure 4b. Variant set -level Excess-of-overlap (EOO) analysis in bulk region.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4c.html">Figure 4c. Variant set -level Excess-of-overlap (EOO) analysis in cell types.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4d.html">Figure 4d. Microglia-specific eQTL colocalization in FCGR2A.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4e.html">Figure 4d. Multiple xQTL colocalization in SUOX.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_5/index.html">Figure 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_5/Figure_5abc.html">Figure 5abc. Disease heritability analyses of variant-level functional annotations derived from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_5/Figure_5d.html">Figure 5d. Standardized effect sizes of the MaxVCP-xQTL and an analogous score based on the HyPrColoc method.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_6/index.html">Figure 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6a.html">Figure 6a. UpSet plot comparison.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6b.html">Figure 6b. Scatter plot across variants in terms of the magnitude of quantile-matched z-scores.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6c.html">Figure 6c. Distribution of distances from the gene TSS for CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6d.html">Figure 6d. Precision-recall analysis compared with ENCODE-rE2G links.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6e.html">Figure 6e. UpSet plot for AD-xQTL colocalization.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6f.html">Figure 6f. Manhattan plot of variant level MaxVCP from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6g.html">Figure 6g. Microglia-specific eQTL colocalization in BLNK.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6h.html">Figure 6h. Colocalization across multiple xQTLs in CTSH.</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Codes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and colocboost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait colocboost)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">OPERA running</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Simulation_Codes/10_OPERA_simulation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>OPERA running</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">OPERA running</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-non-overlapping-regions-from-1-287-regions-used-in-other-simulations">Choose non-overlapping regions from 1,287 regions used in other simulations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#based-on-causal-variant-distribution-mix-the-result-by-proportion">Based on causal variant distribution, mix the result by proportion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-individual-level-simulation-into-sumstat">Transform individual level simulation into sumstat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-output">Example output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-sumstat-into-esd-format-and-make-the-flist-summary-file">Transform sumstat into .esd format and make the .flist summary file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-smr-to-convert-esd-files-to-bsed-files-as-opera-input">Use SMR to convert .esd files to .bsed files as OPERA input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exposure-qtl-meta-file-summary">Exposure (QTL) meta file summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subset-the-genome-wide-snp-plink-binary-file">Subset the genome-wide SNP PLINK binary file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-genotype-ld-metadata-in-remain-snp-ld-file">Save genotype (LD) metadata in remain_snp_LD file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-1-opera-pi-estimation">Stage 1 OPERA (pi estimation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-2-opera">Stage 2 OPERA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Example output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-version-not-mix-causal-variant-by-configuration">Previous version: not mix causal variant by configuration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-individual-level-simulation-results-to-sumstat">Convert individual level simulation results to sumstat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-script">Submission script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Submission script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Use SMR to convert .esd files to .bsed files as OPERA input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exposure (QTL) meta file summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Subset the genome-wide SNP PLINK binary file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Save genotype (LD) metadata in remain_snp_LD file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Stage 1 OPERA (pi estimation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Stage 2 OPERA</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="opera-running">
+<h1>OPERA running<a class="headerlink" href="#opera-running" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>After simulating the phenotypes, we will summarize them into summary statistics format, making them compatible with OPERA, and compare with ColocBoost targeted version.</p>
+</section>
+<section id="input">
+<h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
+<p>Simulated individual level data.</p>
+</section>
+<section id="choose-non-overlapping-regions-from-1-287-regions-used-in-other-simulations">
+<h2>Choose non-overlapping regions from 1,287 regions used in other simulations<a class="headerlink" href="#choose-non-overlapping-regions-from-1-287-regions-used-in-other-simulations" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(tidyverse)
+select_gene = read_tsv(&quot;/home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/selected_gene_tb.tsv&quot;)
+
+select_gene = select_gene%&gt;% mutate(index = str_replace(TADB_index, &quot;TADB_&quot;, &quot;&quot;))  %&gt;%mutate(index = as.numeric(index)) %&gt;% arrange(index) 
+
+chrom_str = c()
+start_str = c()
+end_str = c()
+gene_str = c()
+cnt = 1
+
+for(i in 1:nrow(select_gene)){
+    chrom = select_gene[[&quot;#chr&quot;]][i]
+    start =  select_gene[[&quot;gene_cis_start&quot;]][i]
+    end = select_gene[[&quot;gene_cis_end&quot;]][i]
+    gene = select_gene[[&quot;gene_id&quot;]][i]
+    if(i == 1){
+     chrom_str = c(chrom_str, chrom)
+     start_str = c(start_str, start)
+     end_str = c(end_str, end)
+      gene_str = c(gene_str, gene)
+        cnt = cnt + 1
+    }else{
+        if(chrom != chrom_str[cnt - 1]){
+            chrom_str = c(chrom_str, chrom)
+             start_str = c(start_str, start)
+            end_str = c(end_str, end)
+            gene_str = c(gene_str, gene)
+            cnt = cnt + 1
+        }else{
+            if(start &gt; end_str[cnt -1]){
+                chrom_str = c(chrom_str, chrom)
+                 start_str = c(start_str, start)
+                 end_str = c(end_str, end)
+                gene_str = c(gene_str, gene)
+                cnt = cnt + 1
+            } 
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="based-on-causal-variant-distribution-mix-the-result-by-proportion">
+<h2>Based on causal variant distribution, mix the result by proportion<a class="headerlink" href="#based-on-causal-variant-distribution-mix-the-result-by-proportion" title="Link to this heading">#</a></h2>
+<p>Save the selected files in another folder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>## Obtained from true colocalization configuration
+
+trait_2 = c(2177, 233, 26)
+trait_2 = trait_2 / sum(trait_2)
+
+trait_5 = c(1831, 258, 41, 9 )
+trait_5 = trait_5 / sum(trait_5)
+
+trait_10 = c(3175, 805, 149, 45, 10)
+trait_10 = trait_10 / sum(trait_10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># mix the 
+
+set.seed(100)
+total_indices &lt;- 495
+proportions &lt;- trait_2
+
+# Calculate the exact number of indices for each group
+group_sizes &lt;- floor(total_indices * proportions)
+
+# Adjust for any rounding errors
+group_sizes[1] &lt;- group_sizes[1] + (total_indices - sum(group_sizes))
+
+# Create a vector of group assignments
+groups &lt;- rep(1:3, times = group_sizes)
+
+
+groups &lt;- sample(groups)
+
+# Create a list to store the indices for each group
+partitioned_indices &lt;- lapply(1:3, function(i) which(groups == i) - 1)
+
+for(h2g in c(0.02, 0.03, 0.04, 0.05)){
+    path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/h2g_&quot;, h2g, &quot;_mix/&quot;)
+    dir.create(path, showWarnings = F, recursive = T)
+    for(i in partitioned_indices[[1]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/causal_1_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_2opera/sample_&quot;, 
+                           i, &quot;_real_simulation_1_ncausal_2_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+    
+    for(i in partitioned_indices[[2]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/causal_2_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_2opera/sample_&quot;, 
+                           i, &quot;_real_simulation_2_ncausal_2_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+    
+    for(i in partitioned_indices[[3]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/causal_3_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_2opera/sample_&quot;, 
+                           i, &quot;_real_simulation_3_ncausal_2_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+
+}
+
+
+
+set.seed(100)
+total_indices &lt;- 495
+proportions &lt;- trait_5
+
+# Calculate the exact number of indices for each group
+group_sizes &lt;- floor(total_indices * proportions)
+
+# Adjust for any rounding errors
+group_sizes[1] &lt;- group_sizes[1] + (total_indices - sum(group_sizes))
+
+# Create a vector of group assignments
+groups &lt;- rep(1:4, times = group_sizes)
+
+
+groups &lt;- sample(groups)
+
+# Create a list to store the indices for each group
+partitioned_indices &lt;- lapply(1:4, function(i) which(groups == i) - 1)
+
+for(h2g in c(0.02, 0.03, 0.04, 0.05)){
+    path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/h2g_&quot;, h2g, &quot;_mix/&quot;)
+    dir.create(path, showWarnings = F, recursive = T)
+    for(i in partitioned_indices[[1]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/causal_1_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_5opera/sample_&quot;, 
+                           i, &quot;_real_simulation_1_ncausal_5_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+    
+    for(i in partitioned_indices[[2]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/causal_2_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_5opera/sample_&quot;, 
+                           i, &quot;_real_simulation_2_ncausal_5_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+    
+    for(i in partitioned_indices[[3]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/causal_3_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_5opera/sample_&quot;, 
+                           i, &quot;_real_simulation_3_ncausal_5_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+    
+        for(i in partitioned_indices[[4]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/causal_4_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_5opera/sample_&quot;, 
+                           i, &quot;_real_simulation_4_ncausal_5_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+
+}
+
+set.seed(100)
+total_indices &lt;- 495
+proportions &lt;- trait_10
+
+# Calculate the exact number of indices for each group
+group_sizes &lt;- floor(total_indices * proportions)
+
+# Adjust for any rounding errors
+group_sizes[1] &lt;- group_sizes[1] + (total_indices - sum(group_sizes))
+
+# Create a vector of group assignments
+groups &lt;- rep(1:5, times = group_sizes)
+
+
+groups &lt;- sample(groups)
+
+# Create a list to store the indices for each group
+partitioned_indices &lt;- lapply(1:5, function(i) which(groups == i) - 1)
+
+for(h2g in c(0.02, 0.03, 0.04, 0.05)){
+    path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/h2g_&quot;, h2g, &quot;_mix/&quot;)
+    dir.create(path, showWarnings = F, recursive = T)
+    for(i in partitioned_indices[[1]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/causal_1_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_10opera/sample_&quot;, 
+                           i, &quot;_real_simulation_1_ncausal_10_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+    
+    for(i in partitioned_indices[[2]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/causal_2_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_10opera/sample_&quot;, 
+                           i, &quot;_real_simulation_2_ncausal_10_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+    
+    for(i in partitioned_indices[[3]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/causal_3_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_10opera/sample_&quot;, 
+                           i, &quot;_real_simulation_3_ncausal_10_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+    
+        for(i in partitioned_indices[[4]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/causal_4_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_10opera/sample_&quot;, 
+                           i, &quot;_real_simulation_4_ncausal_10_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+    
+            for(i in partitioned_indices[[5]]){
+        file_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/causal_5_h2g_&quot;, 
+                           h2g, &quot;/real_simulation_10opera/sample_&quot;, 
+                           i, &quot;_real_simulation_5_ncausal_10_trait.rds&quot; )
+        file.copy(from = file_path, to = path, overwrite = TRUE)
+    } 
+
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="transform-individual-level-simulation-into-sumstat">
+<h2>Transform individual level simulation into sumstat<a class="headerlink" href="#transform-individual-level-simulation-into-sumstat" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    calculate_sumstat = function(X, Y){
+        Beta = c()
+        se = c()
+        Freq = c()
+        p = c()
+        for(mm in 1:ncol(X)){
+            rr &lt;- susieR::univariate_regression(X[,mm], Y)
+            Beta[mm] = rr$betahat
+            se[mm] &lt;- rr$sebetahat
+            Freq[mm] = sum(X[,mm])/(2*nrow(X))
+            p[mm] = 2 * (1 - pnorm(abs(rr$betahat / rr$sebetahat)))
+        }
+            tb = tibble(
+            SNP = colnames(X),
+            Beta = Beta,
+            se = se,
+            Freq = Freq, p = p) %&gt;% 
+        separate(SNP, into = c(&quot;Chr&quot;, &quot;Bp&quot;, &quot;A2&quot;, &quot;A1&quot;), sep = &quot;[:_]&quot;, remove = FALSE) %&gt;%
+        select(Chr, SNP, Bp, A1, A2, Freq, Beta, se, p) %&gt;%
+        mutate(Chr = str_replace(Chr, &quot;chr&quot;, &quot;&quot;)) %&gt;%
+        mutate(Chr = as.numeric(Chr), Bp = as.numeric(Bp))
+        return(tb)
+    }
+cnt = 1
+ntrait = TRAIT
+h2g = H2G
+
+path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/h2g_&quot;, h2g, &quot;_mix&quot;)
+files = list.files(path, full.names = T, pattern = &quot;.rds&quot;)
+data &lt;- rep(list(NULL), length(files))
+
+for(file in files){
+    rds = readRDS(file)
+    X = rds$X
+    Y = rds$Y
+    trait = list()
+    trait[[1]] = calculate_sumstat(X, Y[,1, drop = T]) %&gt;% rename(freq = Freq, b = Beta) %&gt;% mutate(N = 1160) %&gt;% select(SNP, A1, A2, freq, b, se, p, N)
+    for(i in 2:ncol(Y)){
+      trait[[i]] = calculate_sumstat(X, Y[,i, drop = T])
+    }
+    index =  str_extract(file, &quot;(?&lt;=sample_)\\d+&quot;)
+    data = list()
+    data[[&quot;trait&quot;]] = trait
+    data$index = index
+    data$gwas_var_num = length(rds$variant[[1]])
+    dir.create(paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/mix_sumstat/h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera&quot;), showWarnings = F, recursive = T)
+    saveRDS(data, paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/mix_sumstat/h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/index_&quot;, index, &quot;.rds&quot;))
+    cnt = cnt + 1
+    
+}
+</pre></div>
+</div>
+</div>
+</div>
+<section id="example-output">
+<h3>Example output<a class="headerlink" href="#example-output" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/mix_sumstat/h2g_0.02/real_simulation_2opera/index_240.rds&quot;)
+str(result)
+head(result$trait[[1]])
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>List of 3
+ $ trait       :List of 2
+  ..$ :Classes ‘tbl_df’, ‘tbl’ and &#39;data.frame&#39;:	6791 obs. of  8 variables:
+  .. ..$ SNP : chr [1:6791] &quot;chr12:108093914_C_T&quot; &quot;chr12:108093950_A_G&quot; &quot;chr12:108094333_C_G&quot; &quot;chr12:108094913_A_G&quot; ...
+  .. ..$ A1  : chr [1:6791] &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;G&quot; ...
+  .. ..$ A2  : chr [1:6791] &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;A&quot; ...
+  .. ..$ freq: num [1:6791] 0.0924 0.3747 0.3504 0.0928 0.2207 ...
+  .. ..$ b   : num [1:6791] -0.4608 0.1953 -0.0277 -0.4819 -0.443 ...
+  .. ..$ se  : num [1:6791] 0.314 0.181 0.191 0.314 0.212 ...
+  .. ..$ p   : num [1:6791] 0.1425 0.2811 0.885 0.1244 0.0369 ...
+  .. ..$ N   : num [1:6791] 1160 1160 1160 1160 1160 1160 1160 1160 1160 1160 ...
+  ..$ :Classes ‘tbl_df’, ‘tbl’ and &#39;data.frame&#39;:	6791 obs. of  9 variables:
+  .. ..$ Chr : num [1:6791] 12 12 12 12 12 12 12 12 12 12 ...
+  .. ..$ SNP : chr [1:6791] &quot;chr12:108093914_C_T&quot; &quot;chr12:108093950_A_G&quot; &quot;chr12:108094333_C_G&quot; &quot;chr12:108094913_A_G&quot; ...
+  .. ..$ Bp  : num [1:6791] 1.08e+08 1.08e+08 1.08e+08 1.08e+08 1.08e+08 ...
+  .. ..$ A1  : chr [1:6791] &quot;T&quot; &quot;G&quot; &quot;G&quot; &quot;G&quot; ...
+  .. ..$ A2  : chr [1:6791] &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;A&quot; ...
+  .. ..$ Freq: num [1:6791] 0.0924 0.3747 0.3504 0.0928 0.2207 ...
+  .. ..$ Beta: num [1:6791] -0.1844 -0.1309 0.128 -0.1795 -0.0441 ...
+  .. ..$ se  : num [1:6791] 0.203 0.117 0.123 0.203 0.137 ...
+  .. ..$ p   : num [1:6791] 0.364 0.263 0.299 0.376 0.748 ...
+ $ index       : chr &quot;240&quot;
+ $ gwas_var_num: int 1
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 6 × 8</caption>
+<thead>
+	<tr><th></th><th scope=col>SNP</th><th scope=col>A1</th><th scope=col>A2</th><th scope=col>freq</th><th scope=col>b</th><th scope=col>se</th><th scope=col>p</th><th scope=col>N</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>chr12:108093914_C_T</td><td>T</td><td>C</td><td>0.09236774</td><td>-0.46078434</td><td>0.3141903</td><td>0.14249112</td><td>1160</td></tr>
+	<tr><th scope=row>2</th><td>chr12:108093950_A_G</td><td>G</td><td>A</td><td>0.37467476</td><td> 0.19533530</td><td>0.1812171</td><td>0.28107492</td><td>1160</td></tr>
+	<tr><th scope=row>3</th><td>chr12:108094333_C_G</td><td>G</td><td>C</td><td>0.35039029</td><td>-0.02765113</td><td>0.1911775</td><td>0.88499837</td><td>1160</td></tr>
+	<tr><th scope=row>4</th><td>chr12:108094913_A_G</td><td>G</td><td>A</td><td>0.09280139</td><td>-0.48190914</td><td>0.3136359</td><td>0.12440993</td><td>1160</td></tr>
+	<tr><th scope=row>5</th><td>chr12:108095069_C_T</td><td>T</td><td>C</td><td>0.22072853</td><td>-0.44301635</td><td>0.2122775</td><td>0.03689105</td><td>1160</td></tr>
+	<tr><th scope=row>6</th><td>chr12:108095158_C_T</td><td>T</td><td>C</td><td>0.25628794</td><td> 0.19442679</td><td>0.2086272</td><td>0.35137065</td><td>1160</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>base_sh=&quot;base_script&quot;
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; ${base_sh}
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 78:00:00
+#SBATCH --mem=30000
+#SBATCH -J extract
+#SBATCH -o /home/hs3393/cloud_colocalization/submission_script/sumstat_generate/log/extract.%j.out
+#SBATCH -e /home/hs3393/cloud_colocalization/submission_script/sumstat_generate/log/extract.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+Rscript /home/hs3393/cb_simulation/simulation_data/simulation_opera/opera_code/sumstat_generate/trait_TRAIT_h2g_H2G.R
+EOF
+
+base_R=&quot;base_R&quot;
+
+for trait in 2 5 10; do
+    for h2g in 0.02 0.03 0.04 0.05; do
+        output_R=&quot;trait_${trait}_h2g_${h2g}.R&quot;
+        output_sh=&quot;trait_${trait}_h2g_${h2g}.sh&quot;
+        cat ${base_R}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|H2G|${h2g}|g&quot;   &gt; ${output_R}
+        cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|H2G|${h2g}|g&quot;  &gt; ${output_sh}
+        sbatch ${output_sh}
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="transform-sumstat-into-esd-format-and-make-the-flist-summary-file">
+<h2>Transform sumstat into .esd format and make the .flist summary file<a class="headerlink" href="#transform-sumstat-into-esd-format-and-make-the-flist-summary-file" title="Link to this heading">#</a></h2>
+<p>Also, GWAS trait is saved into .ma format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(tidyverse)
+cnt = 1
+ntrait = TRAIT
+h2g = H2G
+
+cwd = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/mix_sumstat/h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/&quot;)
+
+
+dir.create(paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/opera_input_mix/&quot;, 
+                     &quot;h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/&quot;), showWarnings = F, recursive = T)
+output_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/opera_input_mix/&quot;, 
+                     &quot;h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/&quot;)
+
+gwas = list()
+path = vector(&quot;list&quot;, ntrait)
+chr = c()
+distance = c()
+probe_id = c()
+
+
+cnt = 1
+for(file in list.files(cwd, pattern = &quot;.rds&quot;)){
+    file_path = paste0(cwd, file)
+    rds = readRDS(file_path)
+    tad_index = as.numeric(sub(&quot;.*index_([0-9]+).*&quot;, &quot;\\1&quot;, file_path))
+    gwas[[cnt]] = rds$trait[[1]]
+    distance[cnt] = floor((max(as.numeric(rds$trait[[2]]$Bp)) + min(as.numeric(rds$trait[[2]]$Bp))) / 2)
+    chr[cnt] = unique(rds$trait[[2]]$Chr)
+    probe_id[cnt] = paste0(&quot;Region_&quot;, tad_index)
+    for(i in 2:ntrait){
+        path[[i-1]][cnt] = paste0(output_path, &quot;/region_&quot;, tad_index, &quot;_trait_&quot;, i, &quot;.esd&quot;)
+        rds$trait[[i]] %&gt;% write_tsv(path[[i-1]][cnt])
+    }
+    cnt = cnt + 1
+}
+
+for(i in 2:ntrait){
+    tibble(Chr = chr, 
+           ProbeID = paste0(probe_id, &quot;_&quot;, i), 
+           GeneticDistance = 0,
+           ProbeBp = distance, 
+           Gene = paste0(probe_id, &quot;_&quot;, i),  
+           Orientation = NA,
+           PathOfEsd = path[[i -1]]) %&gt;%  
+        write_tsv(paste0(output_path,
+                         &quot;/trait_&quot;, i, &quot;.flist&quot;))
+}
+
+bind_rows(gwas) %&gt;% 
+    write_tsv(paste0(output_path, 
+                     &quot;/trait_1.ma&quot;))
+
+bind_rows(gwas) %&gt;% 
+    select(SNP) %&gt;% 
+    write_tsv(paste0(output_path,
+                     &quot;/remain_snp.tsv&quot;), col_names = FALSE)
+
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Example output<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(tidyverse)
+result = read_delim(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.02/real_simulation_2opera/region_274_trait_2.esd&quot;)
+head(result)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">5504</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">9</span>
+<span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
+<span class=" -Color -Color-Bold">Delimiter:</span> &quot;\t&quot;
+<span class=" -Color -Color-Red">chr</span> (3): SNP, A1, A2
+<span class=" -Color -Color-Green">dbl</span> (6): Chr, Bp, Freq, Beta, se, p
+
+<span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
+<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(tidyverse)
+result = read_delim(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.02/real_simulation_2opera/trait_2.flist&quot;)
+head(result)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">495</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">7</span>
+<span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
+<span class=" -Color -Color-Bold">Delimiter:</span> &quot;\t&quot;
+<span class=" -Color -Color-Red">chr</span> (3): ProbeID, Gene, PathOfEsd
+<span class=" -Color -Color-Green">dbl</span> (3): Chr, GeneticDistance, ProbeBp
+<span class=" -Color -Color-Yellow">lgl</span> (1): Orientation
+
+<span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
+<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 6 × 7</caption>
+<thead>
+	<tr><th scope=col>Chr</th><th scope=col>ProbeID</th><th scope=col>GeneticDistance</th><th scope=col>ProbeBp</th><th scope=col>Gene</th><th scope=col>Orientation</th><th scope=col>PathOfEsd</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;lgl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td> 8</td><td>Region_0_2  </td><td>0</td><td> 17497391</td><td>Region_0_2  </td><td>NA</td><td>/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.02/real_simulation_2opera//region_0_trait_2.esd  </td></tr>
+	<tr><td> 7</td><td>Region_1_2  </td><td>0</td><td>107320728</td><td>Region_1_2  </td><td>NA</td><td>/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.02/real_simulation_2opera//region_1_trait_2.esd  </td></tr>
+	<tr><td> 5</td><td>Region_10_2 </td><td>0</td><td>113896770</td><td>Region_10_2 </td><td>NA</td><td>/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.02/real_simulation_2opera//region_10_trait_2.esd </td></tr>
+	<tr><td>20</td><td>Region_100_2</td><td>0</td><td> 61926166</td><td>Region_100_2</td><td>NA</td><td>/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.02/real_simulation_2opera//region_100_trait_2.esd</td></tr>
+	<tr><td>20</td><td>Region_101_2</td><td>0</td><td> 35475951</td><td>Region_101_2</td><td>NA</td><td>/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.02/real_simulation_2opera//region_101_trait_2.esd</td></tr>
+	<tr><td> 1</td><td>Region_102_2</td><td>0</td><td>147899365</td><td>Region_102_2</td><td>NA</td><td>/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.02/real_simulation_2opera//region_102_trait_2.esd</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>base_sh=&quot;base_script&quot;
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; ${base_sh}
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 78:00:00
+#SBATCH --mem=50000
+#SBATCH -J extract
+#SBATCH -o /home/hs3393/cloud_colocalization/submission_script/opera_sumstat_extract/log/config.%j.out
+#SBATCH -e /home/hs3393/cloud_colocalization/submission_script/opera_sumstat_extract/log/config.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+Rscript /home/hs3393/cb_simulation/simulation_data/simulation_opera/opera_code/opera_sumstat_extract/trait_TRAIT_h2g_H2G.R
+EOF
+
+base_R=&quot;base_R&quot;
+
+for trait in 2 5 10; do
+    for h2g in 0.02 0.03 0.04 0.05; do
+        output_R=&quot;trait_${trait}_h2g_${h2g}.R&quot;
+        output_sh=&quot;trait_${trait}_h2g_${h2g}.sh&quot;
+        cat ${base_R}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|H2G|${h2g}|g&quot;   &gt; ${output_R}
+        cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|H2G|${h2g}|g&quot;  &gt; ${output_sh}
+        sbatch ${output_sh}
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="use-smr-to-convert-esd-files-to-bsed-files-as-opera-input">
+<h2>Use SMR to convert .esd files to .bsed files as OPERA input<a class="headerlink" href="#use-smr-to-convert-esd-files-to-bsed-files-as-opera-input" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>job_name=&quot;besd&quot;
+WD=&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/opera_code/make_besd&quot;
+
+
+mkdir -p ${WD}/code
+mkdir -p ${WD}/log
+
+traits=(&quot;2&quot; &quot;5&quot; &quot;10&quot;)
+h2gs=(&quot;0.02&quot; &quot;0.03&quot; &quot;0.04&quot; &quot;0.05&quot;)
+
+cd ${WD}/code
+
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J JOBNAME
+#SBATCH -o PWD/log/JOBNAME.&quot;%j&quot;.out
+#SBATCH -e PWD/log/JOBNAME.&quot;%j&quot;.err
+
+
+source ~/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_TRAITopera/opera_input_mix/h2g_H2G/real_simulation_TRAITopera
+
+for trait_num in {2..10}; do
+    ~/smr_heidi/SMR/smr-1.3.1-linux-x86_64/smr-1.3.1 \
+    --eqtl-flist ./trait_${trait_num}.flist \
+    --make-besd \
+    --cis-wind 3000 \ # extended since our cis region can be larger than 2Mb
+    --make-besd-dense \ # keep all SNP info
+    --out ./trait_${trait_num}
+done
+
+EOF
+            
+base_script=&quot;base_script&quot;
+for trait in &quot;${traits[@]}&quot;; do
+      for h2g in &quot;${h2gs[@]}&quot;; do  
+            output_script=&quot;script_trait_${trait}_h2g_${h2g}.sh&quot;
+            cat ${base_script} | sed &quot;s|TRAIT|${trait}|g&quot; |  sed &quot;s|H2G|${h2g}|g&quot; | sed &quot;s|PWD|${WD}|g&quot; | sed &quot;s|JOBNAME|${job_name}|g&quot;  &gt; ${output_script}
+            sb ${output_script}
+            # cat script_variant_${variant}.sh
+    done
+done
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exposure-qtl-meta-file-summary">
+<h2>Exposure (QTL) meta file summary<a class="headerlink" href="#exposure-qtl-meta-file-summary" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># Create a two-line table with strings
+library(tidyverse)
+for(TRAIT in c(2,5,10)){
+        for(H2G in c(0.02, 0.03, 0.04, 0.05)){
+        path = c()
+        ntrait = TRAIT
+        h2g = H2G
+        cnt = 1
+        output_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/opera_input_mix/h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/&quot;)
+        for(i in c(2:ntrait)){
+            path[cnt] = paste0(output_path, &quot;trait_&quot;, i)
+            cnt = cnt + 1
+        }
+        data &lt;- data.frame(Path = path)
+
+        # Print the data
+        print(data)
+
+        # Save the data to a CSV file
+        write_csv(data, paste0(output_path, &quot;/qtl_list&quot;), col_names = FALSE)
+        }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h3>Example output<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>cat /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.02/real_simulation_5opera/qtl_list
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.02/real_simulation_5opera/trait_2
+/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.02/real_simulation_5opera/trait_3
+/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.02/real_simulation_5opera/trait_4
+/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.02/real_simulation_5opera/trait_5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="subset-the-genome-wide-snp-plink-binary-file">
+<h2>Subset the genome-wide SNP PLINK binary file<a class="headerlink" href="#subset-the-genome-wide-snp-plink-binary-file" title="Link to this heading">#</a></h2>
+<p>Only include the variants in our selected non-overlapping regions for stage 1 prior estimation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=60000
+#SBATCH -J LDextract
+#SBATCH -o LDextract.%j.out
+#SBATCH -e LDextract.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+cd /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_TRAITopera/opera_input_mix/h2g_H2G/real_simulation_TRAITopera
+
+plink2 --bfile /mnt/vast/hpc/csg/molecular_phenotype_calling/genotype_arch/ROSMAP_NIA_WGS.leftnorm.filtered --extract remain_snp.tsv --make-bed --out remain_snp_LD
+
+base_sh=&quot;base_sh&quot;
+for trait in 2 5 10; do
+        for h2g in 0.02 0.03 0.04 0.05; do
+            output_sh=&quot;trait_${trait}_h2g_${h2g}.sh&quot;
+            cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot;  | sed &quot;s|H2G|${h2g}|g&quot;  &gt; ${output_sh}
+            sbatch ${output_sh}
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="save-genotype-ld-metadata-in-remain-snp-ld-file">
+<h2>Save genotype (LD) metadata in remain_snp_LD file<a class="headerlink" href="#save-genotype-ld-metadata-in-remain-snp-ld-file" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># LD
+# Create a two-line table with strings
+library(tidyverse)
+for(ntrait in c(2,5,10)){
+        for(h2g in c(0.02, 0.03, 0.04, 0.05)){
+
+            cnt = 1
+            output_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/opera_input_mix/h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/&quot;)
+            data &lt;- paste0(output_path, &quot;/remain_snp_LD&quot;)
+
+            # Print the data
+            print(data)
+
+            # Save the data to a CSV file
+            write_lines(data, paste0(output_path, &quot;/genotype_data&quot;))
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.02/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.03/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.04/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input_mix/h2g_0.05/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.02/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.03/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.04/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.05/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input_mix/h2g_0.02/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input_mix/h2g_0.03/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input_mix/h2g_0.04/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input_mix/h2g_0.05/real_simulation_10opera//remain_snp_LD&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stage-1-opera-pi-estimation">
+<h2>Stage 1 OPERA (pi estimation)<a class="headerlink" href="#stage-1-opera-pi-estimation" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=60000
+#SBATCH -J opera1
+#SBATCH -o opera1.%j.out
+#SBATCH -e opera1.%j.err
+
+source /home/hs3393/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_TRAITopera/opera_input_mix/h2g_H2G/real_simulation_TRAITopera
+/home/hs3393/opera_Linux/opera_Linux --besd-flist qtl_list --gwas-summary ./trait_1.ma \
+--mbfile ./genotype_data --pi-wind 150 \
+--estimate-pi --out pi_estimation
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>base_sh=&quot;base_sh&quot;
+for trait in 2 5 10; do
+        for h2g in 0.02 0.03 0.04 0.05; do
+            output_sh=&quot;trait_${trait}_h2g_${h2g}.sh&quot;
+            cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot;  | sed &quot;s|H2G|${h2g}|g&quot;  &gt; ${output_sh}
+            sbatch ${output_sh}
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3>Example output<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>cat /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.05/real_simulation_5opera/pi_estimation.pi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Posteriors	Pi1(0:0:0:0)	Pi2(0:0:0:1)	Pi3(0:0:1:0)	Pi4(0:0:1:1)	Pi5(0:1:0:0)	Pi6(0:1:0:1)	Pi7(0:1:1:0)	Pi8(0:1:1:1)	Pi9(1:0:0:0)	Pi10(1:0:0:1)	Pi11(1:0:1:0)	Pi12(1:0:1:1)	Pi13(1:1:0:0)	Pi14(1:1:0:1)	Pi15(1:1:1:0)	Pi16(1:1:1:1)
+Mean	0.275201	0.00228085	0.00233336	0.00224573	0.00231277	0.00220141	0.00223646	0.00227284	0.00246007	0.00209981	0.00291004	0.00263845	0.00362954	0.00242097	0.00327664	0.68948
+SD	0.0643589	0.00712061	0.00685669	0.00697502	0.00686388	0.00684095	0.00673787	0.00699348	0.00695986	0.00649404	0.00799288	0.00752632	0.00940491	0.00681977	0.00880387	0.0667714
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="stage-2-opera">
+<h2>Stage 2 OPERA<a class="headerlink" href="#stage-2-opera" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=80000
+#SBATCH -J opera2
+#SBATCH -o opera2.%j.out
+#SBATCH -e opera2.%j.err
+
+source /home/hs3393/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_TRAITopera/opera_input_mix/h2g_H2G/real_simulation_TRAITopera
+
+/home/hs3393/opera_Linux/opera_Linux --besd-flist qtl_list --gwas-summary ./trait_1.ma \
+    --bfile ./remain_snp_LD \
+    --prior-pi-file ./pi_estimation.pi \
+    --prior-var-file ./pi_estimation.var \
+    --out ./opera_res --outcome-wind 1500
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>base_sh=&quot;base_sh&quot;
+for trait in 2 5 10; do
+        for h2g in 0.02 0.03 0.04 0.05; do
+            output_sh=&quot;trait_${trait}_h2g_${h2g}.sh&quot;
+            cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot;  | sed &quot;s|H2G|${h2g}|g&quot;  &gt; ${output_sh}
+            sbatch ${output_sh}
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h3>Example output<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>head /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input_mix/h2g_0.05/real_simulation_5opera/opera_res_4_expos_assoc.ppa
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chr	Expo1_ID	Expo1_bp	Expo2_ID	Expo2_bp	Expo3_ID	Expo3_bp	Expo4_ID	Expo4_bp	PPA(1,2,3,4)	p_HEIDI(1,2,3,4)
+10	Region_241_2	37025329	Region_241_3	37025329	Region_241_4	37025329	Region_241_5	37025329	0.999967	5.250539e-01
+11	Region_107_2	11927391	Region_107_3	11927391	Region_107_4	11927391	Region_107_5	11927391	0.999991	8.772566e-01
+11	Region_108_2	18057498	Region_108_3	18057498	Region_108_4	18057498	Region_108_5	18057498	1	6.443910e-01
+13	Region_43_2	54814185	Region_43_3	54814185	Region_43_4	54814185	Region_43_5	54814185	0.999916	5.845443e-01
+13	Region_449_2	30572631	Region_449_3	30572631	Region_449_4	30572631	Region_449_5	30572631	0.999933	3.243127e-01
+18	Region_41_2	61335205	Region_41_3	61335205	Region_41_4	61335205	Region_41_5	61335205	0.999989	8.673183e-01
+1	Region_124_2	84179558	Region_124_3	84179558	Region_124_4	84179558	Region_124_5	84179558	0.999975	4.870884e-01
+2	Region_73_2	59140327	Region_73_3	59140327	Region_73_4	59140327	Region_73_5	59140327	0.999987	9.353629e-01
+3	Region_246_2	108165863	Region_246_3	108165863	Region_246_4	108165863	Region_246_5	108165863	0.999999	3.673531e-01
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="previous-version-not-mix-causal-variant-by-configuration">
+<h1>Previous version: not mix causal variant by configuration<a class="headerlink" href="#previous-version-not-mix-causal-variant-by-configuration" title="Link to this heading">#</a></h1>
+<p>For each causal variant number get a separate result.</p>
+<section id="convert-individual-level-simulation-results-to-sumstat">
+<h2>Convert individual level simulation results to sumstat<a class="headerlink" href="#convert-individual-level-simulation-results-to-sumstat" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    calculate_sumstat = function(X, Y){
+        Beta = c()
+        se = c()
+        Freq = c()
+        p = c()
+        for(mm in 1:ncol(X)){
+            rr &lt;- susieR::univariate_regression(X[,mm], Y)
+            Beta[mm] = rr$betahat
+            se[mm] &lt;- rr$sebetahat
+            Freq[mm] = sum(X[,mm])/(2*nrow(X))
+            p[mm] = 2 * (1 - pnorm(abs(rr$betahat / rr$sebetahat)))
+        }
+            tb = tibble(
+            SNP = colnames(X),
+            Beta = Beta,
+            se = se,
+            Freq = Freq, p = p) %&gt;% 
+        separate(SNP, into = c(&quot;Chr&quot;, &quot;Bp&quot;, &quot;A2&quot;, &quot;A1&quot;), sep = &quot;[:_]&quot;, remove = FALSE) %&gt;%
+        select(Chr, SNP, Bp, A1, A2, Freq, Beta, se, p) %&gt;%
+        mutate(Chr = str_replace(Chr, &quot;chr&quot;, &quot;&quot;)) %&gt;%
+        mutate(Chr = as.numeric(Chr), Bp = as.numeric(Bp))
+        return(tb)
+    }
+cnt = 1
+ntrait = TRAIT
+ncausal = CAUSAL
+h2g = H2G
+
+path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/causal_&quot;, ncausal, &quot;_h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera&quot;)
+files = list.files(path, full.names = T, pattern = &quot;.rds&quot;)
+data &lt;- rep(list(NULL), length(files))
+
+for(file in files){
+    rds = readRDS(file)
+    X = rds$X
+    Y = rds$Y
+    trait = list()
+    trait[[1]] = calculate_sumstat(X, Y[,1, drop = T]) %&gt;% rename(freq = Freq, b = Beta) %&gt;% mutate(N = 1160) %&gt;% select(SNP, A1, A2, freq, b, se, p, N)
+    for(i in 2:ncol(Y)){
+      trait[[i]] = calculate_sumstat(X, Y[,i, drop = T])
+    }
+    index =  str_extract(file, &quot;(?&lt;=sample_)\\d+&quot;)
+    data = list()
+    data[[&quot;trait&quot;]] = trait
+    data$index = index
+    data$gwas_var_num = length(rds$variant[[1]])
+    dir.create(paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/sumstat/causal_&quot;, ncausal, &quot;_h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera&quot;), showWarnings = F, recursive = T)
+    saveRDS(data, paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/sumstat/causal_&quot;, ncausal, &quot;_h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/index_&quot;, index, &quot;_ncausal_&quot;, ncausal,&quot;.rds&quot;))
+    cnt = cnt + 1
+    
+}
+</pre></div>
+</div>
+</div>
+</div>
+<section id="submission-script">
+<h3>Submission script<a class="headerlink" href="#submission-script" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>base_sh=&quot;base_script&quot;
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; ${base_sh}
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 78:00:00
+#SBATCH --mem=30000
+#SBATCH -J extract
+#SBATCH -o /home/hs3393/cloud_colocalization/submission_script/sumstat_generate/log/extract.%j.out
+#SBATCH -e /home/hs3393/cloud_colocalization/submission_script/sumstat_generate/log/extract.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+Rscript /home/hs3393/cb_simulation/simulation_data/simulation_opera/opera_code/sumstat_generate/trait_TRAIT_causal_CAUSAL_h2g_H2G.R
+EOF
+
+base_R=&quot;base_R&quot;
+
+for trait in 2 5 10; do
+    for causal in 1 2 3 4 5; do
+        for h2g in 0.02 0.03 0.04 0.05; do
+        output_R=&quot;trait_${trait}_causal_${causal}_h2g_${h2g}.R&quot;
+        output_sh=&quot;trait_${trait}_causal_${causal}_h2g_${h2g}.sh&quot;
+        cat ${base_R}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot; | sed &quot;s|H2G|${h2g}|g&quot;   &gt; ${output_R}
+        cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot;  | sed &quot;s|H2G|${h2g}|g&quot;  &gt; ${output_sh}
+        sbatch ${output_sh}
+        done
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(tidyverse)
+cnt = 1
+ntrait = TRAIT
+ncausal = CAUSAL
+h2g = H2G
+
+cwd = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/sumstat/causal_&quot;, 
+             ncausal, &quot;_h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/&quot;)
+
+
+dir.create(paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/opera_input/causal_&quot;, 
+             ncausal, &quot;_h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera&quot;), showWarnings = F, recursive = T)
+output_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/opera_input/causal_&quot;, 
+             ncausal, &quot;_h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/&quot;)
+
+gwas = list()
+path = vector(&quot;list&quot;, ntrait)
+chr = c()
+distance = c()
+probe_id = c()
+
+
+cnt = 1
+for(file in list.files(cwd, pattern = paste0(ncausal, &quot;.rds&quot;))){
+    file_path = paste0(cwd, file)
+    rds = readRDS(file_path)
+    tad_index = as.numeric(sub(&quot;.*index_([0-9]+).*&quot;, &quot;\\1&quot;, file_path))
+    gwas[[cnt]] = rds$trait[[1]]
+    distance[cnt] = floor((max(as.numeric(rds$trait[[2]]$Bp)) + min(as.numeric(rds$trait[[2]]$Bp))) / 2)
+    chr[cnt] = unique(rds$trait[[2]]$Chr)
+    probe_id[cnt] = paste0(&quot;Region_&quot;, tad_index)
+    for(i in 2:ntrait){
+        path[[i-1]][cnt] = paste0(output_path, &quot;/region_&quot;, tad_index, &quot;_trait_&quot;, i, &quot;.esd&quot;)
+        rds$trait[[i]] %&gt;% write_tsv(path[[i-1]][cnt])
+    }
+    cnt = cnt + 1
+}
+
+for(i in 2:ntrait){
+    tibble(Chr = chr, 
+           ProbeID = paste0(probe_id, &quot;_&quot;, i), 
+           GeneticDistance = 0,
+           ProbeBp = distance, 
+           Gene = paste0(probe_id, &quot;_&quot;, i),  
+           Orientation = NA,
+           PathOfEsd = path[[i -1]]) %&gt;%  
+        write_tsv(paste0(output_path,
+                         &quot;/trait_&quot;, i, &quot;.flist&quot;))
+}
+
+bind_rows(gwas) %&gt;% 
+    write_tsv(paste0(output_path, 
+                     &quot;/trait_1.ma&quot;))
+
+bind_rows(gwas) %&gt;% 
+    select(SNP) %&gt;% 
+    write_tsv(paste0(output_path,
+                     &quot;/remain_snp.tsv&quot;), col_names = FALSE)
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>Submission script<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>base_sh=&quot;base_script&quot;
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; ${base_sh}
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 78:00:00
+#SBATCH --mem=50000
+#SBATCH -J extract
+#SBATCH -o /home/hs3393/cloud_colocalization/submission_script/opera_sumstat_extract/log/config.%j.out
+#SBATCH -e /home/hs3393/cloud_colocalization/submission_script/opera_sumstat_extract/log/config.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+Rscript /home/hs3393/cb_simulation/simulation_data/simulation_opera/opera_code/opera_sumstat_extract/trait_TRAIT_causal_CAUSAL_h2g_H2G.R
+EOF
+
+base_R=&quot;base_R&quot;
+
+for trait in 2 5 10; do
+    for causal in 1 2 3 4 5; do
+        for h2g in 0.02 0.03 0.04 0.05; do
+        output_R=&quot;trait_${trait}_causal_${causal}_h2g_${h2g}.R&quot;
+        output_sh=&quot;trait_${trait}_causal_${causal}_h2g_${h2g}.sh&quot;
+        cat ${base_R}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot; | sed &quot;s|H2G|${h2g}|g&quot;   &gt; ${output_R}
+        cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot;  | sed &quot;s|H2G|${h2g}|g&quot;  &gt; ${output_sh}
+        sbatch ${output_sh}
+        done
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2>Use SMR to convert .esd files to .bsed files as OPERA input<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>job_name=&quot;besd&quot;
+WD=&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/opera_code/make_besd&quot;
+
+
+mkdir -p ${WD}/code
+mkdir -p ${WD}/log
+
+traits=(&quot;2&quot; &quot;5&quot; &quot;10&quot;)
+causals=(&quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot;)
+h2gs=(&quot;0.02&quot; &quot;0.03&quot; &quot;0.04&quot; &quot;0.05&quot;)
+
+cd ${WD}/code
+
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J JOBNAME
+#SBATCH -o PWD/log/JOBNAME.&quot;%j&quot;.out
+#SBATCH -e PWD/log/JOBNAME.&quot;%j&quot;.err
+
+
+source ~/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_TRAITopera/opera_input/causal_CAUSAL_h2g_H2G/real_simulation_TRAITopera
+
+for trait_num in {2..10}; do
+    ~/smr_heidi/SMR/smr-1.3.1-linux-x86_64/smr-1.3.1 \
+    --eqtl-flist ./trait_${trait_num}.flist \
+    --make-besd \
+    --cis-wind 3000 \ # enlarged since our cis region is larger than 2M bases
+    --make-besd-dense \ # keep all SNP info
+    --out ./trait_${trait_num}
+done
+
+EOF
+            
+base_script=&quot;base_script&quot;
+for trait in &quot;${traits[@]}&quot;; do
+    for causal in &quot;${causals[@]}&quot;; do
+      for h2g in &quot;${h2gs[@]}&quot;; do  
+            output_script=&quot;script_n_causal_${causal}_trait_${trait}_h2g_${h2g}.sh&quot;
+            cat ${base_script} | sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot; | sed &quot;s|H2G|${h2g}|g&quot; | sed &quot;s|PWD|${WD}|g&quot; | sed &quot;s|JOBNAME|${job_name}|g&quot;  &gt; ${output_script}
+            sb ${output_script}
+            # cat script_variant_${variant}.sh
+        done
+    done
+done
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>Exposure (QTL) meta file summary<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># Create a two-line table with strings
+library(tidyverse)
+for(TRAIT in c(2,5,10)){
+    for(CAUSAL in c(1,2,3,4,5)){
+        for(H2G in c(0.02, 0.03, 0.04, 0.05)){
+        path = c()
+        ntrait = TRAIT
+        ncausal = CAUSAL
+        h2g = H2G
+        cnt = 1
+        output_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/opera_input/causal_&quot;, 
+         ncausal, &quot;_h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/&quot;)
+        for(i in c(2:ntrait)){
+            path[cnt] = paste0(output_path, &quot;trait_&quot;, i)
+            cnt = cnt + 1
+        }
+        data &lt;- data.frame(Path = path)
+
+        # Print the data
+        print(data)
+
+        # Save the data to a CSV file
+        write_csv(data, paste0(output_path, &quot;/qtl_list&quot;), col_names = FALSE)
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h2>Subset the genome-wide SNP PLINK binary file<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p>Only include the variants in our selected non-overlapping regions for stage 1 prior estimation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=60000
+#SBATCH -J LDextract
+#SBATCH -o LDextract.%j.out
+#SBATCH -e LDextract.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+cd /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_TRAITopera/opera_input/causal_CAUSAL_h2g_H2G/real_simulation_TRAITopera
+
+plink2 --bfile /mnt/vast/hpc/csg/molecular_phenotype_calling/genotype_arch/ROSMAP_NIA_WGS.leftnorm.filtered --extract remain_snp.tsv --make-bed --out remain_snp_LD
+
+base_sh=&quot;base_sh&quot;
+for trait in 2 5 10; do
+    for causal in 1 2 3 4 5; do
+        for h2g in 0.02 0.03 0.04 0.05; do
+            output_sh=&quot;trait_${trait}_causal_${causal}_h2g_${h2g}.sh&quot;
+            cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot;  | sed &quot;s|H2G|${h2g}|g&quot;  &gt; ${output_sh}
+            #sbatch ${output_sh}
+        done
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h2>Save genotype (LD) metadata in remain_snp_LD file<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># LD
+# Create a two-line table with strings
+library(tidyverse)
+for(ntrait in c(2,5,10)){
+    for(ncausal in c(1,2,3,4,5)){
+        for(h2g in c(0.02, 0.03, 0.04, 0.05)){
+
+            cnt = 1
+            output_path = paste0(&quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_&quot;, ntrait, &quot;opera/opera_input/causal_&quot;, 
+             ncausal, &quot;_h2g_&quot;, h2g, &quot;/real_simulation_&quot;, ntrait, &quot;opera/&quot;)
+            data &lt;- paste0(output_path, &quot;/remain_snp_LD&quot;)
+
+            # Print the data
+            print(data)
+
+            # Save the data to a CSV file
+            write_lines(data, paste0(output_path, &quot;/genotype_data&quot;))
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_1_h2g_0.02/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_1_h2g_0.03/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_1_h2g_0.04/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_1_h2g_0.05/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_2_h2g_0.02/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_2_h2g_0.03/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_2_h2g_0.04/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_2_h2g_0.05/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_3_h2g_0.02/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_3_h2g_0.03/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_3_h2g_0.04/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_3_h2g_0.05/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_4_h2g_0.02/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_4_h2g_0.03/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_4_h2g_0.04/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_4_h2g_0.05/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_5_h2g_0.02/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_5_h2g_0.03/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_5_h2g_0.04/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_2opera/opera_input/causal_5_h2g_0.05/real_simulation_2opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_1_h2g_0.02/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_1_h2g_0.03/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_1_h2g_0.04/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_1_h2g_0.05/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_2_h2g_0.02/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_2_h2g_0.03/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_2_h2g_0.04/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_2_h2g_0.05/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_3_h2g_0.02/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_3_h2g_0.03/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_3_h2g_0.04/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_3_h2g_0.05/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_4_h2g_0.02/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_4_h2g_0.03/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_4_h2g_0.04/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_4_h2g_0.05/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_5_h2g_0.02/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_5_h2g_0.03/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_5_h2g_0.04/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_5opera/opera_input/causal_5_h2g_0.05/real_simulation_5opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_1_h2g_0.02/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_1_h2g_0.03/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_1_h2g_0.04/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_1_h2g_0.05/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_2_h2g_0.02/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_2_h2g_0.03/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_2_h2g_0.04/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_2_h2g_0.05/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_3_h2g_0.02/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_3_h2g_0.03/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_3_h2g_0.04/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_3_h2g_0.05/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_4_h2g_0.02/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_4_h2g_0.03/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_4_h2g_0.04/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_4_h2g_0.05/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_5_h2g_0.02/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_5_h2g_0.03/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_5_h2g_0.04/real_simulation_10opera//remain_snp_LD&quot;
+[1] &quot;/home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_10opera/opera_input/causal_5_h2g_0.05/real_simulation_10opera//remain_snp_LD&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h2>Stage 1 OPERA (pi estimation)<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=60000
+#SBATCH -J opera1
+#SBATCH -o opera1.%j.out
+#SBATCH -e opera1.%j.err
+
+source /home/hs3393/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_TRAITopera/opera_input/causal_CAUSAL_h2g_H2G/real_simulation_TRAITopera
+/home/hs3393/opera_Linux/opera_Linux --besd-flist qtl_list --gwas-summary ./trait_1.ma \
+--mbfile ./genotype_data --pi-wind 150 \
+--estimate-pi --out pi_estimation
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id11">
+<h2>Stage 2 OPERA<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 36:00:00
+#SBATCH --mem=80000
+#SBATCH -J opera2
+#SBATCH -o opera2.%j.out
+#SBATCH -e opera2.%j.err
+
+source /home/hs3393/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cb_simulation/simulation_data/simulation_opera/real_simulation_TRAITopera/opera_input/causal_CAUSAL_h2g_H2G/real_simulation_TRAITopera
+
+/home/hs3393/opera_Linux/opera_Linux --besd-flist qtl_list --gwas-summary ./trait_1.ma \
+    --bfile ./remain_snp_LD \
+    --prior-pi-file ./pi_estimation.pi \
+    --prior-var-file ./pi_estimation.var \
+    --out ./opera_res --outcome-wind 1500
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>base_sh=&quot;base_sh&quot;
+for trait in 2 5 10; do
+    for causal in 1 2 3 4 5; do
+        for h2g in 0.02 0.03 0.04 0.05; do
+            output_sh=&quot;trait_${trait}_causal_${causal}_h2g_${h2g}.sh&quot;
+            cat ${base_sh}| sed &quot;s|TRAIT|${trait}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot;  | sed &quot;s|H2G|${h2g}|g&quot;  &gt; ${output_sh}
+            sbatch ${output_sh}
+        done
+    done
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sos"
+        },
+        kernelOptions: {
+            name: "sos",
+            path: "./Simulation_Codes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sos'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="9_Fineboost.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fineboost (single trait colocboost)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="11_OPERA_original_design.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">OPERA: simulation using original proportion configuration</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">OPERA running</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-non-overlapping-regions-from-1-287-regions-used-in-other-simulations">Choose non-overlapping regions from 1,287 regions used in other simulations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#based-on-causal-variant-distribution-mix-the-result-by-proportion">Based on causal variant distribution, mix the result by proportion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-individual-level-simulation-into-sumstat">Transform individual level simulation into sumstat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-output">Example output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-sumstat-into-esd-format-and-make-the-flist-summary-file">Transform sumstat into .esd format and make the .flist summary file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-smr-to-convert-esd-files-to-bsed-files-as-opera-input">Use SMR to convert .esd files to .bsed files as OPERA input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exposure-qtl-meta-file-summary">Exposure (QTL) meta file summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subset-the-genome-wide-snp-plink-binary-file">Subset the genome-wide SNP PLINK binary file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-genotype-ld-metadata-in-remain-snp-ld-file">Save genotype (LD) metadata in remain_snp_LD file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-1-opera-pi-estimation">Stage 1 OPERA (pi estimation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-2-opera">Stage 2 OPERA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Example output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-version-not-mix-causal-variant-by-configuration">Previous version: not mix causal variant by configuration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-individual-level-simulation-results-to-sumstat">Convert individual level simulation results to sumstat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-script">Submission script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Submission script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Use SMR to convert .esd files to .bsed files as OPERA input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exposure (QTL) meta file summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Subset the genome-wide SNP PLINK binary file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Save genotype (LD) metadata in remain_snp_LD file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Stage 1 OPERA (pi estimation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Stage 2 OPERA</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Xuewei Cao with input from Gao Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

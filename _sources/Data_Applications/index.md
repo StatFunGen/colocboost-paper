@@ -18,8 +18,8 @@ This subsection provides a vignette demonstrating how to use the `colocboost::co
 
 This subsection outlines protocols for xQTL analysis, including:
 
-### a. Comparison with fine-Mapping using SuSiE
-- Protocol of fine-mapping analysis using SuSie [protocol link](https://statfungen.github.io/xqtl-protocol/code/mnm_analysis/univariate_fine_mapping_twas_vignette.html).
+### a. Comparison with fine-mapping using SuSiE
+- Protocol of fine-mapping analysis using SuSiE [protocol link](https://statfungen.github.io/xqtl-protocol/code/mnm_analysis/univariate_fine_mapping_twas_vignette.html).
 - Example workflows for identifying causal variants.
 
 ### b. Enrichment Analysis

@@ -1,0 +1,929 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fineboost (single trait colocboost) &#8212; ColocBoost manuscript resources</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Codes/9_Fineboost';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OPERA running" href="10_OPERA_simulation.html" />
+    <link rel="prev" title="Null simulation" href="8_Null_Simulation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ColocBoost manuscript resources</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Main_Figures/index.html">Main Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_2/index.html">Figure 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2a.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2b.html">Figure 2b. Representative simulation examples.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2c.html">Figure 2c. Variant‐level precision‐recall curves.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2d.html">Figure 2d. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2e.html">Figure 2e. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_3/index.html">Figure 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3a.html">Figure 3a. Colocalization patterns across three different molecular trait modalities (expression, splicing, protein abundance).</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3b.html">Figure 3b. Distribution of the number of 95% CoSs corresponding to the different numbers of colocalized traits per locus.</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3c.html">Figure 3c. UpSet plot summarizing the colocalization patterns across 6 pseudo-bulk brain cell-type eQTL data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3d.html">Figure 3d. Cell-type specific colocalization versus fine-mapping eQTL.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3e.html">Figure 3e. Significantly enriched KEGG pathways.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3f.html">Figure 3f. Homogeneity in causal effect directions.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3g.html">Figure 3g. Empirical distribution of the number of 95% CoS versus the size of the CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3h.html">Figure 3h. Distribution of the number of CoSs per gene.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3i.html">Figure 3i. Shared cell-types in primary CoS and secondary CoS.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_4/index.html">Figure 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4a.html">Figure 4a. Variant set -level Excess-of-overlap (EOO) analysis.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4b.html">Figure 4b. Variant set -level Excess-of-overlap (EOO) analysis in bulk region.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4c.html">Figure 4c. Variant set -level Excess-of-overlap (EOO) analysis in cell types.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4d.html">Figure 4d. Microglia-specific eQTL colocalization in FCGR2A.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4e.html">Figure 4d. Multiple xQTL colocalization in SUOX.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_5/index.html">Figure 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_5/Figure_5abc.html">Figure 5abc. Disease heritability analyses of variant-level functional annotations derived from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_5/Figure_5d.html">Figure 5d. Standardized effect sizes of the MaxVCP-xQTL and an analogous score based on the HyPrColoc method.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_6/index.html">Figure 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6a.html">Figure 6a. UpSet plot comparison.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6b.html">Figure 6b. Scatter plot across variants in terms of the magnitude of quantile-matched z-scores.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6c.html">Figure 6c. Distribution of distances from the gene TSS for CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6d.html">Figure 6d. Precision-recall analysis compared with ENCODE-rE2G links.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6e.html">Figure 6e. UpSet plot for AD-xQTL colocalization.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6f.html">Figure 6f. Manhattan plot of variant level MaxVCP from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6g.html">Figure 6g. Microglia-specific eQTL colocalization in BLNK.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6h.html">Figure 6h. Colocalization across multiple xQTLs in CTSH.</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Codes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and colocboost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fineboost (single trait colocboost)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Simulation_Codes/9_Fineboost.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fineboost (single trait colocboost)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-running-code">Fineboost Running code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-summary-code">Fineboost summary code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-batch-file">Fineboost batch file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-summary-batch-file">Fineboost summary batch file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-running-code">SuSiE running code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-susie-batch-file">Run SuSiE batch file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-summary-batch-file">SuSiE summary batch file</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fineboost-single-trait-colocboost">
+<h1>Fineboost (single trait colocboost)<a class="headerlink" href="#fineboost-single-trait-colocboost" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>This notebook takes the input and run colocboost (single trait, Fineboost), the result can be summarized to get power and FDR.</p>
+</section>
+<section id="input">
+<h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
+<p>Individual level data X and Y or summary statistics z and LD from other notebooks. file names of these data should be put in the parameter: simufile.</p>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h2>
+<p>Fineboost / fine-mapping original result, along with some summarized elements.</p>
+<p>Example output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_result/fineboost/sample_41_h2g_0.05_ncausal_3_ntrait_fineboost.rds&quot;)
+
+result$var
+
+print(&quot;=====Prediction=====&quot;)
+# colocalization result - CoS
+result$true_cs_num
+
+# colocalization result - colocalizing trait
+result$total_cs_num
+
+print(&quot;=====Truth=====&quot;)
+#  true colocalizing CoS
+result$cover_var_num
+
+#  true colocalizing trait
+result$total_var_num
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>2654</li><li>8038</li><li>10675</li></ol>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;=====Prediction=====&quot;
+</pre></div>
+</div>
+<div class="output text_html">3</div><div class="output text_html">3</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;=====Truth=====&quot;
+</pre></div>
+</div>
+<div class="output text_html">3</div><div class="output text_html">3</div></div>
+</div>
+</section>
+<section id="fineboost-running-code">
+<h2>Fineboost Running code<a class="headerlink" href="#fineboost-running-code" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[fineboost_Jan]
+parameter: simufile = paths
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 15
+parameter: walltime = &quot;80h&quot;
+parameter: mem = &quot;60G&quot;
+parameter: numThreads = 3
+parameter: trait = 1
+parameter: container = &quot;&quot;
+input: simufile, group_by = 1
+output: f&#39;{cwd:a}/{_input[0]:bn}_ntrait_{step_name}.rds&#39;
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    for(file in list.files(&quot;/home/xc2270/COLOCBoost/code_COLOCBoost/colocboost_updating/&quot;, full.names = T)) {source(file)}
+    rds = readRDS(${_input:ar})
+
+    X = rds$X
+    Y = as.matrix(rds$Y[, 1, drop = FALSE])
+    variant = rds$variant[[1]]
+
+
+    start_time &lt;- Sys.time()
+    colocboost_result = colocboost(
+      X = X, 
+      Y = Y, output_level=2)
+    end_time &lt;- Sys.time()
+
+    # record true variant, analysed trait number and corresponding file name
+    colocboost_result$var = variant
+    colocboost_result$file = &quot;${_input[0]:a}&quot;
+    # show which snp appear in at least two traits as the coloc_variants
+    all_var = unlist(variant)
+    
+    cs_num = length(colocboost_result$ucos_details$ucos$ucos_index)
+  
+    cover_var_num = 0
+    true_cs_num = 0
+    if(length(colocboost_result$ucos_details$ucos$ucos_index) == 0){
+      cover_var_num = 0    
+      true_cs_num = 0
+      total_cs_num = 0
+    }else{
+    
+        # count how many var are covered
+    
+        # count how many var are covered
+        for(i in 1:length(all_var)){
+            cs_vars = unlist(colocboost_result$ucos_details$ucos$ucos_index)
+            if(all_var[i] %in% cs_vars){
+              cover_var_num = cover_var_num + 1 
+            }
+
+        }
+
+        # cover how many cs are true
+        for(i in 1:cs_num){
+            if( length( intersect( colocboost_result$ucos_details$ucos$ucos_index[[i]] , all_var )) &gt; 0 ){
+            true_cs_num = true_cs_num + 1 
+            }
+        }
+    }
+  
+    
+    colocboost_report = colocboost_result
+    colocboost_report$cover_var_num = cover_var_num 
+    colocboost_report$total_var_num = length(all_var)
+    colocboost_report$true_cs_num = true_cs_num 
+    colocboost_report$total_cs_num = cs_num
+    colocboost_report$time = end_time - start_time
+    saveRDS(colocboost_report, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fineboost-summary-code">
+<h2>Fineboost summary code<a class="headerlink" href="#fineboost-summary-code" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[fineboost_summary]
+parameter: folder = path
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 1
+parameter: walltime = &quot;50h&quot;
+parameter: mem = &quot;60G&quot;
+parameter: numThreads = 1
+parameter: container = &quot;&quot;
+input: folder , group_by = 1
+output: f&#39;{cwd:a}/{_input[0]:b}_summary.rds&#39;
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
+    library(&quot;tidyverse&quot;)
+    source(&quot;/home/hs3393/cloud_colocalization/simulation_code/fineboost_summary.r&quot;)
+    filenames &lt;- list.files(${folder:r}, pattern=&quot;*.rds$&quot;, full.names=TRUE, recursive = T)
+    read_and_extract_rds &lt;- function(file_path) {
+      rds_file &lt;- readRDS(file_path)  # Read the RDS file
+      if(length(rds_file$ucos_details$ucos$ucos_index) == 0){
+         rds_file$ucos_details$ucos$ucos_index = NULL
+      }
+      data = fineboost_summary(unlist(rds_file$var), 
+      rds_file$ucos_details$ucos$ucos_index)
+      table &lt;- tibble(match_variant_number = data$match_variant,
+              total_variant_number = data$total_variant_number,
+              true_trait_number = data$true_trait_number,
+              total_set_number = data$total_set_number,
+              file = rds_file$file,
+              out_file = file_path)
+      return(table)
+    }
+
+    combined_table &lt;- map_dfr(filenames, read_and_extract_rds)
+    saveRDS(combined_table, ${_output:r})
+
+  
+  
+</pre></div>
+</div>
+</div>
+</div>
+<section id="fineboost-batch-file">
+<h3>Fineboost batch file<a class="headerlink" href="#fineboost-batch-file" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_simulation/simulation_result/fineboost&quot;
+job=&quot;fineboost&quot;
+mkdir -p ${work_dir}
+
+mkdir -p ${work_dir}/code
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 68:00:00
+#SBATCH --mem=25000
+#SBATCH -J JOB
+#SBATCH -o PWD/JOB.%j.out
+#SBATCH -e PWD/JOB.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cloud_colocalization/simulation_data/simulation_signal/causal_CAUSAL
+sos run /home/hs3393/cb_simulation/simulation_code/Fineboost.ipynb fineboost \
+    --simufile $(find -type f -name &#39;*ncausal_CAUSAL*.rds&#39;) \
+    --mem 25G \
+    --cwd PWD/
+EOF
+
+
+for causal in 1 2 3 4 5; do
+    output_script=&quot;causal_${causal}.sh&quot;
+    cat base_script | sed &quot;s|PWD|${work_dir}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot;  | sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
+    sbatch ${output_script}
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fineboost-summary-batch-file">
+<h3>Fineboost summary batch file<a class="headerlink" href="#fineboost-summary-batch-file" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 48:00:00
+#SBATCH --mem=40000
+#SBATCH -J sum
+#SBATCH -o /home/hs3393/cloud_colocalization/simulation_result/fineboost/log/summary.%j.out
+#SBATCH -e /home/hs3393/cloud_colocalization/simulation_result/fineboost/log/summary.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb fineboost_summary \
+    --folder /home/hs3393/cb_tune/simulation_result/fineboost/ \
+    --cwd /home/hs3393/cb_tune/simulation_result/fineboost//summary
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="susie-running-code">
+<h2>SuSiE running code<a class="headerlink" href="#susie-running-code" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[susie]
+parameter: simufile = paths
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 10
+parameter: walltime = &quot;20h&quot;
+parameter: mem = &quot;50G&quot;
+parameter: numThreads = 3
+parameter: container = &quot;&quot;
+input: simufile, group_by = 1
+output: f&#39;{cwd:a}/{_input[0]:bn}_susie.rds&#39;
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;susieR&quot;)
+    # read 50 traits a s group, if we are going to analyse 3 traits-colocalization, we
+    # select the first 3 traits X-Y pari in this group
+    file_list = c(${_input:ar,})
+    rds_file = readRDS(file_list[1])
+
+    rds = readRDS(${_input:ar})
+
+
+    X = rds$X
+    Y = as.matrix(rds$Y[, 1, drop = FALSE])
+    variant = rds$variant[[1]]
+  
+  
+    susie_result = susie(X, Y)
+    # record true variant, analysed trait number and corresponding file name
+    susie_result$var = variant
+    susie_result$file = &quot;${_input[0]:a}&quot;
+    # show which snp appear in at least two traits as the coloc_variants
+    all_var = unlist(variant)
+    
+    cs_num = length(susie_result$sets$cs)
+  
+    cover_var_num = 0
+    true_cs_num = 0
+    if(length(susie_result$sets$cs) == 0){
+      cover_var_num = 0    
+      true_cs_num = 0
+      total_cs_num = 0
+    }else{
+    
+        # count how many var are covered
+        for(i in 1:length(all_var)){
+            cs_vars = unlist(susie_result$sets$cs)
+            if(all_var[i] %in% cs_vars){
+              cover_var_num = cover_var_num + 1 
+            }
+
+        }
+
+        # cover how many cs are true
+        for(i in 1:cs_num){
+            if( length( intersect( susie_result$sets$cs[[i]] , all_var )) &gt; 0 ){
+            true_cs_num = true_cs_num + 1 
+            }
+        }
+    }
+  
+    
+    susie_result$cover_var_num = cover_var_num 
+    susie_result$total_var_num = length(all_var)
+    susie_result$true_cs_num = true_cs_num 
+    susie_result$total_cs_num = cs_num
+    # show which snp appear in at least two traits as the coloc_variants
+    saveRDS(susie_result, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+<section id="run-susie-batch-file">
+<h3>Run SuSiE batch file<a class="headerlink" href="#run-susie-batch-file" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393//cloud_colocalization/simulation_result/susie&quot;
+job=&quot;susie&quot;
+mkdir -p ${work_dir}
+
+mkdir -p ${work_dir}/code
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 68:00:00
+#SBATCH --mem=25000
+#SBATCH -J JOB
+#SBATCH -o PWD/JOB.%j.out
+#SBATCH -e PWD/JOB.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+cd /home/hs3393/cloud_colocalization/simulation_data/simulation_signal/causal_CAUSAL
+sos run /home/hs3393//cloud_colocalization/simulation_code/Fineboost.ipynb susie \
+    --simufile $(find -type f -name &#39;*ncausal_CAUSAL*.rds&#39;) \
+    --mem 25G \
+    --cwd PWD/
+EOF
+
+
+for causal in 1 2 3 4 5; do
+    output_script=&quot;causal_${causal}.sh&quot;
+    cat base_script | sed &quot;s|PWD|${work_dir}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot;  | sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
+    sbatch ${output_script}
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="susie-summary-batch-file">
+<h3>SuSiE summary batch file<a class="headerlink" href="#susie-summary-batch-file" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 48:00:00
+#SBATCH --mem=40000
+#SBATCH -J susie
+#SBATCH -o /home/hs3393/cloud_colocalization/simulation_result/susie/log/summary.%j.out
+#SBATCH -e /home/hs3393/cloud_colocalization/simulation_result/susie/log/summary.%j.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb fineboost_summary \
+    --folder /home/hs3393/cb_simulation/simulation_result/fineboost \
+    --cwd /home/hs3393/cb_simulation/simulation_result/fineboost/summary
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sos"
+        },
+        kernelOptions: {
+            name: "sos",
+            path: "./Simulation_Codes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sos'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="8_Null_Simulation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Null simulation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="10_OPERA_simulation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">OPERA running</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-running-code">Fineboost Running code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-summary-code">Fineboost summary code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-batch-file">Fineboost batch file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-summary-batch-file">Fineboost summary batch file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-running-code">SuSiE running code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-susie-batch-file">Run SuSiE batch file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-summary-batch-file">SuSiE summary batch file</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Xuewei Cao with input from Gao Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

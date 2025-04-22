@@ -1,0 +1,1553 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Phenotype data simulation &#8212; ColocBoost manuscript resources</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Codes/1_Phenotype_simulation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Run Colocboost" href="2_Run_Colocboost.html" />
+    <link rel="prev" title="Simulation Codes" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ColocBoost manuscript resources</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Main_Figures/index.html">Main Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_2/index.html">Figure 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2a.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2b.html">Figure 2b. Representative simulation examples.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2c.html">Figure 2c. Variant‐level precision‐recall curves.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2d.html">Figure 2d. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2e.html">Figure 2e. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_3/index.html">Figure 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3a.html">Figure 3a. Colocalization patterns across three different molecular trait modalities (expression, splicing, protein abundance).</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3b.html">Figure 3b. Distribution of the number of 95% CoSs corresponding to the different numbers of colocalized traits per locus.</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3c.html">Figure 3c. UpSet plot summarizing the colocalization patterns across 6 pseudo-bulk brain cell-type eQTL data.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3d.html">Figure 3d. Cell-type specific colocalization versus fine-mapping eQTL.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3e.html">Figure 3e. Significantly enriched KEGG pathways.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3f.html">Figure 3f. Homogeneity in causal effect directions.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3g.html">Figure 3g. Empirical distribution of the number of 95% CoS versus the size of the CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3h.html">Figure 3h. Distribution of the number of CoSs per gene.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_3/Figure_3i.html">Figure 3i. Shared cell-types in primary CoS and secondary CoS.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_4/index.html">Figure 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4a.html">Figure 4a. Variant set -level Excess-of-overlap (EOO) analysis.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4b.html">Figure 4b. Variant set -level Excess-of-overlap (EOO) analysis in bulk region.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4c.html">Figure 4c. Variant set -level Excess-of-overlap (EOO) analysis in cell types.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4d.html">Figure 4d. Microglia-specific eQTL colocalization in FCGR2A.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_4/Figure_4e.html">Figure 4d. Multiple xQTL colocalization in SUOX.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_5/index.html">Figure 5</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_5/Figure_5abc.html">Figure 5abc. Disease heritability analyses of variant-level functional annotations derived from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_5/Figure_5d.html">Figure 5d. Standardized effect sizes of the MaxVCP-xQTL and an analogous score based on the HyPrColoc method.</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_6/index.html">Figure 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6a.html">Figure 6a. UpSet plot comparison.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6b.html">Figure 6b. Scatter plot across variants in terms of the magnitude of quantile-matched z-scores.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6c.html">Figure 6c. Distribution of distances from the gene TSS for CoS.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6d.html">Figure 6d. Precision-recall analysis compared with ENCODE-rE2G links.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6e.html">Figure 6e. UpSet plot for AD-xQTL colocalization.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6f.html">Figure 6f. Manhattan plot of variant level MaxVCP from ColocBoost.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6g.html">Figure 6g. Microglia-specific eQTL colocalization in BLNK.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_6/Figure_6h.html">Figure 6h. Colocalization across multiple xQTLs in CTSH.</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Codes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Phenotype data simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and colocboost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait colocboost)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Simulation_Codes/1_Phenotype_simulation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Phenotype data simulation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Phenotype data simulation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-strategy">Simulation Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-heritability-phi-total">Total heritability (<span class="math notranslate nohighlight">\(\phi_{total}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snp-level-heritability">SNP level heritability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-code">Simulation code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-randomly-select-regions">Step 1: Randomly select regions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-a-copy-these-selected-genotypes-to-another-folder">Step 2: Make a copy these selected genotypes to another folder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-simulation">Step 3: Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-2-trait">1. Figure 2A simulation (2 trait)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-5-trait">2. Figure 2A simulation (5 trait)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-10-trait">3. Figure 2A simulation (10 trait)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-20-trait">4. Figure 2A simulation (20 trait)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#job-submission-bash-file">5. Job submission bash file</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trait">2 trait</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5 trait</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10 trait</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20 trait</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-all-shared-senario">6. Supplementary: all shared senario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-job-submission">7. Supplementary job submission</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="phenotype-data-simulation">
+<h1>Phenotype data simulation<a class="headerlink" href="#phenotype-data-simulation" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>Here we use two strategies to simulate phenotype data (Y matrix) based on individual-level genotype data (X matrix).</p>
+</section>
+<section id="input">
+<h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">genofile</span></code>: plink file of real genotyope, <code class="docutils literal notranslate"><span class="pre">/mnt/vast/hpc/csg/FunGen_xQTL/ROSMAP/Genotype/plink_by_gene/extended_cis_before_winsorize_plink_files/*.bim</span></code></p>
+<p>The other parameters can be found in simxQTL repo. <code class="docutils literal notranslate"><span class="pre">https://github.com/StatFunGen/simxQTL</span></code>.</p>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h2>
+<p>An rds matrix, with genotype matrix X (dimension: m * n, m: number of sample, n: number of SNP ) and phenotype (trait) matrix (dimension: m * a, m : number of samples, a: number of simulated traits)</p>
+<p>Example output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cb_Mar/simulation_data/real_simulation_5trait/sample_999_real_simulation_3_ncausal_5_trait.rds&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>dim(result$X)
+
+dim(result$Y)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1153</li><li>10534</li></ol>
+</div><div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1153</li><li>5</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>str(result$variant)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>List of 5
+ $ : int [1:3] 196 5616 6566
+ $ : int [1:2] 5616 6566
+ $ : int [1:2] 196 6566
+ $ : int [1:2] 196 5616
+ $ : int [1:2] 196 6566
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this region, we simulated <strong>3</strong> causal variants (196, 5616, 6566). Each causal variant is distributed by distribution in <strong>5</strong> traits.</p>
+</section>
+<section id="simulation-strategy">
+<h2>Simulation Strategy<a class="headerlink" href="#simulation-strategy" title="Link to this heading">#</a></h2>
+<section id="total-heritability-phi-total">
+<h3>Total heritability (<span class="math notranslate nohighlight">\(\phi_{total}\)</span>)<a class="headerlink" href="#total-heritability-phi-total" title="Link to this heading">#</a></h3>
+<p>Effect size are all set to be 1. This value actually doesn’t matter so much because phi will eventually control the variance. Under this case, all SNPs share the same effect size, and they altogether contribute to explain <span class="math notranslate nohighlight">\(\phi_{total}\)</span> (eg.0.5) variance of the total variance. To get Y, we assume a multivariate gaussian distribution <span class="math notranslate nohighlight">\(\textbf{Y} \sim N(\textbf{X} \beta, \sigma^2)\)</span>, and <span class="math notranslate nohighlight">\(\sigma^2\)</span> can be estimated by the equation below.</p>
+<p><span class="math notranslate nohighlight">\(\phi_{total} = \dfrac{var(X \beta)}{\sigma^2 + var(X \beta)}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\sigma^2 = \frac{var(X \beta)(1-\phi_{total})}{\phi_{total}}\)</span></p>
+</section>
+<section id="snp-level-heritability">
+<h3>SNP level heritability<a class="headerlink" href="#snp-level-heritability" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Assume there are total number of <span class="math notranslate nohighlight">\(a\)</span> causal variants. We assign <span class="math notranslate nohighlight">\(\beta_1 = 1\)</span> as the initialize setting.</p></li>
+<li><p>For each causal variant we have:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\frac{Var(X_1 \beta_1)}{Var(Y)} = \frac{Var(X_2 \beta_2)}{Var(Y)} = ... = \frac{Var(X_a \beta_a)}{Var(Y)} = \phi_{SNP}\)</span></p>
+<ol class="arabic simple" start="3">
+<li><p>In that way, we have: if <span class="math notranslate nohighlight">\(\beta_1^2 Var(X_1) = \beta_2^2Var(X_2) = ... = \beta_a^2 Var(X_a)\)</span>. Then we have <span class="math notranslate nohighlight">\(\beta_2 = \sqrt{\frac{\beta_1^2 Var(X_1)}{Var(X_2)}}\)</span>, …, <span class="math notranslate nohighlight">\(\beta_a = \sqrt{\frac{\beta_1^2 Var(X_1)}{Var(X_a)}}\)</span>.</p></li>
+<li><p>Then we will have
+<span class="math notranslate nohighlight">\(\frac{Var(X_1 \beta_1)}{Var(Y)} = \frac{Var(X_1 \beta_1)}{Var(X \beta) + \sigma^2} = \phi_{SNP}\)</span>. Therefore, we have <span class="math notranslate nohighlight">\(\sigma^2 = \frac{Var(X_1 \beta_1)}{\phi_{SNP}} - Var(X \beta)\)</span></p></li>
+</ol>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="simulation-code">
+<h1>Simulation code<a class="headerlink" href="#simulation-code" title="Link to this heading">#</a></h1>
+<section id="step-1-randomly-select-regions">
+<h2>Step 1: Randomly select regions<a class="headerlink" href="#step-1-randomly-select-regions" title="Link to this heading">#</a></h2>
+<p>Select gene regions to simulate - randomly select one gene from each 1,329 different TADB blocks.</p>
+<p>Some genes might exist in more than one TADB block. Total unique gene number after random selection: 1287.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>library(tidyverse)
+
+mapper = read_tsv(&quot;/home/hs3393/fungen-xqtl-analysis/resource//gene_cis_TADB_mapper.tsv&quot;)
+
+
+df_selected &lt;- mapper %&gt;% filter(`#chr` != &quot;chrX&quot;)  %&gt;%
+  group_by(TADB_index) %&gt;%
+  slice_sample(n = 1) %&gt;%
+  ungroup()
+
+
+genes_selected = df_selected %&gt;% pull(gene_id) 
+
+genes_selected %&gt;% length()
+
+#genes_selected %&gt;% save_tsv(&quot;/home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/selected_gene_id.tsv&quot;)
+
+genes_selected = read_tsv(&quot;/home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/selected_gene_id.tsv&quot;, col_names = &quot;gene&quot;)$gene
+
+mapper %&gt;% filter(gene_id %in% genes_selected)  %&gt;% pull(TADB_index) %&gt;% unique() %&gt;% length()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">126063</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">11</span>
+<span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
+<span class=" -Color -Color-Bold">Delimiter:</span> &quot;\t&quot;
+<span class=" -Color -Color-Red">chr</span> (5): #chr, gene_id, gene_name, TADB_index, TADB_id
+<span class=" -Color -Color-Green">dbl</span> (6): gene_cis_start, gene_cis_end, TSS, end.x, TADB_start, TADB_end
+
+<span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
+<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
+</pre></div>
+</div>
+<div class="output text_html">1329</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">1329</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">1</span>
+<span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
+<span class=" -Color -Color-Bold">Delimiter:</span> &quot;\t&quot;
+<span class=" -Color -Color-Red">chr</span> (1): gene
+
+<span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
+<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
+</pre></div>
+</div>
+<div class="output text_html">1329</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>genes_selected %&gt;% unique() %&gt;% length()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">1287</div></div>
+</div>
+</section>
+<section id="step-2-make-a-copy-these-selected-genotypes-to-another-folder">
+<h2>Step 2: Make a copy these selected genotypes to another folder<a class="headerlink" href="#step-2-make-a-copy-these-selected-genotypes-to-another-folder" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>import os
+import shutil
+
+# Path to the file with gene names
+gene_file_path = &#39;/home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/selected_gene_id.tsv&#39;
+
+source_folder = &#39;/mnt/vast/hpc/csg/FunGen_xQTL/ROSMAP/Genotype/plink_by_gene/extended_cis_before_winsorize_plink_files&#39;
+
+destination_folder = &#39;/home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype&#39;
+
+with open(gene_file_path, &#39;r&#39;) as file:
+    gene_names = [line.strip() for line in file]
+
+if not os.path.exists(destination_folder):
+    os.makedirs(destination_folder)
+
+for filename in os.listdir(source_folder):
+    if any(gene_name in filename for gene_name in gene_names):
+        # Copy the file to the destination folder
+        shutil.copy(os.path.join(source_folder, filename), destination_folder)
+
+print(&#39;Files copied successfully.&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-simulation">
+<h2>Step 3: Simulation<a class="headerlink" href="#step-3-simulation" title="Link to this heading">#</a></h2>
+<section id="figure-2a-simulation-2-trait">
+<h3>1. Figure 2A simulation (2 trait)<a class="headerlink" href="#figure-2a-simulation-2-trait" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_2trait]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 30
+parameter: walltime = &quot;100h&quot;
+parameter: mem = &quot;30G&quot;
+parameter: numThreads = 1
+# specify the number of causal variants
+parameter: n_trait = 2
+parameter: n_causal = 1
+parameter: h2g = 0.05
+parameter: total_h2g = False
+parameter: share_pattern = &quot;all&quot;
+parameter: independent = False
+# specify the number of traits (phenotypes)
+parameter: container = &quot;&quot;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_real_simulation_{n_causal}_ncausal_{n_trait}_trait.rds&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    # read the plink file
+    simu_file = ${_input:r}
+    geno &lt;- read_plink(${_input:nr})
+    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
+    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
+
+    # Extract the TSS position for the given gene
+    TSS_pos &lt;- gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+
+    # Define the genomic region around the TSS (+/- 1.5Mb) and filter SNPs
+    keep_index &lt;- which(geno$bim$V4 &gt; (TSS_pos - 1500000) | geno$bim$V4 &lt; (TSS_pos + 1500000))
+    geno$bed &lt;- geno$bed[, keep_index]
+
+    # Set thresholds for filtering SNPs
+    imiss &lt;- 0.1  # Maximum missing rate allowed (10%)
+    maf &lt;- 0.05   # Minimum minor allele frequency (5%)
+
+    # Filter SNPs based on missing rate and MAF
+    Xmat &lt;- filter_X(geno$bed, imiss, maf)
+
+    # Define the number of causal variants and traits
+    ncausal &lt;- ${n_causal}
+    ntrait &lt;- ${n_trait}
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+
+    # Select causal variants randomly
+    # If we want to limit the LD between causal variants, un-annotate the code below to limit &lt; 0.3 LD between variants   
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+
+
+    # Initialize effect size matrix (B) with zeros
+    B &lt;- matrix(0, nrow = ncol(Xmat), ncol = ntrait)
+
+    # Simulate effect sizes for the first two traits
+    for (i in 1:2) {
+        causal_index &lt;- vars
+        beta &lt;- sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+        B[, i] &lt;- beta
+    }
+
+    # save causal variants per trait
+    variant &lt;- list()
+    for (i in 1:ncol(B)) {
+        variant[[i]] &lt;- which(B[, i] != 0)
+    }
+
+    # Simulate multi-trait phenotypes
+    phenotype &lt;- sim_multi_traits(
+        G = Xmat,
+        B = B,
+        h2g = ${h2g},
+        is_h2g_total = ${&quot;TRUE&quot; if total_h2g else &quot;FALSE&quot;}
+    )
+    phenotype &lt;- phenotype$P
+
+    data &lt;- list()
+    data[[&quot;X&quot;]] &lt;- Xmat
+    data[[&quot;Y&quot;]] &lt;- phenotype
+    data[[&quot;variant&quot;]] &lt;- variant
+
+    saveRDS(data, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-2a-simulation-5-trait">
+<h3>2. Figure 2A simulation (5 trait)<a class="headerlink" href="#figure-2a-simulation-5-trait" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_5trait]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 30
+parameter: walltime = &quot;100h&quot;
+parameter: mem = &quot;30G&quot;
+parameter: numThreads = 1
+# specify the number of causal variants
+parameter: n_trait = 5
+parameter: n_causal = 1
+parameter: h2g = 0.05
+parameter: total_h2g = False
+parameter: share_pattern = &quot;all&quot;
+parameter: independent = False
+# specify the number of traits (phenotypes)
+parameter: container = &quot;&quot;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_real_simulation_{n_causal}_ncausal_{n_trait}_trait.rds&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    # read the plink file
+    simu_file = ${_input:r}
+    geno &lt;- read_plink(${_input:nr})
+    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
+    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
+    # filter by distance with. TSS
+    TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+    keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
+    geno$bed &lt;- geno$bed[, keep_index]
+
+    # Filter out columns with missing rate &gt; 0.1
+    imiss &lt;- 0.1
+
+    # Filter out columns with MAF &lt; 0.05
+    maf &lt;- 0.05
+
+    # Apply filtering
+    Xmat &lt;- filter_X(geno$bed, imiss, maf)
+
+    # Only keep the first 4000 variants
+    ncausal &lt;- ${n_causal}
+    ntrait &lt;- ${n_trait}
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+    # Load predefined proportions for causal variant sampling
+    prop &lt;- readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_code/trait6_prop.rds&quot;)[, 1:4]
+    proportions &lt;- prop[ncausal, ]
+
+    # Sample variant names based on predefined proportions
+    sampled_name &lt;- as.numeric(sample(names(proportions), size = ncausal, prob = proportions, replace = TRUE))
+
+    # Initialize phenotype list and effect size matrix
+    phenotype &lt;- list()
+    B &lt;- matrix(0, nrow = ncol(Xmat), ncol = ntrait)
+
+    # Configuration matrix for trait-variant relationships
+    config &lt;- matrix(0, nrow = ntrait, ncol = ncausal)
+
+    # Assign causal variants to traits
+    for (i in 1:ncausal) {
+        coloc_trait &lt;- sample(1:ntrait, sampled_name[i])
+        config[coloc_trait, i] &lt;- 1
+    }
+
+    # Simulate effect sizes and phenotypes
+    for (i in 1:nrow(config)) {
+        beta &lt;- B[, i, drop = FALSE]
+        index &lt;- which(config[i, ] == 1)
+
+        if (length(index) &gt; 0) {
+            causal_index &lt;- vars[index]
+            beta &lt;- sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+            B[, i] &lt;- beta
+            pheno_single &lt;- sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] &lt;- pheno_single$P
+        } else {
+            pheno_single &lt;- sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] &lt;- pheno_single$P
+        }
+    }
+
+    # Identify causal variants for each trait
+    variant &lt;- list()
+    for (i in 1:ncol(B)) {
+        variant[[i]] &lt;- which(B[, i] != 0)
+    }
+
+    # Combine phenotype data
+    X &lt;- Xmat
+    Y &lt;- bind_cols(phenotype)
+    colnames(Y) &lt;- paste0(&quot;Trait&quot;, 1:ntrait)
+
+    # Store results in a list
+    data &lt;- list()
+    data[[&quot;X&quot;]] &lt;- Xmat
+    data[[&quot;Y&quot;]] &lt;- Y
+    data[[&quot;variant&quot;]] &lt;- variant
+
+    # Save results
+    saveRDS(data, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-2a-simulation-10-trait">
+<h3>3. Figure 2A simulation (10 trait)<a class="headerlink" href="#figure-2a-simulation-10-trait" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_10trait]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 30
+parameter: walltime = &quot;100h&quot;
+parameter: mem = &quot;30G&quot;
+parameter: numThreads = 1
+# specify the number of causal variants
+parameter: n_trait = 10
+parameter: n_causal = 1
+parameter: h2g = 0.05
+parameter: total_h2g = False
+parameter: independent = False
+parameter: share_pattern = &quot;all&quot;
+# specify the number of traits (phenotypes)
+parameter: container = &quot;&quot;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_real_simulation_{n_causal}_ncausal_{n_trait}_trait.rds&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    # read the plink file
+    simu_file = ${_input:r}
+    geno &lt;- read_plink(${_input:nr})
+    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
+    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
+    # filter by distance with. TSS
+    TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+    keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
+    geno$bed = geno$bed[,keep_index]
+    # filter out columns with missing rate &gt; 0.1
+    imiss = 0.1
+    # filter out columns with MAF &lt; 0.05
+    maf = 0.05
+    Xmat = filter_X(geno$bed, imiss, maf)
+    # only keep the first 4000 variants
+    ncausal = ${n_causal}
+    ntrait = ${n_trait}
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+  
+    prop = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_code/trait10_prop.rds&quot;)
+    proportions = prop[ncausal,]
+    sampled_name &lt;- as.numeric(sample(names(proportions), size =  ncausal, prob = proportions, replace = TRUE))
+    phenotype = list()
+    B = matrix(0, nrow =  ncol(Xmat), ncol = ntrait)
+    config = matrix(0, nrow =  ntrait, ncol = ncausal)
+    for(i in c(1:ncausal)){
+          coloc_trait = sample(c(1:ntrait), sampled_name[i])
+          config[coloc_trait, i] = 1
+    }
+    for(i in 1:nrow(config)){
+        beta = B[,i, drop = FALSE]
+        index = which(config[i,] == 1)
+        if(length(index) &gt; 0){
+            causal_index = vars[index]
+            beta = sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+            B[, i] = beta
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        }else{
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        
+        }
+    }
+    variant = list()
+    for(i in 1:ncol(B)){
+        variant[[i]] = which(B[,i] != 0)
+    }
+    X = Xmat
+    Y = bind_cols(phenotype)
+    colnames(Y) = paste0(&quot;Trait&quot;, c(1:ntrait))
+    data = list()
+    data[[&quot;X&quot;]] = Xmat
+    data[[&quot;Y&quot;]] = Y
+    data[[&quot;variant&quot;]] = variant
+    saveRDS(data, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-2a-simulation-20-trait">
+<h3>4. Figure 2A simulation (20 trait)<a class="headerlink" href="#figure-2a-simulation-20-trait" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_20trait]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 30
+parameter: walltime = &quot;100h&quot;
+parameter: mem = &quot;30G&quot;
+parameter: numThreads = 1
+# specify the number of causal variants
+parameter: n_trait = 20
+parameter: n_causal = 1
+parameter: h2g = 0.05
+parameter: total_h2g = False
+parameter: independent = False
+parameter: share_pattern = &quot;all&quot;
+# specify the number of traits (phenotypes)
+parameter: container = &quot;&quot;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_real_simulation_{n_causal}_ncausal_{n_trait}_trait.rds&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    # read the plink file
+    simu_file = ${_input:r}
+    geno &lt;- read_plink(${_input:nr})
+    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
+    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
+    # filter by distance with. TSS
+    TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+    keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
+    geno$bed = geno$bed[,keep_index]
+    # filter out columns with missing rate &gt; 0.1
+    imiss = 0.1
+    # filter out columns with MAF &lt; 0.05
+    maf = 0.05
+    Xmat = filter_X(geno$bed, imiss, maf)
+    # only keep the first 4000 variants
+    ncausal = ${n_causal}
+    ntrait = ${n_trait}
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+  
+    prop = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_code/trait17_prop.rds&quot;)
+    proportions = prop[ncausal,]
+    sampled_name &lt;- as.numeric(sample(names(proportions), size =  ncausal, prob = proportions, replace = TRUE))
+    phenotype = list()
+    B = matrix(0, nrow =  ncol(Xmat), ncol = ntrait)
+    config = matrix(0, nrow =  ntrait, ncol = ncausal)
+    for(i in c(1:ncausal)){
+          coloc_trait = sample(c(1:ntrait), sampled_name[i])
+          config[coloc_trait, i] = 1
+    }
+    for(i in 1:nrow(config)){
+        beta = B[,i, drop = FALSE]
+        index = which(config[i,] == 1)
+        if(length(index) &gt; 0){
+            causal_index = vars[index]
+            beta = sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+            B[, i] = beta
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        }else{
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = ${h2g}, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        
+        }
+    }
+    variant = list()
+    for(i in 1:ncol(B)){
+        variant[[i]] = which(B[,i] != 0)
+    }
+    X = Xmat
+    Y = bind_cols(phenotype)
+    colnames(Y) = paste0(&quot;Trait&quot;, c(1:ntrait))
+    data = list()
+    data[[&quot;X&quot;]] = Xmat
+    data[[&quot;Y&quot;]] = Y
+    data[[&quot;variant&quot;]] = variant
+    saveRDS(data, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="job-submission-bash-file">
+<h3>5. Job submission bash file<a class="headerlink" href="#job-submission-bash-file" title="Link to this heading">#</a></h3>
+<section id="trait">
+<h4>2 trait<a class="headerlink" href="#trait" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/&quot;
+job=&quot;real_simulation_2trait&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J JOB
+#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
+#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/1.Phenotype_simulation.ipynb JOB \
+    --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
+    --n_causal CAUSAL --mem 30G --h2g 0.05 --independent \
+    --cwd /home/hs3393/cb_Mar/simulation_data/
+
+EOF
+
+for ncausal in 1 2 3; do
+    base_sh=&quot;base_script&quot;
+    output_script=&quot;${job}_causal_${ncausal}.sh&quot;
+    cat ${base_sh}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;|  sed &quot;s|CAUSAL|${ncausal}|g&quot;  &gt; ${output_script}
+    sbatch ${output_script}
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h4>5 trait<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/&quot;
+job=&quot;real_simulation_5trait&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J JOB
+#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
+#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/1.Phenotype_simulation.ipynb JOB \
+        --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
+        --n_causal CAUSAL --mem 30G --h2g 0.05 --independent \
+        --cwd /home/hs3393/cb_Mar/simulation_data/
+EOF
+
+for ncausal in 1 2 3 4; do
+    base_sh=&quot;base_script&quot;
+    output_script=&quot;${job}_causal_${ncausal}.sh&quot;
+    cat ${base_sh}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;|  sed &quot;s|CAUSAL|${ncausal}|g&quot;  &gt; ${output_script}
+    sbatch ${output_script}
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h4>10 trait<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/&quot;
+job=&quot;real_simulation_10trait&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J JOB
+#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
+#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/1.Phenotype_simulation.ipynb JOB \
+        --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
+        --n_causal CAUSAL --mem 30G --h2g 0.05 --independent \
+        --cwd /home/hs3393/cb_Mar/simulation_data/
+EOF
+
+for ncausal in 1 2 3 4 5; do
+    base_sh=&quot;base_script&quot;
+    output_script=&quot;${job}_causal_${ncausal}.sh&quot;
+    cat ${base_sh}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;|  sed &quot;s|CAUSAL|${ncausal}|g&quot;  &gt; ${output_script}
+    sbatch ${output_script}
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h4>20 trait<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/&quot;
+job=&quot;real_simulation_20trait&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J JOB
+#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
+#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/1.Phenotype_simulation.ipynb JOB \
+        --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
+        --n_causal CAUSAL --mem 30G --h2g 0.05 --independent \
+        --cwd /home/hs3393/cb_Mar/simulation_data/
+EOF
+
+for ncausal in 1 2 3 4 5; do
+    base_sh=&quot;base_script&quot;
+    output_script=&quot;${job}_causal_${ncausal}.sh&quot;
+    cat ${base_sh}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;|  sed &quot;s|CAUSAL|${ncausal}|g&quot;  &gt; ${output_script}
+    sbatch ${output_script}
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="supplementary-all-shared-senario">
+<h3>6. Supplementary: all shared senario<a class="headerlink" href="#supplementary-all-shared-senario" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[all_share_simulation]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 30
+parameter: walltime = &quot;100h&quot;
+parameter: mem = &quot;40G&quot;
+parameter: numThreads = 1
+parameter: n_causal = 1
+# specify the number of causal variants
+parameter: n_trait = 50
+parameter: h2g = 0.05
+parameter: total_h2g = False
+parameter: independent = False
+parameter: share_pattern = &quot;all&quot;
+# specify the number of traits (phenotypes)
+parameter: container = &quot;&quot;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/sample_{_index}_h2g_{h2g}_ncausal_{n_causal}.rds&#39;
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    # read the plink file
+    simu_file = ${_input:r}
+    geno &lt;- read_plink(${_input:nr})
+    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
+    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
+
+    # Extract the TSS position for the given gene
+    TSS_pos &lt;- gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+
+    # Define the genomic region around the TSS (+/- 1.5Mb) and filter SNPs
+    keep_index &lt;- which(geno$bim$V4 &gt; (TSS_pos - 1500000) | geno$bim$V4 &lt; (TSS_pos + 1500000))
+    geno$bed &lt;- geno$bed[, keep_index]
+
+    # Set thresholds for filtering SNPs
+    imiss &lt;- 0.1  # Maximum missing rate allowed (10%)
+    maf &lt;- 0.05   # Minimum minor allele frequency (5%)
+
+    # Filter SNPs based on missing rate and MAF
+    Xmat &lt;- filter_X(geno$bed, imiss, maf)
+
+    # Define the number of causal variants and traits
+    ncausal &lt;- ${n_causal}
+    ntrait &lt;- ${n_trait}
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+
+    # Initialize effect size matrix (B) with zeros
+    B &lt;- matrix(0, nrow = ncol(Xmat), ncol = ntrait)
+
+    # Simulate effect sizes for the first two traits
+    for (i in 1:ntrait) {
+        causal_index &lt;- vars
+        beta &lt;- sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+        B[, i] &lt;- beta
+    }
+
+    # save causal variants per trait
+    variant &lt;- list()
+    for (i in 1:ncol(B)) {
+        variant[[i]] &lt;- which(B[, i] != 0)
+    }
+
+    # Simulate multi-trait phenotypes
+    phenotype &lt;- sim_multi_traits(
+        G = Xmat,
+        B = B,
+        h2g = ${h2g},
+        is_h2g_total = ${&quot;TRUE&quot; if total_h2g else &quot;FALSE&quot;}
+    )
+    phenotype &lt;- phenotype$P
+
+    data &lt;- list()
+    data[[&quot;X&quot;]] &lt;- Xmat
+    data[[&quot;Y&quot;]] &lt;- phenotype
+    data[[&quot;variant&quot;]] &lt;- variant
+
+    saveRDS(data, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="supplementary-job-submission">
+<h3>7. Supplementary job submission<a class="headerlink" href="#supplementary-job-submission" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/all_share_simulation/&quot;
+job=&quot;all_share_simulation&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J JOB
+#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
+#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/1.Phenotype_simulation.ipynb JOB \
+        --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
+        --n_causal CAUSAL --mem 30G --h2g 0.05 --independent --n_trait 20 \
+        --cwd /home/hs3393/cb_Mar/simulation_data/JOB/result
+EOF
+
+for ncausal in 1 2 3 4; do
+    base_sh=&quot;base_script&quot;
+    output_script=&quot;${job}_causal_${ncausal}.sh&quot;
+    cat ${base_sh}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;|  sed &quot;s|CAUSAL|${ncausal}|g&quot;  &gt; ${output_script}
+    sbatch ${output_script}
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sos"
+        },
+        kernelOptions: {
+            name: "sos",
+            path: "./Simulation_Codes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sos'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Simulation Codes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2_Run_Colocboost.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Run Colocboost</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Phenotype data simulation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-strategy">Simulation Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-heritability-phi-total">Total heritability (<span class="math notranslate nohighlight">\(\phi_{total}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snp-level-heritability">SNP level heritability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-code">Simulation code</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-randomly-select-regions">Step 1: Randomly select regions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-a-copy-these-selected-genotypes-to-another-folder">Step 2: Make a copy these selected genotypes to another folder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-simulation">Step 3: Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-2-trait">1. Figure 2A simulation (2 trait)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-5-trait">2. Figure 2A simulation (5 trait)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-10-trait">3. Figure 2A simulation (10 trait)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-20-trait">4. Figure 2A simulation (20 trait)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#job-submission-bash-file">5. Job submission bash file</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trait">2 trait</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5 trait</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10 trait</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20 trait</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-all-shared-senario">6. Supplementary: all shared senario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-job-submission">7. Supplementary job submission</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Xuewei Cao with input from Gao Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
