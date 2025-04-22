@@ -43,11 +43,25 @@ This section contains R functions for implementing competing multi-trait colocal
 
 - **moloc_set.r**: Provides parameter settings and configuration for the moloc method, including prior specifications and output formatting.
 
-- **moloc.r**: Implements core functionality for the moloc method, including posterior probability calculation for various causal configurations.
+- **moloc.r**: Contains the core implementation of MOLOC method, which is an extension of COLOC across multiple traits.
 
-- **susie_coloc.r**: Adapts the SuSiE (Sum of Single Effects) fine-mapping framework for colocalization analysis across multiple traits.
+- **susie_coloc.r**: Contains the core implementation of COLOC (V5) for pair-wise colocalization analysis comparison. COLOC (V5) adapts the SuSiE (Sum of Single Effects) fine-mapping framework for colocalization analysis to relax the single causal variant assumption.
 
 - **ld_utils.R**: Contains utility functions for handling linkage disequilibrium (LD) matrices, including LD estimation, pruning, and conditioning operations that are used by multiple colocalization methods.
 
+
+## 3. References
+
+[1] [simxQTL](https://github.com/StatFunGen/simxQTL): In house simulation R package to support investigations of various QTL association methods.
+
+[2] [colocboost](https://github.com/StatFunGen/colocboost): R package implements ColocBoost for multi-trait colocalization analysis. See details in our [tutorial website](https://statfungen.github.io/colocboost/).
+
+[3] [hyprcoloc](https://github.com/cnfoley/hyprcoloc): R package implements HyPrColoc, an efficient deterministic Bayesian divisive clustering algorithm using GWAS summary statistics, that can detect colocalization across vast numbers of traits simultaneously.
+
+[4] [moloc](https://github.com/clagiamba/moloc): R package implements MOLOC, an extension of COLOC, a Bayesian method for colocalization across multiple traits.
+
+[5] [coloc](https://github.com/chr1swallace/coloc/): R package implements COLOC that can be used to perform genetic colocalisation analysis of two potentially related phenotypes, to ask whether they share common genetic causal variant(s) in a given region. COLOC (V5) introduces use of the SuSiE approach to deal with multiple causal variants rather than conditioning or masking.
+
+[6] [OPERA](https://github.com/wuyangf7/OPERA): software tool implements the OPERA (omics pleiotropic association) method, which allows for testing the combinatorial pleiotropic associations between multiple molecular phenotypes (e.g., expression level of a gene and DNA methylation level at CpG sites) with a complex trait of interest using summary-level data from GWAS and molecular QTL studies.
 
 

@@ -383,6 +383,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-design-overview">1. Simulation Design Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-dependence">2. Simulation Dependence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">3. References</a></li>
 </ul>
             </nav>
         </div>
@@ -422,10 +423,19 @@ document.write(`
 <li><p><strong>fineboost_summary.r</strong>: Contains the core implementation of summary fine-mapping results from FineBoost.</p></li>
 <li><p><strong>hypercoloc_set.r</strong>: Contains configuration settings and implementation for running HyPrColoc, including parameter optimization and result parsing functions.</p></li>
 <li><p><strong>moloc_set.r</strong>: Provides parameter settings and configuration for the moloc method, including prior specifications and output formatting.</p></li>
-<li><p><strong>moloc.r</strong>: Implements core functionality for the moloc method, including posterior probability calculation for various causal configurations.</p></li>
-<li><p><strong>susie_coloc.r</strong>: Adapts the SuSiE (Sum of Single Effects) fine-mapping framework for colocalization analysis across multiple traits.</p></li>
+<li><p><strong>moloc.r</strong>: Contains the core implementation of MOLOC method, which is an extension of COLOC across multiple traits.</p></li>
+<li><p><strong>susie_coloc.r</strong>: Contains the core implementation of COLOC (V5) for pair-wise colocalization analysis comparison. COLOC (V5) adapts the SuSiE (Sum of Single Effects) fine-mapping framework for colocalization analysis to relax the single causal variant assumption.</p></li>
 <li><p><strong>ld_utils.R</strong>: Contains utility functions for handling linkage disequilibrium (LD) matrices, including LD estimation, pruning, and conditioning operations that are used by multiple colocalization methods.</p></li>
 </ul>
+</section>
+<section id="references">
+<h2>3. References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<p>[1] <a class="reference external" href="https://github.com/StatFunGen/simxQTL">simxQTL</a>: In house simulation R package to support investigations of various QTL association methods.</p>
+<p>[2] <a class="reference external" href="https://github.com/StatFunGen/colocboost">colocboost</a>: R package implements ColocBoost for multi-trait colocalization analysis. See details in our <a class="reference external" href="https://statfungen.github.io/colocboost/">tutorial website</a>.</p>
+<p>[3] <a class="reference external" href="https://github.com/cnfoley/hyprcoloc">hyprcoloc</a>: R package implements HyPrColoc, an efficient deterministic Bayesian divisive clustering algorithm using GWAS summary statistics, that can detect colocalization across vast numbers of traits simultaneously.</p>
+<p>[4] <a class="reference external" href="https://github.com/clagiamba/moloc">moloc</a>: R package implements MOLOC, an extension of COLOC, a Bayesian method for colocalization across multiple traits.</p>
+<p>[5] <a class="reference external" href="https://github.com/chr1swallace/coloc/">coloc</a>: R package implements COLOC that can be used to perform genetic colocalisation analysis of two potentially related phenotypes, to ask whether they share common genetic causal variant(s) in a given region. COLOC (V5) introduces use of the SuSiE approach to deal with multiple causal variants rather than conditioning or masking.</p>
+<p>[6] <a class="reference external" href="https://github.com/wuyangf7/OPERA">OPERA</a>: software tool implements the OPERA (omics pleiotropic association) method, which allows for testing the combinatorial pleiotropic associations between multiple molecular phenotypes (e.g., expression level of a gene and DNA methylation level at CpG sites) with a complex trait of interest using summary-level data from GWAS and molecular QTL studies.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -497,6 +507,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-design-overview">1. Simulation Design Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-dependence">2. Simulation Dependence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">3. References</a></li>
 </ul>
   </nav></div>
 
