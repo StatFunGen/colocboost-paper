@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Simulation Codes &#8212; ColocBoost manuscript resources</title>
+    <title>Null simulation &#8212; ColocBoost manuscript resources</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Codes/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/8_Null_Simulation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Phenotype data simulation" href="1_Phenotype_simulation.html" />
-    <link rel="prev" title="Figure 6h. Colocalization across multiple xQTLs in CTSH." href="../Main_Figures/Figure_6/Figure_6h.html" />
+    <link rel="next" title="Fineboost (single trait colocboost)" href="9_Fineboost.html" />
+    <link rel="prev" title="Correlated phenotypes simulation" href="7_Simulation_correlated.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -216,7 +216,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Simulation Codes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
@@ -225,7 +225,7 @@
 <li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and colocboost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Null simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait colocboost)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
 
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="../_sources/Simulation_Codes/index.md" target="_blank"
+      <li><a href="../_sources/Simulation_Studies/8_Null_Simulation.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +297,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -358,7 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -369,11 +371,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Simulation Codes</h1>
+    <h1>Null simulation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotype-simulation-code">Phenotype simulation code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-submission">Bash submission</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -383,11 +394,113 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="simulation-codes">
-<h1>Simulation Codes<a class="headerlink" href="#simulation-codes" title="Link to this heading">#</a></h1>
-<p>Simulation designs and codes of the paper.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="null-simulation">
+<h1>Null simulation<a class="headerlink" href="#null-simulation" title="Link to this heading">#</a></h1>
+<p>Following the previous simulation design</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{Y}_1 = \mathbf{X} \boldsymbol{\beta}_1 + \boldsymbol{\varepsilon}\)</span></p>
+<p>We assigned <span class="math notranslate nohighlight">\(\boldsymbol{\beta}= \boldsymbol{0}\)</span>, and varied <span class="math notranslate nohighlight">\(Var(\varepsilon)\)</span> by 0.1, 0.5 and 1.</p>
+<p>For each region, we simulated 50 traits will all traits being null.</p>
+<section id="phenotype-simulation-code">
+<h2>Phenotype simulation code<a class="headerlink" href="#phenotype-simulation-code" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[simulation_null]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 30
+parameter: walltime = &quot;100h&quot;
+parameter: mem = &quot;30G&quot;
+parameter: numThreads = 1
+parameter: null_sigma = 0.1
+# for each variant, how many traits it randomly colocalize at
+parameter: n_trait = 50
+# specify the number of traits (phenotypes)
+parameter: container = &quot;&quot;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_trait_{n_trait}_null.rds&#39;
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;/home/hs3393/cb_simulation/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    # read the plink file
+    simu_file = ${_input:r}
+    geno &lt;- read_plink(${_input:nr})
+    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
+    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
+    # filter by distance with. TSS
+    TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+    keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
+    geno$bed = geno$bed[,keep_index]
+    # filter out columns with missing rate &gt; 0.1
+    imiss = 0.1
+    # filter out columns with MAF &lt; 0.05
+    maf = 0.05
+    Xmat = filter_X(geno$bed, imiss, maf)
+    B = matrix(0, nrow =  ncol(Xmat), ncol = 50)
+    pheno_single = sim_multi_traits(G = Xmat, B = B, h2g = 0.05, is_h2g_total = TRUE, null_sigma = ${null_sigma})
+    phenotype = pheno_single$P
+    X = Xmat
+    Y = phenotype
+    data = list()
+    data[[&quot;X&quot;]] = Xmat
+    data[[&quot;Y&quot;]] = Y
+    saveRDS(data, ${_output:r})
+</pre></div>
 </div>
+</div>
+</div>
+</section>
+<section id="bash-submission">
+<h2>Bash submission<a class="headerlink" href="#bash-submission" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/&quot;
+job=&quot;simulation_null&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
+
+# Create the base_script file and write the bash code into it
+cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 30:00:00
+#SBATCH --mem=30000
+#SBATCH -J JOB
+#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
+#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+module load Singularity
+
+
+sos run /home/hs3393/cb_Mar/simulation_code/9.Null_Simulation.ipynb JOB \
+    --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
+    --null_sigma NULL --mem 30G \
+    --cwd WORK_DIR/
+EOF
+
+base_script=&quot;base_script&quot;
+# squared = 0.1, 0.5 and 1
+for null in 0.31 0.71 1; do
+    output_script=&quot;null_${null}.sh&quot;
+    cat ${base_script}|sed &quot;s|NULL|${null}|g&quot; | sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
+    sbatch ${output_script}
+done
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -399,16 +512,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "sos"
         },
         kernelOptions: {
-            name: "python3",
-            path: "./Simulation_Codes"
+            name: "sos",
+            path: "./Simulation_Studies"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'sos'</script>
 
                 </article>
               
@@ -421,20 +534,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Main_Figures/Figure_6/Figure_6h.html"
+       href="7_Simulation_correlated.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Figure 6h. Colocalization across multiple xQTLs in CTSH.</p>
+        <p class="prev-next-title">Correlated phenotypes simulation</p>
       </div>
     </a>
     <a class="right-next"
-       href="1_Phenotype_simulation.html"
+       href="9_Fineboost.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Phenotype data simulation</p>
+        <p class="prev-next-title">Fineboost (single trait colocboost)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -444,6 +557,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotype-simulation-code">Phenotype simulation code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-submission">Bash submission</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

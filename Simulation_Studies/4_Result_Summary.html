@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Null simulation &#8212; ColocBoost manuscript resources</title>
+    <title>Colocalization result summary &#8212; ColocBoost manuscript resources</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Codes/8_Null_Simulation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/4_Result_Summary';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Fineboost (single trait colocboost)" href="9_Fineboost.html" />
-    <link rel="prev" title="Correlated phenotypes simulation" href="7_Simulation_correlated.html" />
+    <link rel="next" title="Secondary simulations" href="5_Simulation_secondary.html" />
+    <link rel="prev" title="Other colocalization methods" href="3_Other_Methods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -216,16 +216,16 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Codes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Colocalization result summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and colocboost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Null simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait colocboost)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
 
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="../_sources/Simulation_Codes/8_Null_Simulation.ipynb" target="_blank"
+      <li><a href="../_sources/Simulation_Studies/4_Result_Summary.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Null simulation</h1>
+    <h1>Colocalization result summary</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,8 +381,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotype-simulation-code">Phenotype simulation code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-submission">Bash submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-code">Summary code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-bash-commands">Summary Bash commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-summary">ColocBoost summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyprcoloc-summary">Hyprcoloc summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moloc-summary">MOLOC summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-coloc-summary">SuSiE coloc summary</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -394,112 +403,410 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="null-simulation">
-<h1>Null simulation<a class="headerlink" href="#null-simulation" title="Link to this heading">#</a></h1>
-<p>Following the previous simulation design</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{Y}_1 = \mathbf{X} \boldsymbol{\beta}_1 + \boldsymbol{\varepsilon}\)</span></p>
-<p>We assigned <span class="math notranslate nohighlight">\(\boldsymbol{\beta}= \boldsymbol{0}\)</span>, and varied <span class="math notranslate nohighlight">\(Var(\varepsilon)\)</span> by 0.1, 0.5 and 1.</p>
-<p>For each region, we simulated 50 traits will all traits being null.</p>
-<section id="phenotype-simulation-code">
-<h2>Phenotype simulation code<a class="headerlink" href="#phenotype-simulation-code" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="colocalization-result-summary">
+<h1>Colocalization result summary<a class="headerlink" href="#colocalization-result-summary" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>Summarize the result based on the key four outputs to calculate FDR and power.</p>
+<p><strong>Fit any coloclaization method</strong> generated by the notebooks in this repo. As long as they are summarized to have the elements: coloc_trait, coloc_set true_trait and true_variant.</p>
+</section>
+<section id="input">
+<h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
+<p>File(s) of colocalization result.</p>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h2>
+<p>A dataframe, each row is a summarization of one finemapping result.</p>
+<p>Example output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[simulation_null]
-parameter: genofile = paths
-# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_10trait/summary/result_summary.rds&quot;)
+head(result)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 6 × 12</caption>
+<thead>
+	<tr><th></th><th scope=col>total_causal_var_number</th><th scope=col>perfect_causal_var_number</th><th scope=col>partial_causal_var_number</th><th scope=col>true_trait_number</th><th scope=col>predict_trait_number</th><th scope=col>total_trait_number</th><th scope=col>true_set_number</th><th scope=col>total_set_number</th><th scope=col>single_set_number</th><th scope=col>max_causal</th><th scope=col>file</th><th scope=col>out_file</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>1</td><td>1</td><td>1</td><td> 5</td><td> 5</td><td> 5</td><td>1</td><td>1</td><td>0</td><td>1</td><td>/mnt/vast/hpc/csg/hs3393/cb_Mar/simulation_data/real_simulation_10trait/sample_0_real_simulation_1_ncausal_10_trait.rds</td><td>/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_10trait/result/sample_0_real_simulation_1_ncausal_10_trait_ntr_10_hypercoloc.rds</td></tr>
+	<tr><th scope=row>2</th><td>2</td><td>1</td><td>1</td><td> 5</td><td> 5</td><td> 8</td><td>1</td><td>1</td><td>0</td><td>2</td><td>/mnt/vast/hpc/csg/hs3393/cb_Mar/simulation_data/real_simulation_10trait/sample_0_real_simulation_2_ncausal_10_trait.rds</td><td>/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_10trait/result/sample_0_real_simulation_2_ncausal_10_trait_ntr_10_hypercoloc.rds</td></tr>
+	<tr><th scope=row>3</th><td>3</td><td>0</td><td>2</td><td> 4</td><td> 4</td><td> 8</td><td>2</td><td>2</td><td>0</td><td>3</td><td>/mnt/vast/hpc/csg/hs3393/cb_Mar/simulation_data/real_simulation_10trait/sample_0_real_simulation_3_ncausal_10_trait.rds</td><td>/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_10trait/result/sample_0_real_simulation_3_ncausal_10_trait_ntr_10_hypercoloc.rds</td></tr>
+	<tr><th scope=row>4</th><td>4</td><td>0</td><td>3</td><td>10</td><td>10</td><td>17</td><td>3</td><td>3</td><td>0</td><td>3</td><td>/mnt/vast/hpc/csg/hs3393/cb_Mar/simulation_data/real_simulation_10trait/sample_0_real_simulation_4_ncausal_10_trait.rds</td><td>/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_10trait/result/sample_0_real_simulation_4_ncausal_10_trait_ntr_10_hypercoloc.rds</td></tr>
+	<tr><th scope=row>5</th><td>1</td><td>1</td><td>1</td><td> 4</td><td> 4</td><td> 4</td><td>1</td><td>1</td><td>0</td><td>1</td><td>/mnt/vast/hpc/csg/hs3393/cb_Mar/simulation_data/real_simulation_10trait/sample_1_real_simulation_1_ncausal_10_trait.rds</td><td>/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_10trait/result/sample_1_real_simulation_1_ncausal_10_trait_ntr_10_hypercoloc.rds</td></tr>
+	<tr><th scope=row>6</th><td>2</td><td>1</td><td>2</td><td> 6</td><td> 6</td><td> 7</td><td>2</td><td>2</td><td>0</td><td>2</td><td>/mnt/vast/hpc/csg/hs3393/cb_Mar/simulation_data/real_simulation_10trait/sample_1_real_simulation_2_ncausal_10_trait.rds</td><td>/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_10trait/result/sample_1_real_simulation_2_ncausal_10_trait_ntr_10_hypercoloc.rds</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="summary-code">
+<h2>Summary code<a class="headerlink" href="#summary-code" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[coloc_summary]
+parameter: folder = path
 parameter: cwd = path(&quot;output&quot;)
-parameter: job_size = 30
-parameter: walltime = &quot;100h&quot;
+parameter: job_size = 1
+parameter: walltime = &quot;50h&quot;
 parameter: mem = &quot;30G&quot;
 parameter: numThreads = 1
-parameter: null_sigma = 0.1
-# for each variant, how many traits it randomly colocalize at
-parameter: n_trait = 50
-# specify the number of traits (phenotypes)
 parameter: container = &quot;&quot;
-input: genofile, group_by = 1
-output: f&#39;{cwd:a}/{step_name}/sample_{_index}_trait_{n_trait}_null.rds&#39;
+input: folder , group_by = 1
+output: f&#39;{cwd:a}/{_input[0]:b}_summary.rds&#39;
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    library(&quot;MASS&quot;)
-    library(&quot;plink2R&quot;)
-    library(&quot;dplyr&quot;)
-    library(&quot;readr&quot;)
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
     library(&quot;tidyverse&quot;)
-    # source some functions to read matrix and inpute the missing data
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/simulate_linreg.R&quot;)
-    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
-    # read the plink file
-    simu_file = ${_input:r}
-    geno &lt;- read_plink(${_input:nr})
-    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
-    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
-    # filter by distance with. TSS
-    TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
-    keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
-    geno$bed = geno$bed[,keep_index]
-    # filter out columns with missing rate &gt; 0.1
-    imiss = 0.1
-    # filter out columns with MAF &lt; 0.05
-    maf = 0.05
-    Xmat = filter_X(geno$bed, imiss, maf)
-    B = matrix(0, nrow =  ncol(Xmat), ncol = 50)
-    pheno_single = sim_multi_traits(G = Xmat, B = B, h2g = 0.05, is_h2g_total = TRUE, null_sigma = ${null_sigma})
-    phenotype = pheno_single$P
-    X = Xmat
-    Y = phenotype
-    data = list()
-    data[[&quot;X&quot;]] = Xmat
-    data[[&quot;Y&quot;]] = Y
-    saveRDS(data, ${_output:r})
+    source(&quot;/home/hs3393/cloud_colocalization/simulation_code/colocboost_summary.r&quot;)
+    filenames &lt;- list.files(${folder:r}, pattern=&quot;*.rds$&quot;, full.names=TRUE, recursive = T)
+    read_and_extract_rds &lt;- function(file_path) {
+      rds_file &lt;- readRDS(file_path)  # Read the RDS file
+      if(length(rds_file$coloc_set) == 0){
+          rds_file$coloc_set = NULL
+      }
+      data = colocboost_summary(rds_file$true_variant, 
+      rds_file$true_trait, rds_file$coloc_set, rds_file$coloc_trait)
+      table &lt;- tibble(total_causal_var_number = data$total_causal_var_number,
+              perfect_causal_var_number = data$perfect_causal_var_number,
+              partial_causal_var_number = data$partial_causal_var_number,
+              true_trait_number = data$true_trait_number,
+              predict_trait_number = data$predict_trait_number,
+              total_trait_number = data$total_trait_number,
+              true_set_number = data$true_set_number,
+              total_set_number = data$total_set_number,
+              single_set_number = length(rds_file$csets),
+              max_causal = max(rds_file$true_trait %&gt;% unlist() %&gt;% table()),
+              file = rds_file$file,
+              out_file = file_path)
+      return(table)
+    }
+
+    combined_table &lt;- map_dfr(filenames, read_and_extract_rds)
+    saveRDS(combined_table, ${_output:r})
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="bash-submission">
-<h2>Bash submission<a class="headerlink" href="#bash-submission" title="Link to this heading">#</a></h2>
+<section id="summary-bash-commands">
+<h2>Summary Bash commands<a class="headerlink" href="#summary-bash-commands" title="Link to this heading">#</a></h2>
+<section id="colocboost-summary">
+<h3>ColocBoost summary<a class="headerlink" href="#colocboost-summary" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/&quot;
-job=&quot;simulation_null&quot;
-mkdir -p ${work_dir}
-mkdir -p ${work_dir}/code
-mkdir -p ${work_dir}/log
-cd ${work_dir}/code
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>## 2 trait summary
 
-# Create the base_script file and write the bash code into it
-cat &lt;&lt; &#39;EOF&#39; &gt; base_script
+data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/real_simulation_2trait/&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
 #!/bin/bash -l
 # NOTE the -l flag!
 #
-#SBATCH -t 30:00:00
+#SBATCH -t 10:00:00
 #SBATCH --mem=30000
-#SBATCH -J JOB
-#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
-#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
+#SBATCH -J summary
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
 
 source ~/mamba_activate.sh
-module load Singularity
 
-
-sos run /home/hs3393/cb_Mar/simulation_code/9.Null_Simulation.ipynb JOB \
-    --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
-    --null_sigma NULL --mem 30G \
-    --cwd WORK_DIR/
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
 EOF
 
-base_script=&quot;base_script&quot;
-# squared = 0.1, 0.5 and 1
-for null in 0.31 0.71 1; do
-    output_script=&quot;null_${null}.sh&quot;
-    cat ${base_script}|sed &quot;s|NULL|${null}|g&quot; | sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
-    sbatch ${output_script}
-done
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+
+## 5 trait summary
+
+data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/real_simulation_5trait/&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J summary
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
+EOF
+
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+
+## 10 trait summary
+
+data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/real_simulation_10trait/&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J summary
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
+EOF
+
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+
+## 20 trait summary
+
+data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/real_simulation_20trait/&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J summary
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
+EOF
+
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="hyprcoloc-summary">
+<h3>Hyprcoloc summary<a class="headerlink" href="#hyprcoloc-summary" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_2trait/&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J summary
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
+EOF
+
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+
+
+data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_5trait/&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J summary
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
+EOF
+
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+
+data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_10trait/&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J summary
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
+EOF
+
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+
+data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_20trait/&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 10:00:00
+#SBATCH --mem=30000
+#SBATCH -J summary
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
+EOF
+
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="moloc-summary">
+<h3>MOLOC summary<a class="headerlink" href="#moloc-summary" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span># moloc 
+
+data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/moloc/moloc_real_simulation_2trait/&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 8:00:00
+#SBATCH --mem=30000
+#SBATCH -J sum
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
+EOF
+
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="susie-coloc-summary">
+<h3>SuSiE coloc summary<a class="headerlink" href="#susie-coloc-summary" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/susie_coloc/susie_coloc_real_simulation_2trait&quot;
+mkdir -p ${data_dir}/summary
+cd ${data_dir}/summary
+
+cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
+#!/bin/bash -l
+# NOTE the -l flag!
+#
+#SBATCH -t 8:00:00
+#SBATCH --mem=30000
+#SBATCH -J sum
+#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
+#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
+
+source ~/mamba_activate.sh
+
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+    --folder DATA_DIR/result \
+    --cwd DATA_DIR/summary
+EOF
+
+
+base_script=&quot;summary_script&quot;
+output_script=&quot;summary.sh&quot;
+cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+sbatch ${output_script}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -516,7 +823,7 @@ done
         },
         kernelOptions: {
             name: "sos",
-            path: "./Simulation_Codes"
+            path: "./Simulation_Studies"
         },
         predefinedOutput: true
     }
@@ -534,20 +841,20 @@ done
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="7_Simulation_correlated.html"
+       href="3_Other_Methods.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Correlated phenotypes simulation</p>
+        <p class="prev-next-title">Other colocalization methods</p>
       </div>
     </a>
     <a class="right-next"
-       href="9_Fineboost.html"
+       href="5_Simulation_secondary.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Fineboost (single trait colocboost)</p>
+        <p class="prev-next-title">Secondary simulations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -567,8 +874,17 @@ done
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotype-simulation-code">Phenotype simulation code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-submission">Bash submission</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-code">Summary code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-bash-commands">Summary Bash commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-summary">ColocBoost summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyprcoloc-summary">Hyprcoloc summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moloc-summary">MOLOC summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-coloc-summary">SuSiE coloc summary</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

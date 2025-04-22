@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Other colocalization methods &#8212; ColocBoost manuscript resources</title>
+    <title>Correlated phenotypes simulation &#8212; ColocBoost manuscript resources</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Codes/3_Other_Methods';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/7_Simulation_correlated';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Colocalization result summary" href="4_Result_Summary.html" />
-    <link rel="prev" title="Run Colocboost" href="2_Run_Colocboost.html" />
+    <link rel="next" title="Null simulation" href="8_Null_Simulation.html" />
+    <link rel="prev" title="GWAS / weaker signal simulation and colocboost" href="6_Simulation_GWAS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -216,15 +216,15 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Codes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Other colocalization methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and colocboost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait colocboost)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="../_sources/Simulation_Codes/3_Other_Methods.ipynb" target="_blank"
+      <li><a href="../_sources/Simulation_Studies/7_Simulation_correlated.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Other colocalization methods</h1>
+    <h1>Correlated phenotypes simulation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,16 +382,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-hyprcoloc-without-ld">Run HyprColoc without LD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-hyprcoloc-with-ld-info">Run Hyprcoloc with LD info</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-moloc">Run MOLOC</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-coloc-v5-susie-coloc">Run COLOC V5 (SuSiE coloc)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-files">Bash files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyprcoloc">Hyprcoloc</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moloc">MOLOC</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coloc-v5-susie-coloc">COLOC V5 (SuSiE-COLOC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotype-simulation-code">Phenotype simulation code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-submission">Bash submission</a></li>
 </ul>
 </li>
 </ul>
@@ -405,516 +397,445 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="other-colocalization-methods">
-<h1>Other colocalization methods<a class="headerlink" href="#other-colocalization-methods" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="correlated-phenotypes-simulation">
+<h1>Correlated phenotypes simulation<a class="headerlink" href="#correlated-phenotypes-simulation" title="Link to this heading">#</a></h1>
 <section id="goal">
 <h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
-<p>This notebook takes the input and run Hyprcoloc, MOLOC or COLOC(V5) (SuSiE-Coloc) , the result can be summarized to get power and FDR.</p>
-<p>Because different methods have different output, we summarized four elements to calculate FDR and power - coloc_trait, coloc_set true_trait and true_variant.</p>
+<p>Here we used estimated correlation to simulate phenotype (traits) with residual correlation.</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{Y}_1 = \mathbf{X} \boldsymbol{\beta}_1 + \boldsymbol{\varepsilon} \quad \text{with} \ \boldsymbol{\varepsilon} \sim \mathcal{N}(\mathbf{0}, \sigma_y^2 \boldsymbol{\Sigma})\)</span></p>
+<p>Input and output format are the same as other phenotype simulation files. <span class="math notranslate nohighlight">\(\Sigma\)</span> is estimated from MASH using AD-xQTL traits.</p>
 </section>
-<section id="input">
-<h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
-<p>Individual level data X and Y or summary statistics z and LD from other notebooks. put in the parameter: simufile.</p>
-</section>
-<section id="output">
-<h2>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h2>
-<p>Hyprcoloc / MOLOC / COLOC (V5) original result, along with some summarized elements.</p>
-<p>Example output:</p>
+<section id="phenotype-simulation-code">
+<h2>Phenotype simulation code<a class="headerlink" href="#phenotype-simulation-code" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/hyp_real_simulation_10trait/result/sample_9_real_simulation_3_ncausal_10_trait_ntr_10_hypercoloc.rds&quot;)
-result$results
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A data.frame: 3 × 7</caption>
-<thead>
-	<tr><th></th><th scope=col>iteration</th><th scope=col>traits</th><th scope=col>posterior_prob</th><th scope=col>regional_prob</th><th scope=col>candidate_snp</th><th scope=col>posterior_explained_by_snp</th><th scope=col>dropped_trait</th></tr>
-	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>1</th><td>1</td><td>5, 9</td><td>0.8754</td><td>1</td><td>snp917 </td><td>0.3881</td><td>NA</td></tr>
-	<tr><th scope=row>2</th><td>2</td><td>3, 8</td><td>0.7915</td><td>1</td><td>snp2568</td><td>0.0418</td><td>NA</td></tr>
-	<tr><th scope=row>3</th><td>3</td><td>2, 6</td><td>0.9426</td><td>1</td><td>snp2904</td><td>0.1141</td><td>NA</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>print(&quot;=====Prediction=====&quot;)
-# colocalization result - CoS
-result$coloc_set
-
-# colocalization result - colocalizing trait
-result$coloc_trait
-
-print(&quot;=====Truth=====&quot;)
-#  true colocalizing CoS
-result$true_variant
-
-#  true colocalizing trait
-result$true_trait
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;=====Prediction=====&quot;
-</pre></div>
-</div>
-<div class="output text_html"><ol>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>917</li><li>911</li><li>931</li><li>934</li><li>916</li><li>913</li></ol>
-</li>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>2568</li><li>2479</li><li>2605</li><li>2627</li><li>2535</li><li>2483</li><li>2485</li><li>2487</li><li>2495</li><li>2496</li><li>2497</li><li>2498</li><li>2504</li><li>2507</li><li>2510</li><li>2512</li><li>2513</li><li>2514</li><li>2515</li><li>2518</li><li>2526</li><li>2528</li><li>2529</li><li>2530</li><li>2537</li><li>2544</li><li>2545</li><li>2547</li><li>2548</li><li>2550</li><li>2552</li><li>2554</li><li>2555</li><li>2558</li><li>2560</li><li>2562</li><li>2563</li><li>2582</li><li>2590</li><li>2591</li><li>2592</li><li>2600</li><li>2603</li><li>2604</li><li>2610</li><li>2617</li><li>2618</li><li>2620</li><li>2621</li><li>2625</li><li>2630</li><li>2631</li><li>2632</li><li>2634</li><li>2635</li><li>2636</li><li>2639</li><li>2642</li><li>2644</li><li>2646</li><li>2647</li><li>2648</li><li>2650</li><li>2652</li><li>2655</li><li>2656</li><li>2657</li><li>2658</li><li>2659</li><li>2665</li><li>2667</li><li>2668</li><li>2673</li><li>2594</li><li>2539</li><li>2614</li><li>2564</li><li>2615</li><li>2649</li><li>2531</li><li>2533</li><li>2493</li><li>2576</li></ol>
-</li>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>2904</li><li>2892</li><li>2900</li><li>2908</li><li>2910</li><li>2911</li><li>2920</li><li>2874</li><li>2887</li><li>2859</li><li>2888</li><li>2894</li></ol>
-</li>
-</ol>
-</div><div class="output text_html"><ol>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>5</li><li>9</li></ol>
-</li>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>3</li><li>8</li></ol>
-</li>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>2</li><li>6</li></ol>
-</li>
-</ol>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;=====Truth=====&quot;
-</pre></div>
-</div>
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>934</li><li>2485</li><li>2908</li></ol>
-</div><div class="output text_html"><ol>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>5</li><li>6</li><li>9</li></ol>
-</li>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>3</li><li>8</li></ol>
-</li>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>2</li><li>6</li></ol>
-</li>
-</ol>
-</div></div>
-</div>
-</section>
-<section id="run-hyprcoloc-without-ld">
-<h2>Run HyprColoc without LD<a class="headerlink" href="#run-hyprcoloc-without-ld" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[hyprcoloc_set]
-parameter: simufile = paths
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_2trait_corr]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 30
-parameter: walltime = &quot;50h&quot;
+parameter: walltime = &quot;100h&quot;
 parameter: mem = &quot;30G&quot;
 parameter: numThreads = 1
-parameter: trait = 10
+# specify the number of causal variants
+parameter: n_trait = 2
+parameter: n_causal = 1
+parameter: h2g = 0.05
+parameter: total_h2g = False
+parameter: share_pattern = &quot;all&quot;
+parameter: independent = False
+# specify the number of traits (phenotypes)
 parameter: container = &quot;&quot;
-parameter: setting=&quot;normal&quot;
-input: simufile, group_by = 1
-output: f&#39;{cwd:a}/{_input[0]:bn}_ntr_{trait}_hyprcoloc.rds&#39;
-task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_real_simulation_{n_causal}_ncausal_{n_trait}_trait.rds&#39;
 R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    library(hyprcoloc)
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/hypercoloc_set.r&quot;)
-    file = ${_input:ar,}
-    hypercoloc_result = run_hypercoloc(file, ${trait}, setting=&quot;${setting}&quot;)
-    saveRDS(hypercoloc_result, ${_output:r})
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    # read the plink file
+    simu_file = ${_input:r}
+    geno &lt;- read_plink(${_input:nr})
+    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
+    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
+    # filter by distance with. TSS
+    TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+    keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
+    geno$bed = geno$bed[,keep_index]
+    # filter out columns with missing rate &gt; 0.1
+    imiss = 0.1
+    # filter out columns with MAF &lt; 0.05
+    maf = 0.05
+    Xmat = filter_X(geno$bed, imiss, maf)
+    
+    ncausal = ${n_causal}
+    ntrait = ${n_trait}
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+    B = matrix(0, nrow =  ncol(Xmat), ncol = ntrait)
   
+    for(i in 1:2){
+        causal_index = vars
+        beta = sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+        B[, i] = beta
+    }
+  
+    variant = list()
+    for(i in 1:ncol(B)){
+      variant[[i]] = which(B[,i] != 0)
+    }
+    variance = readRDS(&quot;/mnt/vast/hpc/csg/xc2270/colocboost/ROSMAP_eQTL/vhat_ROSMAP_eQTL.rds&quot;)
+    two_trait_var = variance[c(&quot;AC_DeJager_eQTL&quot;, &quot;PCC_DeJager_eQTL&quot;), c(&quot;AC_DeJager_eQTL&quot;, &quot;PCC_DeJager_eQTL&quot;)]
+    five_trait_var &lt;- variance[c(1:5), c(1:5)]
+    phenotype = sim_multi_traits(G = Xmat, B = B, h2g = ${h2g}, is_h2g_total = ${&quot;TRUE&quot; if total_h2g else &quot;FALSE&quot;}, residual_corr = two_trait_var)
+    phenotype = phenotype$P
+    X = Xmat
+    Y = phenotype
+    data = list()
+    data[[&quot;X&quot;]] = Xmat
+    data[[&quot;Y&quot;]] = phenotype
+    data[[&quot;variant&quot;]] = variant
+    saveRDS(data, ${_output:r})
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="run-hyprcoloc-with-ld-info">
-<h2>Run Hyprcoloc with LD info<a class="headerlink" href="#run-hyprcoloc-with-ld-info" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[hyprcoloc_LD_set]
-parameter: simufile = paths
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_5trait_corr]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 30
-parameter: walltime = &quot;50h&quot;
+parameter: walltime = &quot;100h&quot;
 parameter: mem = &quot;30G&quot;
 parameter: numThreads = 1
-parameter: trait = 10
+# specify the number of causal variants
+parameter: n_trait = 5
+parameter: n_causal = 1
+parameter: h2g = 0.05
+parameter: total_h2g = False
+parameter: independent = False
+parameter: share_pattern = &quot;all&quot;
+# specify the number of traits (phenotypes)
 parameter: container = &quot;&quot;
-parameter: setting=&quot;normal&quot;
-input: simufile, group_by = 1
-output: f&#39;{cwd:a}/{_input[0]:bn}_ntr_{trait}_hypercoloc_LD.rds&#39;
-task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_real_simulation_{n_causal}_ncausal_{n_trait}_trait.rds&#39;
 R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    library(hyprcoloc)
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/hypercoloc_set_LD.r&quot;)
-    file = ${_input:ar,}
-    hypercoloc_result = run_hypercoloc(file, ${trait}, setting=&quot;${setting}&quot;)
-    saveRDS(hypercoloc_result, ${_output:r})
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    # read the plink file
+    simu_file = ${_input:r}
+    geno &lt;- read_plink(${_input:nr})
+    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
+    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
+    # filter by distance with. TSS
+    TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+    keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
+    geno$bed = geno$bed[,keep_index]
+    # filter out columns with missing rate &gt; 0.1
+    imiss = 0.1
+    # filter out columns with MAF &lt; 0.05
+    maf = 0.05
+    Xmat = filter_X(geno$bed, imiss, maf)
+    # only keep the first 4000 variants
+    ncausal = ${n_causal}
+    ntrait = ${n_trait}
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+  
+    prop = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_code/trait6_prop.rds&quot;)[,1:4]
+    proportions = prop[ncausal,]
+    sampled_name &lt;- as.numeric(sample(names(proportions), size =  ncausal, prob = proportions, replace = TRUE))
+    phenotype = list()
+    B = matrix(0, nrow =  ncol(Xmat), ncol = ntrait)
+    config = matrix(0, nrow =  ntrait, ncol = ncausal)
+    for(i in c(1:ncausal)){
+          coloc_trait = sample(c(1:ntrait), sampled_name[i])
+          config[coloc_trait, i] = 1
+    }
+    for(i in 1:nrow(config)){
+        beta = B[,i, drop = FALSE]
+        index = which(config[i,] == 1)
+        if(length(index) &gt; 0){
+            causal_index = vars[index]
+            beta = sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+            B[, i] = beta
+        }else{
+            B[, i] = beta
+        }
+    }
+  
+    variance = readRDS(&quot;/mnt/vast/hpc/csg/xc2270/colocboost/ROSMAP_eQTL/vhat_ROSMAP_eQTL.rds&quot;)
+    two_trait_var = variance[c(&quot;AC_DeJager_eQTL&quot;, &quot;PCC_DeJager_eQTL&quot;), c(&quot;AC_DeJager_eQTL&quot;, &quot;PCC_DeJager_eQTL&quot;)]
+    five_trait_var &lt;- variance[c(1:5), c(1:5)]
+    phenotype = sim_multi_traits(G = Xmat, B = B, h2g = ${h2g}, is_h2g_total = ${&quot;TRUE&quot; if total_h2g else &quot;FALSE&quot;}, residual_corr = five_trait_var)
+  
+    variant = list()
+    for(i in 1:ncol(B)){
+        variant[[i]] = which(B[,i] != 0)
+    }
+    X = Xmat
+    Y = phenotype$P
+    colnames(Y) = paste0(&quot;Trait&quot;, c(1:ntrait))
+    data = list()
+    data[[&quot;X&quot;]] = Xmat
+    data[[&quot;Y&quot;]] = Y
+    data[[&quot;variant&quot;]] = variant
+    saveRDS(data, ${_output:r})
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="run-moloc">
-<h2>Run MOLOC<a class="headerlink" href="#run-moloc" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[moloc_set]
-parameter: simufile = paths
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_10opera]
+parameter: genofile = paths
+# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 30
-parameter: walltime = &quot;50h&quot;
-parameter: mem = &quot;40G&quot;
+parameter: walltime = &quot;100h&quot;
+parameter: mem = &quot;30G&quot;
 parameter: numThreads = 1
-parameter: trait = 50
+# specify the number of causal variants
+parameter: n_trait = 10
+parameter: n_causal = 1
+parameter: h2g = 0.02
+parameter: total_h2g = False
+parameter: independent = False
+parameter: share_pattern = &quot;all&quot;
+# specify the number of traits (phenotypes)
 parameter: container = &quot;&quot;
-input: simufile, group_by = 1
-output: f&#39;{cwd:a}/{_input[0]:bn}_ntr_{trait}_moloc_set.rds&#39;
-task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+input: genofile, group_by = 1
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_real_simulation_{n_causal}_ncausal_{n_trait}_trait.rds&#39;
 R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    library(moloc)
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/moloc_set.r&quot;)
-    files = c(${_input:ar,})
-    moloc_result = run_moloc(files, ${trait})
-    saveRDS(moloc_result, ${_output:r})
+    library(&quot;MASS&quot;)
+    library(&quot;plink2R&quot;)
+    library(&quot;dplyr&quot;)
+    library(&quot;readr&quot;)
+    library(&quot;tidyverse&quot;)
+    # source some functions to read matrix and inpute the missing data
+    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
+    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
+    # read the plink file
+    simu_file = ${_input:r}
+    geno &lt;- read_plink(${_input:nr})
+    gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
+    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
+    # filter by distance with. TSS
+    TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+    keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
+    geno$bed = geno$bed[,keep_index]
+    # filter out columns with missing rate &gt; 0.1
+    imiss = 0.1
+    # filter out columns with MAF &lt; 0.05
+    maf = 0.05
+    Xmat = filter_X(geno$bed, imiss, maf)
+    # only keep the first 4000 variants
+    ncausal = ${n_causal}
+    ntrait = ${n_trait}
+
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+    if (indep) {
+        LD_vars = 1  # Initialize LD_vars
+
+        if (ncausal == 1) {
+            # If only one causal variant, just sample it
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Repeat sampling until selected variables are quasi independent
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)  
+                cor_mat = cor(Xmat[, vars]) 
+                LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
+            }
+        }
+    } else {
+        vars = sample(1:ncol(Xmat), size = ncausal)
+    }
+  
+    prop = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_code/trait10_prop.rds&quot;)
+    proportions = prop[ncausal,]
+    sampled_name &lt;- as.numeric(sample(names(proportions), size =  ncausal, prob = proportions, replace = TRUE))
+    phenotype = list()
+    B = matrix(0, nrow =  ncol(Xmat), ncol = ntrait)
+    config = matrix(0, nrow =  ntrait, ncol = ncausal)
+    for(i in c(1:ncausal)){
+          coloc_trait = sample(c(1:ntrait), sampled_name[i])
+          config[coloc_trait, i] = 1
+    }
+    for(i in 1:nrow(config)){
+        beta = B[,i, drop = FALSE]
+        index = which(config[i,] == 1)
+        if(length(index) &gt; 0){
+            causal_index = vars[index]
+            beta = sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+            B[, i] = beta
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = 0.05, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        }else{
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = 0.05, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
+        
+        }
+    }
+  
+    pheno_single = sim_multi_traits(G = Xmat, B = B[,1,drop = FALSE], h2g = ${h2g}, is_h2g_total = FALSE)
+    phenotype[[1]] = pheno_single$P
+    variant = list()
+    for(i in 1:ncol(B)){
+        variant[[i]] = which(B[,i] != 0)
+    }
+    X = Xmat
+    Y = bind_cols(phenotype)
+    colnames(Y) = paste0(&quot;Trait&quot;, c(1:ntrait))
+    data = list()
+    data[[&quot;X&quot;]] = Xmat
+    data[[&quot;Y&quot;]] = Y
+    data[[&quot;variant&quot;]] = variant
+    saveRDS(data, ${_output:r})
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="run-coloc-v5-susie-coloc">
-<h2>Run COLOC V5 (SuSiE coloc)<a class="headerlink" href="#run-coloc-v5-susie-coloc" title="Link to this heading">#</a></h2>
+<section id="bash-submission">
+<h3>Bash submission<a class="headerlink" href="#bash-submission" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[susie_coloc_set]
-parameter: simufile = paths
-parameter: cwd = path(&quot;output&quot;)
-parameter: job_size = 300
-parameter: walltime = &quot;50h&quot;
-parameter: mem = &quot;40G&quot;
-parameter: numThreads = 1
-parameter: trait = 2
-parameter: container = &quot;&quot;
-input: simufile, group_by = 1
-output: f&#39;{cwd:a}/{_input[0]:bn}_ntr_{trait}_susie_coloc_result.rds&#39;
-task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/susie_coloc.r&quot;)
-    file = ${_input:ar,}
-    susie_coloc_result = run_susie_coloc(file)
-    saveRDS(susie_coloc_result, ${_output:r})
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="bash-files">
-<h2>Bash files<a class="headerlink" href="#bash-files" title="Link to this heading">#</a></h2>
-<section id="hyprcoloc">
-<h3>Hyprcoloc<a class="headerlink" href="#hyprcoloc" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>## 2 trait
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/simulation_correlated/&quot;
+job=&quot;real_simulation_2trait_corr&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
 
-data_dir=&quot;/home/hs3393/cb_Mar/simulation_data/real_simulation_2trait/&quot;
-job=&quot;hyp_real_simulation_2trait&quot;
-work_dir=&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/&quot;
-#!/bin/bash
-
-mkdir -p ${work_dir}/${job}/code
-mkdir -p ${work_dir}/${job}/log
-mkdir -p ${work_dir}/${job}/result
-
-cd ${work_dir}/${job}/code
-
+# Create the base_script file and write the bash code into it
 cat &lt;&lt; &#39;EOF&#39; &gt; base_script
 #!/bin/bash -l
 # NOTE the -l flag!
 #
-#SBATCH -t 80:00:00
-#SBATCH --mem=20000
-#SBATCH -J JOB
-#SBATCH -o WORK_DIR/JOB/log/JOB.%j.out
-#SBATCH -e WORK_DIR/JOB/log/JOB.%j.err
-
-source /home/hs3393/mamba_activate.sh
-module load Singularity
-
-cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb hyprcoloc_set \
-    --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
-    --mem 20G --trait 2 \
-    --cwd WORK_DIR/JOB/result
-EOF
-
-
-base_script=&quot;base_script&quot;
-for ncausal in 1 2 3; do
-    output_script=&quot;ncausal_${ncausal}.sh&quot;
-    cat ${base_script}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|NCAUSAL|${ncausal}|g&quot; | sed &quot;s|JOB|${job}|g&quot; | sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
-    sbatch ${output_script}
-done
-
-## 5 trait
-
-data_dir=&quot;/home/hs3393/cb_Mar/simulation_data/real_simulation_5trait/&quot;
-job=&quot;hyp_real_simulation_5trait&quot;
-work_dir=&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/&quot;
-#!/bin/bash
-
-mkdir -p ${work_dir}/${job}/code
-mkdir -p ${work_dir}/${job}/log
-mkdir -p ${work_dir}/${job}/result
-
-cd ${work_dir}/${job}/code
-
-cat &lt;&lt; &#39;EOF&#39; &gt; base_script
-#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 80:00:00
-#SBATCH --mem=20000
-#SBATCH -J JOB
-#SBATCH -o WORK_DIR/JOB/log/JOB.%j.out
-#SBATCH -e WORK_DIR/JOB/log/JOB.%j.err
-
-source /home/hs3393/mamba_activate.sh
-module load Singularity
-
-cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb hyprcoloc_set \
-    --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
-    --mem 20G --trait 5 \
-    --cwd WORK_DIR/JOB/result
-EOF
-
-
-base_script=&quot;base_script&quot;
-for ncausal in 1 2 3 4; do
-    output_script=&quot;ncausal_${ncausal}.sh&quot;
-    cat ${base_script}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|NCAUSAL|${ncausal}|g&quot; | sed &quot;s|JOB|${job}|g&quot; | sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
-    sbatch ${output_script}
-done
-
-## 10 trait
-
-data_dir=&quot;/home/hs3393/cb_Mar/simulation_data/real_simulation_10trait/&quot;
-job=&quot;hyp_real_simulation_10trait&quot;
-work_dir=&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/&quot;
-#!/bin/bash
-
-mkdir -p ${work_dir}/${job}/code
-mkdir -p ${work_dir}/${job}/log
-mkdir -p ${work_dir}/${job}/result
-
-cd ${work_dir}/${job}/code
-
-cat &lt;&lt; &#39;EOF&#39; &gt; base_script
-#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 80:00:00
+#SBATCH -t 30:00:00
 #SBATCH --mem=30000
 #SBATCH -J JOB
-#SBATCH -o WORK_DIR/JOB/log/JOB.%j.out
-#SBATCH -e WORK_DIR/JOB/log/JOB.%j.err
+#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
+#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
 
-source /home/hs3393/mamba_activate.sh
+source ~/mamba_activate.sh
 module load Singularity
 
-cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb hyprcoloc_set \
-    --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
-    --mem 30G --trait 10 \
-    --cwd WORK_DIR/JOB/result
-EOF
 
-
-base_script=&quot;base_script&quot;
-for ncausal in 1 2 3 4; do
-    output_script=&quot;ncausal_${ncausal}.sh&quot;
-    cat ${base_script}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|NCAUSAL|${ncausal}|g&quot; | sed &quot;s|JOB|${job}|g&quot; | sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
-    sbatch ${output_script}
-done
-
-## 20 trait
-
-data_dir=&quot;/home/hs3393/cb_Mar/simulation_data/real_simulation_20trait/&quot;
-job=&quot;hyp_real_simulation_20trait&quot;
-work_dir=&quot;/home/hs3393/cb_Mar/simulation_result/hyprcoloc/&quot;
-#!/bin/bash
-
-mkdir -p ${work_dir}/${job}/code
-mkdir -p ${work_dir}/${job}/log
-mkdir -p ${work_dir}/${job}/result
-
-cd ${work_dir}/${job}/code
-
-cat &lt;&lt; &#39;EOF&#39; &gt; base_script
-#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 80:00:00
-#SBATCH --mem=40000
-#SBATCH -J JOB
-#SBATCH -o WORK_DIR/JOB/log/JOB.%j.out
-#SBATCH -e WORK_DIR/JOB/log/JOB.%j.err
-
-source /home/hs3393/mamba_activate.sh
-module load Singularity
-
-cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb hyprcoloc_set \
-    --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
-    --mem 40G --trait 20 \
-    --cwd WORK_DIR/JOB/result
+sos run /home/hs3393/cb_Mar/simulation_code/8.Simulation_correlated.ipynb JOB \
+    --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
+    --n_causal CAUSAL --mem 30G --h2g 0.05 --independent \
+    --cwd WORK_DIR/
 EOF
 
 base_script=&quot;base_script&quot;
-for ncausal in 1 2 3 4; do
-    output_script=&quot;ncausal_${ncausal}.sh&quot;
-    cat ${base_script}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|NCAUSAL|${ncausal}|g&quot; | sed &quot;s|JOB|${job}|g&quot; | sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+for causal in 1 2 3; do
+    output_script=&quot;causal_${causal}.sh&quot;
+    cat ${base_script}|sed &quot;s|CAUSAL|${causal}|g&quot; | sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
     sbatch ${output_script}
 done
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="moloc">
-<h3>MOLOC<a class="headerlink" href="#moloc" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>data_dir=&quot;/home/hs3393/cb_Mar/simulation_data/real_simulation_2trait/&quot;
-job=&quot;moloc_real_simulation_2trait&quot;
-work_dir=&quot;/home/hs3393/cb_Mar/simulation_result/moloc&quot;
-#!/bin/bash
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/simulation_correlated/&quot;
+job=&quot;real_simulation_5trait_corr&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
 
-mkdir -p ${work_dir}/${job}/code
-mkdir -p ${work_dir}/${job}/log
-mkdir -p ${work_dir}/${job}/result
-
-cd ${work_dir}/${job}/code
-
+# Create the base_script file and write the bash code into it
 cat &lt;&lt; &#39;EOF&#39; &gt; base_script
 #!/bin/bash -l
 # NOTE the -l flag!
 #
-#SBATCH -t 80:00:00
-#SBATCH --mem=15000
+#SBATCH -t 30:00:00
+#SBATCH --mem=30000
 #SBATCH -J JOB
-#SBATCH -o WORK_DIR/JOB/log/JOB.%j.out
-#SBATCH -e WORK_DIR/JOB/log/JOB.%j.err
+#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
+#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
 
-source /home/hs3393/mamba_activate.sh
+source ~/mamba_activate.sh
 module load Singularity
 
-cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb moloc_set \
-    --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
-    --mem 15G --trait 2 \
-    --cwd WORK_DIR/JOB/result
+
+sos run /home/hs3393/cb_Mar/simulation_code/8.Simulation_correlated.ipynb JOB \
+    --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
+    --n_causal CAUSAL --mem 30G --h2g 0.05 --independent \
+    --cwd WORK_DIR/
 EOF
 
-
 base_script=&quot;base_script&quot;
-for ncausal in 1 2 3; do
-    output_script=&quot;ncausal_${ncausal}.sh&quot;
-    cat ${base_script}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|NCAUSAL|${ncausal}|g&quot; | sed &quot;s|JOB|${job}|g&quot; | sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+for causal in 1 2 3 4; do
+    output_script=&quot;causal_${causal}.sh&quot;
+    cat ${base_script}|sed &quot;s|CAUSAL|${causal}|g&quot; | sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
     sbatch ${output_script}
 done
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="coloc-v5-susie-coloc">
-<h3>COLOC V5 (SuSiE-COLOC)<a class="headerlink" href="#coloc-v5-susie-coloc" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>data_dir=&quot;/home/hs3393/cb_Mar/simulation_data/real_simulation_2trait/&quot;
-job=&quot;susie_coloc_real_simulation_2trait&quot;
-work_dir=&quot;/home/hs3393/cb_Mar/simulation_result/susie_coloc&quot;
-#!/bin/bash
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/simulation_correlated/&quot;
+job=&quot;real_simulation_10trait_corr&quot;
+mkdir -p ${work_dir}
+mkdir -p ${work_dir}/code
+mkdir -p ${work_dir}/log
+cd ${work_dir}/code
 
-mkdir -p ${work_dir}/${job}/code
-mkdir -p ${work_dir}/${job}/log
-mkdir -p ${work_dir}/${job}/result
-
-cd ${work_dir}/${job}/code
-
+# Create the base_script file and write the bash code into it
 cat &lt;&lt; &#39;EOF&#39; &gt; base_script
 #!/bin/bash -l
 # NOTE the -l flag!
 #
-#SBATCH -t 80:00:00
-#SBATCH --mem=40000
+#SBATCH -t 30:00:00
+#SBATCH --mem=30000
 #SBATCH -J JOB
-#SBATCH -o WORK_DIR/JOB/log/JOB.%j.out
-#SBATCH -e WORK_DIR/JOB/log/JOB.%j.err
+#SBATCH -o WORK_DIR/log/JOB.&quot;%j&quot;.out
+#SBATCH -e WORK_DIR/log/JOB.&quot;%j&quot;.err
 
-source /home/hs3393/mamba_activate.sh
+source ~/mamba_activate.sh
 module load Singularity
 
-cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb susie_coloc_set \
-    --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
-    --mem 40G --trait 2 \
-    --cwd WORK_DIR/JOB/result
+
+sos run /home/hs3393/cb_Mar/simulation_code/8.Simulation_correlated.ipynb JOB \
+    --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
+    --n_causal CAUSAL --mem 30G --h2g 0.05 --independent \
+    --cwd WORK_DIR/
 EOF
 
-
 base_script=&quot;base_script&quot;
-for ncausal in 1 2 3; do
-    output_script=&quot;ncausal_${ncausal}.sh&quot;
-    cat ${base_script}| sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|NCAUSAL|${ncausal}|g&quot; | sed &quot;s|JOB|${job}|g&quot; | sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
+for causal in 1 2 3 4 5; do
+    output_script=&quot;causal_${causal}.sh&quot;
+    cat ${base_script}|sed &quot;s|CAUSAL|${causal}|g&quot; | sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
     sbatch ${output_script}
 done
 </pre></div>
@@ -938,7 +859,7 @@ done
         },
         kernelOptions: {
             name: "sos",
-            path: "./Simulation_Codes"
+            path: "./Simulation_Studies"
         },
         predefinedOutput: true
     }
@@ -956,20 +877,20 @@ done
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2_Run_Colocboost.html"
+       href="6_Simulation_GWAS.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Run Colocboost</p>
+        <p class="prev-next-title">GWAS / weaker signal simulation and colocboost</p>
       </div>
     </a>
     <a class="right-next"
-       href="4_Result_Summary.html"
+       href="8_Null_Simulation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Colocalization result summary</p>
+        <p class="prev-next-title">Null simulation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -990,16 +911,8 @@ done
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-hyprcoloc-without-ld">Run HyprColoc without LD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-hyprcoloc-with-ld-info">Run Hyprcoloc with LD info</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-moloc">Run MOLOC</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-coloc-v5-susie-coloc">Run COLOC V5 (SuSiE coloc)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-files">Bash files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyprcoloc">Hyprcoloc</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moloc">MOLOC</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coloc-v5-susie-coloc">COLOC V5 (SuSiE-COLOC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotype-simulation-code">Phenotype simulation code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-submission">Bash submission</a></li>
 </ul>
 </li>
 </ul>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fineboost (single trait colocboost) &#8212; ColocBoost manuscript resources</title>
+    <title>Simulation Studies &#8212; ColocBoost manuscript resources</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Codes/9_Fineboost';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="OPERA running" href="10_OPERA_simulation.html" />
-    <link rel="prev" title="Null simulation" href="8_Null_Simulation.html" />
+    <link rel="next" title="Phenotype data simulation" href="1_Phenotype_simulation.html" />
+    <link rel="prev" title="Figure 6h. Colocalization across multiple xQTLs in CTSH." href="../Main_Figures/Figure_6/Figure_6h.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -216,7 +216,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Codes</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
@@ -226,7 +226,7 @@
 <li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and colocboost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fineboost (single trait colocboost)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait colocboost)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="../_sources/Simulation_Codes/9_Fineboost.ipynb" target="_blank"
+      <li><a href="../_sources/Simulation_Studies/index.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +297,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -371,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Fineboost (single trait colocboost)</h1>
+    <h1>Simulation Studies</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,20 +381,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-running-code">Fineboost Running code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-summary-code">Fineboost summary code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-batch-file">Fineboost batch file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-summary-batch-file">Fineboost summary batch file</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-running-code">SuSiE running code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-susie-batch-file">Run SuSiE batch file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-summary-batch-file">SuSiE summary batch file</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-design-overview">1. Simulation Design Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-dependence">2. Simulation Dependence</a></li>
 </ul>
             </nav>
         </div>
@@ -406,392 +394,41 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="fineboost-single-trait-colocboost">
-<h1>Fineboost (single trait colocboost)<a class="headerlink" href="#fineboost-single-trait-colocboost" title="Link to this heading">#</a></h1>
-<section id="goal">
-<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
-<p>This notebook takes the input and run colocboost (single trait, Fineboost), the result can be summarized to get power and FDR.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="simulation-studies">
+<h1>Simulation Studies<a class="headerlink" href="#simulation-studies" title="Link to this heading">#</a></h1>
+<p>This directory contains simulation designs and implementation codes used in the paper.</p>
+<section id="simulation-design-overview">
+<h2>1. Simulation Design Overview<a class="headerlink" href="#simulation-design-overview" title="Link to this heading">#</a></h2>
+<p>This section provides a summary of the simulation notebooks (1-11) that implement different aspects of our multi-trait colocalization method evaluations.</p>
+<ul class="simple">
+<li><p><strong>1_Phenotype_simulation.ipynb</strong>: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.</p></li>
+<li><p><strong>2_Run_Colocboost.ipynb</strong>: Executes the ColocBoost algorithm on simulated datasets to identify colocalizing variants and trait clusters. Processes and standardizes results for performance evaluation with key output metrics.</p></li>
+<li><p><strong>3_Other_Methods.ipynb</strong>: Implements competing colocalization methods (HyprColoc, MOLOC, and COLOC (V5)) for benchmarking. Standardizes outputs across methods to enable fair comparison.</p></li>
+<li><p><strong>4_Result_Summary.ipynb</strong>: Calculates performance metrics including power and false discovery rates from method results. Generates standardized comparison tables summarizing method effectiveness across simulation scenarios.</p></li>
+<li><p><strong>5_Simulation_secondary.ipynb</strong>: Creates advanced simulation scenarios including 50-trait datasets and complex colocalization configurations. Implements specialized trait clustering patterns (5+5, 3+3+2+2) and random variant sharing to test method robustness.</p></li>
+<li><p><strong>6_Simulation_GWAS.ipynb</strong>: Implements simulations specifically designed to mimic real-world GWAS summary statistics.</p></li>
+<li><p><strong>7_Simulation_correlated.ipynb</strong>: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.</p></li>
+<li><p><strong>8_Null_Simulation.ipynb</strong>: Tests type I error control and false discovery rates under null scenarios where no colocalization exists.</p></li>
+<li><p><strong>9_Fineboost.ipynb</strong>: Demonstrates the FineBoost extension that incorporates fine-mapping capabilities into the ColocBoost framework.</p></li>
+<li><p><strong>10_OPERA_simulation.ipynb</strong>: Compares performance with the OPERA method and evaluates under OPERA-specific simulation settings.</p></li>
+<li><p><strong>11_OPERA_original_design.ipynb</strong>: Implements the original OPERA design for benchmark comparisons and methodological validation.</p></li>
+</ul>
 </section>
-<section id="input">
-<h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
-<p>Individual level data X and Y or summary statistics z and LD from other notebooks. file names of these data should be put in the parameter: simufile.</p>
+<section id="simulation-dependence">
+<h2>2. Simulation Dependence<a class="headerlink" href="#simulation-dependence" title="Link to this heading">#</a></h2>
+<p>This section contains R functions for implementing competing multi-trait colocalization methods and supporting utilities.</p>
+<ul class="simple">
+<li><p><strong>colocboost_summary.r</strong>: Contains the core implementation of summary colocalization results from ColocBoost.</p></li>
+<li><p><strong>fineboost_summary.r</strong>: Contains the core implementation of summary fine-mapping results from FineBoost.</p></li>
+<li><p><strong>hypercoloc_set.r</strong>: Contains configuration settings and implementation for running HyPrColoc, including parameter optimization and result parsing functions.</p></li>
+<li><p><strong>moloc_set.r</strong>: Provides parameter settings and configuration for the moloc method, including prior specifications and output formatting.</p></li>
+<li><p><strong>moloc.r</strong>: Implements core functionality for the moloc method, including posterior probability calculation for various causal configurations.</p></li>
+<li><p><strong>susie_coloc.r</strong>: Adapts the SuSiE (Sum of Single Effects) fine-mapping framework for colocalization analysis across multiple traits.</p></li>
+<li><p><strong>ld_utils.R</strong>: Contains utility functions for handling linkage disequilibrium (LD) matrices, including LD estimation, pruning, and conditioning operations that are used by multiple colocalization methods.</p></li>
+</ul>
 </section>
-<section id="output">
-<h2>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h2>
-<p>Fineboost / fine-mapping original result, along with some summarized elements.</p>
-<p>Example output:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_result/fineboost/sample_41_h2g_0.05_ncausal_3_ntrait_fineboost.rds&quot;)
-
-result$var
-
-print(&quot;=====Prediction=====&quot;)
-# colocalization result - CoS
-result$true_cs_num
-
-# colocalization result - colocalizing trait
-result$total_cs_num
-
-print(&quot;=====Truth=====&quot;)
-#  true colocalizing CoS
-result$cover_var_num
-
-#  true colocalizing trait
-result$total_var_num
-</pre></div>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>2654</li><li>8038</li><li>10675</li></ol>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;=====Prediction=====&quot;
-</pre></div>
-</div>
-<div class="output text_html">3</div><div class="output text_html">3</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;=====Truth=====&quot;
-</pre></div>
-</div>
-<div class="output text_html">3</div><div class="output text_html">3</div></div>
-</div>
-</section>
-<section id="fineboost-running-code">
-<h2>Fineboost Running code<a class="headerlink" href="#fineboost-running-code" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[fineboost_Jan]
-parameter: simufile = paths
-parameter: cwd = path(&quot;output&quot;)
-parameter: job_size = 15
-parameter: walltime = &quot;80h&quot;
-parameter: mem = &quot;60G&quot;
-parameter: numThreads = 3
-parameter: trait = 1
-parameter: container = &quot;&quot;
-input: simufile, group_by = 1
-output: f&#39;{cwd:a}/{_input[0]:bn}_ntrait_{step_name}.rds&#39;
-task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    for(file in list.files(&quot;/home/xc2270/COLOCBoost/code_COLOCBoost/colocboost_updating/&quot;, full.names = T)) {source(file)}
-    rds = readRDS(${_input:ar})
-
-    X = rds$X
-    Y = as.matrix(rds$Y[, 1, drop = FALSE])
-    variant = rds$variant[[1]]
-
-
-    start_time &lt;- Sys.time()
-    colocboost_result = colocboost(
-      X = X, 
-      Y = Y, output_level=2)
-    end_time &lt;- Sys.time()
-
-    # record true variant, analysed trait number and corresponding file name
-    colocboost_result$var = variant
-    colocboost_result$file = &quot;${_input[0]:a}&quot;
-    # show which snp appear in at least two traits as the coloc_variants
-    all_var = unlist(variant)
-    
-    cs_num = length(colocboost_result$ucos_details$ucos$ucos_index)
-  
-    cover_var_num = 0
-    true_cs_num = 0
-    if(length(colocboost_result$ucos_details$ucos$ucos_index) == 0){
-      cover_var_num = 0    
-      true_cs_num = 0
-      total_cs_num = 0
-    }else{
-    
-        # count how many var are covered
-    
-        # count how many var are covered
-        for(i in 1:length(all_var)){
-            cs_vars = unlist(colocboost_result$ucos_details$ucos$ucos_index)
-            if(all_var[i] %in% cs_vars){
-              cover_var_num = cover_var_num + 1 
-            }
-
-        }
-
-        # cover how many cs are true
-        for(i in 1:cs_num){
-            if( length( intersect( colocboost_result$ucos_details$ucos$ucos_index[[i]] , all_var )) &gt; 0 ){
-            true_cs_num = true_cs_num + 1 
-            }
-        }
-    }
-  
-    
-    colocboost_report = colocboost_result
-    colocboost_report$cover_var_num = cover_var_num 
-    colocboost_report$total_var_num = length(all_var)
-    colocboost_report$true_cs_num = true_cs_num 
-    colocboost_report$total_cs_num = cs_num
-    colocboost_report$time = end_time - start_time
-    saveRDS(colocboost_report, ${_output:r})
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="fineboost-summary-code">
-<h2>Fineboost summary code<a class="headerlink" href="#fineboost-summary-code" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[fineboost_summary]
-parameter: folder = path
-parameter: cwd = path(&quot;output&quot;)
-parameter: job_size = 1
-parameter: walltime = &quot;50h&quot;
-parameter: mem = &quot;60G&quot;
-parameter: numThreads = 1
-parameter: container = &quot;&quot;
-input: folder , group_by = 1
-output: f&#39;{cwd:a}/{_input[0]:b}_summary.rds&#39;
-task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
-    library(&quot;tidyverse&quot;)
-    source(&quot;/home/hs3393/cloud_colocalization/simulation_code/fineboost_summary.r&quot;)
-    filenames &lt;- list.files(${folder:r}, pattern=&quot;*.rds$&quot;, full.names=TRUE, recursive = T)
-    read_and_extract_rds &lt;- function(file_path) {
-      rds_file &lt;- readRDS(file_path)  # Read the RDS file
-      if(length(rds_file$ucos_details$ucos$ucos_index) == 0){
-         rds_file$ucos_details$ucos$ucos_index = NULL
-      }
-      data = fineboost_summary(unlist(rds_file$var), 
-      rds_file$ucos_details$ucos$ucos_index)
-      table &lt;- tibble(match_variant_number = data$match_variant,
-              total_variant_number = data$total_variant_number,
-              true_trait_number = data$true_trait_number,
-              total_set_number = data$total_set_number,
-              file = rds_file$file,
-              out_file = file_path)
-      return(table)
-    }
-
-    combined_table &lt;- map_dfr(filenames, read_and_extract_rds)
-    saveRDS(combined_table, ${_output:r})
-
-  
-  
-</pre></div>
-</div>
-</div>
-</div>
-<section id="fineboost-batch-file">
-<h3>Fineboost batch file<a class="headerlink" href="#fineboost-batch-file" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_simulation/simulation_result/fineboost&quot;
-job=&quot;fineboost&quot;
-mkdir -p ${work_dir}
-
-mkdir -p ${work_dir}/code
-cd ${work_dir}/code
-
-# Create the base_script file and write the bash code into it
-cat &lt;&lt; &#39;EOF&#39; &gt; base_script
-#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 68:00:00
-#SBATCH --mem=25000
-#SBATCH -J JOB
-#SBATCH -o PWD/JOB.%j.out
-#SBATCH -e PWD/JOB.%j.err
-
-source ~/mamba_activate.sh
-module load Singularity
-
-cd /home/hs3393/cloud_colocalization/simulation_data/simulation_signal/causal_CAUSAL
-sos run /home/hs3393/cb_simulation/simulation_code/Fineboost.ipynb fineboost \
-    --simufile $(find -type f -name &#39;*ncausal_CAUSAL*.rds&#39;) \
-    --mem 25G \
-    --cwd PWD/
-EOF
-
-
-for causal in 1 2 3 4 5; do
-    output_script=&quot;causal_${causal}.sh&quot;
-    cat base_script | sed &quot;s|PWD|${work_dir}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot;  | sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
-    sbatch ${output_script}
-done
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="fineboost-summary-batch-file">
-<h3>Fineboost summary batch file<a class="headerlink" href="#fineboost-summary-batch-file" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 48:00:00
-#SBATCH --mem=40000
-#SBATCH -J sum
-#SBATCH -o /home/hs3393/cloud_colocalization/simulation_result/fineboost/log/summary.%j.out
-#SBATCH -e /home/hs3393/cloud_colocalization/simulation_result/fineboost/log/summary.%j.err
-
-source ~/mamba_activate.sh
-module load Singularity
-
-sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb fineboost_summary \
-    --folder /home/hs3393/cb_tune/simulation_result/fineboost/ \
-    --cwd /home/hs3393/cb_tune/simulation_result/fineboost//summary
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="susie-running-code">
-<h2>SuSiE running code<a class="headerlink" href="#susie-running-code" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[susie]
-parameter: simufile = paths
-parameter: cwd = path(&quot;output&quot;)
-parameter: job_size = 10
-parameter: walltime = &quot;20h&quot;
-parameter: mem = &quot;50G&quot;
-parameter: numThreads = 3
-parameter: container = &quot;&quot;
-input: simufile, group_by = 1
-output: f&#39;{cwd:a}/{_input[0]:bn}_susie.rds&#39;
-task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    library(&quot;susieR&quot;)
-    # read 50 traits a s group, if we are going to analyse 3 traits-colocalization, we
-    # select the first 3 traits X-Y pari in this group
-    file_list = c(${_input:ar,})
-    rds_file = readRDS(file_list[1])
-
-    rds = readRDS(${_input:ar})
-
-
-    X = rds$X
-    Y = as.matrix(rds$Y[, 1, drop = FALSE])
-    variant = rds$variant[[1]]
-  
-  
-    susie_result = susie(X, Y)
-    # record true variant, analysed trait number and corresponding file name
-    susie_result$var = variant
-    susie_result$file = &quot;${_input[0]:a}&quot;
-    # show which snp appear in at least two traits as the coloc_variants
-    all_var = unlist(variant)
-    
-    cs_num = length(susie_result$sets$cs)
-  
-    cover_var_num = 0
-    true_cs_num = 0
-    if(length(susie_result$sets$cs) == 0){
-      cover_var_num = 0    
-      true_cs_num = 0
-      total_cs_num = 0
-    }else{
-    
-        # count how many var are covered
-        for(i in 1:length(all_var)){
-            cs_vars = unlist(susie_result$sets$cs)
-            if(all_var[i] %in% cs_vars){
-              cover_var_num = cover_var_num + 1 
-            }
-
-        }
-
-        # cover how many cs are true
-        for(i in 1:cs_num){
-            if( length( intersect( susie_result$sets$cs[[i]] , all_var )) &gt; 0 ){
-            true_cs_num = true_cs_num + 1 
-            }
-        }
-    }
-  
-    
-    susie_result$cover_var_num = cover_var_num 
-    susie_result$total_var_num = length(all_var)
-    susie_result$true_cs_num = true_cs_num 
-    susie_result$total_cs_num = cs_num
-    # show which snp appear in at least two traits as the coloc_variants
-    saveRDS(susie_result, ${_output:r})
-</pre></div>
-</div>
-</div>
-</div>
-<section id="run-susie-batch-file">
-<h3>Run SuSiE batch file<a class="headerlink" href="#run-susie-batch-file" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393//cloud_colocalization/simulation_result/susie&quot;
-job=&quot;susie&quot;
-mkdir -p ${work_dir}
-
-mkdir -p ${work_dir}/code
-cd ${work_dir}/code
-
-# Create the base_script file and write the bash code into it
-cat &lt;&lt; &#39;EOF&#39; &gt; base_script
-#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 68:00:00
-#SBATCH --mem=25000
-#SBATCH -J JOB
-#SBATCH -o PWD/JOB.%j.out
-#SBATCH -e PWD/JOB.%j.err
-
-source ~/mamba_activate.sh
-module load Singularity
-
-cd /home/hs3393/cloud_colocalization/simulation_data/simulation_signal/causal_CAUSAL
-sos run /home/hs3393//cloud_colocalization/simulation_code/Fineboost.ipynb susie \
-    --simufile $(find -type f -name &#39;*ncausal_CAUSAL*.rds&#39;) \
-    --mem 25G \
-    --cwd PWD/
-EOF
-
-
-for causal in 1 2 3 4 5; do
-    output_script=&quot;causal_${causal}.sh&quot;
-    cat base_script | sed &quot;s|PWD|${work_dir}|g&quot; | sed &quot;s|CAUSAL|${causal}|g&quot;  | sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
-    sbatch ${output_script}
-done
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="susie-summary-batch-file">
-<h3>SuSiE summary batch file<a class="headerlink" href="#susie-summary-batch-file" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 48:00:00
-#SBATCH --mem=40000
-#SBATCH -J susie
-#SBATCH -o /home/hs3393/cloud_colocalization/simulation_result/susie/log/summary.%j.out
-#SBATCH -e /home/hs3393/cloud_colocalization/simulation_result/susie/log/summary.%j.err
-
-source ~/mamba_activate.sh
-module load Singularity
-
-sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb fineboost_summary \
-    --folder /home/hs3393/cb_simulation/simulation_result/fineboost \
-    --cwd /home/hs3393/cb_simulation/simulation_result/fineboost/summary
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -803,16 +440,16 @@ sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb finebo
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "sos"
+            mode: "python"
         },
         kernelOptions: {
-            name: "sos",
-            path: "./Simulation_Codes"
+            name: "python3",
+            path: "./Simulation_Studies"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'sos'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -825,20 +462,20 @@ sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb finebo
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="8_Null_Simulation.html"
+       href="../Main_Figures/Figure_6/Figure_6h.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Null simulation</p>
+        <p class="prev-next-title">Figure 6h. Colocalization across multiple xQTLs in CTSH.</p>
       </div>
     </a>
     <a class="right-next"
-       href="10_OPERA_simulation.html"
+       href="1_Phenotype_simulation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">OPERA running</p>
+        <p class="prev-next-title">Phenotype data simulation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -858,20 +495,8 @@ sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb finebo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-running-code">Fineboost Running code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-summary-code">Fineboost summary code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-batch-file">Fineboost batch file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineboost-summary-batch-file">Fineboost summary batch file</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-running-code">SuSiE running code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-susie-batch-file">Run SuSiE batch file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susie-summary-batch-file">SuSiE summary batch file</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-design-overview">1. Simulation Design Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-dependence">2. Simulation Dependence</a></li>
 </ul>
   </nav></div>
 
