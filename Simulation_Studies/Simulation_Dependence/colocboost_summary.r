@@ -1,3 +1,42 @@
+colocboost_summary = function(true_variant, true_trait, coloc_set, coloc_trait){
+    
+    if(length(coloc_set) == 0){
+        coloc_set = NULL
+    }
+    coloc_trait_vector = coloc_trait_vec(true_variant, true_trait, coloc_set, coloc_trait)
+
+    true_trait_vector = true_trait_vec(true_variant, true_trait)
+    
+    coloc_set_vector = coloc_set_vec(true_variant, true_trait,coloc_set, coloc_trait)
+    
+    total_causal_var_number = length(true_variant)
+    perfect_causal_var_number = perfect_number(coloc_trait_vector, true_trait_vector )
+    partial_causal_var_number = partial_number(coloc_trait_vector, true_trait_vector)
+    true_trait_number = sum(coloc_trait_vector)
+    total_trait_number = sum(true_trait_vector)
+    true_set_number = sum(coloc_set_vector)
+    total_set_number = length(coloc_set_vector)
+    set_sizes = c()
+    for(i in c(1:length(coloc_set))){
+        set_sizes[i] = length(coloc_set[[i]])
+    }
+    
+    ### ture_trait : in the prediction, which are correct
+    ### predict_trait : the total numbe rof predicted traits (some of the sets will be wrong!)
+        
+    return(list(total_causal_var_number = total_causal_var_number, 
+                perfect_causal_var_number = perfect_causal_var_number, 
+                partial_causal_var_number = partial_causal_var_number,
+                true_trait_number = true_trait_number, 
+                predict_trait_number = length(unlist(coloc_trait)),
+                total_trait_number = total_trait_number, 
+                true_set_number = true_set_number, 
+                total_set_number = total_set_number,
+                set_sizes = set_sizes))
+}
+
+
+
 coloc_trait_vec = function(true_variant, true_trait, coloc_set, coloc_trait){
     var_num = length(true_variant)
     ## initialize 0 vector for each true variant   
@@ -70,7 +109,6 @@ perfect_number = function(coloc_trait_vector, true_trait_vector){
     
     }
     return(perfect_match_number)
-
 }
 
 partial_number = function(coloc_trait_vector, true_trait_vector){
@@ -85,40 +123,3 @@ partial_number = function(coloc_trait_vector, true_trait_vector){
 
 }
 
-
-
-colocboost_summary = function(true_variant, true_trait, coloc_set, coloc_trait){
-    if(length(coloc_set) == 0){
-        coloc_set = NULL
-    }
-    coloc_trait_vector = coloc_trait_vec(true_variant, true_trait, coloc_set, coloc_trait)
-
-    true_trait_vector = true_trait_vec(true_variant, true_trait)
-    
-    coloc_set_vector = coloc_set_vec(true_variant, true_trait,coloc_set, coloc_trait)
-    
-total_causal_var_number = length(true_variant)
-perfect_causal_var_number = perfect_number(coloc_trait_vector, true_trait_vector )
-partial_causal_var_number = partial_number(coloc_trait_vector, true_trait_vector)
-true_trait_number = sum(coloc_trait_vector)
-total_trait_number = sum(true_trait_vector)
-true_set_number = sum(coloc_set_vector)
-total_set_number = length(coloc_set_vector)
-set_sizes = c()
-for(i in c(1:length(coloc_set))){
-    set_sizes[i] = length(coloc_set[[i]])
-}
-
-### ture_trait : in the prediction, which are correct
-### predict_trait : the total numbe rof predicted traits (some of the sets will be wrong!)
-    
-return(list(total_causal_var_number = total_causal_var_number, 
-            perfect_causal_var_number = perfect_causal_var_number, 
-           partial_causal_var_number = partial_causal_var_number,
-            true_trait_number = true_trait_number, 
-            predict_trait_number = length(unlist(coloc_trait)),
-            total_trait_number = total_trait_number, 
-            true_set_number = true_set_number, 
-            total_set_number = total_set_number,
-            set_sizes = set_sizes))
-}
