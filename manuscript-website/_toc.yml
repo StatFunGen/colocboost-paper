@@ -49,17 +49,17 @@ chapters:
 
   - file: Simulation_Studies/index
     sections:
-      - file: Simulation_Studies/1_Phenotype_simulation
-      - file: Simulation_Studies/2_Run_Colocboost
-      - file: Simulation_Studies/3_Other_Methods
+      - file: Simulation_Studies/1_Phenotype_Simulation
+      - file: Simulation_Studies/2_Run_ColocBoost
+      - file: Simulation_Studies/3_Other_Colocalization_Methods
       - file: Simulation_Studies/4_Result_Summary
-      - file: Simulation_Studies/5_Simulation_secondary
-      - file: Simulation_Studies/6_Simulation_GWAS
-      - file: Simulation_Studies/7_Simulation_correlated
+      - file: Simulation_Studies/5_Secondary_Simulation
+      - file: Simulation_Studies/6_GWAS_Simulation
+      - file: Simulation_Studies/7_Correlated_Simulation
       - file: Simulation_Studies/8_Null_Simulation
-      - file: Simulation_Studies/9_Fineboost
-      - file: Simulation_Studies/10_OPERA_simulation
-      - file: Simulation_Studies/11_OPERA_original_design
+      - file: Simulation_Studies/9_FineBoost
+      - file: Simulation_Studies/10_Run_OPERA
+      - file: Simulation_Studies/11_Run_OPERA_Original_Proportion
       
   - file: Data_Applications/index
       
