@@ -7,50 +7,33 @@ This directory contains simulation designs and implementation codes used in the 
 
 This section provides a summary of the simulation notebooks (1-11) that implement different aspects of our multi-trait colocalization method evaluations.
 
-- **Phenotype data simulation**: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.
+- **Phenotype simulation**: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.
 
 
-- **Run ColocBoostb**: Executes the ColocBoost algorithm on simulated datasets to identify colocalizing variants and trait clusters. Processes and standardizes results for performance evaluation with key output metrics.
+- **Run ColocBoost**: Executes the ColocBoost algorithm on simulated datasets to identify colocalizing variants and trait clusters. Processes and standardizes results for performance evaluation with key output metrics.
 
-- **Other colocalization methods**: Implements competing colocalization methods (HyprColoc, MOLOC, and COLOC (V5)) for benchmarking. Standardizes outputs across methods to enable fair comparison.
+- **Other Colocalization Methods**: Implements competing colocalization methods (HyprColoc, MOLOC, and COLOC (V5)) for benchmarking. Standardizes outputs across methods to enable fair comparison.
 
-- **Colocalization result summary**: Calculates performance metrics including power and false discovery rates from method results. Generates standardized comparison tables summarizing method effectiveness across simulation scenarios.
+- **Result Summary**: Calculates performance metrics including power and false discovery rates from method results. Generates standardized comparison tables summarizing method effectiveness across simulation scenarios.
 
 - **Secondary simulations**: Creates advanced simulation scenarios including 50-trait datasets and complex colocalization configurations. Implements specialized trait clustering patterns (5+5, 3+3+2+2) and random variant sharing to test method robustness.
 
-- **GWAS / weaker signal simulation and ColocBoost**: Implements simulations specifically designed to mimic real-world GWAS summary statistics.
+- **GWAS Simulation**: Implements simulations specifically designed to mimic real-world GWAS summary statistics.
 
-- **Correlated phenotypes simulation**: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.
+- **Correlated Simulation **: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.
 
 - **Null simulation**: Tests type I error control and false discovery rates under null scenarios where no colocalization exists.
 
 - **FineBoost (single trait ColocBoost)**: Demonstrates the FineBoost extension that incorporates fine-mapping capabilities into the ColocBoost framework.
 
-- **OPERA running**: Compares performance with the OPERA method and evaluates under OPERA-specific simulation settings.
+- **Run OPERA**: Compares performance with the OPERA method and evaluates under OPERA-specific simulation settings.
 
-- **OPERA: simulation using original proportion configuration**: Implements the original OPERA design for benchmark comparisons and methodological validation.
+- **OPERA: Run OPERA Original Proportion**: Implements the original OPERA design for benchmark comparisons and methodological validation.
 
-
-## 2. Simulation Dependence
-
-This section contains R functions for implementing competing multi-trait colocalization methods and supporting utilities.
-
-- **colocboost_summary.r**: Contains the core implementation of summary colocalization results from ColocBoost.
-
-- **fineboost_summary.r**: Contains the core implementation of summary fine-mapping results from FineBoost.
-
-- **hypercoloc_set.r**: Contains configuration settings and implementation for running HyPrColoc, including parameter optimization and result parsing functions.
-
-- **moloc_set.r**: Provides parameter settings and configuration for the moloc method, including prior specifications and output formatting.
-
-- **moloc.r**: Contains the core implementation of MOLOC method, which is an extension of COLOC across multiple traits.
-
-- **susie_coloc.r**: Contains the core implementation of COLOC (V5) for pair-wise colocalization analysis comparison. COLOC (V5) adapts the SuSiE (Sum of Single Effects) fine-mapping framework for colocalization analysis to relax the single causal variant assumption.
-
-- **ld_utils.R**: Contains utility functions for handling linkage disequilibrium (LD) matrices, including LD estimation, pruning, and conditioning operations that are used by multiple colocalization methods.
+Part of the data needed is provided in the **Data** folder.
 
 
-## 3. References
+## 2. References
 
 [1] [simxQTL](https://github.com/StatFunGen/simxQTL): In house simulation R package to support investigations of various QTL association methods.
 

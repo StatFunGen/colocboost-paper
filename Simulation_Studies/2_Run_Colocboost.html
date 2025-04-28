@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/2_Run_Colocboost';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Other colocalization methods" href="3_Other_Methods.html" />
-    <link rel="prev" title="Phenotype data simulation" href="1_Phenotype_simulation.html" />
+    <link rel="next" title="Colocalization result summary" href="4_Result_Summary.html" />
+    <link rel="prev" title="Simulation Studies" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,19 +217,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
-
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Run Colocboost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and ColocBoost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait ColocBoost)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
@@ -385,6 +376,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-running">Colocboost Running</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-target-version-running">Colocboost Target Version Running</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#job-submission">Job submission</a></li>
 </ul>
             </nav>
@@ -414,7 +406,7 @@ document.write(`
 <p>Example output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cb_Mar/simulation_result/real_simulation_5trait/result/sample_999_real_simulation_3_ncausal_5_trait_ntrait_5_colocboost.rds&quot;)
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cb_Mar/simulation_result/real_simulation_5trait/result/sample_1_real_simulation_3_ncausal_5_trait_ntrait_5_colocboost.rds&quot;)
 # true variant and corresponding trait index
 result$var
 
@@ -441,58 +433,44 @@ result$true_trait
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>196</li><li>5616</li><li>6566</li></ol>
+<ol class=list-inline><li>787</li><li>7524</li></ol>
 </li>
 	<li><style>
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>5616</li><li>6566</li></ol>
+<ol class=list-inline><li>787</li><li>7524</li></ol>
 </li>
+	<li>3152</li>
+	<li>3152</li>
 	<li><style>
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>196</li><li>6566</li></ol>
-</li>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>196</li><li>5616</li></ol>
-</li>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>196</li><li>6566</li></ol>
+<ol class=list-inline><li>3152</li><li>7524</li></ol>
 </li>
 </ol>
 </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;=====Prediction=====&quot;
 </pre></div>
 </div>
 <div class="output text_html"><dl>
-	<dt>$`cos1:y1_y3_y4_y5`</dt>
-		<dd>196</dd>
-	<dt>$`cos2:y1_y2_y3_y5`</dt>
+	<dt>$`cos1:y1_y2_y5`</dt>
 		<dd><style>
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>6566</li><li>6535</li></ol>
+<ol class=list-inline><li>7524</li><li>7525</li><li>7526</li><li>7520</li><li>7523</li><li>7518</li><li>7521</li><li>7522</li><li>7531</li><li>7532</li><li>7533</li><li>7538</li><li>7540</li><li>7516</li><li>7494</li><li>7497</li><li>7499</li><li>7507</li><li>7519</li><li>7508</li><li>7536</li><li>7504</li><li>7506</li><li>7505</li><li>7553</li><li>7546</li><li>7547</li><li>7548</li><li>7549</li><li>7583</li></ol>
 </dd>
-	<dt>$`cos3:y1_y2_y4`</dt>
+	<dt>$`cos2:y3_y4_y5`</dt>
 		<dd><style>
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>5616</li><li>5621</li><li>5628</li><li>5629</li><li>5632</li><li>5636</li><li>5637</li><li>5634</li><li>5635</li><li>5627</li><li>5623</li><li>5625</li><li>5615</li></ol>
+<ol class=list-inline><li>3152</li><li>3156</li><li>3154</li><li>3158</li><li>3160</li><li>3157</li><li>3184</li><li>3242</li><li>3246</li><li>3185</li><li>3196</li><li>3230</li><li>3203</li><li>3258</li><li>3231</li><li>3233</li><li>3178</li><li>3153</li><li>3183</li><li>3261</li><li>3176</li><li>3190</li><li>3147</li><li>3199</li><li>3266</li><li>3167</li><li>3169</li><li>3171</li><li>3200</li><li>3198</li><li>3168</li><li>3253</li><li>3255</li><li>3256</li><li>3277</li><li>3288</li><li>3290</li><li>3226</li><li>3270</li><li>3271</li><li>3281</li><li>3284</li><li>3285</li><li>3264</li><li>3274</li><li>3278</li><li>3283</li></ol>
 </dd>
 </dl>
 </div><div class="output text_html"><ol>
@@ -501,21 +479,14 @@ result$true_trait
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1</li><li>3</li><li>4</li><li>5</li></ol>
+<ol class=list-inline><li>1</li><li>2</li><li>5</li></ol>
 </li>
 	<li><style>
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>5</li></ol>
-</li>
-	<li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>1</li><li>2</li><li>4</li></ol>
+<ol class=list-inline><li>3</li><li>4</li><li>5</li></ol>
 </li>
 </ol>
 </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;=====Truth=====&quot;
@@ -526,28 +497,28 @@ result$true_trait
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>196</li><li>5616</li><li>6566</li></ol>
+<ol class=list-inline><li>787</li><li>3152</li><li>7524</li></ol>
 </div><div class="output text_html"><ol>
 	<li><style>
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1</li><li>3</li><li>4</li><li>5</li></ol>
+<ol class=list-inline><li>1</li><li>2</li></ol>
 </li>
 	<li><style>
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1</li><li>2</li><li>4</li></ol>
+<ol class=list-inline><li>3</li><li>4</li><li>5</li></ol>
 </li>
 	<li><style>
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>5</li></ol>
+<ol class=list-inline><li>1</li><li>2</li><li>5</li></ol>
 </li>
 </ol>
 </div></div>
@@ -558,6 +529,104 @@ result$true_trait
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[colocboost]
+# ======= Define parameters =======
+parameter: simufile = paths
+parameter: cwd = path(&quot;output&quot;)
+parameter: job_size = 15
+parameter: walltime = &quot;80h&quot;
+parameter: mem = &quot;60G&quot;
+parameter: numThreads = 3
+parameter: trait = 10
+parameter: container = &quot;&quot;
+
+# ======= Workflow input/output =======
+input: simufile, group_by = 1
+output: f&#39;{cwd:a}/{_input[0]:bn}_ntrait_{trait}_{step_name}.rds&#39;
+
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+
+# ======= Main R block =======
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+
+    # --- Load colocboost function files ---
+    # devtools::install_github(&quot;StatFunGen/colocboost&quot;)
+    # for(file in list.files(&quot;/home/xc2270/COLOCBoost/code_COLOCBoost/release&quot;, full.names = T)) {source(file)}
+    library(&quot;colocboost&quot;)
+
+    # --- Read simulation RDS file ---
+    rds = readRDS(${_input:ar})
+
+    # --- Prepare inputs for colocboost: X (genotypes), Y (phenotypes), variant (causal variant list) ---
+    X = list()
+    Y = list()
+    variant = list()
+
+    for (i in 1:${trait}) {
+        X[[i]] = rds$X
+        Y[[i]] = as.matrix(rds$Y[, i, drop = FALSE])
+        variant[[i]] = rds$variant[[i]]
+    }
+
+    # --- Run colocboost and measure time ---
+    start_time &lt;- Sys.time()
+    colocboost_result = colocboost(
+      X = X, 
+      Y = Y
+    )
+    end_time &lt;- Sys.time()
+
+    # --- Record additional information into colocboost result ---
+    colocboost_result$var = variant         # True causal variants
+    colocboost_result$trait_num = ${trait}   # Number of traits analyzed
+    colocboost_result$file = &quot;${_input[0]:a}&quot;  # File used as input
+
+    # --- Determine true variants colocalized across multiple traits ---
+    all_var = unlist(variant)
+    true_var = as.numeric(names(which(table(all_var) &gt;= 2)))  # Variants appearing in at least 2 traits
+    true_trait = list()
+
+    for (variant_index in 1:length(true_var)) {
+        temp_vec = c()
+        for (i in 1:length(variant)) {
+            if (true_var[variant_index] %in% variant[[i]]) {
+                temp_vec = c(temp_vec, i)
+            }
+        }
+        true_trait[[variant_index]] = temp_vec
+    }
+
+    # --- Extract colocalization outcomes ---
+    library(stringr)
+    coloc_trait = list()
+
+    # If no colocalization sets are detected, assign NULL
+    if (length(colocboost_result$cos_details$cos$cos_index) == 0) {
+        coloc_trait = NULL  
+    } else {
+        for (i in 1:length(colocboost_result$cos_details$cos_outcomes$outcome_index)) {
+            coloc_trait[[i]] = colocboost_result$cos_details$cos_outcomes$outcome_index[[i]]
+        }
+    }
+
+    # --- Finalize result object ---
+    colocboost_result$true_variant = true_var
+    colocboost_result$true_trait = true_trait
+    colocboost_result$coloc_set = colocboost_result$cos_details$cos$cos_index
+    colocboost_result$coloc_trait = coloc_trait
+    colocboost_result$time = end_time - start_time
+
+    # --- Save output RDS file ---
+    saveRDS(colocboost_result, ${_output:r})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="colocboost-target-version-running">
+<h2>Colocboost Target Version Running<a class="headerlink" href="#colocboost-target-version-running" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[colocboost_target]
 parameter: simufile = paths
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 15
@@ -569,8 +638,12 @@ parameter: container = &quot;&quot;
 input: simufile, group_by = 1
 output: f&#39;{cwd:a}/{_input[0]:bn}_ntrait_{trait}_{step_name}.rds&#39;
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    for(file in list.files(&quot;/home/xc2270/COLOCBoost/code_COLOCBoost/colocboost_updating/&quot;, full.names = T)) {source(file)}
+R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
+
+    # --- Load colocboost function files ---
+    # devtools::install_github(&quot;StatFunGen/colocboost&quot;)
+    # for(file in list.files(&quot;/home/xc2270/COLOCBoost/code_COLOCBoost/release&quot;, full.names = T)) {source(file)}
+    library(&quot;colocboost&quot;)
     X = list()
     Y = list()
     variant = list()
@@ -585,7 +658,7 @@ R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = 
     start_time &lt;- Sys.time()
     colocboost_result = colocboost(
       X = X, 
-      Y = Y
+      Y = Y, focal_outcome_idx = 1
     )
     end_time &lt;- Sys.time()
 
@@ -662,7 +735,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR/JOB
-sos run /home/hs3393/cb_Mar/simulation_code/2.Run_Colocboost.ipynb colocboost \
+sos run /home/hs3393/cb_Mar/simulation_code/2_Run_Colocboost.ipynb colocboost \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 40G --trait 2 \
     --cwd WORK_DIR/JOB/result
@@ -702,7 +775,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR/JOB
-sos run /home/hs3393/cb_Mar/simulation_code/2.Run_Colocboost.ipynb colocboost \
+sos run /home/hs3393/cb_Mar/simulation_code/2_Run_Colocboost.ipynb colocboost \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 40G --trait 5 \
     --cwd WORK_DIR/JOB/result
@@ -743,7 +816,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR/JOB
-sos run /home/hs3393/cb_Mar/simulation_code/2.Run_Colocboost.ipynb colocboost \
+sos run /home/hs3393/cb_Mar/simulation_code/2_Run_Colocboost.ipynb colocboost \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 40G --trait 10 \
     --cwd WORK_DIR/JOB/result
@@ -783,7 +856,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR/JOB
-sos run /home/hs3393/cb_Mar/simulation_code/2.Run_Colocboost.ipynb colocboost \
+sos run /home/hs3393/cb_Mar/simulation_code/2_Run_Colocboost.ipynb colocboost \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 40G --trait 20 \
     --cwd WORK_DIR/JOB/result
@@ -834,20 +907,20 @@ done
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1_Phenotype_simulation.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Phenotype data simulation</p>
+        <p class="prev-next-title">Simulation Studies</p>
       </div>
     </a>
     <a class="right-next"
-       href="3_Other_Methods.html"
+       href="4_Result_Summary.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Other colocalization methods</p>
+        <p class="prev-next-title">Colocalization result summary</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -871,6 +944,7 @@ done
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-running">Colocboost Running</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-target-version-running">Colocboost Target Version Running</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#job-submission">Job submission</a></li>
 </ul>
   </nav></div>

@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/6_Simulation_GWAS';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/6_GWAS_Simulation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Correlated phenotypes simulation" href="7_Simulation_correlated.html" />
-    <link rel="prev" title="Secondary simulations" href="5_Simulation_secondary.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -167,7 +167,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Main_Figures/index.html">Main Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_2/index.html">Figure 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2a.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
@@ -216,20 +216,11 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">GWAS / weaker signal simulation and ColocBoost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait ColocBoost)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
@@ -287,7 +278,7 @@
       
       
       
-      <li><a href="../_sources/Simulation_Studies/6_Simulation_GWAS.ipynb" target="_blank"
+      <li><a href="../_sources/Simulation_Studies/6_GWAS_Simulation.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,9 +382,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-gwas-5-traits">Simulation GWAS - 5 traits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-gwas-10-traits">Simulation GWAS - 10 traits</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-submission">Bash submission</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeted-colocboost-running">Targeted Colocboost running</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-job-submission">Bash job submission</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#result-summary">Result summary</a></li>
 </ul>
@@ -475,97 +463,140 @@ susie_plot(susie_res, y = &quot;z_original&quot;)
 <h3>Simulation code<a class="headerlink" href="#simulation-code" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[simulation_GWAS]
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[GWAS_2trait]
+# ======= Define parameters =======
 parameter: genofile = paths
-# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 30
 parameter: walltime = &quot;100h&quot;
 parameter: mem = &quot;30G&quot;
 parameter: numThreads = 1
-# for each variant, how many traits it randomly colocalize at
-parameter: ntrait = 2
-parameter: h2g = 0.05
+parameter: n_trait = 2
+parameter: h2g = 0.02  # weaker heritability for Trait 1
 parameter: ncausal = 1
+parameter: total_h2g = False
 parameter: share_pattern = &quot;all&quot;
-# specify the number of traits (phenotypes)
-parameter: container = &quot;&quot;
 parameter: independent = False
+parameter: container = &quot;&quot;
+
+# ======= Workflow input/output =======
 input: genofile, group_by = 1
-output: f&#39;{cwd:a}/sample_{_index}_h2g_{h2g}_GWAS_{ncausal}.rds&#39;
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_2_trait_simulation.rds&#39;
+
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+
+# ======= Main R block =======
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
+
+    # --- Load necessary libraries ---
     library(&quot;MASS&quot;)
     library(&quot;plink2R&quot;)
     library(&quot;dplyr&quot;)
     library(&quot;readr&quot;)
     library(&quot;tidyverse&quot;)
-    # source some functions to read matrix and inpute the missing data
-    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
-    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
-    # read the plink file
+  
+    # install simulation package
+    # devtools::install_github(&quot;StatFunGen/simxQTL&quot;, build_vignettes = FALSE)
+    # BiocManager::install(&quot;StatFunGen/pecotmr&quot;)
+    library(&quot;pecotmr&quot;)
+    library(&quot;simxQTL&quot;)
+
+    # --- Read genotype data ---
     simu_file = ${_input:r}
     geno &lt;- read_plink(${_input:nr})
+
+    # --- Extract gene name and TSS ---
     gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
-    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
-    # filter by distance with. TSS
+    gene_tss_map = read_tsv(&quot;./Data/gene_cis_TADB_mapper.tsv&quot;)
     TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+
+    # --- Filter SNPs by distance to TSS ---
     keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
-    geno$bed = geno$bed[,keep_index]
-    # filter out columns with missing rate &gt; 0.1
+    geno$bed = geno$bed[, keep_index]
+
+    # --- Apply SNP filters: missingness and MAF ---
     imiss = 0.1
-    # filter out columns with MAF &lt; 0.05
     maf = 0.05
     Xmat = filter_X(geno$bed, imiss, maf)
 
-    # To avoid that the matrix is too large, we use only the first 5000 SNPs in each TAD, if that region have more than 5,000 
-    ncausal = ${ncausal}
-    ntrait = ${ntrait}
+    # ======= Select causal variants manually =======
+    indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+
     if (indep) {
-        LD_vars = 1  # Initialize LD_vars
+        LD_vars = 1  # Initialize LD check
 
         if (ncausal == 1) {
-            # If only one causal variant, just sample it
+            # Only one causal variant needed
             vars = sample(1:ncol(Xmat), size = ncausal)
         } else {
-            # Repeat sampling until selected variables are quasi independent
+            # Ensure selected variants are approximately independent (LD &lt; 0.3)
             while (length(LD_vars != 0)) {
-                vars = sample(1:ncol(Xmat), size = ncausal)  
-                cor_mat = cor(Xmat[, vars]) 
+                vars = sample(1:ncol(Xmat), size = ncausal)
+                cor_mat = cor(Xmat[, vars])
                 LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
             }
         }
     } else {
-        vars = sample(1:ncol(Xmat), size = ncausal)
+        LD_vars = 1  # Initialize LD check
+
+        if (ncausal == 1) {
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Avoid perfectly correlated variants (|cor| = 1)
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)
+                cor_mat = cor(Xmat[, vars])
+                LD_vars = which(colSums(abs(cor_mat) == 1) &gt; 1)
+            }
+        }
     }
-    B = matrix(0, nrow =  ncol(Xmat), ncol = ntrait)
-  
-    
+
+    # ======= Assign effects manually =======
+    ntrait = ${n_trait}
+    B = matrix(0, nrow = ncol(Xmat), ncol = ntrait)
+
     phenotype = list()
+
+    # First trait: weaker heritability (h2g specified by parameter)
     i = 1
     beta = sim_beta_fix_variant(G = Xmat, causal_index = vars, is_h2g_total = FALSE)
     B[, i] = beta
-    pheno_single = sim_multi_traits(G = Xmat, B = B[,i, drop = FALSE], h2g = ${h2g}, is_h2g_total = FALSE)
+    pheno_single = sim_multi_traits(
+        G = Xmat,
+        B = B[, i, drop = FALSE],
+        h2g = ${h2g},  # weaker h2g
+        is_h2g_total = FALSE
+    )
     phenotype[[i]] = pheno_single$P
-  
+
+    # Second trait: normal heritability (hardcoded here 0.05)
     i = 2
     beta = sim_beta_fix_variant(G = Xmat, causal_index = vars, is_h2g_total = FALSE)
     B[, i] = beta
-  
-    pheno_single = sim_multi_traits(G = Xmat, B = B[,i, drop = FALSE], h2g = 0.05, is_h2g_total = FALSE)
+    pheno_single = sim_multi_traits(
+        G = Xmat,
+        B = B[, i, drop = FALSE],
+        h2g = 0.05,   # normal h2g
+        is_h2g_total = FALSE
+    )
     phenotype[[i]] = pheno_single$P
-  
+
+    # ======= Assemble final dataset =======
     variant = list()
-    for(i in 1:ncol(B)){
-        variant[[i]] = which(B[,i] != 0)
+    for (i in 1:ncol(B)) {
+        variant[[i]] = which(B[, i] != 0)
     }
+
     X = Xmat
     Y = bind_cols(phenotype)
-    colnames(Y) = paste0(&quot;Trait&quot;, c(1:ntrait))
+    colnames(Y) = paste0(&quot;Trait&quot;, 1:ntrait)
+
     data = list()
-    data[[&quot;X&quot;]] = Xmat
+    data[[&quot;X&quot;]] = X
     data[[&quot;Y&quot;]] = Y
     data[[&quot;variant&quot;]] = variant
+
+    # ======= Save final dataset =======
     saveRDS(data, ${_output:r})
 </pre></div>
 </div>
@@ -578,135 +609,150 @@ R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[GWAS_5trait]
+# ======= Define parameters =======
 parameter: genofile = paths
-# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 30
 parameter: walltime = &quot;100h&quot;
 parameter: mem = &quot;30G&quot;
 parameter: numThreads = 1
-# specify the number of causal variants
 parameter: n_trait = 5
 parameter: n_causal = 1
-parameter: h2g = 0.05
+parameter: h2g = 0.02  # weaker h2g for the first trait
 parameter: total_h2g = False
 parameter: share_pattern = &quot;all&quot;
 parameter: independent = False
-# specify the number of traits (phenotypes)
 parameter: container = &quot;&quot;
+
+# ======= Workflow input/output =======
 input: genofile, group_by = 1
-output: f&#39;{cwd:a}/{step_name}/sample_{_index}_real_simulation_{n_causal}_ncausal_{n_trait}_trait.rds&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_5trait_simulation.rds&#39;
+
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+
+# ======= Main R block =======
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
+
+    # --- Load necessary libraries ---
     library(&quot;MASS&quot;)
     library(&quot;plink2R&quot;)
     library(&quot;dplyr&quot;)
     library(&quot;readr&quot;)
     library(&quot;tidyverse&quot;)
-    # source some functions to read matrix and inpute the missing data
-    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
-    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
-    # read the plink file
+  
+    # install simulation package
+    # devtools::install_github(&quot;StatFunGen/simxQTL&quot;, build_vignettes = FALSE)
+    # BiocManager::install(&quot;StatFunGen/pecotmr&quot;)
+    library(&quot;pecotmr&quot;)
+    library(&quot;simxQTL&quot;)
+
+    # --- Read genotype data ---
     simu_file = ${_input:r}
     geno &lt;- read_plink(${_input:nr})
+
+    # --- Extract gene name and TSS ---
     gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
-    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
-    # filter by distance with. TSS
+    gene_tss_map = read_tsv(&quot;./Data/gene_cis_TADB_mapper.tsv&quot;)
     TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+
+    # --- Filter SNPs by distance to TSS ---
     keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
-    geno$bed &lt;- geno$bed[, keep_index]
+    geno$bed = geno$bed[, keep_index]
 
-    # Filter out columns with missing rate &gt; 0.1
-    imiss &lt;- 0.1
+    # --- Apply SNP filters: missingness and MAF ---
+    imiss = 0.1
+    maf = 0.05
+    Xmat = filter_X(geno$bed, imiss, maf)
 
-    # Filter out columns with MAF &lt; 0.05
-    maf &lt;- 0.05
-
-    # Apply filtering
-    Xmat &lt;- filter_X(geno$bed, imiss, maf)
-
-    # Only keep the first 4000 variants
-    ncausal &lt;- ${n_causal}
-    ntrait &lt;- ${n_trait}
+    # ======= Select causal variants manually =======
+    ncausal = ${n_causal}
+    ntrait = ${n_trait}
     indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
 
     if (indep) {
-        LD_vars = 1  # Initialize LD_vars
+        LD_vars = 1  # Initialize LD check
 
         if (ncausal == 1) {
-            # If only one causal variant, just sample it
+            # Only one causal variant needed
             vars = sample(1:ncol(Xmat), size = ncausal)
         } else {
-            # Repeat sampling until selected variables are quasi independent
+            # Ensure selected variants are approximately independent (LD &lt; 0.3)
             while (length(LD_vars != 0)) {
-                vars = sample(1:ncol(Xmat), size = ncausal)  
-                cor_mat = cor(Xmat[, vars]) 
+                vars = sample(1:ncol(Xmat), size = ncausal)
+                cor_mat = cor(Xmat[, vars])
                 LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
             }
         }
     } else {
-        vars = sample(1:ncol(Xmat), size = ncausal)
-    }
-    # Load predefined proportions for causal variant sampling
-    prop &lt;- readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_code/trait6_prop.rds&quot;)[, 1:4]
-    proportions &lt;- prop[ncausal, ]
+        LD_vars = 1  # Initialize LD check
 
-    # Sample variant names based on predefined proportions
+        if (ncausal == 1) {
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Avoid perfectly correlated variants (|cor| = 1)
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)
+                cor_mat = cor(Xmat[, vars])
+                LD_vars = which(colSums(abs(cor_mat) == 1) &gt; 1)
+            }
+        }
+    }
+
+    # ======= Load predefined proportions for trait sharing =======
+    prop &lt;- readRDS(&quot;./Data/trait6_prop.rds&quot;)[, 1:4]
+    proportions &lt;- prop[ncausal, ]
     sampled_name &lt;- as.numeric(sample(names(proportions), size = ncausal, prob = proportions, replace = TRUE))
 
-    # Initialize phenotype list and effect size matrix
-    phenotype &lt;- list()
-    B &lt;- matrix(0, nrow = ncol(Xmat), ncol = ntrait)
+    # ======= Assign effects manually =======
+    B = matrix(0, nrow = ncol(Xmat), ncol = ntrait)
+    config = matrix(0, nrow = ntrait, ncol = ncausal)
 
-    # Configuration matrix for trait-variant relationships
-    config &lt;- matrix(0, nrow = ntrait, ncol = ncausal)
-
-    # Assign causal variants to traits
     for (i in 1:ncausal) {
         coloc_trait &lt;- sample(1:ntrait, sampled_name[i])
         config[coloc_trait, i] &lt;- 1
     }
 
-    # Simulate effect sizes and phenotypes
+    phenotype = list()
+
     for (i in 1:nrow(config)) {
-        beta &lt;- B[, i, drop = FALSE]
-        index &lt;- which(config[i, ] == 1)
-  
-        if(i == 1){
-            h2g = ${h2g}
-        }else{
-            h2g = 0.05  
+        beta = B[, i, drop = FALSE]
+        index = which(config[i, ] == 1)
+
+        # First trait (Trait 1) has lower heritability
+        if (i == 1) {
+            h2g_trait = ${h2g}
+        } else {
+            h2g_trait = 0.05
         }
 
         if (length(index) &gt; 0) {
-            causal_index &lt;- vars[index]
-            beta &lt;- sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
-            B[, i] &lt;- beta
-            pheno_single &lt;- sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = h2g, is_h2g_total = FALSE)
-            phenotype[[i]] &lt;- pheno_single$P
+            causal_index = vars[index]
+            beta = sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
+            B[, i] = beta
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = h2g_trait, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
         } else {
-            pheno_single &lt;- sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = h2g, is_h2g_total = FALSE)
-            phenotype[[i]] &lt;- pheno_single$P
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = h2g_trait, is_h2g_total = FALSE)
+            phenotype[[i]] = pheno_single$P
         }
     }
 
-    # Identify causal variants for each trait
-    variant &lt;- list()
+    # ======= Assemble final dataset =======
+    variant = list()
     for (i in 1:ncol(B)) {
-        variant[[i]] &lt;- which(B[, i] != 0)
+        variant[[i]] = which(B[, i] != 0)
     }
 
-    # Combine phenotype data
-    X &lt;- Xmat
-    Y &lt;- bind_cols(phenotype)
-    colnames(Y) &lt;- paste0(&quot;Trait&quot;, 1:ntrait)
+    X = Xmat
+    Y = bind_cols(phenotype)
+    colnames(Y) = paste0(&quot;Trait&quot;, 1:ntrait)
 
-    # Store results in a list
-    data &lt;- list()
-    data[[&quot;X&quot;]] &lt;- Xmat
-    data[[&quot;Y&quot;]] &lt;- Y
-    data[[&quot;variant&quot;]] &lt;- variant
+    data = list()
+    data[[&quot;X&quot;]] = X
+    data[[&quot;Y&quot;]] = Y
+    data[[&quot;variant&quot;]] = variant
 
-    # Save results
+    # ======= Save final dataset =======
     saveRDS(data, ${_output:r})
 </pre></div>
 </div>
@@ -718,110 +764,150 @@ R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[GWAS_10trait]
+# ======= Define parameters =======
 parameter: genofile = paths
-# pheno_file: give genotype file (in plink)，we can read the gentype matrix. These files are separated by TADs.
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 30
 parameter: walltime = &quot;100h&quot;
 parameter: mem = &quot;30G&quot;
 parameter: numThreads = 1
-# specify the number of causal variants
 parameter: n_trait = 10
 parameter: n_causal = 1
-parameter: h2g = 0.05
+parameter: h2g = 0.02  # weaker h2g for first trait (GWAS)
 parameter: total_h2g = False
-parameter: independent = False
 parameter: share_pattern = &quot;all&quot;
-# specify the number of traits (phenotypes)
+parameter: independent = False
 parameter: container = &quot;&quot;
+
+# ======= Workflow input/output =======
 input: genofile, group_by = 1
-output: f&#39;{cwd:a}/{step_name}/sample_{_index}_real_simulation_{n_causal}_ncausal_{n_trait}_trait.rds&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+output: f&#39;{cwd:a}/{step_name}/sample_{_index}_10trait_simulation.rds&#39;
+
+task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
+
+# ======= Main R block =======
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
+
+    # --- Load necessary libraries ---
     library(&quot;MASS&quot;)
     library(&quot;plink2R&quot;)
     library(&quot;dplyr&quot;)
     library(&quot;readr&quot;)
     library(&quot;tidyverse&quot;)
-    # source some functions to read matrix and inpute the missing data
-    source(&quot;~/cloud_colocalization/simulation_code/simulate_linreg.R&quot;)
-    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
-    # read the plink file
+  
+    # install simulation package
+    # devtools::install_github(&quot;StatFunGen/simxQTL&quot;, build_vignettes = FALSE)
+    # BiocManager::install(&quot;StatFunGen/pecotmr&quot;)
+    library(&quot;pecotmr&quot;)
+    library(&quot;simxQTL&quot;)
+
+    # --- Read genotype data ---
     simu_file = ${_input:r}
     geno &lt;- read_plink(${_input:nr})
+
+    # --- Extract gene name and TSS ---
     gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
     gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
-    # filter by distance with. TSS
     TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
+
+    # --- Filter SNPs by distance to TSS ---
     keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
-    geno$bed = geno$bed[,keep_index]
-    # filter out columns with missing rate &gt; 0.1
+    geno$bed = geno$bed[, keep_index]
+
+    # --- Apply SNP filters: missingness and MAF ---
     imiss = 0.1
-    # filter out columns with MAF &lt; 0.05
     maf = 0.05
     Xmat = filter_X(geno$bed, imiss, maf)
-    # only keep the first 4000 variants
+
+    # ======= Select causal variants manually =======
     ncausal = ${n_causal}
     ntrait = ${n_trait}
     indep = ${&quot;TRUE&quot; if independent else &quot;FALSE&quot;}
+
     if (indep) {
-        LD_vars = 1  # Initialize LD_vars
+        LD_vars = 1  # Initialize LD check
 
         if (ncausal == 1) {
-            # If only one causal variant, just sample it
+            # Only one causal variant needed
             vars = sample(1:ncol(Xmat), size = ncausal)
         } else {
-            # Repeat sampling until selected variables are quasi independent
+            # Ensure selected variants are approximately independent (LD &lt; 0.3)
             while (length(LD_vars != 0)) {
-                vars = sample(1:ncol(Xmat), size = ncausal)  
-                cor_mat = cor(Xmat[, vars]) 
+                vars = sample(1:ncol(Xmat), size = ncausal)
+                cor_mat = cor(Xmat[, vars])
                 LD_vars = which(colSums(abs(cor_mat) &gt; 0.3) &gt; 1)
             }
         }
     } else {
-        vars = sample(1:ncol(Xmat), size = ncausal)
-    }
-  
-    prop = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_code/trait10_prop.rds&quot;)
-    proportions = prop[ncausal,]
-    sampled_name &lt;- as.numeric(sample(names(proportions), size =  ncausal, prob = proportions, replace = TRUE))
-    phenotype = list()
-    B = matrix(0, nrow =  ncol(Xmat), ncol = ntrait)
-    config = matrix(0, nrow =  ntrait, ncol = ncausal)
-    for(i in c(1:ncausal)){
-          coloc_trait = sample(c(1:ntrait), sampled_name[i])
-          config[coloc_trait, i] = 1
-    }
-    for(i in 1:nrow(config)){
-        beta = B[,i, drop = FALSE]
-        index = which(config[i,] == 1)
-        if(i == 1){
-            h2g = ${h2g}
-        }else{
-            h2g = 0.05  
+        LD_vars = 1  # Initialize LD check
+
+        if (ncausal == 1) {
+            vars = sample(1:ncol(Xmat), size = ncausal)
+        } else {
+            # Avoid perfectly correlated variants (|cor| = 1)
+            while (length(LD_vars != 0)) {
+                vars = sample(1:ncol(Xmat), size = ncausal)
+                cor_mat = cor(Xmat[, vars])
+                LD_vars = which(colSums(abs(cor_mat) == 1) &gt; 1)
+            }
         }
-        if(length(index) &gt; 0){
+    }
+
+    # ======= Load predefined proportions for trait sharing =======
+    prop &lt;- readRDS(&quot;./Data/trait10_prop.rds&quot;)
+    proportions &lt;- prop[ncausal, ]
+    sampled_name &lt;- as.numeric(sample(names(proportions), size = ncausal, prob = proportions, replace = TRUE))
+
+    # ======= Assign effects manually =======
+    B = matrix(0, nrow = ncol(Xmat), ncol = ntrait)
+    config = matrix(0, nrow = ntrait, ncol = ncausal)
+
+    for (i in 1:ncausal) {
+        coloc_trait &lt;- sample(1:ntrait, sampled_name[i])
+        config[coloc_trait, i] &lt;- 1
+    }
+
+    phenotype = list()
+
+    for (i in 1:nrow(config)) {
+        beta = B[, i, drop = FALSE]
+        index = which(config[i, ] == 1)
+
+        # First trait (Trait 1) has lower heritability
+        if (i == 1) {
+            h2g_trait = ${h2g}
+        } else {
+            h2g_trait = 0.05
+        }
+
+        if (length(index) &gt; 0) {
             causal_index = vars[index]
             beta = sim_beta_fix_variant(G = Xmat, causal_index = causal_index, is_h2g_total = FALSE)
             B[, i] = beta
-            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = h2g, is_h2g_total = FALSE)
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = h2g_trait, is_h2g_total = FALSE)
             phenotype[[i]] = pheno_single$P
-        }else{
-            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = h2g, is_h2g_total = FALSE)
+        } else {
+            pheno_single = sim_multi_traits(G = Xmat, B = as.matrix(beta), h2g = h2g_trait, is_h2g_total = FALSE)
             phenotype[[i]] = pheno_single$P
-        
         }
     }
+
+    # ======= Assemble final dataset =======
     variant = list()
-    for(i in 1:ncol(B)){
-        variant[[i]] = which(B[,i] != 0)
+    for (i in 1:ncol(B)) {
+        variant[[i]] = which(B[, i] != 0)
     }
+
     X = Xmat
     Y = bind_cols(phenotype)
-    colnames(Y) = paste0(&quot;Trait&quot;, c(1:ntrait))
+    colnames(Y) = paste0(&quot;Trait&quot;, 1:ntrait)
+
     data = list()
-    data[[&quot;X&quot;]] = Xmat
+    data[[&quot;X&quot;]] = X
     data[[&quot;Y&quot;]] = Y
     data[[&quot;variant&quot;]] = variant
+
+    # ======= Save final dataset =======
     saveRDS(data, ${_output:r})
 </pre></div>
 </div>
@@ -853,7 +939,7 @@ source ~/mamba_activate.sh
 module load Singularity
 
 
-sos run /home/hs3393/cb_Mar/simulation_code/6.Simulation_GWAS.ipynb JOB \
+sos run ./6_GWAS_Simulation.ipynb JOB \
     --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
     --mem 30G --h2g H2G --ncausal VAR --n_trait 2 --independent \
     --cwd WORK_DIR/simulation_signal_H2G/causal_VAR
@@ -861,7 +947,7 @@ EOF
 
 base_script=&quot;base_script&quot;
 for variant in 1 2 3; do
-    for h2g in 0.01 0.02 0.03 0.04 0.05; do
+    for h2g in 0.02 0.03 0.04 0.05; do
         output_script=&quot;variant_${variant}_h2g_${h2g}.sh&quot;
         cat ${base_script}|sed &quot;s|H2G|${h2g}|g&quot; | sed &quot;s|VAR|${variant}|g&quot; | sed &quot;s|WORK_DIR|${work_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
         sbatch ${output_script}
@@ -895,7 +981,7 @@ source ~/mamba_activate.sh
 module load Singularity
 
 
-sos run /home/hs3393/cb_Mar/simulation_code/6.Simulation_GWAS.ipynb JOB \
+sos run ./6_GWAS_Simulation.ipynb JOB \
     --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
     --mem 30G --h2g H2G --ncausal VAR --n_trait 5 --independent \
     --cwd WORK_DIR/simulation_signal_H2G/causal_VAR
@@ -937,7 +1023,7 @@ source ~/mamba_activate.sh
 module load Singularity
 
 
-sos run /home/hs3393/cb_Mar/simulation_code/6.Simulation_GWAS.ipynb JOB \
+sos run ./6_GWAS_Simulation.ipynb JOB \
     --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
     --mem 30G --h2g H2G --ncausal VAR --n_trait 10 --independent \
     --cwd WORK_DIR/simulation_signal_H2G/causal_VAR
@@ -956,86 +1042,6 @@ done
 </div>
 </div>
 </section>
-</section>
-<section id="targeted-colocboost-running">
-<h2>Targeted Colocboost running<a class="headerlink" href="#targeted-colocboost-running" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[colocboost_target]
-parameter: simufile = paths
-parameter: cwd = path(&quot;output&quot;)
-parameter: job_size = 15
-parameter: walltime = &quot;80h&quot;
-parameter: mem = &quot;60G&quot;
-parameter: numThreads = 3
-parameter: trait = 10
-parameter: container = &quot;&quot;
-input: simufile, group_by = 1
-output: f&#39;{cwd:a}/{_input[0]:bn}_ntrait_{trait}_{step_name}.rds&#39;
-task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    for(file in list.files(&quot;/home/xc2270/COLOCBoost/code_COLOCBoost/colocboost_updating/&quot;, full.names = T)) {source(file)}
-    X = list()
-    Y = list()
-    variant = list()
-    rds = readRDS(${_input:ar})
-
-    for(i in 1:${trait}){
-      X[[i]] = rds$X
-      Y[[i]] = as.matrix(rds$Y[, i, drop = FALSE])
-      variant[[i]] = rds$variant[[i]]
-    }
-
-    start_time &lt;- Sys.time()
-    colocboost_result = colocboost(
-      X = X, 
-      Y = Y, target_outcome_idx=1
-    )
-    end_time &lt;- Sys.time()
-
-    # record true variant, analysed trait number and corresponding file name
-    colocboost_result$var = variant
-    colocboost_result$trait_num = ${trait}
-    colocboost_result$file = &quot;${_input[0]:a}&quot;
-
-    # In real setting (list: variant), show which snp appear in at least two traits
-    all_var = unlist(variant)
-    true_var = as.numeric(names(which(table(all_var) &gt;= 2)))
-    true_trait = list()
-
-    # Iterate through the variant list to find which traits the true_var is colocalized on
-    for (variant_index in 1:length(true_var)){
-      temp_vec = c()
-      for(i in 1:length(variant)){
-        if(true_var[variant_index] %in% variant[[i]]){
-          temp_vec = c(temp_vec, i)
-        }
-      }
-      true_trait[[variant_index]] = temp_vec
-    }
-
-    library(stringr)
-    coloc_trait = list()
-
-    # if no coloc sets detected, assign coloc_trait as NULL as well
-    if(length(colocboost_result$cos_details$cos$cos_index) == 0){
-      coloc_trait = NULL  
-    } else {
-      for(i in 1:length(colocboost_result$cos_details$cos_outcomes$outcome_index)){
-        coloc_trait[[i]] = colocboost_result$cos_details$cos_outcomes$outcome_index[[i]]
-      }
-    }
-
-    colocboost_result$true_variant = true_var
-    colocboost_result$true_trait = true_trait
-    colocboost_result$coloc_set = colocboost_result$cos_details$cos$cos_index
-    colocboost_result$coloc_trait = coloc_trait
-    colocboost_result$time = end_time - start_time
-    saveRDS(colocboost_result, ${_output:r})
-</pre></div>
-</div>
-</div>
-</div>
 <section id="bash-job-submission">
 <h3>Bash job submission<a class="headerlink" href="#bash-job-submission" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -1066,54 +1072,7 @@ module load Singularity
 
 cd DATA_DIR/simulation_signal_H2G/causal_VAR
 
-sos run /home/hs3393/cb_Mar/simulation_code/6.Simulation_GWAS.ipynb JOB \
-    --simufile $(find -type f -name &#39;*.rds&#39;) \
-    --mem 30G --trait 2 \
-    --cwd WORK_DIR/JOB/simulation_signal_H2G/causal_VAR
-EOF
-
-
-base_script=&quot;base_script&quot;
-for variant in 1 2 3; do
-    for h2g in 0.01 0.02 0.03 0.04 0.05; do
-        output_script=&quot;variant_${variant}_h2g_${h2g}.sh&quot;
-        cat ${base_script}|sed &quot;s|H2G|${h2g}|g&quot; | sed &quot;s|VAR|${variant}|g&quot; | sed &quot;s|WORK_DIR|${work_dir}|g&quot;  | sed &quot;s|DATA_DIR|${data_dir}|g&quot; |sed &quot;s|JOB|${job}|g&quot;  &gt; ${output_script}
-        sbatch ${output_script}
-    done
-done
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>data_dir=&quot;/home/hs3393/cb_Mar/simulation_data/simulation_GWAS/&quot;
-job=&quot;colocboost&quot;
-work_dir=&quot;/home/hs3393/cb_Mar/simulation_result/simulation_GWAS/&quot;
-#!/bin/bash
-
-mkdir -p ${work_dir}/${job}/code
-mkdir -p ${work_dir}/${job}/log
-mkdir -p ${work_dir}/${job}/result
-
-cd ${work_dir}/${job}/code
-
-cat &lt;&lt; &#39;EOF&#39; &gt; base_script
-#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 100:00:00
-#SBATCH --mem=30000
-#SBATCH -J JOB
-#SBATCH -o WORK_DIR/JOB/log/JOB.%j.out
-#SBATCH -e WORK_DIR/JOB/log/JOB.%j.err
-
-source /home/hs3393/mamba_activate.sh
-module load Singularity
-
-cd DATA_DIR/simulation_signal_H2G/causal_VAR
-
-sos run /home/hs3393/cb_Mar/simulation_code/2.Run_Colocboost.ipynb JOB \
+sos run /home/hs3393/cb_Mar/simulation_code/2_Run_Colocboost.ipynb JOB \
     --simufile $(find -type f -name &#39;*.rds&#39;) \
     --mem 30G --trait 2 \
     --cwd WORK_DIR/JOB/simulation_signal_H2G/causal_VAR
@@ -1153,71 +1112,7 @@ cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
 
 source ~/mamba_activate.sh
 
-sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
-    --folder DATA_DIR/ \
-    --cwd DATA_DIR/summary
-EOF
-
-
-base_script=&quot;summary_script&quot;
-output_script=&quot;summary.sh&quot;
-cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
-sbatch ${output_script}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>data_dir=&quot;/home/hs3393/cb_Mar/simulation_result/simulation_GWAS/colocboost/&quot;
-mkdir -p ${data_dir}/summary
-cd ${data_dir}/summary
-
-cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
-#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 8:00:00
-#SBATCH --mem=30000
-#SBATCH -J sum
-#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
-#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
-
-source ~/mamba_activate.sh
-
-sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
-    --folder DATA_DIR/ \
-    --cwd DATA_DIR/summary
-EOF
-
-
-base_script=&quot;summary_script&quot;
-output_script=&quot;summary.sh&quot;
-cat ${base_script}|  sed &quot;s|DATA_DIR|${data_dir}|g&quot;  &gt; ${output_script}
-sbatch ${output_script}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>data_dir=&quot;/home/hs3393/cb_simulation/simulation_result/colocboost/simulation_GWAS_not_targeted/&quot;
-mkdir -p ${data_dir}/summary
-cd ${data_dir}/summary
-
-cat &lt;&lt; &#39;EOF&#39; &gt; summary_script
-#!/bin/bash -l
-# NOTE the -l flag!
-#
-#SBATCH -t 8:00:00
-#SBATCH --mem=30000
-#SBATCH -J sum
-#SBATCH -o DATA_DIR/log/summary.&quot;%j&quot;.out
-#SBATCH -e DATA_DIR/log/summary.&quot;%j&quot;.err
-
-source ~/mamba_activate.sh
-
-sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_summary \
+sos run /home/hs3393/cb_Mar/simulation_code/4.Result_Summary.ipynb coloc_target_summary \
     --folder DATA_DIR/ \
     --cwd DATA_DIR/summary
 EOF
@@ -1265,24 +1160,6 @@ sbatch ${output_script}
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="5_Simulation_secondary.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Secondary simulations</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="7_Simulation_correlated.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Correlated phenotypes simulation</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -1309,9 +1186,6 @@ sbatch ${output_script}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-gwas-5-traits">Simulation GWAS - 5 traits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-gwas-10-traits">Simulation GWAS - 10 traits</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-submission">Bash submission</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeted-colocboost-running">Targeted Colocboost running</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash-job-submission">Bash job submission</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#result-summary">Result summary</a></li>
 </ul>

@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/3_Other_Methods';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/3_Other_Colocalization_Methods';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Colocalization result summary" href="4_Result_Summary.html" />
-    <link rel="prev" title="Run Colocboost" href="2_Run_Colocboost.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -167,7 +167,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Main_Figures/index.html">Main Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../Main_Figures/Figure_2/index.html">Figure 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../Main_Figures/Figure_2/Figure_2a.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
@@ -216,20 +216,11 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Other colocalization methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and ColocBoost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait ColocBoost)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
@@ -287,7 +278,7 @@
       
       
       
-      <li><a href="../_sources/Simulation_Studies/3_Other_Methods.ipynb" target="_blank"
+      <li><a href="../_sources/Simulation_Studies/3_Other_Colocalization_Methods.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -563,10 +554,146 @@ input: simufile, group_by = 1
 output: f&#39;{cwd:a}/{_input[0]:bn}_ntr_{trait}_hyprcoloc.rds&#39;
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
 R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    library(hyprcoloc)
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/hypercoloc_set.r&quot;)
+    # ======= Load necessary libraries =======
+    library(&quot;hyprcoloc&quot;)
+    library(&quot;susieR&quot;)
+    # install simulation package
+    # devtools::install_github(&quot;StatFunGen/simxQTL&quot;, build_vignettes = FALSE)
+    # BiocManager::install(&quot;StatFunGen/pecotmr&quot;)
+    library(&quot;pecotmr&quot;)
+    library(&quot;simxQTL&quot;)
+
+    # ======= Define run_hypercoloc function =======
+    run_hypercoloc = function(file, actual_pheno_number, setting = &quot;normal&quot;) {
+        library(hyprcoloc)
+
+        # --- Load simulation file ---
+        rds = readRDS(file)
+
+        # --- Prepare input data: X (genotype), Y (phenotypes), variant (causal SNPs) ---
+        X = list()
+        Y = list()
+        variant = list()
+
+        for (i in 1:actual_pheno_number) {
+            X[[i]] = rds$X[, , drop = FALSE]
+            Y[[i]] = as.matrix(rds$Y[, i, drop = FALSE])
+            variant[[i]] = rds$variant[[i]]
+        }
+
+        # --- Estimate marginal betas and SEs using univariate regression ---
+        betas = sebetas = matrix(NA, nrow = ncol(X[[1]]), ncol = actual_pheno_number)
+
+        for (i in 1:actual_pheno_number) {
+            for (mm in 1:ncol(X[[1]])) {
+                rr &lt;- susieR::univariate_regression(scale(X[[i]][, mm]), scale(Y[[i]]))
+                betas[mm, i] = rr$betahat
+                sebetas[mm, i] = rr$sebetahat
+            }
+        }
+
+        # --- Set trait and SNP labels ---
+        traits &lt;- c(1:actual_pheno_number)
+        rsid &lt;- paste0(&quot;snp&quot;, c(1:ncol(X[[1]])))
+        colnames(betas) &lt;- colnames(sebetas) &lt;- traits
+        rownames(betas) &lt;- rownames(sebetas) &lt;- rsid
+
+
+        # --- Run HyPrColoc ---
+        t1 &lt;- Sys.time()
+        res_hyprcoloc &lt;- hyprcoloc(betas, sebetas, trait.names = traits, snp.id = rsid, snpscores = TRUE)
+        t2 &lt;- Sys.time()
+
+        # --- Process HyPrColoc results ---
+        tb = res_hyprcoloc$results
+        index = which(tb$traits != &quot;None&quot;)
+        tb = tb[index, , drop = FALSE]
+        res_hyprcoloc$results = tb
+        num = nrow(res_hyprcoloc$results)
+
+        # --- Handle &quot;normal&quot; setting - output the credible set ---
+        if (setting == &quot;normal&quot;) {
+            if (num == 0) {
+                causal_snp = NULL
+                causal_trait = NULL
+            } else {
+                hyprcoloc_csets &lt;- cred.sets(res_hyprcoloc, value = 0.95)
+                causal_snp = list()
+                causal_trait = list()
+
+                for (i in 1:num) {
+                    causal_snp[[i]] = as.numeric(gsub(&quot;[^0-9]&quot;, &quot;&quot;, names(hyprcoloc_csets[[i]])))
+                    causal_trait[[i]] = as.numeric(unlist(strsplit(res_hyprcoloc$results$traits[i], &quot;, &quot;)))
+                }
+            }
+
+            ### Find true coloc variants and traits ###
+            all_var = unlist(variant)
+            coloc_var_index = as.numeric(names(which(table(all_var) &gt;= 2)))  # Variants appearing in ≥2 traits
+
+            true_coloc_var = coloc_var_index
+            true_coloc_trait = list()
+
+            for (variant_index in 1:length(coloc_var_index)) {
+                temp_vec = c()
+                for (i in 1:length(variant)) {
+                    if (coloc_var_index[variant_index] %in% variant[[i]]) {
+                        temp_vec = c(temp_vec, i)
+                    }
+                }
+                true_coloc_trait[[variant_index]] = temp_vec
+            }
+
+            # --- Create report ---
+            hypercoloc_report = res_hyprcoloc
+            hypercoloc_report$true_variant = true_coloc_var
+            hypercoloc_report$true_trait = true_coloc_trait
+            hypercoloc_report$coloc_set = causal_snp    
+            hypercoloc_report$coloc_trait = causal_trait
+            hypercoloc_report$file = file
+            hypercoloc_report$time = (t2 - t1)
+
+        # --- Handle &quot;alternative&quot; setting (no trait recording): output the SNP hit (one variant) ---
+        } else {
+            if (num == 0) {
+                causal_snp = NULL
+            } else {
+                hyprcoloc_csets &lt;- cred.sets(res_hyprcoloc, value = 0.95)
+                causal_snp = list()
+
+                for (i in 1:num) {
+                    causal_snp[[i]] = as.numeric(gsub(&quot;[^0-9]&quot;, &quot;&quot;, names(hyprcoloc_csets[[i]])))
+                }
+            }
+
+            hypercoloc_report = res_hyprcoloc
+            hypercoloc_report$coloc_set = causal_snp    
+            hypercoloc_report$file = file
+            hypercoloc_report$time = (t2 - t1)
+        }
+
+        # --- Purity filtering: keep only sets with LD-purity &gt; 0.5 ---
+        purity_check = lapply(hypercoloc_report$coloc_set, function(x) (get_purity(x, X = X[[1]]))[1])
+        purity_index = which(unlist(purity_check) &gt; 0.5)
+
+        if (length(purity_index) &gt; 0) {
+            hypercoloc_report$coloc_set = hypercoloc_report$coloc_set[purity_index]
+            hypercoloc_report$coloc_trait = hypercoloc_report$coloc_trait[purity_index]
+        } else {
+            print(&quot;All filtered out&quot;)
+            hypercoloc_report$coloc_set = NULL
+            hypercoloc_report$coloc_trait = NULL
+        }
+
+        hypercoloc_report$purity = purity_check
+
+        # --- Return result ---
+        return(hypercoloc_report)
+    }
+
+    # ======= Execute and Save =======
     file = ${_input:ar,}
-    hypercoloc_result = run_hypercoloc(file, ${trait}, setting=&quot;${setting}&quot;)
+    hypercoloc_result = run_hypercoloc(file, ${trait}, setting = &quot;${setting}&quot;)
     saveRDS(hypercoloc_result, ${_output:r})
   
 </pre></div>
@@ -579,6 +706,7 @@ R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[hyprcoloc_LD_set]
+# ======= Define parameters =======
 parameter: simufile = paths
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 30
@@ -587,15 +715,165 @@ parameter: mem = &quot;30G&quot;
 parameter: numThreads = 1
 parameter: trait = 10
 parameter: container = &quot;&quot;
-parameter: setting=&quot;normal&quot;
+parameter: setting = &quot;normal&quot;
+
+# ======= Workflow input/output =======
 input: simufile, group_by = 1
 output: f&#39;{cwd:a}/{_input[0]:bn}_ntr_{trait}_hypercoloc_LD.rds&#39;
+
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    library(hyprcoloc)
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/hypercoloc_set_LD.r&quot;)
+
+# ======= Main R block =======
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+
+    library(&quot;hyprcoloc&quot;)
+    library(&quot;susieR&quot;)
+    # install simulation package
+    # devtools::install_github(&quot;StatFunGen/simxQTL&quot;, build_vignettes = FALSE)
+    # BiocManager::install(&quot;StatFunGen/pecotmr&quot;)
+    library(&quot;pecotmr&quot;)
+    library(&quot;simxQTL&quot;)
+
+    # ======= Define run_hypercoloc function =======
+    run_hypercoloc = function(file, actual_pheno_number, setting = &quot;normal&quot;) {
+        library(hyprcoloc)
+
+        # --- Load simulation data ---
+        rds = readRDS(file)
+
+        # --- Prepare input lists ---
+        X = list()
+        Y = list()
+        variant = list()
+
+        for (i in 1:actual_pheno_number) {
+            X[[i]] = rds$X[, , drop = FALSE]
+            Y[[i]] = as.matrix(rds$Y[, i, drop = FALSE])
+            variant[[i]] = rds$variant[[i]]
+        }
+
+        # --- Estimate marginal betas and SEs ---
+        betas = sebetas = matrix(NA, nrow = ncol(X[[1]]), ncol = actual_pheno_number)
+        for (i in 1:actual_pheno_number) {
+            for (mm in 1:ncol(X[[1]])) {
+                rr &lt;- susieR::univariate_regression(scale(X[[i]][, mm]), scale(Y[[i]]))
+                betas[mm, i] = rr$betahat
+                sebetas[mm, i] = rr$sebetahat
+            }
+        }
+
+        # --- Label traits and SNPs ---
+        traits &lt;- c(1:actual_pheno_number)
+        rsid &lt;- paste0(&quot;snp&quot;, c(1:ncol(X[[1]])))
+        colnames(betas) &lt;- colnames(sebetas) &lt;- traits
+        rownames(betas) &lt;- rownames(sebetas) &lt;- rsid
+
+        # --- Calculate LD matrix from X (correlation) ---
+        LD = get_correlation(X[[1]])
+        colnames(LD) &lt;- rownames(LD) &lt;- colnames(X[[1]])
+
+        # --- Run HyPrColoc with LD matrix ---
+        t1 &lt;- Sys.time()
+        res_hyprcoloc &lt;- hyprcoloc(
+            betas, 
+            sebetas, 
+            trait.names = traits, 
+            snp.id = rsid, 
+            snpscores = TRUE, 
+            ld.matrix = LD   # &lt;&lt;=== NEW compared to previous version
+        )
+        t2 &lt;- Sys.time()
+
+        # --- Process HyPrColoc results ---
+        tb = res_hyprcoloc$results
+        index = which(tb$traits != &quot;None&quot;)
+        tb = tb[index, , drop = FALSE]
+        res_hyprcoloc$results = tb
+        num = nrow(res_hyprcoloc$results)
+
+        # --- Handle &quot;normal&quot; setting ---
+        if (setting == &quot;normal&quot;) {
+            if (num == 0) {
+                causal_snp = NULL
+                causal_trait = NULL
+            } else {
+                hyprcoloc_csets &lt;- cred.sets(res_hyprcoloc, value = 0.95)
+                causal_snp = list()
+                causal_trait = list()
+
+                for (i in 1:num) {
+                    causal_snp[[i]] = as.numeric(gsub(&quot;[^0-9]&quot;, &quot;&quot;, names(hyprcoloc_csets[[i]])))
+                    causal_trait[[i]] = as.numeric(unlist(strsplit(res_hyprcoloc$results$traits[i], &quot;, &quot;)))
+                }
+            }
+
+            # --- Identify true coloc variants and traits ---
+            all_var = unlist(variant)
+            coloc_var_index = as.numeric(names(which(table(all_var) &gt;= 2)))
+
+            true_coloc_var = coloc_var_index
+            true_coloc_trait = list()
+
+            for (variant_index in 1:length(coloc_var_index)) {
+                temp_vec = c()
+                for (i in 1:length(variant)) {
+                    if (coloc_var_index[variant_index] %in% variant[[i]]) {
+                        temp_vec = c(temp_vec, i)
+                    }
+                }
+                true_coloc_trait[[variant_index]] = temp_vec
+            }
+
+            # --- Save full report ---
+            hypercoloc_report = res_hyprcoloc
+            hypercoloc_report$true_variant = true_coloc_var
+            hypercoloc_report$true_trait = true_coloc_trait
+            hypercoloc_report$coloc_set = causal_snp    
+            hypercoloc_report$coloc_trait = causal_trait
+            hypercoloc_report$file = file
+            hypercoloc_report$time = (t2 - t1)
+
+        # --- Handle alternative setting ---
+        } else {
+            if (num == 0) {
+                causal_snp = NULL
+            } else {
+                hyprcoloc_csets &lt;- cred.sets(res_hyprcoloc, value = 0.95)
+                causal_snp = list()
+
+                for (i in 1:num) {
+                    causal_snp[[i]] = as.numeric(gsub(&quot;[^0-9]&quot;, &quot;&quot;, names(hyprcoloc_csets[[i]])))
+                }
+            }
+
+            hypercoloc_report = res_hyprcoloc
+            hypercoloc_report$coloc_set = causal_snp    
+            hypercoloc_report$file = file
+            hypercoloc_report$time = (t2 - t1)
+        }
+
+        # --- Purity filtering (keep coloc sets with LD purity &gt; 0.5) ---
+        purity_check = lapply(hypercoloc_report$coloc_set, function(x) (get_purity(x, X = X[[1]]))[1])
+        purity_index = which(unlist(purity_check) &gt; 0.5)
+
+        if (length(purity_index) &gt; 0) {
+            hypercoloc_report$coloc_set = hypercoloc_report$coloc_set[purity_index]
+            hypercoloc_report$coloc_trait = hypercoloc_report$coloc_trait[purity_index]
+        } else {
+            print(&quot;All filtered out&quot;)
+            hypercoloc_report$coloc_set = NULL
+            hypercoloc_report$coloc_trait = NULL
+        }
+
+        hypercoloc_report$purity = purity_check
+
+        # --- Return result ---
+        return(hypercoloc_report)
+    }
+
+    # ======= Execute and Save =======
     file = ${_input:ar,}
-    hypercoloc_result = run_hypercoloc(file, ${trait}, setting=&quot;${setting}&quot;)
+    hypercoloc_result = run_hypercoloc(file, ${trait}, setting = &quot;${setting}&quot;)
     saveRDS(hypercoloc_result, ${_output:r})
 </pre></div>
 </div>
@@ -607,6 +885,7 @@ R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[moloc_set]
+# ======= Define parameters =======
 parameter: simufile = paths
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 30
@@ -615,12 +894,165 @@ parameter: mem = &quot;40G&quot;
 parameter: numThreads = 1
 parameter: trait = 50
 parameter: container = &quot;&quot;
+
+# ======= Workflow input/output =======
 input: simufile, group_by = 1
 output: f&#39;{cwd:a}/{_input[0]:bn}_ntr_{trait}_moloc_set.rds&#39;
+
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    library(moloc)
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/moloc_set.r&quot;)
+
+# ======= Main R block =======
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+
+    library(&quot;moloc&quot;)
+    library(&quot;tidyverse&quot;)
+    library(&quot;susieR&quot;)
+    # install simulation package
+    # devtools::install_github(&quot;StatFunGen/simxQTL&quot;, build_vignettes = FALSE)
+    # BiocManager::install(&quot;StatFunGen/pecotmr&quot;)
+    library(&quot;pecotmr&quot;)
+    library(&quot;simxQTL&quot;)
+
+    # ======= Define run_moloc function =======
+    run_moloc &lt;- function(file, actual_pheno_number, setting = &quot;normal&quot;) {
+        
+        # --- Load simulation RDS file ---
+        rds = readRDS(file)
+
+        # --- Prepare X (genotypes), Y (phenotypes), variant (causal SNPs) ---
+        X = list()
+        Y = list()
+        variant = list()
+
+        for (i in 1:actual_pheno_number) {
+            X[[i]] = rds$X[, , drop = FALSE]
+            Y[[i]] = as.matrix(rds$Y[, i, drop = FALSE])
+            variant[[i]] = rds$variant[[i]]
+        }
+
+        # --- Build input summary statistics tables for moloc ---
+        tb &lt;- list()
+        cnt = 1
+
+        for (i in 1:actual_pheno_number) {
+            betas = c()
+            sebetas = c()
+            MAF = c()
+
+            for (mm in 1:ncol(X[[i]])) {
+                rr &lt;- susieR::univariate_regression(X[[i]][, mm], Y[[i]])
+                betas[mm] = rr$betahat
+                sebetas[mm] = rr$sebetahat
+                # Minor Allele Frequency (MAF) calculation
+                MAF[mm] = min(sum(X[[i]][, mm]) / (2 * nrow(X[[i]])), 1 - sum(X[[i]][, mm]) / (2 * nrow(X[[i]])))
+            }
+
+            tb[[cnt]] = tibble(
+                SNP = 1:ncol(X[[i]]),
+                BETA = betas,
+                SE = sebetas,
+                N = nrow(X[[i]]),
+                MAF = MAF
+            )
+            cnt = cnt + 1
+        }
+
+        # --- Run moloc on the prepared input ---
+        options(scipen = 1, digits = 3)
+
+        t1 &lt;- Sys.time()
+        moloc &lt;- moloc_test(listData = tb, save.SNP.info = TRUE)
+        t2 &lt;- Sys.time()
+
+        # --- Identify true coloc variants across traits ---
+        all_var = unlist(variant)
+        coloc_var_index = as.numeric(names(which(table(all_var) &gt;= 2)))
+
+        true_coloc_var = coloc_var_index
+        true_coloc_trait = list()
+
+        for (variant_index in 1:length(coloc_var_index)) {
+            temp_vec = c()
+            for (i in 1:length(variant)) {
+                if (coloc_var_index[variant_index] %in% variant[[i]]) {
+                    temp_vec = c(temp_vec, i)
+                }
+            }
+            true_coloc_trait[[variant_index]] = temp_vec
+        }
+
+        # --- Extract colocalization result from moloc output ---
+        index = which.max(moloc$priors_lkl_ppa$PPA)
+        hypothesis_name = rownames(moloc$priors_lkl_ppa)[index]
+        coloc_traits = unlist(strsplit(hypothesis_name, &quot;,&quot;))
+
+        # Find the hypothesis with maximum number of traits coloc&#39;d
+        trait_num = max(nchar(coloc_traits))
+        coloc_trait = coloc_traits[which.max(nchar(coloc_traits))]
+
+        # Decode coloc trait indices (letters -&gt; numbers)
+        coloc_trait_index = c()
+        for (item in unlist(strsplit(coloc_trait, NULL))) {
+            temp_index = as.integer(charToRaw(item)) - as.integer(charToRaw(&quot;a&quot;)) + 1
+            coloc_trait_index = c(coloc_trait_index, temp_index)
+        }
+
+        # --- Find credible SNP set covering 95% probability ---
+        index2 = which(rownames(moloc$best_snp[[1]]) == coloc_trait)
+        colname = colnames(moloc$best_snp[[2]])[index2]
+
+        row_index &lt;- moloc$best_snp[[2]] %&gt;%
+            as_tibble() %&gt;%
+            arrange(desc(!!sym(colname))) %&gt;%
+            mutate(row_number = row_number()) %&gt;%
+            mutate(cumulative_sum = cumsum(!!sym(colname))) %&gt;%
+            filter(cumulative_sum &gt;= 0.95) %&gt;%
+            pull(row_number) %&gt;%
+            min()
+
+        # Identify top SNPs up to 95% credible set
+        snps = moloc$best_snp[[2]] %&gt;%
+            as_tibble() %&gt;%
+            mutate(row_number = row_number()) %&gt;%
+            arrange(desc(!!sym(colname))) %&gt;%
+            pull(row_number)
+        snps = snps[1:row_index]
+
+        # --- Assemble moloc report ---
+        moloc_report = moloc
+        moloc_report$file = file
+        moloc_report$true_variant = true_coloc_var
+        moloc_report$true_trait = true_coloc_trait
+
+        if (length(coloc_trait_index) &gt;= 2) {
+            moloc_report$coloc_set = list(snps)
+            moloc_report$coloc_trait = list(coloc_trait_index)
+        } else {
+            # If only one trait coloc, treat as fine-mapping only (not true coloc)
+            moloc_report$coloc_set = NULL
+            moloc_report$coloc_trait = NULL
+        }
+
+        # --- Purity filtering (keep coloc sets with LD-purity &gt; 0.5) ---
+        purity_check = lapply(moloc_report$coloc_set, function(x) (get_purity(x, X = X[[1]]))[1])
+        purity_index = which(unlist(purity_check) &gt; 0.5)
+
+        if (length(purity_index) &gt; 0) {
+            moloc_report$coloc_set = moloc_report$coloc_set[purity_index]
+            moloc_report$coloc_trait = moloc_report$coloc_trait[purity_index]
+        } else {
+            print(&quot;All filtered out&quot;)
+            moloc_report$coloc_set = NULL
+            moloc_report$coloc_trait = NULL
+        }
+
+        moloc_report$time = (t2 - t1)
+        moloc_report$purity = purity_check
+
+        return(moloc_report)
+    }
+
+    # ======= Execute and Save =======
     files = c(${_input:ar,})
     moloc_result = run_moloc(files, ${trait})
     saveRDS(moloc_result, ${_output:r})
@@ -634,6 +1066,7 @@ R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[susie_coloc_set]
+# ======= Define parameters =======
 parameter: simufile = paths
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 300
@@ -642,11 +1075,188 @@ parameter: mem = &quot;40G&quot;
 parameter: numThreads = 1
 parameter: trait = 2
 parameter: container = &quot;&quot;
+
+# ======= Workflow input/output =======
 input: simufile, group_by = 1
 output: f&#39;{cwd:a}/{_input[0]:bn}_ntr_{trait}_susie_coloc_result.rds&#39;
+
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/susie_coloc.r&quot;)
+
+# ======= Main R block =======
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+    library(&quot;susieR&quot;)
+    library(&quot;coloc&quot;)
+    library(&quot;tidyverse&quot;)
+    # install simulation package
+    # devtools::install_github(&quot;StatFunGen/simxQTL&quot;, build_vignettes = FALSE)
+    # BiocManager::install(&quot;StatFunGen/pecotmr&quot;)
+    library(&quot;pecotmr&quot;)
+    library(&quot;simxQTL&quot;)
+  
+    run_susie_coloc &lt;- function(file, actual_pheno_number = 2) {
+
+
+        # --- Load simulation file ---
+        rds = readRDS(file)
+
+        # --- Extract X, Y, variant for each trait ---
+        X = list()
+        Y = list()
+        variant = list()
+
+        for (i in 1:actual_pheno_number) {
+            X[[i]] = rds$X[, , drop = FALSE]
+            Y[[i]] = as.matrix(rds$Y[, i, drop = FALSE])
+            variant[[i]] = rds$variant[[i]]
+        }
+
+        # --- Prepare for SuSiE fine-mapping (assume two traits) ---
+        Xe = X[[1]]  # First trait
+        Xp = X[[2]]  # Second trait
+        Ye = Y[[1]]
+        Yp = Y[[2]]
+
+        # --- Estimate marginal betas and varbetas ---
+        beta_p = varbeta_p = rep(0, ncol(Xp))
+        beta_e = varbeta_e = rep(0, ncol(Xe))
+
+        for (mm in 1:ncol(Xe)) {
+            rr &lt;- susieR::univariate_regression(Yp, Xp[, mm])
+            beta_p[mm] = rr$betahat
+            varbeta_p[mm] = rr$sebetahat^2
+
+            rr &lt;- susieR::univariate_regression(Ye, Xe[, mm])
+            beta_e[mm] = rr$betahat
+            varbeta_e[mm] = rr$sebetahat^2
+        }
+
+        # --- Construct SuSiE input for both traits ---
+        LDp = cor(Xp)
+        LDe = cor(Xe)
+        snp = paste0(&quot;snp&quot;, 1:ncol(Xe))
+        colnames(LDe) = rownames(LDe) = colnames(LDp) = rownames(LDp) = snp
+
+        dp = list(
+            &quot;beta&quot; = beta_p, &quot;varbeta&quot; = varbeta_p,
+            &quot;LD&quot; = LDp, &quot;snp&quot; = snp, &quot;N&quot; = nrow(Xp),
+            &quot;type&quot; = &quot;quant&quot;, &quot;sdY&quot; = sd(Yp)
+        )
+
+        de = list(
+            &quot;beta&quot; = beta_e, &quot;varbeta&quot; = varbeta_e,
+            &quot;LD&quot; = LDe, &quot;snp&quot; = snp, &quot;N&quot; = nrow(Xe),
+            &quot;type&quot; = &quot;quant&quot;, &quot;sdY&quot; = sd(Ye)
+        )
+
+        # --- Run SuSiE fine-mapping and coloc.susie ---
+        t1 &lt;- Sys.time()
+        out_p &lt;- runsusie(dp)
+        out_e &lt;- runsusie(de)
+        out_coloc = coloc.susie(out_e, out_p)
+        t2 &lt;- Sys.time()
+
+        # --- Identify true colocalized variants ---
+        all_var = unlist(variant)
+        coloc_var_index = as.numeric(names(which(table(all_var) &gt;= 2)))
+
+        true_coloc_var = coloc_var_index
+        true_coloc_trait = list()
+
+        for (variant_index in 1:length(coloc_var_index)) {
+            temp_vec = c()
+            for (i in 1:length(variant)) {
+                if (coloc_var_index[variant_index] %in% variant[[i]]) {
+                    temp_vec = c(temp_vec, i)
+                }
+            }
+            true_coloc_trait[[variant_index]] = temp_vec
+        }
+
+        ### --- Post-process coloc summary results ---
+        df &lt;- out_coloc$summary
+
+        if (is.null(df)) {
+            out_coloc = list()
+            sets = NULL
+            coloc_trait_index = NULL
+
+        } else {
+            # Find rows where PP.H4 is maximum
+            index &lt;- which(df$PP.H4.abf &gt; df$PP.H1.abf &amp; df$PP.H4.abf &gt; df$PP.H2.abf &amp; df$PP.H4.abf &gt; df$PP.H3.abf)
+
+            if (length(index) &gt; 0) {
+                tb &lt;- out_coloc$results
+                number = 1
+
+                # For each H4-supported region
+                for (i in index) {
+                    new_index = i + 1
+                    colname = names(tb)[new_index]
+
+                    row_index &lt;- tb %&gt;%
+                        as_tibble() %&gt;%
+                        arrange(desc(!!sym(colname))) %&gt;%
+                        mutate(row_number = row_number()) %&gt;%
+                        mutate(cumulative_sum = cumsum(!!sym(colname))) %&gt;%
+                        filter(cumulative_sum &gt;= 0.95) %&gt;%
+                        pull(row_number) %&gt;%
+                        min()
+
+                    snps = tb %&gt;%
+                        as_tibble() %&gt;%
+                        arrange(desc(!!sym(colname))) %&gt;%
+                        pull(snp)
+
+                    if (number == 1) {
+                        sets = list(as.numeric(gsub(&quot;snp&quot;, &quot;&quot;, snps[1:row_index])))
+                    } else {
+                        new_list = as.numeric(gsub(&quot;snp&quot;, &quot;&quot;, snps[1:row_index]))
+                        sets = c(sets, list(new_list))
+                    }
+                    number = number + 1
+                }
+            } else {
+                sets = NULL
+            }
+
+            coloc_trait_index = list()
+            if (length(sets) == 0) {
+                coloc_trait_index = NULL
+            } else {
+                for (j in 1:length(sets)) {
+                    coloc_trait_index[[j]] = c(1, 2)
+                }
+            }
+        }
+
+        # --- Assemble final report ---
+        susie_coloc_report = out_coloc
+        susie_coloc_report$file = file
+        susie_coloc_report$true_variant = true_coloc_var
+        susie_coloc_report$true_trait = true_coloc_trait
+        susie_coloc_report$coloc_set = sets
+        susie_coloc_report$coloc_trait = coloc_trait_index
+        susie_coloc_report$time = (t2 - t1)
+
+        # --- Purity filtering (LD purity &gt; 0.5) ---
+        purity_check = lapply(susie_coloc_report$coloc_set, function(x) (get_purity(x, X = X[[1]]))[1])
+        purity_index = which(unlist(purity_check) &gt; 0.5)
+
+        if (length(purity_index) &gt; 0) {
+            susie_coloc_report$coloc_set = susie_coloc_report$coloc_set[purity_index]
+            susie_coloc_report$coloc_trait = susie_coloc_report$coloc_trait[purity_index]
+        } else {
+            print(&quot;All filtered out&quot;)
+            susie_coloc_report$coloc_set = NULL
+            susie_coloc_report$coloc_trait = NULL
+        }
+
+        susie_coloc_report$purity = purity_check
+
+        return(susie_coloc_report)
+    }
+
+    # ======= Execute and Save =======
     file = ${_input:ar,}
     susie_coloc_result = run_susie_coloc(file)
     saveRDS(susie_coloc_result, ${_output:r})
@@ -688,7 +1298,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb hyprcoloc_set \
+sos run ./3_Other_Colocalization_Methods.ipynb hyprcoloc_set \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 20G --trait 2 \
     --cwd WORK_DIR/JOB/result
@@ -729,7 +1339,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb hyprcoloc_set \
+sos run /home/hs3393/cb_Mar/simulation_code/3_Other_Colocalization_Methods.ipynb hyprcoloc_set \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 20G --trait 5 \
     --cwd WORK_DIR/JOB/result
@@ -770,7 +1380,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb hyprcoloc_set \
+sos run /home/hs3393/cb_Mar/simulation_code/3_Other_Colocalization_Methods.ipynb hyprcoloc_set \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 30G --trait 10 \
     --cwd WORK_DIR/JOB/result
@@ -811,7 +1421,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb hyprcoloc_set \
+sos run /home/hs3393/cb_Mar/simulation_code/3_Other_Colocalization_Methods.ipynb hyprcoloc_set \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 40G --trait 20 \
     --cwd WORK_DIR/JOB/result
@@ -857,7 +1467,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb moloc_set \
+sos run /home/hs3393/cb_Mar/simulation_code/3_Other_Colocalization_Methods.ipynb moloc_set \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 15G --trait 2 \
     --cwd WORK_DIR/JOB/result
@@ -904,7 +1514,7 @@ source /home/hs3393/mamba_activate.sh
 module load Singularity
 
 cd DATA_DIR
-sos run /home/hs3393/cb_Mar/simulation_code/3.Other_Methods.ipynb susie_coloc_set \
+sos run /home/hs3393/cb_Mar/simulation_code/3_Other_Colocalization_Methods.ipynb susie_coloc_set \
     --simufile $(find -type f -name &#39;*_NCAUSAL_ncausal_*.rds&#39;) \
     --mem 40G --trait 2 \
     --cwd WORK_DIR/JOB/result
@@ -955,24 +1565,6 @@ done
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="2_Run_Colocboost.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Run Colocboost</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="4_Result_Summary.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Colocalization result summary</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

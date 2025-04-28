@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/9_Fineboost';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="OPERA running" href="10_OPERA_simulation.html" />
+    <link rel="next" title="Data Application" href="../Data_Applications/index.html" />
     <link rel="prev" title="Null simulation" href="8_Null_Simulation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -217,19 +217,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and ColocBoost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Fineboost (single trait ColocBoost)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
@@ -462,7 +453,7 @@ result$total_var_num
 <h2>Fineboost Running code<a class="headerlink" href="#fineboost-running-code" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[fineboost_Jan]
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[fineboost]
 parameter: simufile = paths
 parameter: cwd = path(&quot;output&quot;)
 parameter: job_size = 15
@@ -474,63 +465,66 @@ parameter: container = &quot;&quot;
 input: simufile, group_by = 1
 output: f&#39;{cwd:a}/{_input[0]:bn}_ntrait_{step_name}.rds&#39;
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
-    for(file in list.files(&quot;/home/xc2270/COLOCBoost/code_COLOCBoost/colocboost_updating/&quot;, full.names = T)) {source(file)}
-    rds = readRDS(${_input:ar})
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
+    # FineBoost: Single-trait causal discovery
 
+    library(&quot;tidyverse&quot;)   
+    # --- Load colocboost function files ---
+    # devtools::install_github(&quot;StatFunGen/colocboost&quot;)
+    # for(file in list.files(&quot;/home/xc2270/COLOCBoost/code_COLOCBoost/release&quot;, full.names = T)) {source(file)}
+    library(&quot;colocboost&quot;)
+  
+    # --- Load input ---
+    rds = readRDS(${_input:ar})
     X = rds$X
     Y = as.matrix(rds$Y[, 1, drop = FALSE])
     variant = rds$variant[[1]]
 
-
+    # --- Run colocboost (fineboost mode) ---
     start_time &lt;- Sys.time()
     colocboost_result = colocboost(
-      X = X, 
-      Y = Y, output_level=2)
+        X = X,
+        Y = Y,
+        output_level = 2
+    )
     end_time &lt;- Sys.time()
 
-    # record true variant, analysed trait number and corresponding file name
+    # --- Post-processing ---
     colocboost_result$var = variant
     colocboost_result$file = &quot;${_input[0]:a}&quot;
-    # show which snp appear in at least two traits as the coloc_variants
+
     all_var = unlist(variant)
-    
     cs_num = length(colocboost_result$ucos_details$ucos$ucos_index)
-  
+
     cover_var_num = 0
     true_cs_num = 0
-    if(length(colocboost_result$ucos_details$ucos$ucos_index) == 0){
-      cover_var_num = 0    
-      true_cs_num = 0
-      total_cs_num = 0
-    }else{
-    
-        # count how many var are covered
-    
-        # count how many var are covered
-        for(i in 1:length(all_var)){
-            cs_vars = unlist(colocboost_result$ucos_details$ucos$ucos_index)
-            if(all_var[i] %in% cs_vars){
-              cover_var_num = cover_var_num + 1 
-            }
 
-        }
+    if (cs_num == 0) {
+        cover_var_num = 0
+        true_cs_num = 0
+        total_cs_num = 0
+    } else {
+        # How many true causal variants are covered
+        cs_vars = unlist(colocboost_result$ucos_details$ucos$ucos_index)
 
-        # cover how many cs are true
-        for(i in 1:cs_num){
-            if( length( intersect( colocboost_result$ucos_details$ucos$ucos_index[[i]] , all_var )) &gt; 0 ){
-            true_cs_num = true_cs_num + 1 
+        cover_var_num = sum(all_var %in% cs_vars)
+
+        # How many credible sets overlap a true variant
+        for (i in 1:cs_num) {
+            if (length(intersect(colocboost_result$ucos_details$ucos$ucos_index[[i]], all_var)) &gt; 0) {
+                true_cs_num = true_cs_num + 1
             }
         }
     }
-  
-    
+
+    # --- Summarize results ---
     colocboost_report = colocboost_result
-    colocboost_report$cover_var_num = cover_var_num 
+    colocboost_report$cover_var_num = cover_var_num
     colocboost_report$total_var_num = length(all_var)
-    colocboost_report$true_cs_num = true_cs_num 
+    colocboost_report$true_cs_num = true_cs_num
     colocboost_report$total_cs_num = cs_num
     colocboost_report$time = end_time - start_time
+
     saveRDS(colocboost_report, ${_output:r})
 </pre></div>
 </div>
@@ -549,34 +543,98 @@ parameter: walltime = &quot;50h&quot;
 parameter: mem = &quot;60G&quot;
 parameter: numThreads = 1
 parameter: container = &quot;&quot;
-input: folder , group_by = 1
+input: folder, group_by = 1
 output: f&#39;{cwd:a}/{_input[0]:b}_summary.rds&#39;
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
-    library(&quot;tidyverse&quot;)
-    source(&quot;/home/hs3393/cloud_colocalization/simulation_code/fineboost_summary.r&quot;)
-    filenames &lt;- list.files(${folder:r}, pattern=&quot;*.rds$&quot;, full.names=TRUE, recursive = T)
-    read_and_extract_rds &lt;- function(file_path) {
-      rds_file &lt;- readRDS(file_path)  # Read the RDS file
-      if(length(rds_file$ucos_details$ucos$ucos_index) == 0){
-         rds_file$ucos_details$ucos$ucos_index = NULL
-      }
-      data = fineboost_summary(unlist(rds_file$var), 
-      rds_file$ucos_details$ucos$ucos_index)
-      table &lt;- tibble(match_variant_number = data$match_variant,
-              total_variant_number = data$total_variant_number,
-              true_trait_number = data$true_trait_number,
-              total_set_number = data$total_set_number,
-              file = rds_file$file,
-              out_file = file_path)
-      return(table)
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
+    # FineBoost summary script
+
+    library(tidyverse)
+
+    # load summary code
+    variant_vector = function(true_variant, coloc_set){
+        var_vec = numeric(length(true_variant))
+        for(i in c(1:length(true_variant))){
+            for (j in c(1:length(coloc_set))){
+                if(true_variant[i] %in% unlist(coloc_set[[j]])){
+                    var_vec[i] = 1
+                }else{
+                    var_vec[i] = var_vec[i]
+                }
+            }
+        }
+        return(var_vec)
+
     }
 
-    combined_table &lt;- map_dfr(filenames, read_and_extract_rds)
-    saveRDS(combined_table, ${_output:r})
+    set_vector =  function(true_variant, coloc_set){
+        set_vec = numeric(length(coloc_set))
+        for(i in c(1:length(true_variant))){
+             for (j in c(1:length(coloc_set))){
+                     inter = intersect(unlist(coloc_set[[j]]),
+                                      true_variant)
+                 if(length(inter &gt; 0)){
+                    set_vec[j] = 1 
+                     }else{
+                     set_vec[j] = 0
+                     }
+                 }
+        return(set_vec)
+        }
+    }
 
-  
-  
+    set_size = function(coloc_set){
+        size_vec = numeric(length(coloc_set))
+        for (j in c(1:length(coloc_set))){
+        size_vec[j] = length(unlist(coloc_set[j]))
+        }
+        return(size_vec)
+    }
+
+    fineboost_summary = function(true_variant, coloc_set){
+        return(list(
+        match_variant = sum(variant_vector(true_variant, coloc_set)),
+        true_trait_number = sum(set_vector(true_variant, coloc_set)),
+        total_variant_number = length(true_variant),
+        total_set_number = length(coloc_set)
+        ))
+    }
+
+    # List all RDS result files
+    filenames &lt;- list.files(${folder:r}, pattern = &quot;*.rds$&quot;, full.names = TRUE, recursive = TRUE)
+
+    # Function to read and summarize each RDS
+    read_and_extract_rds &lt;- function(file_path) {
+        rds_file &lt;- readRDS(file_path)
+
+        # If no ucos detected, set to NULL
+        if (length(rds_file$ucos_details$ucos$ucos_index) == 0) {
+            rds_file$ucos_details$ucos$ucos_index = NULL
+        }
+
+        # Run fineboost summary
+        data = fineboost_summary(
+            unlist(rds_file$var),
+            rds_file$ucos_details$ucos$ucos_index
+        )
+
+        # Build output table
+        table &lt;- tibble(
+            match_variant_number = data$match_variant,
+            total_variant_number = data$total_variant_number,
+            true_trait_number = data$true_trait_number,
+            total_set_number = data$total_set_number,
+            file = rds_file$file,
+            out_file = file_path
+        )
+        return(table)
+    }
+
+    # Combine all summary tables
+    combined_table &lt;- map_dfr(filenames, read_and_extract_rds)
+
+    # Save combined summary
+    saveRDS(combined_table, ${_output:r})
 </pre></div>
 </div>
 </div>
@@ -607,7 +665,7 @@ source ~/mamba_activate.sh
 module load Singularity
 
 cd /home/hs3393/cloud_colocalization/simulation_data/simulation_signal/causal_CAUSAL
-sos run /home/hs3393/cb_simulation/simulation_code/Fineboost.ipynb fineboost \
+sos run /home/hs3393/colocboost-paper/Simulation_Studies/9_Fineboost.ipynb fineboost \
     --simufile $(find -type f -name &#39;*ncausal_CAUSAL*.rds&#39;) \
     --mem 25G \
     --cwd PWD/
@@ -640,7 +698,7 @@ done
 source ~/mamba_activate.sh
 module load Singularity
 
-sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb fineboost_summary \
+sos run /home/hs3393/colocboost-paper/Simulation_Studies/9_Fineboost.ipynb fineboost_summary \
     --folder /home/hs3393/cb_tune/simulation_result/fineboost/ \
     --cwd /home/hs3393/cb_tune/simulation_result/fineboost//summary
 </pre></div>
@@ -664,61 +722,60 @@ parameter: container = &quot;&quot;
 input: simufile, group_by = 1
 output: f&#39;{cwd:a}/{_input[0]:bn}_susie.rds&#39;
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
+    # Susie finemapping script
+
     library(&quot;susieR&quot;)
-    # read 50 traits a s group, if we are going to analyse 3 traits-colocalization, we
-    # select the first 3 traits X-Y pari in this group
-    file_list = c(${_input:ar,})
-    rds_file = readRDS(file_list[1])
 
+    # Read input file
     rds = readRDS(${_input:ar})
-
 
     X = rds$X
     Y = as.matrix(rds$Y[, 1, drop = FALSE])
     variant = rds$variant[[1]]
-  
-  
+
+    # Run SuSiE
     susie_result = susie(X, Y)
-    # record true variant, analysed trait number and corresponding file name
+
+    # Record true variant, analyzed trait number, and file name
     susie_result$var = variant
     susie_result$file = &quot;${_input[0]:a}&quot;
-    # show which snp appear in at least two traits as the coloc_variants
+
     all_var = unlist(variant)
-    
     cs_num = length(susie_result$sets$cs)
-  
+
+    # Initialize counts
     cover_var_num = 0
     true_cs_num = 0
-    if(length(susie_result$sets$cs) == 0){
-      cover_var_num = 0    
-      true_cs_num = 0
-      total_cs_num = 0
-    }else{
-    
-        # count how many var are covered
-        for(i in 1:length(all_var)){
-            cs_vars = unlist(susie_result$sets$cs)
-            if(all_var[i] %in% cs_vars){
-              cover_var_num = cover_var_num + 1 
-            }
 
+    # If no credible sets found
+    if (length(susie_result$sets$cs) == 0) {
+        cover_var_num = 0
+        true_cs_num = 0
+        total_cs_num = 0
+    } else {
+        # Count how many true causal variants are covered
+        cs_vars = unlist(susie_result$sets$cs)
+
+        for (i in 1:length(all_var)) {
+            if (all_var[i] %in% cs_vars) {
+                cover_var_num = cover_var_num + 1
+            }
         }
 
-        # cover how many cs are true
-        for(i in 1:cs_num){
-            if( length( intersect( susie_result$sets$cs[[i]] , all_var )) &gt; 0 ){
-            true_cs_num = true_cs_num + 1 
+        # Count how many credible sets contain at least one true variant
+        for (i in 1:cs_num) {
+            if (length(intersect(susie_result$sets$cs[[i]], all_var)) &gt; 0) {
+                true_cs_num = true_cs_num + 1
             }
         }
     }
-  
-    
-    susie_result$cover_var_num = cover_var_num 
+
+    susie_result$cover_var_num = cover_var_num
     susie_result$total_var_num = length(all_var)
-    susie_result$true_cs_num = true_cs_num 
+    susie_result$true_cs_num = true_cs_num
     susie_result$total_cs_num = cs_num
-    # show which snp appear in at least two traits as the coloc_variants
+
     saveRDS(susie_result, ${_output:r})
 </pre></div>
 </div>
@@ -750,7 +807,7 @@ source ~/mamba_activate.sh
 module load Singularity
 
 cd /home/hs3393/cloud_colocalization/simulation_data/simulation_signal/causal_CAUSAL
-sos run /home/hs3393//cloud_colocalization/simulation_code/Fineboost.ipynb susie \
+sos run /home/hs3393/colocboost-paper/Simulation_Studies/9_Fineboost.ipynb susie \
     --simufile $(find -type f -name &#39;*ncausal_CAUSAL*.rds&#39;) \
     --mem 25G \
     --cwd PWD/
@@ -783,7 +840,7 @@ done
 source ~/mamba_activate.sh
 module load Singularity
 
-sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb fineboost_summary \
+sos run /home/hs3393/colocboost-paper/Simulation_Studies/9_Fineboost.ipynb fineboost_summary \
     --folder /home/hs3393/cb_simulation/simulation_result/fineboost \
     --cwd /home/hs3393/cb_simulation/simulation_result/fineboost/summary
 </pre></div>
@@ -834,11 +891,11 @@ sos run /home/hs3393/cloud_colocalization/simulation_code/Fineboost.ipynb finebo
       </div>
     </a>
     <a class="right-next"
-       href="10_OPERA_simulation.html"
+       href="../Data_Applications/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">OPERA running</p>
+        <p class="prev-next-title">Data Application</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

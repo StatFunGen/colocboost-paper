@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Fineboost (single trait ColocBoost)" href="9_Fineboost.html" />
-    <link rel="prev" title="Correlated phenotypes simulation" href="7_Simulation_correlated.html" />
+    <link rel="prev" title="Colocalization result summary" href="4_Result_Summary.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,19 +217,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_simulation.html">Phenotype data simulation</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="2_Run_Colocboost.html">Run Colocboost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Other_Methods.html">Other colocalization methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Simulation_secondary.html">Secondary simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_Simulation_GWAS.html">GWAS / weaker signal simulation and ColocBoost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_Simulation_correlated.html">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Null simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_Fineboost.html">Fineboost (single trait ColocBoost)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_OPERA_simulation.html">OPERA running</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="11_OPERA_original_design.html">OPERA: simulation using original proportion configuration</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
@@ -412,45 +403,63 @@ parameter: job_size = 30
 parameter: walltime = &quot;100h&quot;
 parameter: mem = &quot;30G&quot;
 parameter: numThreads = 1
-parameter: null_sigma = 0.1
-# for each variant, how many traits it randomly colocalize at
+parameter: null_sigma = 1
 parameter: n_trait = 50
-# specify the number of traits (phenotypes)
 parameter: container = &quot;&quot;
+
 input: genofile, group_by = 1
 output: f&#39;{cwd:a}/{step_name}/sample_{_index}_trait_{n_trait}_null.rds&#39;
+
 task: trunk_workers = 1, trunk_size = job_size, walltime = walltime, mem = mem, cores = numThreads, tags = f&#39;{step_name}_{_output[0]:bn}&#39;
-R:  expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container 
+
+R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f&quot;{_output:n}.stderr&quot;, container = container
+    # Null simulation: no causal variants, simulate pure noise phenotypes
     library(&quot;MASS&quot;)
     library(&quot;plink2R&quot;)
     library(&quot;dplyr&quot;)
     library(&quot;readr&quot;)
     library(&quot;tidyverse&quot;)
-    # source some functions to read matrix and inpute the missing data
-    source(&quot;/home/hs3393/cb_simulation/simulation_code/simulate_linreg.R&quot;)
-    source(&quot;~/cloud_colocalization/simulation_code/misc.R&quot;)
-    # read the plink file
+  
+    # install simulation package
+    # devtools::install_github(&quot;StatFunGen/simxQTL&quot;, build_vignettes = FALSE)
+    # BiocManager::install(&quot;StatFunGen/pecotmr&quot;)
+    library(&quot;pecotmr&quot;)
+    library(&quot;simxQTL&quot;)
+
+    # --- Read genotype ---
     simu_file = ${_input:r}
     geno &lt;- read_plink(${_input:nr})
     gene_name = str_extract(simu_file, &quot;ENSG[0-9]+&quot;)
-    gene_tss_map = read_tsv(&quot;/home/hs3393/coloc/fungen-xqtl-analysis/resource/gene_cis_TADB_mapper.tsv&quot;)
-    # filter by distance with. TSS
+    gene_tss_map = read_tsv(&quot;./Data/gene_cis_TADB_mapper.tsv&quot;)
+
+    # --- Filter by TSS window (+/- 1.5Mb) ---
     TSS_pos = gene_tss_map$TSS[which(gene_tss_map$gene_id == gene_name)][1]
-    keep_index = which(geno$bim$V4 &gt; TSS_pos - 1500000 | geno$bim$V4 &lt; TSS_pos + 1500000)
-    geno$bed = geno$bed[,keep_index]
-    # filter out columns with missing rate &gt; 0.1
+    keep_index = which(geno$bim$V4 &gt; (TSS_pos - 1500000) &amp; geno$bim$V4 &lt; (TSS_pos + 1500000))
+    geno$bed = geno$bed[, keep_index]
+
+    # --- SNP filtering ---
     imiss = 0.1
-    # filter out columns with MAF &lt; 0.05
     maf = 0.05
     Xmat = filter_X(geno$bed, imiss, maf)
-    B = matrix(0, nrow =  ncol(Xmat), ncol = 50)
-    pheno_single = sim_multi_traits(G = Xmat, B = B, h2g = 0.05, is_h2g_total = TRUE, null_sigma = ${null_sigma})
+
+    # --- Set up empty effect size matrix ---
+    ntrait = ${n_trait}
+    B = matrix(0, nrow = ncol(Xmat), ncol = ntrait)
+
+    # --- Simulate null traits ---
+    pheno_single = sim_multi_traits(
+        G = Xmat,
+        B = B,
+        h2g = 0.05,
+        is_h2g_total = TRUE,
+        null_sigma = ${null_sigma}
+    )
     phenotype = pheno_single$P
-    X = Xmat
-    Y = phenotype
+
+    # --- Save results ---
     data = list()
     data[[&quot;X&quot;]] = Xmat
-    data[[&quot;Y&quot;]] = Y
+    data[[&quot;Y&quot;]] = phenotype
     saveRDS(data, ${_output:r})
 </pre></div>
 </div>
@@ -483,7 +492,7 @@ source ~/mamba_activate.sh
 module load Singularity
 
 
-sos run /home/hs3393/cb_Mar/simulation_code/9.Null_Simulation.ipynb JOB \
+sos run ~/colocboost-paper/Simulation_Studies/8_Null_Simulation.ipynb JOB \
     --genofile `ls /home/hs3393/cloud_colocalization/simulation_data/selected_genes_genotype/*.bim` \
     --null_sigma NULL --mem 30G \
     --cwd WORK_DIR/
@@ -534,12 +543,12 @@ done
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="7_Simulation_correlated.html"
+       href="4_Result_Summary.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Correlated phenotypes simulation</p>
+        <p class="prev-next-title">Colocalization result summary</p>
       </div>
     </a>
     <a class="right-next"
