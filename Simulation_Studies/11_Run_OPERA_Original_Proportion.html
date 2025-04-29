@@ -391,7 +391,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-genotype-ld-metadata-in-remain-snp-ld-file">7. Save genotype (LD) metadata in remain_snp_LD file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-1-opera">8. Stage 1 OPERA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-2-opera">9.Stage 2 OPERA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-colocboost-on-simulated-data-for-comparison">10. Run colocboost on simulated data for comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-colocboost-on-simulated-data-for-comparison">10. Run ColocBoost on simulated data for comparison</a></li>
 </ul>
             </nav>
         </div>
@@ -466,7 +466,7 @@ config = list(
 
 saveRDS(
     list(partitioned_indices = partitioned_indices, config = config),
-    &quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/index/partitioned_index_3trait.rds&quot;
+    &quot;../simulation_data/opera_original_design/index/partitioned_index_3trait.rds&quot;
 )
 </pre></div>
 </div>
@@ -538,7 +538,7 @@ config = list(c(1,0,0,0,0,0),
               
              c(1,1,1,1,1,1))
 
-saveRDS(list(partitioned_indices = partitioned_indices, config = config), &quot;/home/hs3393/cloud_colocalization/simulation_data/opera_original_design/index/partitioned_index_5trait.rds&quot;)
+saveRDS(list(partitioned_indices = partitioned_indices, config = config), &quot;../simulation_data/opera_original_design/index/partitioned_index_5trait.rds&quot;)
 </pre></div>
 </div>
 </div>
@@ -1230,7 +1230,7 @@ cd /home/hs3393/cloud_colocalization/simulation_data/opera_original_design/opera
 </div>
 </section>
 <section id="run-colocboost-on-simulated-data-for-comparison">
-<h2>10. Run colocboost on simulated data for comparison<a class="headerlink" href="#run-colocboost-on-simulated-data-for-comparison" title="Link to this heading">#</a></h2>
+<h2>10. Run ColocBoost on simulated data for comparison<a class="headerlink" href="#run-colocboost-on-simulated-data-for-comparison" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[colocboost_sumstat]
@@ -1433,7 +1433,7 @@ sbatch ${output_script}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-genotype-ld-metadata-in-remain-snp-ld-file">7. Save genotype (LD) metadata in remain_snp_LD file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-1-opera">8. Stage 1 OPERA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stage-2-opera">9.Stage 2 OPERA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-colocboost-on-simulated-data-for-comparison">10. Run colocboost on simulated data for comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-colocboost-on-simulated-data-for-comparison">10. Run ColocBoost on simulated data for comparison</a></li>
 </ul>
   </nav></div>
 
