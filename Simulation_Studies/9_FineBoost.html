@@ -409,19 +409,24 @@ document.write(`
 <h1>FineBoost (single trait ColocBoost)<a class="headerlink" href="#fineboost-single-trait-colocboost" title="Link to this heading">#</a></h1>
 <section id="goal">
 <h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
-<p>This notebook takes the input and run colocboost (single trait, Fineboost), the result can be summarized to get power and FDR.</p>
+<p>This notebook takes the input and run FineBoost (single trait version of ColocBoost), the result can be summarized to get power and FDR.</p>
 </section>
 <section id="input">
 <h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
-<p>Individual level data X and Y or summary statistics z and LD from other notebooks. file names of these data should be put in the parameter: simufile.</p>
+<p><code class="docutils literal notranslate"><span class="pre">simufile</span></code>: Individual level data X and Y introduced in <em>Phenotype Simulation</em>.</p>
 </section>
 <section id="output">
 <h2>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h2>
 <p>Fineboost / fine-mapping original result, along with some summarized elements.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cover_var_num</span></code>: sets of variants identified as causal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">true_cs_num</span></code>: variants that are truly causal (ground truth)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">total_var_num</span></code>: total number of truly causal (ground truth)</p></li>
+</ul>
 <p>Example output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cloud_colocalization/simulation_result/fineboost/sample_41_h2g_0.05_ncausal_3_ntrait_fineboost.rds&quot;)
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;../simulation_result/fineboost/sample_41_h2g_0.05_ncausal_3_ntrait_fineboost.rds&quot;)
 
 result$var
 
