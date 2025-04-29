@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GWAS / weaker signal simulation and ColocBoost &#8212; ColocBoost manuscript resources</title>
+    <title>GWAS / weaker signal simulation &#8212; ColocBoost manuscript resources</title>
   
   
   
@@ -174,7 +174,7 @@
 <li class="toctree-l2"><a class="reference internal" href="3_Other_Colocalization_Methods.html">Other colocalization methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5_Secondary_Simulation.html">Secondary simulations</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">GWAS / weaker signal simulation and ColocBoost</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">GWAS / weaker signal simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_Correlated_Simulation.html">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_FineBoost.html">FineBoost (single trait ColocBoost)</a></li>
@@ -370,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>GWAS / weaker signal simulation and ColocBoost</h1>
+    <h1>GWAS / weaker signal simulation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,15 +405,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="gwas-weaker-signal-simulation-and-colocboost">
-<h1>GWAS / weaker signal simulation and ColocBoost<a class="headerlink" href="#gwas-weaker-signal-simulation-and-colocboost" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="gwas-weaker-signal-simulation">
+<h1>GWAS / weaker signal simulation<a class="headerlink" href="#gwas-weaker-signal-simulation" title="Link to this heading">#</a></h1>
 <section id="goal">
 <h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
 <p>This notebook simulates the cases that the first trait is treated as GWAS, or any other traits that have a weaker signals than the other traits (eg. eQTL). The first trait will be designed to have a less heritability.</p>
 </section>
 <section id="input">
 <h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">genofile</span></code>: plink file of real genotyope, <code class="docutils literal notranslate"><span class="pre">/mnt/vast/hpc/csg/FunGen_xQTL/ROSMAP/Genotype/plink_by_gene/extended_cis_before_winsorize_plink_files/*.bim</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">genofile</span></code>: plink file of real genotyope, <code class="docutils literal notranslate"><span class="pre">plink_by_gene/extended_cis_before_winsorize_plink_files/*.bim</span></code></p>
 <p>The other parameters can be found in simxQTL repo. <code class="docutils literal notranslate"><span class="pre">https://github.com/StatFunGen/simxQTL</span></code>.</p>
 </section>
 <section id="output">
@@ -422,7 +422,7 @@ document.write(`
 <p>Example output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cb_Mar/simulation_data/simulation_GWAS/simulation_signal_0.02/causal_1/sample_1_h2g_0.02_GWAS_1.rds&quot;)
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;../simulation_data/simulation_GWAS/simulation_signal_0.02/causal_1/sample_1_h2g_0.02_GWAS_1.rds&quot;)
 result$variant
 </pre></div>
 </div>
