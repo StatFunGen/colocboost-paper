@@ -400,6 +400,7 @@ document.write(`
 <h2>1. Simulation Design Overview<a class="headerlink" href="#simulation-design-overview" title="Link to this heading">#</a></h2>
 <p>This section provides a summary of the simulation notebooks that implement different aspects of our multi-trait colocalization method evaluations.</p>
 <ul class="simple">
+<li><p><strong>Simulation Schematics</strong>: Comprehensive overview of the simulation framework used to evaluate and benchmark the ColocBoost with competing methods.</p></li>
 <li><p><strong>Phenotype Data Simulation</strong>: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) for <span class="math notranslate nohighlight">\(L\)</span> traits based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.</p></li>
 <li><p><strong>Run ColocBoost</strong>: Executes the ColocBoost algorithm on simulated datasets to identify colocalizing variants and trait clusters. Processes and standardizes results for performance evaluation with key output metrics.</p></li>
 <li><p><strong>Other Colocalization Methods</strong>: Implements competing colocalization methods (HyprColoc, MOLOC, and COLOC (V5)) for benchmarking. Standardizes outputs across methods to enable fair comparison.</p></li>
