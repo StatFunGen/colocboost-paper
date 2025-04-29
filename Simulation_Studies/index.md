@@ -20,7 +20,7 @@ This section provides a summary of the simulation notebooks that implement diffe
 
 - **GWAS Simulation**: Implements simulations specifically designed to mimic real-world GWAS summary statistics.
 
-- **Correlated Simulation **: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.
+- **Correlated Simulation**: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.
 
 - **Null simulation**: Tests type I error control and false discovery rates under null scenarios where no colocalization exists.
 
