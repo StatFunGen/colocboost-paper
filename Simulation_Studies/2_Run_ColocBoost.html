@@ -401,16 +401,22 @@ document.write(`
 <h1>Run ColocBoost<a class="headerlink" href="#run-colocboost" title="Link to this heading">#</a></h1>
 <section id="goal">
 <h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
-<p>This notebook takes the input and run colocboost, the result can be summarized to get power and FDR.</p>
-<p>Because different methods have different output, we summarized four elements to calculate FDR and power - coloc_trait, coloc_set true_trait and true_variant.</p>
+<p>This notebook demonstrates how to execute ColocBoost on simulated data and analyze its performance through power and false discovery rate (FDR) calculations.</p>
+<p><em>Note</em>: Because different methods have different output, we summarized four elements to calculate FDR and power - <code class="docutils literal notranslate"><span class="pre">coloc_trait</span></code>, <code class="docutils literal notranslate"><span class="pre">coloc_set</span></code>, <code class="docutils literal notranslate"><span class="pre">true_trait</span></code>, and <code class="docutils literal notranslate"><span class="pre">true_variant</span></code>.</p>
 </section>
 <section id="input">
 <h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
-<p>Individual level data X and Y or summary statistics z and LD from other notebooks. file names of these data should be put in the parameter: simufile.</p>
+<p><code class="docutils literal notranslate"><span class="pre">simufile</span></code>: Individual level data X and Y introduced in <em>Phenotype Simulation</em>.</p>
 </section>
 <section id="output">
 <h2>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h2>
 <p>Colocboost original result, along with some summarized elements.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">coloc_trait</span></code>: traits identified by ColocBoost as having shared genetic effects</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coloc_set</span></code>: sets of variants identified as causal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">true_trait</span></code>: traits with true causal relationships (ground truth)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">true_variant</span></code>: variants that are truly causal (ground truth)</p></li>
+</ul>
 <p>Example output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
