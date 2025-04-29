@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Phenotype data simulation" href="1_Phenotype_Simulation.html" />
+    <link rel="next" title="Phenotype Data Simulation" href="1_Phenotype_Simulation.html" />
     <link rel="prev" title="ColocBoost Manuscript Resources" href="../README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,18 +169,18 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_Simulation.html">Phenotype data simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Phenotype_Simulation.html">Phenotype Data Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_Run_ColocBoost.html">Run ColocBoost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Other_Colocalization_Methods.html">Other colocalization methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Secondary_Simulation.html">Secondary simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Other_Colocalization_Methods.html">Other Colocalization Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization Result Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Secondary_Simulation.html">Secondary Simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6_GWAS_Simulation.html">Weaker Signal Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_Correlated_Simulation.html">Correlated Phenotypes Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_FineBoost.html">FineBoost (single trait ColocBoost)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_Run_OPERA.html">Running OPERA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_Run_OPERA.html">Run OPERA</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="11_Run_OPERA_Original_Proportion.html">Running OPERA: OPERA: simulation using original proportion configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_Run_OPERA_Original_Proportion.html">Comparison with OPERA</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Data_Applications/index.html">Data Application</a></li>
@@ -400,17 +400,17 @@ document.write(`
 <h2>1. Simulation Design Overview<a class="headerlink" href="#simulation-design-overview" title="Link to this heading">#</a></h2>
 <p>This section provides a summary of the simulation notebooks that implement different aspects of our multi-trait colocalization method evaluations.</p>
 <ul class="simple">
-<li><p><strong>Phenotype simulation</strong>: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) for <span class="math notranslate nohighlight">\(L\)</span> traits based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.</p></li>
+<li><p><strong>Phenotype Data Simulation</strong>: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) for <span class="math notranslate nohighlight">\(L\)</span> traits based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.</p></li>
 <li><p><strong>Run ColocBoost</strong>: Executes the ColocBoost algorithm on simulated datasets to identify colocalizing variants and trait clusters. Processes and standardizes results for performance evaluation with key output metrics.</p></li>
 <li><p><strong>Other Colocalization Methods</strong>: Implements competing colocalization methods (HyprColoc, MOLOC, and COLOC (V5)) for benchmarking. Standardizes outputs across methods to enable fair comparison.</p></li>
-<li><p><strong>Result Summary</strong>: Calculates performance metrics including power and false discovery rates from method results. Generates standardized comparison tables summarizing method effectiveness across simulation scenarios.</p></li>
-<li><p><strong>Secondary simulations</strong>: Creates advanced simulation scenarios including 50-trait datasets and complex colocalization configurations. Implements specialized trait clustering patterns (5+5, 3+3+2+2) and random variant sharing to test method robustness.</p></li>
+<li><p><strong>Colocalization Result Summary</strong>: Calculates performance metrics including power and false discovery rates from method results. Generates standardized comparison tables summarizing method effectiveness across simulation scenarios.</p></li>
+<li><p><strong>Secondary Simulations</strong>: Creates advanced simulation scenarios including 50-trait datasets and complex colocalization configurations. Implements specialized trait clustering patterns (5+5, 3+3+2+2) and random variant sharing to test method robustness.</p></li>
 <li><p><strong>Weaker Signal Simulation</strong>: Implements simulations specifically designed to mimic real-world GWAS summary statistics.</p></li>
 <li><p><strong>Correlated Phenotypes Simulation</strong>: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.</p></li>
-<li><p><strong>Null simulation</strong>: Tests type I error control and false discovery rates under null scenarios where no colocalization exists.</p></li>
+<li><p><strong>Null Simulation</strong>: Tests type I error control and false discovery rates under null scenarios where no colocalization exists.</p></li>
 <li><p><strong>FineBoost (single trait ColocBoost)</strong>: Demonstrates the FineBoost extension that incorporates fine-mapping capabilities into the ColocBoost framework.</p></li>
 <li><p><strong>Run OPERA</strong>: Compares performance with the OPERA method and evaluates under OPERA-specific simulation settings.</p></li>
-<li><p><strong>OPERA: Run OPERA Original Proportion</strong>: Implements the original OPERA design for benchmark comparisons and methodological validation.</p></li>
+<li><p><strong>Comparison with OPERA</strong>: Implements the original OPERA design for benchmark comparisons and methodological validation.</p></li>
 </ul>
 <p>Part of the data needed is provided in the <strong>Data</strong> folder.</p>
 </section>
@@ -471,7 +471,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Phenotype data simulation</p>
+        <p class="prev-next-title">Phenotype Data Simulation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

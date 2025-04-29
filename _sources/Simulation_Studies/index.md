@@ -7,28 +7,28 @@ This directory contains simulation designs and implementation codes used in the 
 
 This section provides a summary of the simulation notebooks that implement different aspects of our multi-trait colocalization method evaluations.
 
-- **Phenotype simulation**: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) for $L$ traits based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.
+- **Phenotype Data Simulation**: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) for $L$ traits based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.
 
 
 - **Run ColocBoost**: Executes the ColocBoost algorithm on simulated datasets to identify colocalizing variants and trait clusters. Processes and standardizes results for performance evaluation with key output metrics.
 
 - **Other Colocalization Methods**: Implements competing colocalization methods (HyprColoc, MOLOC, and COLOC (V5)) for benchmarking. Standardizes outputs across methods to enable fair comparison.
 
-- **Result Summary**: Calculates performance metrics including power and false discovery rates from method results. Generates standardized comparison tables summarizing method effectiveness across simulation scenarios.
+- **Colocalization Result Summary**: Calculates performance metrics including power and false discovery rates from method results. Generates standardized comparison tables summarizing method effectiveness across simulation scenarios.
 
-- **Secondary simulations**: Creates advanced simulation scenarios including 50-trait datasets and complex colocalization configurations. Implements specialized trait clustering patterns (5+5, 3+3+2+2) and random variant sharing to test method robustness.
+- **Secondary Simulations**: Creates advanced simulation scenarios including 50-trait datasets and complex colocalization configurations. Implements specialized trait clustering patterns (5+5, 3+3+2+2) and random variant sharing to test method robustness.
 
 - **Weaker Signal Simulation**: Implements simulations specifically designed to mimic real-world GWAS summary statistics.
 
 - **Correlated Phenotypes Simulation**: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.
 
-- **Null simulation**: Tests type I error control and false discovery rates under null scenarios where no colocalization exists.
+- **Null Simulation**: Tests type I error control and false discovery rates under null scenarios where no colocalization exists.
 
 - **FineBoost (single trait ColocBoost)**: Demonstrates the FineBoost extension that incorporates fine-mapping capabilities into the ColocBoost framework.
 
 - **Run OPERA**: Compares performance with the OPERA method and evaluates under OPERA-specific simulation settings.
 
-- **OPERA: Run OPERA Original Proportion**: Implements the original OPERA design for benchmark comparisons and methodological validation.
+- **Comparison with OPERA**: Implements the original OPERA design for benchmark comparisons and methodological validation.
 
 Part of the data needed is provided in the **Data** folder.
 
