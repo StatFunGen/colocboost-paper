@@ -170,7 +170,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Phenotype data simulation</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="2_Run_ColocBoost.html">Run ColocBoost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_Other_Colocalization_Methods.html">Other colocalization methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
@@ -178,7 +177,7 @@
 <li class="toctree-l2"><a class="reference internal" href="6_GWAS_Simulation.html">GWAS / weaker signal simulation and ColocBoost</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_Correlated_Simulation.html">Correlated phenotypes simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_FineBoost.html">FineBoost (single trait version of ColocBoost)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_FineBoost.html">FineBoost (single trait ColocBoost)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_Run_OPERA.html">Running OPERA</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="11_Run_OPERA_Original_Proportion.html">Running OPERA: OPERA: simulation using original proportion configuration</a></li>
@@ -381,40 +380,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Phenotype data simulation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-heritability-phi-total">1. Total heritability (<span class="math notranslate nohighlight">\(\phi_{total}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snp-level-heritability">2. SNP level heritability</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-strategy">Simulation Strategy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-heritability-phi-total">Total heritability (<span class="math notranslate nohighlight">\(\phi_{total}\)</span>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snp-level-heritability">SNP level heritability</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-code">Simulation code</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-randomly-select-regions">Step 1: Randomly select regions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-a-copy-these-selected-genotypes-to-another-folder">Step 2: Make a copy these selected genotypes to another folder</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-simulation">Step 3: Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-2-trait">1. Figure 2A simulation (2 trait)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-5-trait">2. Figure 2A simulation (5 trait)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-10-trait">3. Figure 2A simulation (10 trait)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-20-trait">4. Figure 2A simulation (20 trait)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#job-submission-bash-file">5. Job submission bash file</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-code">Simulation code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-randomly-select-regions">Step 1: Randomly select regions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-a-copy-these-selected-genotypes-to-another-folder">Step 2: Make a copy these selected genotypes to another folder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-simulation">Step 3: Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-2-trait">1. Figure 2A simulation (2 trait)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-5-trait">2. Figure 2A simulation (5 trait)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-10-trait">3. Figure 2A simulation (10 trait)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-20-trait">4. Figure 2A simulation (20 trait)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#job-submission-bash-file">5. Job submission bash file</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trait">2 trait</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5 trait</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10 trait</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20 trait</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-all-shared-senario">6. Supplementary: all shared senario</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-job-submission">7. Supplementary job submission</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-all-shared-senario">6. Supplementary: all shared senario</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-job-submission">7. Supplementary job submission</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -430,6 +422,25 @@ document.write(`
 <section id="goal">
 <h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
 <p>Here we use two strategies to simulate phenotype data (Y matrix) based on individual-level genotype data (X matrix).</p>
+<section id="total-heritability-phi-total">
+<h3>1. Total heritability (<span class="math notranslate nohighlight">\(\phi_{total}\)</span>)<a class="headerlink" href="#total-heritability-phi-total" title="Link to this heading">#</a></h3>
+<p>Effect size are all set to be 1. This value actually doesn’t matter so much because phi will eventually control the variance. Under this case, all SNPs share the same effect size, and they altogether contribute to explain <span class="math notranslate nohighlight">\(\phi_{total}\)</span> (eg.0.5) variance of the total variance. To get Y, we assume a multivariate gaussian distribution <span class="math notranslate nohighlight">\(\textbf{Y} \sim N(\textbf{X} \beta, \sigma^2)\)</span>, and <span class="math notranslate nohighlight">\(\sigma^2\)</span> can be estimated by the equation below.</p>
+<p><span class="math notranslate nohighlight">\(\phi_{total} = \dfrac{var(X \beta)}{\sigma^2 + var(X \beta)}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\sigma^2 = \frac{var(X \beta)(1-\phi_{total})}{\phi_{total}}\)</span></p>
+</section>
+<section id="snp-level-heritability">
+<h3>2. SNP level heritability<a class="headerlink" href="#snp-level-heritability" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Assume there are total number of <span class="math notranslate nohighlight">\(a\)</span> causal variants. We assign <span class="math notranslate nohighlight">\(\beta_1 = 1\)</span> as the initialize setting.</p></li>
+<li><p>For each causal variant we have:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\frac{Var(X_1 \beta_1)}{Var(Y)} = \frac{Var(X_2 \beta_2)}{Var(Y)} = ... = \frac{Var(X_a \beta_a)}{Var(Y)} = \phi_{SNP}\)</span></p>
+<ol class="arabic simple" start="3">
+<li><p>In that way, we have: if <span class="math notranslate nohighlight">\(\beta_1^2 Var(X_1) = \beta_2^2Var(X_2) = ... = \beta_a^2 Var(X_a)\)</span>. Then we have <span class="math notranslate nohighlight">\(\beta_2 = \sqrt{\frac{\beta_1^2 Var(X_1)}{Var(X_2)}}\)</span>, …, <span class="math notranslate nohighlight">\(\beta_a = \sqrt{\frac{\beta_1^2 Var(X_1)}{Var(X_a)}}\)</span>.</p></li>
+<li><p>Then we will have
+<span class="math notranslate nohighlight">\(\frac{Var(X_1 \beta_1)}{Var(Y)} = \frac{Var(X_1 \beta_1)}{Var(X \beta) + \sigma^2} = \phi_{SNP}\)</span>. Therefore, we have <span class="math notranslate nohighlight">\(\sigma^2 = \frac{Var(X_1 \beta_1)}{\phi_{SNP}} - Var(X \beta)\)</span></p></li>
+</ol>
+</section>
 </section>
 <section id="input">
 <h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
@@ -443,7 +454,7 @@ document.write(`
 <p>Example output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cb_Mar/simulation_data/real_simulation_5trait/sample_999_real_simulation_3_ncausal_5_trait.rds&quot;)
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;../sample_999_real_simulation_3_ncausal_5_trait.rds&quot;)
 </pre></div>
 </div>
 </div>
@@ -490,33 +501,10 @@ dim(result$Y)
 </div>
 <p>In this region, we simulated <strong>3</strong> causal variants (196, 5616, 6566). Each causal variant is distributed by distribution in <strong>5</strong> traits.</p>
 </section>
-<section id="simulation-strategy">
-<h2>Simulation Strategy<a class="headerlink" href="#simulation-strategy" title="Link to this heading">#</a></h2>
-<section id="total-heritability-phi-total">
-<h3>Total heritability (<span class="math notranslate nohighlight">\(\phi_{total}\)</span>)<a class="headerlink" href="#total-heritability-phi-total" title="Link to this heading">#</a></h3>
-<p>Effect size are all set to be 1. This value actually doesn’t matter so much because phi will eventually control the variance. Under this case, all SNPs share the same effect size, and they altogether contribute to explain <span class="math notranslate nohighlight">\(\phi_{total}\)</span> (eg.0.5) variance of the total variance. To get Y, we assume a multivariate gaussian distribution <span class="math notranslate nohighlight">\(\textbf{Y} \sim N(\textbf{X} \beta, \sigma^2)\)</span>, and <span class="math notranslate nohighlight">\(\sigma^2\)</span> can be estimated by the equation below.</p>
-<p><span class="math notranslate nohighlight">\(\phi_{total} = \dfrac{var(X \beta)}{\sigma^2 + var(X \beta)}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\sigma^2 = \frac{var(X \beta)(1-\phi_{total})}{\phi_{total}}\)</span></p>
-</section>
-<section id="snp-level-heritability">
-<h3>SNP level heritability<a class="headerlink" href="#snp-level-heritability" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Assume there are total number of <span class="math notranslate nohighlight">\(a\)</span> causal variants. We assign <span class="math notranslate nohighlight">\(\beta_1 = 1\)</span> as the initialize setting.</p></li>
-<li><p>For each causal variant we have:</p></li>
-</ol>
-<p><span class="math notranslate nohighlight">\(\frac{Var(X_1 \beta_1)}{Var(Y)} = \frac{Var(X_2 \beta_2)}{Var(Y)} = ... = \frac{Var(X_a \beta_a)}{Var(Y)} = \phi_{SNP}\)</span></p>
-<ol class="arabic simple" start="3">
-<li><p>In that way, we have: if <span class="math notranslate nohighlight">\(\beta_1^2 Var(X_1) = \beta_2^2Var(X_2) = ... = \beta_a^2 Var(X_a)\)</span>. Then we have <span class="math notranslate nohighlight">\(\beta_2 = \sqrt{\frac{\beta_1^2 Var(X_1)}{Var(X_2)}}\)</span>, …, <span class="math notranslate nohighlight">\(\beta_a = \sqrt{\frac{\beta_1^2 Var(X_1)}{Var(X_a)}}\)</span>.</p></li>
-<li><p>Then we will have
-<span class="math notranslate nohighlight">\(\frac{Var(X_1 \beta_1)}{Var(Y)} = \frac{Var(X_1 \beta_1)}{Var(X \beta) + \sigma^2} = \phi_{SNP}\)</span>. Therefore, we have <span class="math notranslate nohighlight">\(\sigma^2 = \frac{Var(X_1 \beta_1)}{\phi_{SNP}} - Var(X \beta)\)</span></p></li>
-</ol>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="simulation-code">
-<h1>Simulation code<a class="headerlink" href="#simulation-code" title="Link to this heading">#</a></h1>
+<section id="simulation-code">
+<h2>Simulation code<a class="headerlink" href="#simulation-code" title="Link to this heading">#</a></h2>
 <section id="step-1-randomly-select-regions">
-<h2>Step 1: Randomly select regions<a class="headerlink" href="#step-1-randomly-select-regions" title="Link to this heading">#</a></h2>
+<h3>Step 1: Randomly select regions<a class="headerlink" href="#step-1-randomly-select-regions" title="Link to this heading">#</a></h3>
 <p>Select gene regions to simulate - randomly select one gene from each 1,329 different TADB blocks.</p>
 <p>Some genes might exist in more than one TADB block. Total unique gene number after random selection: 1287.</p>
 <div class="cell docutils container">
@@ -577,7 +565,7 @@ mapper %&gt;% filter(gene_id %in% genes_selected)  %&gt;% pull(TADB_index) %&gt;
 </div>
 </section>
 <section id="step-2-make-a-copy-these-selected-genotypes-to-another-folder">
-<h2>Step 2: Make a copy these selected genotypes to another folder<a class="headerlink" href="#step-2-make-a-copy-these-selected-genotypes-to-another-folder" title="Link to this heading">#</a></h2>
+<h3>Step 2: Make a copy these selected genotypes to another folder<a class="headerlink" href="#step-2-make-a-copy-these-selected-genotypes-to-another-folder" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>import os
@@ -608,9 +596,9 @@ print(&#39;Files copied successfully.&#39;)
 </div>
 </section>
 <section id="step-3-simulation">
-<h2>Step 3: Simulation<a class="headerlink" href="#step-3-simulation" title="Link to this heading">#</a></h2>
+<h3>Step 3: Simulation<a class="headerlink" href="#step-3-simulation" title="Link to this heading">#</a></h3>
 <section id="figure-2a-simulation-2-trait">
-<h3>1. Figure 2A simulation (2 trait)<a class="headerlink" href="#figure-2a-simulation-2-trait" title="Link to this heading">#</a></h3>
+<h4>1. Figure 2A simulation (2 trait)<a class="headerlink" href="#figure-2a-simulation-2-trait" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_2trait]
@@ -746,7 +734,7 @@ R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f
 </div>
 </section>
 <section id="figure-2a-simulation-5-trait">
-<h3>2. Figure 2A simulation (5 trait)<a class="headerlink" href="#figure-2a-simulation-5-trait" title="Link to this heading">#</a></h3>
+<h4>2. Figure 2A simulation (5 trait)<a class="headerlink" href="#figure-2a-simulation-5-trait" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_5trait]
@@ -901,7 +889,7 @@ R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f
 </div>
 </section>
 <section id="figure-2a-simulation-10-trait">
-<h3>3. Figure 2A simulation (10 trait)<a class="headerlink" href="#figure-2a-simulation-10-trait" title="Link to this heading">#</a></h3>
+<h4>3. Figure 2A simulation (10 trait)<a class="headerlink" href="#figure-2a-simulation-10-trait" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_10trait]
@@ -1056,7 +1044,7 @@ R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f
 </div>
 </section>
 <section id="figure-2a-simulation-20-trait">
-<h3>4. Figure 2A simulation (20 trait)<a class="headerlink" href="#figure-2a-simulation-20-trait" title="Link to this heading">#</a></h3>
+<h4>4. Figure 2A simulation (20 trait)<a class="headerlink" href="#figure-2a-simulation-20-trait" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[real_simulation_20trait]
@@ -1211,7 +1199,8 @@ R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f
 </div>
 </section>
 <section id="job-submission-bash-file">
-<h3>5. Job submission bash file<a class="headerlink" href="#job-submission-bash-file" title="Link to this heading">#</a></h3>
+<h4>5. Job submission bash file<a class="headerlink" href="#job-submission-bash-file" title="Link to this heading">#</a></h4>
+</section>
 <section id="trait">
 <h4>2 trait<a class="headerlink" href="#trait" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
@@ -1377,9 +1366,8 @@ done
 </div>
 </div>
 </section>
-</section>
 <section id="supplementary-all-shared-senario">
-<h3>6. Supplementary: all shared senario<a class="headerlink" href="#supplementary-all-shared-senario" title="Link to this heading">#</a></h3>
+<h4>6. Supplementary: all shared senario<a class="headerlink" href="#supplementary-all-shared-senario" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>[all_share_simulation]
@@ -1511,7 +1499,7 @@ R: expand = &#39;${ }&#39;, stdout = f&quot;{_output:n}.stdout&quot;, stderr = f
 </div>
 </section>
 <section id="supplementary-job-submission">
-<h3>7. Supplementary job submission<a class="headerlink" href="#supplementary-job-submission" title="Link to this heading">#</a></h3>
+<h4>7. Supplementary job submission<a class="headerlink" href="#supplementary-job-submission" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>work_dir=&quot;/home/hs3393/cb_Mar/simulation_data/all_share_simulation/&quot;
@@ -1550,6 +1538,7 @@ done
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 </section>
@@ -1618,40 +1607,33 @@ done
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Phenotype data simulation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-heritability-phi-total">1. Total heritability (<span class="math notranslate nohighlight">\(\phi_{total}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snp-level-heritability">2. SNP level heritability</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-strategy">Simulation Strategy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-heritability-phi-total">Total heritability (<span class="math notranslate nohighlight">\(\phi_{total}\)</span>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snp-level-heritability">SNP level heritability</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-code">Simulation code</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-randomly-select-regions">Step 1: Randomly select regions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-a-copy-these-selected-genotypes-to-another-folder">Step 2: Make a copy these selected genotypes to another folder</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-simulation">Step 3: Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-2-trait">1. Figure 2A simulation (2 trait)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-5-trait">2. Figure 2A simulation (5 trait)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-10-trait">3. Figure 2A simulation (10 trait)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-20-trait">4. Figure 2A simulation (20 trait)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#job-submission-bash-file">5. Job submission bash file</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-code">Simulation code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-randomly-select-regions">Step 1: Randomly select regions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-make-a-copy-these-selected-genotypes-to-another-folder">Step 2: Make a copy these selected genotypes to another folder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-simulation">Step 3: Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-2-trait">1. Figure 2A simulation (2 trait)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-5-trait">2. Figure 2A simulation (5 trait)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-10-trait">3. Figure 2A simulation (10 trait)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2a-simulation-20-trait">4. Figure 2A simulation (20 trait)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#job-submission-bash-file">5. Job submission bash file</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trait">2 trait</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5 trait</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10 trait</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20 trait</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-all-shared-senario">6. Supplementary: all shared senario</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-job-submission">7. Supplementary job submission</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-all-shared-senario">6. Supplementary: all shared senario</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-job-submission">7. Supplementary job submission</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>
