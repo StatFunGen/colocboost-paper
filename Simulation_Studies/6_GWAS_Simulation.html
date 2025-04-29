@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Simulation_Studies/6_GWAS_Simulation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Correlated phenotypes simulation" href="7_Correlated_Simulation.html" />
+    <link rel="next" title="Correlated Phenotypes Simulation" href="7_Correlated_Simulation.html" />
     <link rel="prev" title="Secondary simulations" href="5_Secondary_Simulation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,7 +175,7 @@
 <li class="toctree-l2"><a class="reference internal" href="4_Result_Summary.html">Colocalization result summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5_Secondary_Simulation.html">Secondary simulations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Weaker Signal Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_Correlated_Simulation.html">Correlated phenotypes simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_Correlated_Simulation.html">Correlated Phenotypes Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_Null_Simulation.html">Null simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_FineBoost.html">FineBoost (single trait ColocBoost)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_Run_OPERA.html">Running OPERA</a></li>
@@ -409,7 +409,7 @@ document.write(`
 <h1>Weaker Signal Simulation<a class="headerlink" href="#weaker-signal-simulation" title="Link to this heading">#</a></h1>
 <section id="goal">
 <h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
-<p>This notebook simulates the cases that the first trait is treated as GWAS, or any other traits that have a weaker signals than the other traits (eg. eQTL). The first trait will be designed to have a less heritability.</p>
+<p>This notebook simulates the cases that the first trait is treated as focal trait, that have a weaker signals than the other traits. The first trait will be designed to have a less heritability (see details in Online Method in ColocBoost paper).</p>
 </section>
 <section id="input">
 <h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
@@ -1182,7 +1182,7 @@ sbatch ${output_script}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Correlated phenotypes simulation</p>
+        <p class="prev-next-title">Correlated Phenotypes Simulation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
