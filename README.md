@@ -17,6 +17,11 @@ This repository contains the codes and data used to generate all figures from ou
 
 - **Main Figures**: Each notebook is fully executable and documented to ensure reproducibility of our results. 
 
+Due to the file size limitation of CRAN release, the full dataset used in [tutorials](https://statfungen.github.io/colocboost/articles/index.html) can be found in this repo.
+
+- Reproducible dataset in Figure 2b: Main_Figures/Figure_2/*.rda
+- Full example data with individual level and summary statistics for 5 traits: Simulation_Studies/Data/*.rda
+
 
 ## Getting Started
 
