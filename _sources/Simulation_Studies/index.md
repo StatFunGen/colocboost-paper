@@ -5,9 +5,9 @@ This directory contains simulation designs and implementation codes used in the 
 
 ## 1. Simulation Design Overview
 
-This section provides a summary of the simulation notebooks (1-11) that implement different aspects of our multi-trait colocalization method evaluations.
+This section provides a summary of the simulation notebooks that implement different aspects of our multi-trait colocalization method evaluations.
 
-- **Phenotype simulation**: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.
+- **Phenotype simulation**: Establishes the fundamental simulation framework for generating synthetic phenotype data. Simulates phenotype data (Y matrix) for $L$ traits based on real genotype data (X matrix) using total heritability and SNP-level heritability approaches. Configurable for different numbers of traits (2, 5, 10, 20) and causal variants with controllable heritability.
 
 
 - **Run ColocBoost**: Executes the ColocBoost algorithm on simulated datasets to identify colocalizing variants and trait clusters. Processes and standardizes results for performance evaluation with key output metrics.
