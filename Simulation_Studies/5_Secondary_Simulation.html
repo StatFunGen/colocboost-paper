@@ -410,25 +410,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="secondary-simulations">
 <h1>Secondary simulations<a class="headerlink" href="#secondary-simulations" title="Link to this heading">#</a></h1>
-<p>This notebook include data simulation of 50 traits, and complex configurations suggested in HyprColoc paper.</p>
+<p>This notebook include data simulation of 50 traits, and complex configurations suggested in HyPrColoc paper.</p>
 <section id="goal">
 <h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
-<p>Because we don’t have 50 traits to estimate and reflect the true configurations, we used a different approach: for each causal variant,
-we randomly select 10-25 traits to colocalize on that variant.</p>
-<p>We also simulated 10 traits complex configuration cases described and extended from Hyprcoloc paper.</p>
+<p>To generate 50 traits, for each causal variant, we randomly selected 10-25 traits to colocalize on that variant.</p>
+<p>We also simulated 10 traits complex configuration cases described and extended from HyPrcoloc paper (see details in Supplementary Note S.6.2 of ColocBoost paper).</p>
 </section>
 <section id="input">
 <h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">genofile</span></code>: plink file of real genotyope, <code class="docutils literal notranslate"><span class="pre">/mnt/vast/hpc/csg/FunGen_xQTL/ROSMAP/Genotype/plink_by_gene/extended_cis_before_winsorize_plink_files/*.bim</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">genofile</span></code>: plink file of real genotyope, <code class="docutils literal notranslate"><span class="pre">plink_by_gene/extended_cis_before_winsorize_plink_files/*.bim</span></code></p>
 <p>The other parameters can be found in simxQTL repo. <code class="docutils literal notranslate"><span class="pre">https://github.com/StatFunGen/simxQTL</span></code>.</p>
 </section>
 <section id="output">
 <h2>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h2>
-<p>An rds matrix, with genotype matrix X (dimension: m * n, m: number of sample, n: number of SNP ) and phenotype (trait) matrix (dimension: m * a, m : number of samples, a: number of simulated traits)</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">rds</span></code> object, with genotype matrix <span class="math notranslate nohighlight">\(X\)</span> (dimension: <span class="math notranslate nohighlight">\(N \times P\)</span>m with <span class="math notranslate nohighlight">\(N\)</span> samples, <span class="math notranslate nohighlight">\(P\)</span> variants ) and phenotype (trait) matrix (dimension: <span class="math notranslate nohighlight">\(N \times L\)</span> with <span class="math notranslate nohighlight">\(N\)</span> samples and <span class="math notranslate nohighlight">\(L\)</span> simulated traits)</p>
 <p>Example output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;/home/hs3393/cb_Mar/simulation_data/simulation_551rand_complex/sample_39_h2g_0.05_10trait_cluster_5+5+1rand.rds&quot;)
+<div class="highlight-sos notranslate"><div class="highlight"><pre><span></span>result = readRDS(&quot;../simulation_data/simulation_551rand_complex/sample_39_h2g_0.05_10trait_cluster_5+5+1rand.rds&quot;)
 </pre></div>
 </div>
 </div>
