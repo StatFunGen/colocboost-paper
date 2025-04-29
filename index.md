@@ -9,15 +9,14 @@ ColocBoost is a statistical approach for identifying shared genetic influences a
 
 ## Repository Structure
 
-This Jupyter Book contains the codes and data used to generate all figures from our manuscript, available at: https://github.com/StatFunGen/colocboost-paper
+This repository contains the codes and data used to generate all figures from our manuscript, available at: https://github.com/StatFunGen/colocboost-paper
 
-Each notebook is fully executable and documented to ensure reproducibility of our results. The main sections include:
+- **Simulation Studies**: This directory contains simulation designs and implementation codes used in the paper. 
 
-- **Figure 2**: Performance comparison of ColocBoost with other multi-trait colocalization methods in simulation benchmarks
-- **Figure 3**: ColocBoost xQTL analysis across cell types and traits modalities
-- **Figure 4**: Validation of ColocBoost colocalization signals using CRISPR data
-- **Figure 5**: Disease heritability analyses of variant-level functional annotations derived from ColocBoost
-- **Figure 6**: AD–xQTL ColocBoost identifies colocalized variants between xQTLs and AD GWAS
+- **Data Applications**: This section contains the data applications discussed in the ColocBoost paper.
+
+- **Main Figures**: Each notebook is fully executable and documented to ensure reproducibility of our results. 
+
 
 ## Getting Started
 
@@ -32,4 +31,14 @@ To navigate this resource, use the table of contents in the left sidebar. Each f
 The analyses in this book were performed using:
 - R version 4.1 or higher
 - Key R packages: data.table, ggplot2, dplyr
+
+## ColocBoost Tutorial Website
+
+Learn how to perform colocalization analysis with step-by-step examples. For detailed tutorials and use cases in [Tutorials](https://statfungen.github.io/colocboost/articles/index.html).
+
+## Citation
+
+If you use ColocBoost in your research, please cite:
+
+> Cao X, Sun H, Feng R, Mazumder R, Najar CFB, Li YI, de Jager PL, Bennett D, The Alzheimer's Disease Functional Genomics Consortium, Dey KK, Wang G. (2025+). Integrative multi-omics QTL colocalization maps regulatory architecture in aging human brain. medRxiv. [https://doi.org/10.1101/2025.04.17.25326042](https://doi.org/10.1101/2025.04.17.25326042)
 

@@ -5,6 +5,22 @@ format: jb-book
 root: index
 chapters:
   - file: intro
+  - file: Simulation_Studies/index
+    sections:
+      - file: Simulation_Studies/1_Phenotype_Simulation
+      - file: Simulation_Studies/2_Run_ColocBoost
+      - file: Simulation_Studies/3_Other_Colocalization_Methods
+      - file: Simulation_Studies/4_Result_Summary
+      - file: Simulation_Studies/5_Secondary_Simulation
+      - file: Simulation_Studies/6_GWAS_Simulation
+      - file: Simulation_Studies/7_Correlated_Simulation
+      - file: Simulation_Studies/8_Null_Simulation
+      - file: Simulation_Studies/9_FineBoost
+      - file: Simulation_Studies/10_Run_OPERA
+      - file: Simulation_Studies/11_Run_OPERA_Original_Proportion
+      
+  - file: Data_Applications/index
+
   - file: Main_Figures/index
     sections:
       - file: Main_Figures/Figure_2/index
@@ -47,19 +63,4 @@ chapters:
           - file: Main_Figures/Figure_6/Figure_6g
           - file: Main_Figures/Figure_6/Figure_6h
 
-  - file: Simulation_Studies/index
-    sections:
-      - file: Simulation_Studies/1_Phenotype_Simulation
-      - file: Simulation_Studies/2_Run_ColocBoost
-      - file: Simulation_Studies/3_Other_Colocalization_Methods
-      - file: Simulation_Studies/4_Result_Summary
-      - file: Simulation_Studies/5_Secondary_Simulation
-      - file: Simulation_Studies/6_GWAS_Simulation
-      - file: Simulation_Studies/7_Correlated_Simulation
-      - file: Simulation_Studies/8_Null_Simulation
-      - file: Simulation_Studies/9_FineBoost
-      - file: Simulation_Studies/10_Run_OPERA
-      - file: Simulation_Studies/11_Run_OPERA_Original_Proportion
-      
-  - file: Data_Applications/index
       
