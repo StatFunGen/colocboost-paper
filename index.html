@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Main Figures" href="Main_Figures/index.html" />
+    <link rel="next" title="Simulation Studies" href="Simulation_Studies/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,6 +169,23 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Simulation_Studies/index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/1_Phenotype_Simulation.html">Phenotype data simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/2_Run_ColocBoost.html">Run ColocBoost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/3_Other_Colocalization_Methods.html">Other colocalization methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/4_Result_Summary.html">Colocalization result summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/5_Secondary_Simulation.html">Secondary simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/6_GWAS_Simulation.html">GWAS / weaker signal simulation and ColocBoost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/7_Correlated_Simulation.html">Correlated phenotypes simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/8_Null_Simulation.html">Null simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/9_FineBoost.html">FineBoost (single trait version of ColocBoost)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/10_Run_OPERA.html">Running OPERA</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/11_Run_OPERA_Original_Proportion.html">Running OPERA: OPERA: simulation using original proportion configuration</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Applications/index.html">Data Application</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Main_Figures/index.html">Main Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="Main_Figures/Figure_2/index.html">Figure 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="Main_Figures/Figure_2/Figure_2a.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
@@ -217,23 +234,6 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Simulation_Studies/index.html">Simulation Studies</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/1_Phenotype_Simulation.html">Phenotype data simulation</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/2_Run_ColocBoost.html">Run ColocBoost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/3_Other_Colocalization_Methods.html">Other colocalization methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/4_Result_Summary.html">Colocalization result summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/5_Secondary_Simulation.html">Secondary simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/6_GWAS_Simulation.html">GWAS / weaker signal simulation and ColocBoost</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/7_Correlated_Simulation.html">Correlated phenotypes simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/8_Null_Simulation.html">Null simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/9_FineBoost.html">FineBoost (single trait version of ColocBoost)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/10_Run_OPERA.html">Running OPERA</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Simulation_Studies/11_Run_OPERA_Original_Proportion.html">Running OPERA: OPERA: simulation using original proportion configuration</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Applications/index.html">Data Application</a></li>
 </ul>
 
     </div>
@@ -386,6 +386,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-structure">Repository Structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-requirements">Computational Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-tutorial-website">ColocBoost Tutorial Website</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
 </ul>
             </nav>
         </div>
@@ -406,14 +408,11 @@ document.write(`
 </section>
 <section id="repository-structure">
 <h2>Repository Structure<a class="headerlink" href="#repository-structure" title="Link to this heading">#</a></h2>
-<p>This Jupyter Book contains the codes and data used to generate all figures from our manuscript, available at: <a class="github reference external" href="https://github.com/StatFunGen/colocboost-paper">StatFunGen/colocboost-paper</a></p>
-<p>Each notebook is fully executable and documented to ensure reproducibility of our results. The main sections include:</p>
+<p>This repository contains the codes and data used to generate all figures from our manuscript, available at: <a class="github reference external" href="https://github.com/StatFunGen/colocboost-paper">StatFunGen/colocboost-paper</a></p>
 <ul class="simple">
-<li><p><strong>Figure 2</strong>: Performance comparison of ColocBoost with other multi-trait colocalization methods in simulation benchmarks</p></li>
-<li><p><strong>Figure 3</strong>: ColocBoost xQTL analysis across cell types and traits modalities</p></li>
-<li><p><strong>Figure 4</strong>: Validation of ColocBoost colocalization signals using CRISPR data</p></li>
-<li><p><strong>Figure 5</strong>: Disease heritability analyses of variant-level functional annotations derived from ColocBoost</p></li>
-<li><p><strong>Figure 6</strong>: AD–xQTL ColocBoost identifies colocalized variants between xQTLs and AD GWAS</p></li>
+<li><p><strong>Simulation Studies</strong>: This directory contains simulation designs and implementation codes used in the paper.</p></li>
+<li><p><strong>Data Applications</strong>: This section contains the data applications discussed in the ColocBoost paper.</p></li>
+<li><p><strong>Main Figures</strong>: Each notebook is fully executable and documented to ensure reproducibility of our results.</p></li>
 </ul>
 </section>
 <section id="getting-started">
@@ -432,6 +431,17 @@ document.write(`
 <li><p>R version 4.1 or higher</p></li>
 <li><p>Key R packages: data.table, ggplot2, dplyr</p></li>
 </ul>
+</section>
+<section id="colocboost-tutorial-website">
+<h2>ColocBoost Tutorial Website<a class="headerlink" href="#colocboost-tutorial-website" title="Link to this heading">#</a></h2>
+<p>Learn how to perform colocalization analysis with step-by-step examples. For detailed tutorials and use cases in <a class="reference external" href="https://statfungen.github.io/colocboost/articles/index.html">Tutorials</a>.</p>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
+<p>If you use ColocBoost in your research, please cite:</p>
+<blockquote>
+<div><p>Cao X, Sun H, Feng R, Mazumder R, Najar CFB, Li YI, de Jager PL, Bennett D, The Alzheimer’s Disease Functional Genomics Consortium, Dey KK, Wang G. (2025+). Integrative multi-omics QTL colocalization maps regulatory architecture in aging human brain. medRxiv. <a class="reference external" href="https://doi.org/10.1101/2025.04.17.25326042">https://doi.org/10.1101/2025.04.17.25326042</a></p>
+</div></blockquote>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -468,11 +478,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="Main_Figures/index.html"
+       href="Simulation_Studies/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Main Figures</p>
+        <p class="prev-next-title">Simulation Studies</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -496,6 +506,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-structure">Repository Structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-requirements">Computational Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colocboost-tutorial-website">ColocBoost Tutorial Website</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
 </ul>
   </nav></div>
 
