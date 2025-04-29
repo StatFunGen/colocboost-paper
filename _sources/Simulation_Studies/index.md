@@ -18,7 +18,7 @@ This section provides a summary of the simulation notebooks that implement diffe
 
 - **Secondary simulations**: Creates advanced simulation scenarios including 50-trait datasets and complex colocalization configurations. Implements specialized trait clustering patterns (5+5, 3+3+2+2) and random variant sharing to test method robustness.
 
-- **GWAS Simulation**: Implements simulations specifically designed to mimic real-world GWAS summary statistics.
+- **Weaker Signal Simulation**: Implements simulations specifically designed to mimic real-world GWAS summary statistics.
 
 - **Correlated Simulation**: Evaluates method performance under scenarios with correlated traits and complex pleiotropy patterns.
 
