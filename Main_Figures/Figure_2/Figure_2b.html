@@ -232,6 +232,9 @@
 </details></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Supplementary_Figures/index.html">Supplementary Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -425,7 +428,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">colocboost</span><span class="p">)</span>
-<span class="nf">data</span><span class="p">(</span><span class="n">Heterogeneous_Effect</span><span class="p">)</span>
+<span class="nf">load</span><span class="p">(</span><span class="s">&quot;data/Heterogeneous_Effect.rda&quot;</span><span class="p">)</span>
 <span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Heterogeneous_Effect</span>
 <span class="n">X</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">X</span>
 <span class="n">Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">Y</span>
@@ -844,7 +847,7 @@ Probability that trait ab colocalizes with at least one other trait = 0.0067
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">colocboost</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-<span class="nf">data</span><span class="p">(</span><span class="n">Non_Causal_Strongest_Marginal</span><span class="p">)</span>
+<span class="nf">load</span><span class="p">(</span><span class="s">&quot;data/Non_Causal_Strongest_Marginal.rda&quot;</span><span class="p">)</span>
 <span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Non_Causal_Strongest_Marginal</span>
 <span class="n">X</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">X</span>
 <span class="n">Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">Y</span>
@@ -1220,7 +1223,7 @@ Probability that trait ab colocalizes with at least one other trait = 1
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">colocboost</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-<span class="nf">data</span><span class="p">(</span><span class="n">Weaker_GWAS_Effect</span><span class="p">)</span>
+<span class="nf">load</span><span class="p">(</span><span class="s">&quot;data/Weaker_GWAS_Effect.rda&quot;</span><span class="p">)</span>
 <span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Weaker_GWAS_Effect</span>
 <span class="n">X</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">X</span>
 <span class="n">Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">Y</span>

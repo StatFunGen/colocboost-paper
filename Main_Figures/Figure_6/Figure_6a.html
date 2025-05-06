@@ -230,6 +230,9 @@
 </details></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Supplementary_Figures/index.html">Supplementary Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -386,7 +389,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;UpSetR&quot;</span><span class="p">)</span>
-<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;Figure_6a.rds&quot;</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;data/Figure_6a.rds&quot;</span><span class="p">)</span>
 <span class="n">comparison</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="p">)</span>
 <span class="nf">names</span><span class="p">(</span><span class="n">comparison</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;AD Fine-mapping&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ColocBoost&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;COLOC (V5)&quot;</span><span class="p">)</span>
 <span class="n">max_size</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="nf">sapply</span><span class="p">(</span><span class="n">comparison</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">))</span>

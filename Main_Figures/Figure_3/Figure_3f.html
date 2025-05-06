@@ -230,6 +230,9 @@
 </details></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Supplementary_Figures/index.html">Supplementary Figures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -385,7 +388,7 @@ document.write(`
 <p>For each pair of brain cell types, we assess the homogeneity in estimated causal effects directions by measuring the proportion of colocalized signals exhibiting concordant effect size signs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">homo_rate</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;Fig_3g_homo_rate.rds&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">homo_rate</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;data/Fig_3g_homo_rate.rds&quot;</span><span class="p">)</span>
 <span class="n">custom_colors</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colorRampPalette</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;white&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#0F3B6D&quot;</span><span class="p">))(</span><span class="m">10</span><span class="p">)</span><span class="w"> </span>
 <span class="n">formatted_numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">format</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">homo_rate</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">nsmall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 <span class="n">breaks</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0.89</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">length.out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">11</span><span class="p">)</span>
