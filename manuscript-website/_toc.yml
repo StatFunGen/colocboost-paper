@@ -63,5 +63,21 @@ chapters:
           - file: Main_Figures/Figure_6/Figure_6f
           - file: Main_Figures/Figure_6/Figure_6g
           - file: Main_Figures/Figure_6/Figure_6h
+          
+  - file: Supplementary_Figures/index
+    sections:
+      - file: Supplementary_Figures/Figure_S2/Figure_S2
+      - file: Supplementary_Figures/Figure_S3/Figure_S3
+      - file: Supplementary_Figures/Figure_S4/Figure_S4
+      - file: Supplementary_Figures/Figure_S5/Figure_S5
+      - file: Supplementary_Figures/Figure_S6/Figure_S6
+      - file: Supplementary_Figures/Figure_S7/Figure_S7
+      - file: Supplementary_Figures/Figure_S8/Figure_S8
+      - file: Supplementary_Figures/Figure_S9/Figure_S9
+      - file: Supplementary_Figures/Figure_S10/Figure_S10
+      - file: Supplementary_Figures/Figure_S11/Figure_S11
+      - file: Supplementary_Figures/Figure_S12/Figure_S12
+      - file: Supplementary_Figures/Figure_S13/Figure_S13
+      - file: Supplementary_Figures/Figure_S14/Figure_S14
 
       
