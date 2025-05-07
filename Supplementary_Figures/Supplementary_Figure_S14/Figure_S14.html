@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons. &#8212; ColocBoost manuscript resources</title>
+    <title>Figure S14. Additional details of colocalizations in gene CTSH. &#8212; ColocBoost manuscript resources</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Supplementary_Figures/Supplementary_Figure_S14/Figure_S14';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons." href="../Supplementary_Figure_S13/Figure_S13.html" />
+    <link rel="prev" title="Figure 13. Example cases of xQTL colocalizations in known AD risk genes." href="../Supplementary_Figure_S13/Figure_S13.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -241,8 +241,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../Supplementary_Figure_S10/Figure_S10.html">Figure S10. Extended disease heritability analyses of variant-level functional annotations derived from ColocBoost.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Supplementary_Figure_S11/Figure_S11.html">Figure S11. Extended evaluations of GWAS-xQTL colocalization from ColocBoost and competing methods.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Supplementary_Figure_S12/Figure_S12.html">Figure S12. Additional summary of genome-wide GWAS-xQTL colocalization results.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Supplementary_Figure_S13/Figure_S13.html">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Supplementary_Figure_S13/Figure_S13.html">Figure 13. Example cases of xQTL colocalizations in known AD risk genes.</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Figure S14. Additional details of colocalizations in gene CTSH.</a></li>
 </ul>
 </details></li>
 </ul>
@@ -370,9 +370,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -383,20 +381,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</h1>
+    <h1>Figure S14. Additional details of colocalizations in gene CTSH.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-power">Statistical power</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fdr">FDR</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -406,120 +395,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="figure-2a-statistical-power-and-false-discovery-rate-fdr-comparisons">
-<h1>Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.<a class="headerlink" href="#figure-2a-statistical-power-and-false-discovery-rate-fdr-comparisons" title="Link to this heading">#</a></h1>
-<p>Statistical power and False Discovery Rate (FDR) comparisons of ColocBoost against COLOC (V5), MOLOC and HyPrColoc, in simulation settings involving 2, 5, 10, and 20 traits, up to five causal variants per trait per locus, with genotype data and induced colocalization configurations designed to mimic real world xQTL datasets. Details of power and FDR calculations are provided in Methods. The X-axis represents the maximum number of causal variants across traits.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">ggpattern</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">ggpubr</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">cowplot</span><span class="p">)</span>
-<span class="n">sumstat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="s">&quot;data/Figure_2a.rds&quot;</span><span class="p">)</span>
-<span class="n">sumstat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sumstat</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">max_causal</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
-<span class="n">colors_man</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;#B24745FF&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#00A1D5FF&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#79AF97FF&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;#DF8F44FF&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="statistical-power">
-<h2>Statistical power<a class="headerlink" href="#statistical-power" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sumstat</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
-<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">max_causal</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">power</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">method</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">geom_col</span><span class="p">(</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dodge&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;grey20&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.8</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">  </span><span class="nf">ylim</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1.05</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">  </span><span class="c1">#scale_x_continuous(breaks = 1:max(sumstat$total_causal_var_number)) +  # Ensures x-axis ticks are integers</span>
-<span class="w">  </span><span class="nf">facet_wrap</span><span class="p">(</span><span class="n">.</span><span class="o">~</span><span class="w"> </span><span class="n">marginal_trait_number</span><span class="p">,</span>
-<span class="w">             </span><span class="n">labeller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">labeller</span><span class="p">(</span><span class="n">marginal_trait_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Number of Traits:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)),</span><span class="w"> </span><span class="n">scales</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;free_x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">geom_errorbar</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">ymin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">power</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1.96</span><span class="o">*</span><span class="n">power_SD</span><span class="o">/</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="m">20</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span>
-<span class="w">                    </span><span class="n">ymax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">power</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1.96</span><span class="o">*</span><span class="n">power_SD</span><span class="o">/</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="m">20</span><span class="p">)</span><span class="w"> </span><span class="p">),</span>
-<span class="w">                </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">position_dodge</span><span class="p">(</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.7</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colors_man</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Methods&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="c1"># guides(fill = guide_legend(title = &quot;Methods&quot;)) + </span>
-<span class="w">  </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Max Number of True Causal Variants Per Trait&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Power&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Methods&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="n">axis.title.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="p">),</span><span class="w"> </span>
-<span class="w">        </span><span class="n">axis.title.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="p">),</span>
-<span class="w">        </span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">22</span><span class="p">),</span><span class="w"> </span>
-<span class="w">        </span><span class="n">axis.text.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">22</span><span class="p">),</span>
-<span class="w">        </span><span class="n">strip.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="n">legend.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">margin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">margin</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">)),</span><span class="w">  </span><span class="c1"># Change legend title font size and style</span>
-<span class="w">        </span><span class="n">legend.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="p">,</span><span class="w"> </span><span class="n">margin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">margin</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">)),</span>
-<span class="w">        </span><span class="n">text</span><span class="o">=</span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">24</span><span class="p">,</span><span class="w">  </span><span class="n">family</span><span class="o">=</span><span class="s">&quot;sans&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">theme</span><span class="p">(</span>
-<span class="w">          </span><span class="n">panel.grid.major</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">(),</span><span class="w">      </span><span class="c1"># Remove major grid lines</span>
-<span class="w">          </span><span class="n">panel.grid.minor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">(),</span><span class="w">      </span><span class="c1"># Remove minor grid lines</span>
-<span class="w">          </span><span class="c1">#     axis.line = element_line(color = &quot;black&quot;) # Keep the axis lines</span>
-<span class="w">        </span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
-<span class="n">p1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../../_images/a30fbb4aa5281dc6f9513befc0739551e77813246111c3c669a805e4cc8e59b3.png"><img alt="../../_images/a30fbb4aa5281dc6f9513befc0739551e77813246111c3c669a805e4cc8e59b3.png" src="../../_images/a30fbb4aa5281dc6f9513befc0739551e77813246111c3c669a805e4cc8e59b3.png" style="width: 1200px; height: 360px;" />
-</a>
-</div>
-</div>
-</section>
-<section id="fdr">
-<h2>FDR<a class="headerlink" href="#fdr" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sumstat</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
-<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">max_causal</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FDR</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">method</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">geom_col</span><span class="p">(</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dodge&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;grey20&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.8</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">  </span><span class="nf">ylim</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="c1">#scale_x_continuous(breaks = 1:max(sumstat$total_causal_var_number)) +  # Ensures x-axis ticks are integers</span>
-<span class="w">  </span><span class="nf">facet_wrap</span><span class="p">(</span><span class="n">.</span><span class="o">~</span><span class="w"> </span><span class="n">marginal_trait_number</span><span class="p">,</span>
-<span class="w">             </span><span class="n">labeller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">labeller</span><span class="p">(</span><span class="n">marginal_trait_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Number of Traits:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)),</span><span class="w"> </span><span class="n">scales</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;free_x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">geom_errorbar</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">ymin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FDR</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1.96</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">FDR_SD</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="m">20</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                    </span><span class="n">ymax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FDR</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1.96</span><span class="w"> </span><span class="o">*</span><span class="n">FDR_SD</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="m">20</span><span class="p">)),</span>
-<span class="w">                </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">position_dodge</span><span class="p">(</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.7</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colors_man</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Methods&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="c1"># guides(fill = guide_legend(title = &quot;Methods&quot;)) + </span>
-<span class="w">  </span><span class="nf">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Max Number of True Causal Variants Per Trait&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;FDR&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Methods&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.05</span><span class="p">,</span><span class="w"> </span><span class="n">linetype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dashed&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">linewidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="c1"># geom_hline(yintercept = 0.1, linetype = &quot;dashed&quot;, color = &quot;blue&quot;, linewidth = 0.6) +</span>
-<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bottom&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="n">axis.title.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="p">),</span><span class="w"> </span>
-<span class="w">        </span><span class="n">axis.title.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="p">),</span>
-<span class="w">        </span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">22</span><span class="p">),</span><span class="w"> </span>
-<span class="w">        </span><span class="n">axis.text.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">22</span><span class="p">),</span>
-<span class="w">        </span><span class="n">strip.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="n">legend.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bold&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">margin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">margin</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">)),</span><span class="w">  </span><span class="c1"># Change legend title font size and style</span>
-<span class="w">        </span><span class="n">legend.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="p">,</span><span class="w"> </span><span class="n">margin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">margin</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">)),</span>
-<span class="w">        </span><span class="n">text</span><span class="o">=</span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">24</span><span class="p">,</span><span class="w">  </span><span class="n">family</span><span class="o">=</span><span class="s">&quot;sans&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">theme</span><span class="p">(</span>
-<span class="w">          </span><span class="n">panel.grid.major</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">(),</span><span class="w">      </span><span class="c1"># Remove major grid lines</span>
-<span class="w">          </span><span class="n">panel.grid.minor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">(),</span><span class="w">      </span><span class="c1"># Remove minor grid lines</span>
-<span class="w">          </span><span class="c1"># axis.line = element_line(color = &quot;black&quot;) # Keep the axis lines</span>
-<span class="w">        </span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
-<span class="n">p2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../../_images/4e9ac85bfb152019b13719ee298a9ebf4de1f70a5f10bc5a7889175dd9f2ddee.png"><img alt="../../_images/4e9ac85bfb152019b13719ee298a9ebf4de1f70a5f10bc5a7889175dd9f2ddee.png" src="../../_images/4e9ac85bfb152019b13719ee298a9ebf4de1f70a5f10bc5a7889175dd9f2ddee.png" style="width: 1200px; height: 360px;" />
-</a>
-</div>
-</div>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="figure-s14-additional-details-of-colocalizations-in-gene-ctsh">
+<h1>Figure S14. Additional details of colocalizations in gene CTSH.<a class="headerlink" href="#figure-s14-additional-details-of-colocalizations-in-gene-ctsh" title="Link to this heading">#</a></h1>
+<p>See detailed information in Main Figure 6h.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -558,7 +436,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Figure 2a. Statistical power and False Discovery Rate (FDR) comparisons.</p>
+        <p class="prev-next-title">Figure 13. Example cases of xQTL colocalizations in known AD risk genes.</p>
       </div>
     </a>
 </div>
@@ -567,22 +445,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-power">Statistical power</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fdr">FDR</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
