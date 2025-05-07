@@ -63,7 +63,9 @@ chapters:
           - file: Main_Figures/Figure_6/Figure_6f
           - file: Main_Figures/Figure_6/Figure_6g
           - file: Main_Figures/Figure_6/Figure_6h
-          
+  
+  - file: Supplementary_Tables/index
+
   - file: Supplementary_Figures/index
     sections:
       - file: Supplementary_Figures/Supplementary_Figure_S2/Figure_S2
