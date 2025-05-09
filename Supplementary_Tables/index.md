@@ -16,6 +16,7 @@
 - **Table S8**: Heritability enrichment analysis for AD GWAS in Bellenguez 2022 conditional on 97 baseline-LD annotations.
 - **Table S9**: Feature comparison of multi-trait colocalization methods (green: feature supported/allowed). 
 - **Table S10**: Realistic cross-trait sharing patterns from genome-wide fine-mapping results from 62 FunGen-xQTL contexts by calculating how often signals overlapped among those contexts and then sampled from these observed overlap frequencies to define what subset of traits each simulated causal variant share.
+- **annotations_maxVCP**: Folder includes 5 maxVCP-based annotation in disease heritability enrichment analysis.
 
 ### Column Descriptions for Table S1.
 
